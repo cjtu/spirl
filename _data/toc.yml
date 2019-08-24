@@ -28,14 +28,8 @@
   not_numbered: true
   expand_sections: true
   sections:
-  - title: Create your book
-    url: /00_guide/02_create
-  - title: Build and publish your book
-    url: /00_guide/03_build
-  - title: FAQ
-    url: /00_guide/04_faq
-  - title: How-to and advanced topics
-    url: /00_guide/05_advanced
+  - title: Schedule
+    url: /00_guide/02_schedule
 
 - title: GitHub repository
   url: https://github.com/cjtu/spirl
@@ -49,115 +43,112 @@
   url: /01_bash/why-bash
   sections:
   - title: Introduction
-    url: /01_bash/1_shell/intro
-    subsections:
-    - title: Subsection Demo 1
-      url: /01_bash/1_shell/1/todo
-    - title: Subsection Demo 2
-      url: /01_bash/1_shell/2/todo
+    url: /01_bash/1_shell/shell
+  - title: Introduction
+    url: /01_bash/1_shell/windows
   - title: Bash Basics
-    url: /01_bash/2_basics/todo
+    url: /01_bash/2_basics/basics
   - title: Permissions
-    url: /01_bash/3_permissions/todo
+    url: /01_bash/3_permissions/permissions
   - title: Profiles
-    url: /01_bash/4_profiles/todo
+    url: /01_bash/4_profiles/profiles
 
 - title: Version Control in Git
   url: /02_git/why-git
-  sections:
-  - title: Version Control
-    url: /02_git/1_vcs/todo
-  - title: Git
-    url: /02_git/2_git/todo
-  - title: GitHub
-    url: /02_git/3_github/todo
+  # sections:
+  # - title: Version Control
+  #   url: /02_git/1_vcs/todo
+  # - title: Git
+  #   url: /02_git/2_git/todo
+  # - title: GitHub
+  #   url: /02_git/3_github/todo
 
-- title: Programming in Python
-  url: /03_python/why-python
-  sections:
-  - title: Basics
-    url: /03_python/1_basics/basics
-    subsections:
-    - title: Syntax
-      url: /03_python/1_basics/1_syntax/todo
-    - title: Expressions
-      url: /03_python/1_basics/2_expressions/todo
-    - title: Types
-      url: /03_python/1_basics/3_types/todo
-    - title: Help
-      url: /03_python/1_basics/4_help/todo
-  - title: Functions
-    url: /03_python/2_functions/todo
-  - title: Conditionals
-    url: /03_python/3_conditionals/todo
-  - title: Loops
-    url: /03_python/4_loops/loops
-  - title: Data Structures
-    url: /03_python/5_data_structs/intro
-    subsections:
-    - title: Booleans
-      url: /03_python/5_data_structs/1_bool/bool
-    - title: Numbers
-      url: /03_python/5_data_structs/2_int_float/todo
-    - title: Strings
-      url: /03_python/5_data_structs/3_str/todo
-    - title: Arrays
-      url: /03_python/5_data_structs/4_array/list_tuple
-    - title: Dictionaries
-      url: /03_python/5_data_structs/5_dict/set_dict
-    - title: Tables
-      url: /03_python/5_data_structs/6_dataframe/dataframe
-  - title: Modules
-    url: /03_python/6_modules/todo
-  - title: Plotting
-    url: /03_python/7_plotting/todo
-  - title: Optimization
-    url: /03_python/8_optimization/why-optimize
-    subsections:
-    - title: Timing
-      url: /03_python/8_optimization/1_timing/todo
-    - title: Complexity
-      url: /03_python/8_optimization/2_complexity/todo
-    - title: Sorting
-      url: /03_python/8_optimization/3_sorting/todo
-    - title: Algorithms
-      url: /03_python/8_optimization/4_choosing_algorithms/todo
-  - title: Advanced
-    url: /03_python/9_advanced/advanced
-    subsections:
-    - title: Files
-      url: /03_python/9_advanced/1_files/todo
-    - title: Classes
-      url: /03_python/9_advanced/2_classes/todo
-    - title: Fancy Indexing
-      url: /03_python/9_advanced/3_fancy_indexing/todo
-    - title: CLI Scripts
-      url: /03_python/9_advanced/4_cli/todo
-    - title: Ternary if
-      url: /03_python/9_advanced/5_ternary_if/todo
-    - title: Comprehensions
-      url: /03_python/9_advanced/6_comprehensions/todo
-    - title: Generators
-      url: /03_python/9_advanced/7_generators/todo
-    - title: Decorators
-      url: /03_python/9_advanced/8_decorators/todo
+# - title: Programming in Python
+#   url: /03_python/why-python
+#   sections:
+#   - title: Basics
+#     url: /03_python/1_basics/basics
+#     subsections:
+#     - title: Syntax
+#       url: /03_python/1_basics/1_syntax/todo
+#     - title: Expressions
+#       url: /03_python/1_basics/2_expressions/todo
+#     - title: Types
+#       url: /03_python/1_basics/3_types/todo
+#     - title: Help
+#       url: /03_python/1_basics/4_help/todo
+#   - title: Functions
+#     url: /03_python/2_functions/todo
+#   - title: Conditionals
+#     url: /03_python/3_conditionals/todo
+#   - title: Loops
+#     url: /03_python/4_loops/loops
+#   - title: Data Structures
+#     url: /03_python/5_data_structs/intro
+#     subsections:
+#     - title: Booleans
+#       url: /03_python/5_data_structs/1_bool/bool
+#     - title: Numbers
+#       url: /03_python/5_data_structs/2_int_float/todo
+#     - title: Strings
+#       url: /03_python/5_data_structs/3_str/todo
+#     - title: Arrays
+#       url: /03_python/5_data_structs/4_array/list_tuple
+#     - title: Dictionaries
+#       url: /03_python/5_data_structs/5_dict/set_dict
+#     - title: Tables
+#       url: /03_python/5_data_structs/6_dataframe/dataframe
+#   - title: Modules
+#     url: /03_python/6_modules/todo
+#   - title: Plotting
+#     url: /03_python/7_plotting/todo
+#   - title: Optimization
+#     url: /03_python/8_optimization/why-optimize
+#     subsections:
+#     - title: Timing
+#       url: /03_python/8_optimization/1_timing/todo
+#     - title: Complexity
+#       url: /03_python/8_optimization/2_complexity/todo
+#     - title: Sorting
+#       url: /03_python/8_optimization/3_sorting/todo
+#     - title: Algorithms
+#       url: /03_python/8_optimization/4_choosing_algorithms/todo
+#   - title: Advanced
+#     url: /03_python/9_advanced/advanced
+#     subsections:
+#     - title: Files
+#       url: /03_python/9_advanced/1_files/todo
+#     - title: Classes
+#       url: /03_python/9_advanced/2_classes/todo
+#     - title: Fancy Indexing
+#       url: /03_python/9_advanced/3_fancy_indexing/todo
+#     - title: CLI Scripts
+#       url: /03_python/9_advanced/4_cli/todo
+#     - title: Ternary if
+#       url: /03_python/9_advanced/5_ternary_if/todo
+#     - title: Comprehensions
+#       url: /03_python/9_advanced/6_comprehensions/todo
+#     - title: Generators
+#       url: /03_python/9_advanced/7_generators/todo
+#     - title: Decorators
+#       url: /03_python/9_advanced/8_decorators/todo
 
-- title: Anaconda
-  url: /04_anaconda/why-anaconda
-  sections:
-  - title: Installing Anaconda
-    url: /04_anaconda/1_installing/todo
-  - title: Environments
-    url: /04_anaconda/2_environments/todo
-  - title: Packages
-    url: /04_anaconda/3_packages/todo
-    subsections:
-    - title: Dependencies
-      url: /04_anaconda/3_packages/1_dependencies/todo
-  - title: Licenses
-    url: /04_anaconda/4_licenses/todo
-  - title: Packaging Code
-    url: /04_anaconda/5_packaging_code/todo
-    subsection: 
-    - title: Cookie cutter
-      url: /04_anaconda/5_packaging_code/1_cookie_cutter/todo
+# - title: Anaconda
+#   url: /04_anaconda/why-anaconda
+#   sections:
+#   - title: Installing Anaconda
+#     url: /04_anaconda/1_installing/todo
+#   - title: Environments
+#     url: /04_anaconda/2_environments/todo
+#   - title: Packages
+#     url: /04_anaconda/3_packages/todo
+#     subsections:
+#     - title: Dependencies
+#       url: /04_anaconda/3_packages/1_dependencies/todo
+#   - title: Licenses
+#     url: /04_anaconda/4_licenses/todo
+#   - title: Packaging Code
+#     url: /04_anaconda/5_packaging_code/todo
+#     subsection: 
+#     - title: Cookie cutter
+#       url: /04_anaconda/5_packaging_code/1_cookie_cutter/todo
