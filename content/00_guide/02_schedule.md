@@ -10,7 +10,7 @@ Last edit: Aug 24, 2019
 | Sep 6 | 2 | Version control, Git basics | TBA |
 | Sep 13 | 3 | Python syntax, functions, conditionals, exceptions  | TBA |
 | Sep 20 | 4 | Loops, data structures, modules, timing | TBA |
-| Sep 27 | (break) | Conference / catch-up week | TBA |
+| Sep 27 | - | (break - no class) Conference / catch-up week | TBA |
 | Oct 4 | 5 | Python science stack (numpy, scipy, matplotlib)  | TBA |
 | Oct 11 | 6 | Python data I/O (astropy, pandas, rasterio) | TBA |
 | Oct 18 | 7 | Managing your scientific programming environment | TBA |
