@@ -6,7 +6,7 @@ Last edit: Aug 24, 2019
 
 | Date | Lesson  | Topics | Pre-class homework |
 | ---- | ------- | ------ | ------------------ |
-| Aug 31 | 1 | Terminal navigation, bash scripts | None |
+| Aug 30 | 1 ([link](../01_bash/why-bash)) | Terminal navigation, bash scripts | None |
 | Sep 6 | 2 | Version control, Git basics | TBA |
 | Sep 13 | 3 | Python syntax, functions, conditionals, exceptions  | TBA |
 | Sep 20 | 4 | Loops, data structures, modules, timing | TBA |
