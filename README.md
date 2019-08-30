@@ -1,6 +1,6 @@
 # Welcome to SpIRL
 
-The Scientific Programming In Real Life course is an introduction to core concepts for scientists to get started with programming in Python. The textbook is free and available at [cjtu.github.io/spirl].
+The Scientific Programming In Real Life course is an introduction to core concepts for scientists to get started with programming in Python. The textbook is free and available at cjtu.github.io/spirl.
 
 ## The Textbook
 

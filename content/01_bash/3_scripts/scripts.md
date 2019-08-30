@@ -19,7 +19,7 @@ We added the shebang, but we haven't added any commands yet. The plain redirect 
 Let's add a basic `touch` command to our bash script.
 
 ```bash
-echo 'touch test_script_file.txt' >> 'test_script.sh
+echo 'touch test_script_file.txt' >> 'test_script.sh'
 ```
 
 Let's see our fancy new bash script!
