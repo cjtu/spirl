@@ -84,7 +84,7 @@ This ensures that the `master` branch is always in good working order and usable
 ### The basics: HEAD
 The shorthand `HEAD` tells Git where you currently are in history (which **branch** and which **commit**). When you make a new commit, `HEAD` moves with you to that commit. When you undo a commit, `HEAD` move back to the last commit. When you switch to a new branch, Git moves HEAD to the most recent commit on that branch.
 
-![git commit](./data/commit.png)
+![git commit](../../images/commit.png)
 
 If you ever end up in `detached HEAD` state, it simply means that Git got lost somehow (e.g. if you deleted the branch you were currently on), and it doesn't know where to point `HEAD`. From here you can `git checkout` to move to any of your existing branches and re-atttach your `HEAD`.
 
@@ -194,7 +194,7 @@ git status
 
 To summarize, your files can be in 3 possible places according to Git. The **working directory**, the **staging area**, or in **history**. You just moved `file1.txt` from your **working directory** to the **staging area** with `git add`, then into **history** with `git commit`. The following figure summarizes how to move between the 3 areas.
 
-![git areas](./data/git_at_a_glance.png)
+![git areas](../../images/git_at_a_glance.png)
 
 ### Reverting a commit
 We can also move files out of history and out of the staging area too. Let's make a second test commit to practice this. Like before, make a file, add it to the staging area and then commit it. This time let's use `touch`, a command that makes new empty files.
@@ -312,11 +312,11 @@ To make our first GitHub repository, first log in to https://github.com. If you 
 
 Next make a **new repository** (either with the new repository button on your profile, or with the `+` in the upper right).
 
-![new repo](./data/new_repo.png)
+![new repo](../../images/new_repo.png)
 
 Here, you are given some options. You can name the repository `lesson1` and give it a description if you would like. You will probably only have the option of `Public` for now, but once your application for the Education developer pack comes through, you will be able to make a private repository (see image below). Finally, you can leave the last 3 options blank: no README, no .gitignore, no license (more on these soon).
 
-![create new repo](./data/create_new_repo.png)
+![create new repo](../../images/create_new_repo.png)
 
 You've made a GitHub repository! Right now it's blank, but GitHub offers some suggestions for starting our repository. Since we want our local `lesson1/` to be tracked by GitHub, we will follow the directions under **…or push an existing repository from the command line**.
 
@@ -335,7 +335,7 @@ You will need to input your GitHub username and password, and if all went well, 
 
 Now head back to GitHub and click on the **Code** tab or on **lesson1**.
 
-![code tab](./data/code_tab.png)
+![code tab](../../images/code_tab.png)
 
 Do you see your beautiful `file1.txt`? You just pushed to your first GitHub repo!
 
@@ -349,11 +349,11 @@ If `push` is how we keep our remote repo up to date with our local repo, it woul
 ### Read the README!
 On GitHub, the README is the first thing a visitor will see when they look at your repository. In my **lesson1** repo on GitHub, there is a link pestering me to add a `README`. Let's indulge it. From the `Code` tab of your **lesson1** repository on GitHub click on the green `Add README` button, or if you do not see it, click `Create New File`.
 
-![add README](./data/add_readme.png)
+![add README](../../images/add_readme.png)
 
 You will be given a text field to add a README to your project. GitHub auto-formats your README based on the rules of a simple text *mark-up* language contrarily named **MarkDown**. Fun fact: this whole couse is written in MarkDown, and it's super easy to pick up (see [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for a great cheatsheet with all you need to know).
 
-![readme text](./data/readme_text.png)
+![readme text](../../images/readme_text.png)
 
 You can be creative, or here is what I wrote in mine.
 ```MarkDown
@@ -368,7 +368,7 @@ This is my first GitHub repository!
 
 Finally, write a desriptive commit message and click the commit button on GitHub.
 
-![commit readme](./data/commit_readme.png)
+![commit readme](../../images/commit_readme.png)
 
 Now we have a commit in our **lesson1** repo on GitHub that is not yet reflected in our local `lesson1` repo.
 
@@ -397,7 +397,7 @@ Great! The last thing we will do is learn to check out an existing repository on
 
 You can check out your `lesson1` repo at any time from any machine by clicking the green `clone or download` button on GitHub to get the url to clone (something like `https://github.com/<user>/lesson1.git`), and then typing `git clone <url>` into the shell.
 
-![clone lesson1](./data/clone_lesson1.png)
+![clone lesson1](../../images/clone_lesson1.png)
 
 Only you will be able to clone your private repository because you need to supply your GitHub username and password. 
 
@@ -412,14 +412,14 @@ Before forking a repository, make sure you check for a [LICENSE](../../LICENSE) 
 
 Since open source licenses can be full of legal jargon, https://choosealicense.com is a great resource for choosing or understanding a license. The sci_coding repo is made available through the MIT License, which you can read about [here](https://choosealicense.com/licenses/mit/). Here is the TL;DR (Too Long; Didn't Read) version:
 
-![mit](./data/mit.png)
+![mit](../../images/mit.png)
 
 According to the MIT License, anybody can use and distribute this entire course, as long as they cite the authors, Christian Tai Udovicic and Alexandre Boivin. This is great news! We're free to fork.
 
 ### Forking a repository
 On the main page of the [sci_coding](https://github.com/cjtu/sci_coding) repository, you should see a **Fork** button in the upper right.
 
-![fork button](./data/fork_button.png)
+![fork button](../../images/fork_button.png)
 
 Click this button to make a copy of the repository. After a few seconds you should end up on a page that looks like the original sci_coding repository, but in the upper left, you will see `<your_user>/sci_coding` and below that, `forked from cjtu/sci_coding`.
 

@@ -44,8 +44,9 @@
   sections:
   - title: Introduction
     url: /01_bash/1_shell/shell
-  - title: Introduction
-    url: /01_bash/1_shell/windows
+    subsections:
+    - title: Windows Users
+      url: /01_bash/1_shell/windows
   - title: Bash Basics
     url: /01_bash/2_basics/basics
   - title: Permissions

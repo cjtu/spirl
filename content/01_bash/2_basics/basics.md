@@ -1,6 +1,8 @@
 # Bash Basics
 
-Now that you have access to a shell, open it up to practice some basics.
+If you have access to a Mac Terminal or Bash shell, open it up to practice these basic commands. If not, you can use an online *emulator* like [JS/UNIX](https://www.masswerk.at/jsuix/index.html), but your capabilities may be slightly limited.
+
+## Hello World
 
 Type the following code into your shell and press enter:
 
@@ -8,54 +10,60 @@ Type the following code into your shell and press enter:
 echo "Hello World"
 ```
 
-Did you type it out? Seriously try it! Programming is just a dialogue between you and your computer, and like any language you need to read, write and speak (or at least input) code to become fluent.
+Did you type it out? Seriously try it!
 
-### Navigation
+## Navigating the shell
 
-Before we decide where to go, we can check where we are with the `pwd` (print working directory) command. 
+You can navigate your operating system's files using a few simple commands in the shell.
 
-(Note: the `#` (hash) symbol below denotes a comment in bash. I will use comments to show my output so that you can compare. You don't need to type the comment into your shell, but you can try it and see what happens!):
+For starters, we can always check where we are with the `pwd` (print working directory) command.
 
 ```bash
 pwd
 ```
 
-The *path* shows me I am in my *home directory* (or folder). Each user on a Linux computer has their own home directory. The symbol `~` (tilde) is shorthand for your home directory. To make sure we're on the same page, we can use the `cd` (change directory) command to navigate to home (`~`).
+The *path* that you see tells you where you are. Each `/` denotes a *directory* (or folder). The initial `/` is called the *root directory*. It is the very top level of your file system and contains all of your system's files and folders, at least for Mac and Linux (it's a little different on Windows).
+
+### Going home
+
+When you open a new shell, you typically start in your *home directory*. Each user on a Linux computer has their own home directory, typically at the path `/home/<username>`. The symbol `~` (tilde) is shorthand for your home directory. We can use the `cd` (change directory) command to navigate to the root directory, `/`, then back to home (`~`).
 
 ```bash
+cd /
+pwd
 cd ~
 pwd
 ```
 
-Your computer's file system can be thought of as a tree. We will learn to navigate up and down directories (branches) and make new files (leaves). Your home directory is the trunk from which all your files and folders branch out. This isn't the start of the tree, though. 
+### Listing files
 
-All Unix filesystems branch out from a single **root directory** (get it? like the root(s) of a tree?). The root directory is simply the `/` at the start of every file path. 
+Your computer's hierarchy of files are like a branching tree. Starting from the root directory, we will learn to navigate up and down directories (branches) and make new files (leaves).
 
-![file_tree, CSE 124 Fall 2017. (c) George Porter 2017](./data/file_tree.png)
+![file_tree, CSE 124 Fall 2017. (c) George Porter 2017](../../images/file_tree.png)
 
-Let's go to the root directory.
+Let's go back to the root directory.
 
 ```bash
 cd /
 pwd
 ```
 
-Okay, our path is now `/` so we know we're in root, but what if we want to know what files and folders we can go to from here? Try using the `ls` (list) command.
+Okay, our path is now `/` so we know we're in root, but what if we want to know what files and folders are in this directory? Try using the `ls` (list) command.
 
 ```bash
 ls
 ```
 
-Here are the non-hidden files and folders that branch out from root. Many of them are system files that you don't need to worry about. 
+Here are the files and folders that are in root. Many of them are directories maintained by the operating system that you don't need to worry about.
 
 Recall the path to your home directory `/home/<your_username>`. Let's see if we can get there from the root directory. First we want to change directory to `/home/`.
 
 ```bash
-cd home # or 'cd home/' works too
+cd home
 pwd
 ```
 
-If we want to check out which other users are on this machine, we can use list to see all of the home directories.
+If we use `ls` here, we can see all of the users with a home directory on this machine.
 
 ```bash
 ls
@@ -68,6 +76,8 @@ cd <your_username>
 pwd
 ```
 
+### Seeing dots
+
 We made it back home! Now let's check out two shortcuts bash has for navigating, (`.`) and (`..`). Try to change directory to (`.`).
 
 ```bash
@@ -75,7 +85,7 @@ cd .
 pwd
 ```
 
-Were you surprised you didn't move? The `.` is shorthand for the current directory that we are in. Why would we ever want to do this? Well, we probably wouldn't want to change directory to our current one, but it will be convenient to use `.` to refer to our current path later on.
+Were you surprised you didn't move? The `.` is shorthand for the current directory that we are in. While we probably never want to change directory to the one we're already in, this shortcut will come in handy later on.
 
 Now let's try to cd to `..`
 
@@ -84,7 +94,7 @@ cd ..
 pwd
 ```
 
-This appears to have moved up one level to the `/home` directory. The `..` is shorthand for the parent directory of the diectory you are currently in. In our tree analogy `..` is a way to move up the branches towards root `/`. Now change directory to `..` once more.
+You should have moved up one level to the `/home` directory. The `..` is shorthand for the parent directory of the directory you are currently in. In our tree analogy `..` is a way to move up the branches towards root `/`. Now change directory to `..` once more.
 
 ```bash
 cd ..
@@ -98,16 +108,16 @@ cd ..
 pwd
 ```
 
-Since root is the highest level directory, it has no parent directory, so cd `..` keeps us here at `/`.
+Root is the highest level directory (it has no parent directory), so cd `..` keeps us here at `/`.
 
-Now let's take our handy shortcut back to home and start making our own directories.
+Now let's take our handy `~` shortcut back to home and start making our own directories.
 
 ```bash
 cd ~
 pwd
 ```
 
-### Making files and directories
+## Making files and directories
 
 If this is your first time on this Linux machine, your home directory might look pretty empty. 
 
@@ -162,7 +172,7 @@ less test_file.txt
 
 Press `q` to exit less. Great! We've now learned to navigate directories, make our own directories and files, and read files, all without leaving the shell.
 
-### Manipulating files
+## Manipulating files
 
 Say we want to duplicate a file. To do this, we use the `cp` command. Let's give our copy a creative new name like `test_file2.txt`. 
 
@@ -229,8 +239,7 @@ ls
 
 And it's gone! Great, you now know how to move, copy, and delete files and directories. You also know how to get help on any command with `info`. Now let's cover one more important basic shell option.
 
-
-### Wrapping up
+## Wrapping up
 I hope this foray into the basics of bash has helped with your aversion to using the shell. We will build on these basics and apply them to actual scientific coding through the next 5 lessons. 
 
 I think a big source of shell anxiety comes from thinking you'll destroy the computer that you are using if you start typing into the black box. Now that you know about permissions, you know you literally couldn't erase all the data on the machine if you tried. You can inadvertantly delete all of *your* data (never run `rm -rf ~`), which is why it is useful to always have backups and snapshots of your super important files.

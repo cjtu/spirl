@@ -1,6 +1,4 @@
-# 404 Not Found
-
-### Permissions
+# Permissions
 Each file and folder in a UNIX filesystem has specific perissions defined for who on the system can read, write or execute that file.
 
 To show this, let's make a special type of text file called a **bash script**. A bash script is a text file that you can put bash commands into, and run by *executing* that file. All bash scripts start with a **shebang** (yes that's what it is called) and have a filename ending in `.sh`. Print the shebang (`#!/bin/bash`) to a new file called `test_script.sh`. Make sure to use single quotes.
@@ -44,7 +42,7 @@ Char 1: `d` means directory, `-` means file.
 
 Chars 2-10: `rwx` means yes the specified user has permission to `read/write/execute` and `-` means no they cannot do that action. It goes `rwx` (User), `rwx` (Group), `rwx` (Others).
 
-![File Permissions in Linux (c) 2017 Clofus innovations](./data/permissions.jpg)
+![File Permissions in Linux (c) 2017 Clofus innovations](../../images/permissions.jpg)
 
 To visualize this in a table:
 

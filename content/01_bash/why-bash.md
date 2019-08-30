@@ -1,18 +1,28 @@
 # Why Bash?
 
-The shell is a tool that can be intimidating for first time users, but is used throughout scientific programming. In this chapter, you will learn the basics of shell navigation, file editing and scripting to reduce any shell anxiety you may have!
-
+The shell is a tool that can be intimidating for first time users, but is common in scientific programming workflows. This chapter will cover the basics of shell navigation, file editing and bash scripting to reduce any shell anxiety you may have!
 
 ## Talking to your computer at a low level
 
-If you have mainly used a Windows or Mac computer your whole life like me, you might get a tightness in your chest every time you see something like this:
+If you mainly use a Mac or PC, you might get a tightness in your chest when you see something like this:
 
-![terminal angst](./data/terminal.gif)
+![terminal angst](../images/terminal.gif)
 
-Even though the pretty graphical user interfaces we're used to using are excellent for most things, the plain old shell can be your best friend if we can get over the anxiety of using it. The motivation for making this part of the course is 3-fold:
+Even though Windows and OS X give us pretty things to click on, sometimes the plain old shell and your keyboard can be your best friend.
 
-1) As someone who is interested in scientific coding, you will probably encounter a shell promt at some point (maybe you have already). Might as well get over the shell angst now while we're all learning!
+## But I like clicking things!
 
-2) Working in the shell makes things like version control with Git much easier (stay tuned until lesson1 for my motivation behind making Git a part of this course). 
+Reasons to use the shell anyways:
 
-3) Using the shell makes you look like a total hacker!
+1.  Chances are, some program or script you encounter in your scientific programming endeavors will need to be installed or run from the shell.
+
+2. Working in the shell makes things like moving or editing a lot of files - or backing them up with [version control](../02_git/why-git) - much easier.
+
+3. Using the shell makes you look like a total hacker!
+
+4. You can do [this](https://robobunny.com/projects/asciiquarium/html/) for some reason:
+
+![asciiquarium](../images/asciiquarium.gif)
+
+
+Let's get started with some basics.
