@@ -49,10 +49,10 @@
       url: /01_bash/1_shell/windows
   - title: Bash Basics
     url: /01_bash/2_basics/basics
-  - title: Permissions
-    url: /01_bash/3_permissions/permissions
+  - title: Scripts and Permissions
+    url: /01_bash/3_scripts/scripts
   - title: Profiles
-    url: /01_bash/4_profiles/profiles
+    url: /01_bash/4_tips_tricks/tips_tricks
 
 - title: Version Control in Git
   url: /02_git/why-git
