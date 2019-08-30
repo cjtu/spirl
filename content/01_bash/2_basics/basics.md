@@ -38,7 +38,7 @@ Note: The Windows file system is a little different. Windows separates your file
 
 ### Changing directories
 
-When you open a new shell, you typically start in your *home directory*. Each user on a Linux computer has their own home directory, typically at the path `/home/<username>`. The symbol `~` (tilde) is shorthand for your home directory.
+When you open a new shell, you typically start in your *home directory*. Each user on a Linux computer has their own home directory, typically at the path `/home/<username>` (or `/Users/<username>` on MacOS). The symbol `~` (tilde) is shorthand for your home directory.
 
 Let's use the `cd` (change directory) command to navigate to the root directory, `/`.
 
@@ -61,14 +61,14 @@ ls
 
 Here are the files and folders that are in root. Many of them are directories maintained by the operating system that you don't need to worry about.
 
-Recall the path to your home directory `/home/<your_username>`. Let's see if we can get there from the root directory. First we want to change directory to `/home/`.
+Recall the path to your home directory `/home/<your_username>` (or `/Users/<your_username>` on MacOS). Let's see if we can get there from the root directory. First we want to change directory to `/home/` (od `/Users/` on MacOS).
 
 ```bash
-cd home
+cd home  # cd Users
 pwd
 ```
 
-If we use `ls` here, we can see all of the users with a home directory on this machine. If this is your personal computer, you should just see your username.
+If we use `ls` here, we can see all of the users on this machine. If this is your personal computer, you should just see your username.
 
 ```bash
 ls
