@@ -17,21 +17,22 @@
 # - header: My Header  # Will insert a header with no link in the sidebar
 
 
-- title: Home
-  url: /intro
+- title: About
+  url: /about
   not_numbered: true
+
 - title: Search
   search: true
 
 - title: Getting started
   url: /00_guide/01_overview
   not_numbered: true
-  expand_sections: true
-  sections:
-  - title: Schedule
-    url: /00_guide/02_schedule
+  
+- title: Schedule
+  url: /00_guide/02_schedule
+  not_numbered: true
 
-- title: GitHub repository
+- title: GitHub repository <i class="fa fa-external-link" aria-hidden="true"></i>
   url: https://github.com/cjtu/spirl
   external: true
   not_numbered: true
@@ -56,13 +57,16 @@
 
 - title: Version Control in Git
   url: /02_git/why-git
-  # sections:
-  # - title: Version Control
-  #   url: /02_git/1_vcs/todo
-  # - title: Git
-  #   url: /02_git/2_git/todo
-  # - title: GitHub
-  #   url: /02_git/3_github/todo
+  sections:
+  - title: Version Control
+    url: /02_git/1_vcs/vcs
+    subsections:
+    - title: Git overview
+      url: /02_git/2_git/git-overview
+    - title: Git basics
+      url: /02_git/2_git/git-basics
+  - title: Remotes and GitHub
+    url: /02_git/3_github/remotes-github
 
 # - title: Programming in Python
 #   url: /03_python/why-python
