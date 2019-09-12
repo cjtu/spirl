@@ -89,11 +89,9 @@
     url: /03_python/01_basics/basics
     subsections:
     - title: Syntax
-      url: /03_python/01_basics/01_syntax/todo
-    - title: Expressions
-      url: /03_python/01_basics/02_expressions/todo
+      url: /03_python/01_basics/01_syntax/expressions
     - title: Help
-      url: /03_python/01_basics/03_help/todo
+      url: /03_python/01_basics/02_variables/variables
   - title: Basic Data Types
     url: /03_python/02_basic-types/types
     subsections:
