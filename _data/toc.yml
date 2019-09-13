@@ -74,17 +74,17 @@
 - title: Programming in Python
   url: /03_python/why-python
   sections:
-  # - title: Style
-  #   url: /03_python/00_style/why-style
-  #   subsections:
-  #   - title: The Zen of Python
-  #     url: /03_python/00_style/01_zen-of-python/todo
-  #   - title: Comments
-  #     url: /03_python/00_style/02_comments/todo
-  #   - title: DRY programming
-  #     url: /03_python/00_style/03_dry/todo
-  #   - title: Style guide (PEP8)
-  #     url: /03_python/00_style/04_pep8/todo
+  - title: Style
+    url: /03_python/00_style/why-style
+    subsections:
+    - title: The Zen of Python
+      url: /03_python/00_style/01_zen-of-python/zenofpython
+    - title: Comments
+      url: /03_python/00_style/02_comments/comments
+    - title: DRY programming
+      url: /03_python/00_style/03_dry/dry
+    - title: Style guide (PEP8)
+      url: /03_python/00_style/04_pep8/pep8
   - title: Python Basics
     url: /03_python/01_basics/basics
     subsections:
