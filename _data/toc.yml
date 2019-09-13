@@ -88,10 +88,12 @@
   - title: Python Basics
     url: /03_python/01_basics/basics
     subsections:
-    - title: Syntax
+    - title: Syntax and Expressions
       url: /03_python/01_basics/01_syntax/expressions
-    - title: Help
+    - title: Variables
       url: /03_python/01_basics/02_variables/variables
+    - title: Calls
+      url: /03_python/01_basics/03_calls/calls
   - title: Basic Data Types
     url: /03_python/02_basic-types/types
     subsections:
@@ -105,16 +107,16 @@
     url: /03_python/03_functions/todo
   - title: Conditionals
     url: /03_python/04_conditionals/todo
-  - title: Advanced Data Types
-    url: /03_python/05_data_structs/intro
-    subsections:
-    - title: Arrays
-      url: /03_python/05_data_structs/01_array/list_tuple
-    - title: Dictionaries
-      url: /03_python/05_data_structs/02_dict/set_dict
-    - title: Tables
-      url: /03_python/05_data_structs/03_dataframe/dataframe
 
+  # - title: Advanced Data Types
+  #   url: /03_python/05_data_structs/intro
+  #   subsections:
+  #   - title: Arrays
+  #     url: /03_python/05_data_structs/01_array/list_tuple
+  #   - title: Dictionaries
+  #     url: /03_python/05_data_structs/02_dict/set_dict
+  #   - title: Tables
+  #     url: /03_python/05_data_structs/03_dataframe/dataframe
 #   - title: Loops
 #     url: /03_python/06_loops/loops
 #   - title: Modules
