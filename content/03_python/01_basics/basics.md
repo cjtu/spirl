@@ -1,3 +1,9 @@
-# Lesson 2: Python basics
+# Python basics
 
-In this lesson we will explore the basics of Python syntax and expressions.
+In this section, we will cover some Python basics:
+
+- Syntax and Expressions
+- Variables
+- Call Statements
+
+These fundamentals are the building blocks of every line of every program you will write in Python.

@@ -74,17 +74,17 @@
 - title: Programming in Python
   url: /03_python/why-python
   sections:
-  - title: Style
-    url: /03_python/00_style/why-style
-    subsections:
-    - title: The Zen of Python
-      url: /03_python/00_style/01_zen-of-python/todo
-    - title: Comments
-      url: /03_python/00_style/02_comments/todo
-    - title: DRY programming
-      url: /03_python/00_style/03_dry/todo
-    - title: Style guide (PEP8)
-      url: /03_python/00_style/04_pep8/todo
+  # - title: Style
+  #   url: /03_python/00_style/why-style
+  #   subsections:
+  #   - title: The Zen of Python
+  #     url: /03_python/00_style/01_zen-of-python/todo
+  #   - title: Comments
+  #     url: /03_python/00_style/02_comments/todo
+  #   - title: DRY programming
+  #     url: /03_python/00_style/03_dry/todo
+  #   - title: Style guide (PEP8)
+  #     url: /03_python/00_style/04_pep8/todo
   - title: Python Basics
     url: /03_python/01_basics/basics
     subsections:
@@ -100,13 +100,13 @@
     - title: Boolean (bool)
       url: /03_python/02_basic-types/01_bool/bool
     - title: Numerical (int, float)
-      url: /03_python/02_basic-types/02_int_float/todo
-    - title: String (str)
-      url: /03_python/02_basic-types/03_str/todo
-  - title: Functions
-    url: /03_python/03_functions/todo
-  - title: Conditionals
-    url: /03_python/04_conditionals/todo
+      url: /03_python/02_basic-types/02_int_float/int_str
+    # - title: String (str)
+    #   url: /03_python/02_basic-types/03_str/todo
+  # - title: Functions
+  #   url: /03_python/03_functions/todo
+  # - title: Conditionals
+  #   url: /03_python/04_conditionals/todo
 
   # - title: Advanced Data Types
   #   url: /03_python/05_data_structs/intro
