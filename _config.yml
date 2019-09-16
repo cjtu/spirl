@@ -33,8 +33,8 @@ url: "https://cjtu.github.io" # the base hostname & protocol for your site, e.g.
 show_sidebar              : true  # Show the sidebar. Only set to false if your only wish to host a single page.
 collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
 textbook_logo             : images/logo/logo_spirl.png  # A logo to be displayed at the top of your textbook sidebar
-textbook_logo_link        : https://cjtu.github.io/spirl/intro.html  # A link for the logo.
-sidebar_footer_text       : 'Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>'
+textbook_logo_link        : https://cjtu.github.io/spirl  # A link for the logo.
+sidebar_footer_text       : 'Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a> <br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>'
 number_toc_chapters       : true  # Whether to add numbers to chapterse in your Table of Contents. If true, you can control this at the Chapter level in _data/toc.yml
 
 # Search settings
