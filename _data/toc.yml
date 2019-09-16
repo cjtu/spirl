@@ -101,68 +101,66 @@
       url: /03_python/03/01_bool
     - title: Numerical (int, float)
       url: /03_python/03/02_int-float
-      
-#     - title: String (str)
-#       url: /03_python/03/03_str
-#   - title: Functions
-#     url: /03_python/04/00_functions
-#   - title: Conditionals
-#     url: /03_python/05/00_conditionals
+  #   - title: String (str)
+  #     url: /03_python/03/03_str
+  - title: Functions (Coming soon)
+    url: /03_python/04/00_functions
+  # - title: Conditionals
+  #   url: /03_python/05/00_conditionals
+  # - title: Advanced Data Types
+  #   url: /03_python/06/00_data-structs
+  #   subsections:
+  #   - title: Arrays
+  #     url: /03_python/06/01_list-tuple
+  #   - title: Dictionaries
+  #     url: /03_python/06/02_set-dict
+  #   - title: Tables
+  #     url: /03_python/06/03_dataframe
+  # - title: Loops
+  #   url: /03_python/07/00_loops
+  # - title: Modules
+  #   url: /03_python/08/00_modules
+  # - title: Testing
+  #   url: /03_python/09/00_testing
+  #   subsections:
+  #   - title: Debugging
+  #     url: /03_python/09/01_debugging
+  #   - title: Unittesting
+  #     url: /03_python/09/02_unittesting
+  # - title: Optimization
+  #   url: /03_python/10/00_optimization
+  #   subsections:
+  #   - title: Timing
+  #     url: /03_python/10/01_timing
+  #   - title: Complexity
+  #     url: /03_python/10/02_complexity
+  #   - title: Sorting
+  #     url: /03_python/10/03_sorting
+  #   - title: Algorithms
+  #     url: /03_python/10/04_algorithms
+  # - title: Advanced
+  #   url: /03_python/11/00_advanced
+  #   subsections:
+  #   - title: Files
+  #     url: /03_python/11/01_files
+  #   - title: Classes
+  #     url: /03_python/11/02_classes
+  #   - title: Fancy Indexing
+  #     url: /03_python/11/03_fancy-indexing
+  #   - title: CLI Scripts
+  #     url: /03_python/11/04_cli
+  #   - title: Ternary if
+  #     url: /03_python/11/05_ternary-if
+  #   - title: Comprehensions
+  #     url: /03_python/11/06_comprehensions
+  #   - title: Generators
+  #     url: /03_python/11/07_generators
+  #   - title: Decorators
+  #     url: /03_python/11/08_decorators
 
-#   - title: Advanced Data Types
-#     url: /03_python/06/00_data-structs
-#     subsections:
-#     - title: Arrays
-#       url: /03_python/06/01_list-tuple
-#     - title: Dictionaries
-#       url: /03_python/06/02_set-dict
-#     - title: Tables
-#       url: /03_python/06/03_dataframe
-#   - title: Loops
-#     url: /03_python/07/00_loops
-#   - title: Modules
-#     url: /03_python/08/00_modules
-#   - title: Testing
-#     url: /03_python/09/00_testing
-#     subsections:
-#     - title: Debugging
-#       url: /03_python/09/01_debugging
-#     - title: Unittesting
-#       url: /03_python/09/02_unittesting
-#   - title: Optimization
-#     url: /03_python/10/00_optimization
-#     subsections:
-#     - title: Timing
-#       url: /03_python/10/01_timing
-#     - title: Complexity
-#       url: /03_python/10/02_complexity
-#     - title: Sorting
-#       url: /03_python/10/03_sorting
-#     - title: Algorithms
-#       url: /03_python/10/04_algorithms
-#   - title: Advanced
-#     url: /03_python/11/00_advanced
-#     subsections:
-#     - title: Files
-#       url: /03_python/11/01_files
-#     - title: Classes
-#       url: /03_python/11/02_classes
-#     - title: Fancy Indexing
-#       url: /03_python/11/03_fancy-indexing
-#     - title: CLI Scripts
-#       url: /03_python/11/04_cli
-#     - title: Ternary if
-#       url: /03_python/11/05_ternary-if
-#     - title: Comprehensions
-#       url: /03_python/11/06_comprehensions
-#     - title: Generators
-#       url: /03_python/11/07_generators
-#     - title: Decorators
-#       url: /03_python/11/08_decorators
-
-# # Chapter 4
-# - title: Scientific Programming
-#   url: /04_sci-programming/00_why-sci-programming
+# Chapter 4
+- title: Scientific Programming (Coming soon)
+  url: /04_sci-programming/00_why-sci-programming
 #   sections:
 #   - title: Jupyter
 #     url: /04_sci-programming/01/00_jupyter
@@ -175,9 +173,9 @@
 #   - title: Astropy
 #     url: /04_sci-programming/05/00_astropy
 
-# # Chapter 5
-# - title: Anaconda
-#   url: /05_anaconda/00_why-anaconda
+# Chapter 5
+- title: Anaconda (Coming soon)
+  url: /05_anaconda/00_why-anaconda
 #   sections:
 #   - title: Installing Anaconda
 #     url: /05_anaconda/01/00_installing
@@ -197,3 +195,5 @@
 #       url: /05_anaconda/05/01_packaging
 #     - title: Cookie cutter
 #       url: /05_anaconda/05/02_cookie-cutter
+
+- divider: true
