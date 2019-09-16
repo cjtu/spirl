@@ -35,12 +35,11 @@ Now that you have a local `gh-pages` branch, you can update it with the followin
 
 ```bash
 git checkout gh-pages
-git reset HEAD~ --hard
 git rebase master
 make clean
 make book
 git add _build
 git commit -m "Build site on MM/DD/YY"
-git push
+git push -f
 git checkout master
 ```
