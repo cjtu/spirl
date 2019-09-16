@@ -101,6 +101,7 @@
       url: /03_python/02_basic-types/01_bool/bool
     - title: Numerical (int, float)
       url: /03_python/02_basic-types/02_int_float/int_str
+      
     # - title: String (str)
     #   url: /03_python/02_basic-types/03_str/todo
   # - title: Functions
