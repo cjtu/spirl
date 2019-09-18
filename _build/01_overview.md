@@ -20,7 +20,7 @@ Many "basic" programming courses contain a lot of programming jargon, and someti
 
 ## How does it work?
 
-If you work through this textbook from start to finish, it will read like a short programming course (course outline [here](../00_guide/02_schedule)). Alternatively, you can use the navigation bar on the left or [search](../search) for the concept you want to learn about.
+If you work through this textbook from start to finish, it will read like a short programming course (course outline [here](../02_schedule)). Alternatively, you can use the navigation bar on the left or [search](../search) for the concept you want to learn about.
 
 Get stuck on a module or can't find what you're looking for? Make a suggestion on the project [issues board](https://github.com/cjtu/spirl/issues)!
 
