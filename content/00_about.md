@@ -8,9 +8,9 @@ This book is a work in progress! Have ideas? Want to help out? Check out the Git
 
 Some topics you can learn here are:
 
-- [Chapter 1](./01_bash/why-bash): Bash and shell scripting
-- [Chapter 2](./02_git/why-git): Git and version control
-- [Chapter 3](./03_python/why-python): Python language basics
+- [Chapter 1](./01_bash/00_why-bash): Bash and shell scripting
+- [Chapter 2](./02_git/00_why-git): Git and version control
+- [Chapter 3](./03_python/00_why-python): Python language basics
 - Chapter 4 (*coming soon*): Python scientific programming stack
 - Chapter 5 (*coming soon*): Python packages, environments and Anaconda
 
@@ -19,8 +19,8 @@ Some topics you can learn here are:
 To get started, you may want to:
 
 - [Search](./search) for the concept you want learn about
-- See the [Schedule](./00_guide/02_schedule) if you are taking the SpIRL class IRL
-- Jump into the SpIRL textbook with [The Bash Shell](./01_bash/why-bash)
+- See the [Schedule](./02_schedule) if you are taking the SpIRL class IRL
+- Jump into the SpIRL textbook with [The Bash Shell](./01_bash/00_why-bash)
 
 ## Need help?
 
