@@ -8,9 +8,9 @@ This schedule is for students taking the SpIRL course, currently offered at Nort
 
 | Date   | Lesson  | Topics | Pre-class homework |
 | :--- | :------ | :----- | :----------------- |
-| Aug 30 | 1 ([link](../01_bash/00_why-bash)) | Terminal navigation, bash scripts | None |
-| Sep 6 | 2 ([link](../02_git/00_why-git)) | Version control, Git basics | Get access to a bash shell, practice editing files in a command-line text editor |
-| Sep 13 | 3 ([link](../03_python/00_why-python)) | Style, Python syntax, data types, functions, conditionals  | TBA |
+| Aug 30 | 1 ([link](./01_bash/00_why-bash)) | Terminal navigation, bash scripts | None |
+| Sep 6 | 2 ([link](./02_git/00_why-git)) | Version control, Git basics | Get access to a bash shell, practice editing files in a command-line text editor |
+| Sep 13 | 3 ([link](./03_python/00_why-python)) | Style, Python syntax, data types, functions, conditionals  | TBA |
 | Sep 20 | 4 | Loops, modules, testing, timing | TBA |
 | Sep 27 | - | (break - no class) | TBA |
 | Oct 4 | 5 | Python science stack (numpy, scipy, matplotlib)  | TBA |
