@@ -101,23 +101,25 @@
       url: /03_python/03/01_bool
     - title: Numerical (int, float)
       url: /03_python/03/02_int-float
-  #   - title: String (str)
-  #     url: /03_python/03/03_str
-  - title: Functions (Coming soon)
+    - title: String (str)
+      url: /03_python/03/03_str
+    - title: List and Tuple
+      url: /03_python/03/04_list-tuple
+  - title: Functions
     url: /03_python/04/00_functions
-  # - title: Conditionals
-  #   url: /03_python/05/00_conditionals
+  - title: Conditionals
+    url: /03_python/05/00_conditionals
+  - title: Loops
+    url: /03_python/06/00_loops
   # - title: Advanced Data Types
   #   url: /03_python/06/00_data-structs
   #   subsections:
-  #   - title: Arrays
-  #     url: /03_python/06/01_list-tuple
+
   #   - title: Dictionaries
   #     url: /03_python/06/02_set-dict
   #   - title: Tables
   #     url: /03_python/06/03_dataframe
-  # - title: Loops
-  #   url: /03_python/07/00_loops
+
   # - title: Modules
   #   url: /03_python/08/00_modules
   # - title: Testing
