@@ -3,7 +3,7 @@ redirect_from:
   - "/03-python/00-why-python"
 title: 'Programming in Python'
 prev_page:
-  url: /02_git/03/00_remotes-github.html
+  url: /02_git/02/02_remotes-github.html
   title: 'Remotes and GitHub'
 next_page:
   url: /03_python/01/00_why-style.html

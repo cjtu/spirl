@@ -1,9 +1,9 @@
 ---
 redirect_from:
-  - "/02-git/03/00-remotes-github"
+  - "/02-git/02/02-remotes-github"
 title: 'Remotes and GitHub'
 prev_page:
-  url: /02_git/01/02_git-basics.html
+  url: /02_git/02/01_git-basics.html
   title: 'Git basics'
 next_page:
   url: /03_python/00_why-python.html
@@ -63,9 +63,9 @@ Now head back to your GitHub window and click on the **Code** tab on the **myfir
 
 ![code tab](../../images/code_tab.png)
 
-Do you see your beautiful `file1.txt`? You just added files to your first GitHub repo!
+Do you see the beautiful files we committed? You just made your first GitHub repo!
 
-### Push and Pull
+## Push and Pull
 
 Now that your local repository is set up to track the remote repository on GitHub, we can `push` new commits to GitHub at any time. This is how we will back up our code to GitHub, and when you're ready to make it public, also send updates to be used by collaborators.
 
@@ -77,7 +77,7 @@ On GitHub, the README is the first thing a visitor will see when they look at yo
 
 ![add README](../../images/add_readme.png)
 
-You will be given a text field to add a README to your project. GitHub auto-formats your README based on the rules of a simple text *mark-up* language contrarily named **MarkDown** (with file extension `.md`). Fun fact: this whole text is written primarily in MarkDown and all the facny formatting are just a few simple characters in an otherwise plain text document. Markdown is pretty easy to pick up, see [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for a great cheatsheet with all you need to know.
+You will be given a text field to add a README to your project. GitHub auto-formats your README based on the rules of a simple text *mark-up* language contrarily named **MarkDown** (with file extension `.md`). Fun fact: this whole text is written primarily in MarkDown and all the fancy formatting are just a few simple characters in an otherwise plain text document. Markdown is pretty easy to pick up, see [here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for a great cheatsheet with all you need to know.
 
 ![readme text](../../images/readme_text.png)
 
@@ -121,55 +121,76 @@ git log --oneline
 # 8a7625f Add hello world to file1.txt
 ```
 
-Great! The last thing we will do is learn to check out an existing repository on GitHub.
+Great! The last thing we will do is learn to **clone** an existing repository on GitHub.
 
-### Clones and Forks
+## Clones and Forks
 
-You can check out your `myfirstrepo` repo at any time from any machine by clicking the green `clone or download` button on GitHub to get the url to clone (something like `https://github.com/<user>/myfirstrepo.git`), and then typing `git clone <url>` into the shell.
+### The clone wars
+
+You can **clone** a local copy of your `myfirstrepo` repository at any time from any machine by clicking the green `clone or download` button on GitHub to get the url to clone (i.e. `https://github.com/<user>/myfirstrepo.git`), and then typing `git clone <url>` into the shell.
 
 ![clone myfirstrepo](../../images/clone_myfirstrepo.png)
 
 Only you will be able to clone your private repository because you need to supply your GitHub username and password.
 
-What if you want to clone somebody else's public repo on GitHub, either to use their work or to contribute to their repository?
+You can try this out by making a new directory and cloning `myfirstrepo` again.
+
+```bash
+cd ~
+mkdir tmp
+cd tmp
+git clone https://github.com/<user>/myfirstrepo.git
+cd myfirstrepo
+ls
+bad_file.xls  file1.txt  great_file.py
+```
+
+You should see all the files you've committed to GitHub in this newly cloned version of `myfirstrepo`. You can do this on any computer with Git to keep your files in sync across PCs or servers!
+
+Since it may be confusing to have two different directories called `myfirstrepo` on your computer, let's remove the one we just made.
+
+```bash
+cd ~
+rm -rf tmp
+```
+
+### Two forks diverged in a wood
+
+What if you want to clone another user's public repo on GitHub, either to use their work or to contribute to their repository?
 
 In this case, we will first need to **fork** the repository on GitHub. This will make a complete copy of the repository under your GitHub profile that you can then clone and edit at will.
 
 To demonstrate this, head over to the repository for this course at [https://github.com/cjtu/spirl](https://github.com/cjtu/spirl).
 
-### License and registration (er - just license)
+#### License and registration
 
-Before forking a repository, make sure you check for a [LICENSE](../../LICENSE) file, which should be in the top-level directory. The LICENSE tells you how you may use the contents of a repository and who to cite when using it.
+Before forking a repository, make sure you check for a [LICENSE](https://github.com/cjtu/spirl/blob/master/LICENSE.md) file, which is usually in the top-level directory. The licence tells you how you may use the contents of a repository and who owns the rights to it.
 
-Since open source licenses can be full of legal jargon, [ChooseALicense.com](https://choosealicense.com) is a great resource for understanding what a license is and what it allows you to do with the code in a public repository. The SpIRL project is made available through the MIT License, which you can read about [here](https://choosealicense.com/licenses/mit/). Here is the TL;DR (Too Long; Didn't Read) version:
+Since open source licenses can be full of legal jargon, [ChooseALicense.com](https://choosealicense.com) is a great resource for understanding what a particular license means. The SpIRL project is made available through the MIT License, which you can read about [here](https://choosealicense.com/licenses/mit/). Here is the TL;DR (Too Long; Didn't Read) version:
 
 ![mit](../../images/mit.png)
 
 According to the MIT License, anybody can use, modify and distribute this entire course, as long as they cite the author(s). This is great news! We're free to make a copy!
 
-### Forking a repository
+#### Forking a repository
 
 On the main page of the [spirl](https://github.com/cjtu/spirl) repository, you should see a **Fork** button in the upper right.
 
 ![fork button](../../images/fork_button.png)
 
-Click this button to make a copy of the repository. After a few seconds you should end up on a page that looks like the original spirl repository, but in the upper left, you will see `<your_user>/spirl` and below that, `forked from cjtu/spirl`.
+Click this button to make a copy of the repository. After a few seconds you should end up on a page that looks like the original spirl repository, but in the upper left, you will see `<your_user>/spirl` and below that, `forked from cjtu/spirl`. This is your *forked copy* of spirl which you are free to clone and modify.
 
-Great. Now that you have a fork, you can clone the `spirl` repo locally. Again, you can click the green `Clone or download` button to get a link to the repository that you can paste in the shell.
+Remember to click the green `Clone or download` button to get a url to `git clone`.
 
 ```bash
+cd ~
 git clone https://github.com/<user>/spirl.git
-# Cloning into 'spirl'...
-# remote: Enumerating objects: 69, done.
-# remote: Counting objects: 100% (69/69), done.
-# remote: Compressing objects: 100% (47/47), done.
-# remote: Total 69 (delta 25), reused 56 (delta 16), pack-reused 
-# Unpacking objects: 100% (69/69), done.
+cd spirl
+ls
 ```
 
-Now you have a copy of the textbook locally which you can edit at will! Since you made a **fork**, this version of spirl is a copy that belongs to your repository, so nothing that you change or push to GitHub will affect the main `spirl` repository! In a future lesson, we will look at how you can edit a fork of a repo and propose a change to the original repo via a **pull request**. This is how collaborators work on Git projects together from this one to giant ones with hundreds of contributors like [astropy](https://github.com/astropy/astropy).
+Now you have a copy of the textbook locally which you can edit at will! Since you made a **fork**, this version of spirl is a copy that belongs to you, so nothing that you change or push to GitHub will affect the main `spirl` repository! In a future lesson, we will look at how you can edit a fork of a repo and propose a change to the original repo via a **pull request**. This is how collaborators work on Git projects together, from out humble repo to huge repos with hundreds of contributors like [astropy](https://github.com/astropy/astropy).
 
-### You did it
+### You did it!
 
-Great job making it to the end of this crash course on Git and GitHub. I hope you were able to learn a couple new tricks and see the value of keeping track of backed-up versions of your code, regardless of if you are working with collaborators on it. There are many resources out there for learning more about working in Git, but you should know all you need to start practicing creating your own repositories and backing up your code!
-
+Great job making it to the end of this crash course on remotes and GitHub. With these basics, you know all you need to start backing up your files and how to access other users' code on GitHub.

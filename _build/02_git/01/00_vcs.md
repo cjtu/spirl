@@ -6,8 +6,8 @@ prev_page:
   url: /02_git/00_why-git.html
   title: 'Version Control in Git'
 next_page:
-  url: /02_git/01/01_git-overview.html
-  title: 'Git overview'
+  url: /02_git/02/00_git-overview.html
+  title: 'Git'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Version Control Systems (VCS)

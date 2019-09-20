@@ -264,14 +264,38 @@ Try to make the following expression evaluate to `True`, changing only the opera
 <div markdown="1" class="cell code_cell">
 <div class="input_area" markdown="1">
 ```python
-1 + 2 + 3 + 4 == 16
+3 + 1 + 2 + 4 == 16
 
 ```
 </div>
 
+<div class="output_wrapper" markdown="1">
+<div class="output_subarea" markdown="1">
+
+
+{:.output_data_text}
+```
+False
+```
+
+
+</div>
+</div>
 </div>
 
 
 
 Now you know some basic operators in Python and how to string them into expressions. Remember that to learn a language you need to actively explore what you're learning and try new things. For example, what do you think happens when you divide by 0? Try it (and anything else you think of) in the code block below:
+
+
+
+<div markdown="1" class="cell code_cell">
+<div class="input_area" markdown="1">
+```python
+100 / 0
+
+```
+</div>
+
+</div>
 

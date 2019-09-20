@@ -1,12 +1,12 @@
 ---
 redirect_from:
-  - "/02-git/01/01-git-overview"
-title: 'Git overview'
+  - "/02-git/02/00-git-overview"
+title: 'Git'
 prev_page:
   url: /02_git/01/00_vcs.html
   title: 'Version Control'
 next_page:
-  url: /02_git/01/02_git-basics.html
+  url: /02_git/02/01_git-basics.html
   title: 'Git basics'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
