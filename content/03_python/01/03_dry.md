@@ -1,21 +1,68 @@
 # DRY - Do Not Repeat Yourself
 
-The do not repeat yourself principle in Python is exaclty what it sounds like. Don't re-write the same code multiple times, don't copy and paste code where you need to make changes in multiple places. Write code once and use it.
+The **D**o not **R**epeat **Y**ourself principle encourages us to not repeat ourselves. We shouldn't repeat ourselves according to the **D**o not **R**epeat **Y**ourself principle.
 
-## Why write efficient code?
+Good DRY programmers DO NOT:
 
-Really, DRY is all about being lazy! It makes your life easier. But it also prevents some common issues - for example writing multiple lines of code to do something, copy and pasting that elsewhere where you need to do the same thing. Chances are you'll change that code at some point - now you need to track down every location you have a copy of this and make the same change multiple times. This is a lot of work! It wastes time and increases the chance of making a mistake.
-Instead, when code it reused it should be written into a function. This function can then be called each time you need to perform that task, and any changes easily propogate throughout the entire program. Writing code efficiently (with DRY) makes it easier for you and your future self to understand, more readable, and ensures reproducability.
+- copy and paste code
+
+Good DRY programmers DO:
+
+- write code once and re-use it
+
+## Why write DRY code?
+
+Really, DRY is all about being lazy! Re-using code makes your life easier. Programming with DRY in mind can also prevent common issues. Imagine the following scenario:
+
+```Python
+a = awesome_fucntion(0)
+b = awesome_fucntion(0)
+c = awesome_fucntion(0)
+d = awesome_fucntion(0)
+e = awesome_fucntion(0)
+f = awesome_fucntion(0)
+g = awesome_fucntion(0)
+```
+
+We copy and pasted our function many times (maybe in different places in the code). Later, we realize that we misspelled `awesome_function`. Now we have to go search through the code for all the times we copy and pasted that typo! Oh no!
+
+Also, if you're keen you may notice that we are calling `awesome_function()` on the same value every time and simply storing it in different variables instead of re-using the result.
+
+If we use the DRY principle, we would only call `a = awesome_function(0)` once and reuse the variable `a` throughout our code. This way, if we realize we made a typo - or we want to swap out `awesome_function()` for `better_function()` - we only need to fix it in one place:
+
+```Python
+a = better_function(0)
+```
+
+Whenever you write code that you think you will need to reuse, think **DRY**. Re-usable code can generally be written into a **function** (we will how to write functions in a future lesson). The function can then be called each time you want to perform that task. Now if you edit the function, your changes will propagate throughout the entire program!
+
+DRY code is generally more readable and easier for future you to modify and understand.
 
 ## Ways to Write Dry Code
 
-There are several easy ways to convert long code into shorte, repeatable bits. These concepts will be listed here, but you will learn how to implement these in Python in the upcoming sections.
+Most programming languages have common built-in concepts that make it easy to re-use code. You will learn how to use these in Python in the upcoming sections:
 
-**Loops**
-A loop is a way to loop through a list of variables. You can perform a task on each variable in a list, instead of coding the task for each variable separately. The advantage of this is clear when you imaging a list with 10,000 items in it.
+### Functions
 
-**Conditional Statement**
-A conditional statement checks whether a certain condition (for example True of False) exists before code is executed. This allows you the ability to control the flow of your code and only perform a task when specific condtions are met.
+A function is a reusable block of code that performs a specific task. Having functions for mundane tasks can make your code more readable and maintainable.
 
-**Functions**
-A function is simply a reusable block of code that performs a specific task. It is organized so that you only need to type the name of the function and any inputs in order to perform that task. Using functions improves efficiency and allows you to write modular code - where you organize units of code into functions that can be reused (by yourself or others), without needing to understand all of the specific details.
+For example, say we have a 5-line code block that computes the location of an object given its x, y, z position and speed. Now say we need to do this computation one hundred times in our code. That's 500 lines of code!
+
+Now say we put that 5-line code block in a function called `get_location(x, y, z, speed)`. Now we only need to call `get_location()` one hundred times. We reduced our program from 500 lines to 100 by using a function!
+
+### Loops
+
+A loop is a way to repeat a set of instructions to repeat a set of instructions to repeat a set of instructions multiple times.
+
+In our example above, we needed to `get_location()` one hundred times. If instead we used a *loop*, we could do those 100 repeats in only a couple lines:
+
+```bash
+for i in range(100):  # i.e. do the following 100 times
+    get_location(x, y, z, speed)
+```
+
+Now our 100 line program is only 2 lines! Now imagine we wanted to `get_location()` 1 thousand times. Or 1 million times! Loops can significantly reduce repeated code by *doing the repetition for us*!
+
+### Think DRY
+
+We will learn about functions and loops in future sections. As you write your first Python programs, remember to think DRY and *Do not Repeat Yourself* wherever possible.
