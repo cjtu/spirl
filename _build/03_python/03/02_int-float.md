@@ -9,8 +9,8 @@ prev_page:
   url: /03_python/03/01_bool.html
   title: 'Boolean (bool)'
 next_page:
-  url: /03_python/04/00_functions.html
-  title: 'Functions (Coming soon)'
+  url: /03_python/03/03_str.html
+  title: 'String (str)'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 

@@ -4,26 +4,19 @@ redirect_from:
 interact_link: content/03_python/04/00_functions.ipynb
 kernel_name: python3
 has_widgets: false
-title: 'Functions (Coming soon)'
+title: 'Functions'
 prev_page:
-  url: /03_python/03/02_int-float.html
-  title: 'Numerical (int, float)'
+  url: /03_python/03/04_list-tuple.html
+  title: 'List and Tuple'
 next_page:
-  url: /04_sci-programming/00_why-sci-programming.html
-  title: 'Scientific Programming (Coming soon)'
+  url: /03_python/05/00_conditionals.html
+  title: 'Conditionals'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
 
-# Functions and Methods
-
-Functions and methods are handy ways to define blocks of code that we want to re-use (see our discussion on [DRY programming](../01/03_dry). In this chapter, we will learn the difference between functions and methods, learn some pre-defined methods in Python, and how to write our own functions!
-
 # Methods
-
-A class is a code template for creating objects in Python. Creating classes goes beyond the scope of this tutorial, but it is sufficient to know that all of the Python data types you will use have a class. This is useful because it allows you to use pre-defined "special functions" called **methods**. Methods are called on an object by following that object with `.methodname()`.
-
-Run the following code to explore a few of the methods for strings.
+Classes have special functions defined only for their own members called class methods, or simply **methods**. Methods are called on an object by following that object with `.methodname()`. We saw methods like `.isround()` in action above. Built-in classes like `str` have methods too!
 
 
 
@@ -83,14 +76,8 @@ help(str)
 
 
 
-Methods are very useful when performing the same task on objects of the same class. This type of program is called **Object Oriented Programming**. We won't be getting into this for now, but if you would like to learn more about how to make your own classes there are lots of great tutorials out there, I like [this one](https://realpython.com/python3-object-oriented-programming/).
-
-
-
-
-
 # Functions
-Like methods, functions bundle code into repeatable and easily callable code blocks, but they are independent of a specific class. Any objects that they act on must be passed in as arguments. Let's break down the anatomy of a function.
+Functions are like methods but are independent of a specific class. Any objects that they act on must be passed in as arguments. Let's break down the anatomy of a function.
 
 ```Python
 def funcname(arg1, arg2):
@@ -193,7 +180,7 @@ Cool it looks like `stuff` takes the square of the number it is given! Now to do
 
 That was an example of writing a function with poor *style*. The function worked as intended, but was frustrating to use if you didn't remember what `stuff()` did. I hope this highlights the importance of readable code. Python comes built-in with features like the **docstring** to avoid situations like the one above. Python won't force you to use docstrings, but it is highly encouraged to get into the habit, especially if you are working with others. And if not for others, do it for future you who won't remember what `stuff()` is in 6 months.
 
-So how do we improve our `stuff()` function for squaring numbers? The first step is giving it a self-evident name, e.g. `square(num)`. Next, we can add a docstring with a description `"""Return the square of num"""`. Finally, we can describe the parameters (inputs), return values and provide a couple examples of how to use it. Altogether, it might look like this.
+So how do we improve our `stuff()` function for squaring numbers? The first step is giving it a self-evident name, e.g. `square(num)`. Next, we can add a docstring with a description `"""Return the square of num"""`. Finally, we can describe the parameters, return values and provide a couple examples of how to use it. Altogether, it might look like this.
 
 
 
@@ -334,4 +321,7 @@ else:
 
 
 There are many possible ways to break up code into functions. How specific you make your functions depends on your particular use case. If you want to see my solution, you can copy and paste it from [here](https://github.com/cjtu/sci_coding/tree/master/lessons/lesson3/data/function_solution.py) and compare with yours!
+
+
+Great job! You made it to the end of the crash course on objects, methods and functions (oh my). Next, we will be working with `Lists and Tuples`.
 
