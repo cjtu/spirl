@@ -62,13 +62,13 @@
   sections:
   - title: Version Control
     url: /02_git/01/00_vcs
+  - title: Git
+    url: /02_git/02/00_git-overview
     subsections:
-    - title: Git overview
-      url: /02_git/01/01_git-overview
     - title: Git basics
-      url: /02_git/01/02_git-basics
-  - title: Remotes and GitHub
-    url: /02_git/03/00_remotes-github
+      url: /02_git/02/01_git-basics
+    - title: Remotes and GitHub
+      url: /02_git/02/02_remotes-github
 
 # Chapter 3
 - title: Programming in Python
