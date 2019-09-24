@@ -23,6 +23,7 @@
 
 - title: Search
   search: true
+  not_numbered: true
 
 - title: Getting started
   url: /01_overview
