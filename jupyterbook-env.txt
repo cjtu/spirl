@@ -98,15 +98,9 @@ https://repo.anaconda.com/pkgs/main/linux-64/ipykernel-5.1.2-py37h39e3cac_0.tar.
 https://repo.anaconda.com/pkgs/main/noarch/nbconvert-5.5.0-py_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/notebook-6.0.0-py37_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/noarch/qtconsole-4.5.3-py_0.tar.bz2
-https://conda.anaconda.org/conda-forge/noarch/jupyter_contrib_core-0.3.3-py_2.tar.bz2
 https://conda.anaconda.org/conda-forge/linux-64/nb_conda_kernels-2.2.2-py37_0.tar.bz2
-https://repo.anaconda.com/pkgs/main/linux-64/widgetsnbextension-3.5.1-py37_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/noarch/ipywidgets-7.5.1-py_0.tar.bz2
-https://conda.anaconda.org/conda-forge/linux-64/jupyter_highlight_selected_word-0.2.0-py37_1000.tar.bz2
-https://conda.anaconda.org/conda-forge/linux-64/jupyter_latex_envs-1.4.4-py37_1000.tar.bz2
-https://conda.anaconda.org/conda-forge/linux-64/jupyter_nbextensions_configurator-0.4.1-py37_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/jupyter-1.0.0-py37_7.tar.bz2
-https://conda.anaconda.org/conda-forge/linux-64/jupyter_contrib_nbextensions-0.5.1-py37_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/matplotlib-3.1.0-py37h5429711_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/mkl-service-2.0.2-py37h7b6447c_0.tar.bz2
 https://repo.anaconda.com/pkgs/main/linux-64/mkl_fft-1.0.14-py37ha843d7b_0.tar.bz2
