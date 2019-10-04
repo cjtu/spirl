@@ -25,7 +25,7 @@ This schedule is for students taking the SpIRL course, currently offered at Nort
 | Sep 13 | 3 ([link](./03_python/00_why-python)) | Style, Python syntax, bool, int, float  | N/A |
 | Sep 20 | 4 ([link](./03_python/03/03_str)) | String, list, tuple, functions, conditionals, loops | N/A |
 | Sep 27 | - | (break - no class) | TBA |
-| Oct 4 | 5 | Dictionaries, sets, modules, testing/debugging, numpy, matplotlib)  | TBA |
+| Oct 4 | 5 ([link](./03_python/07/00_data-structs)) | Dictionaries, sets, modules, testing/debugging, numpy, matplotlib)  | TBA |
 | Oct 11 | 6 | scipy, pandas, astropy, rasterio) | TBA |
 | Oct 18 | 7 | Managing environments, reproducibility (jupyter), day-to-day workflow | TBA |
 | Oct 25 | 8 | Putting it all together | TBA |

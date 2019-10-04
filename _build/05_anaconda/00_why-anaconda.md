@@ -3,8 +3,8 @@ redirect_from:
   - "/05-anaconda/00-why-anaconda"
 title: 'Anaconda (Coming soon)'
 prev_page:
-  url: /04_sci-programming/00_why-sci-programming.html
-  title: 'Scientific Programming (Coming soon)'
+  url: /04_sci-programming/03/00_matplotlib.html
+  title: 'Matplotlib'
 next_page:
   url: 
   title: ''

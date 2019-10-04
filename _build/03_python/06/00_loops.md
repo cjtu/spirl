@@ -9,8 +9,8 @@ prev_page:
   url: /03_python/05/00_conditionals.html
   title: 'Conditionals'
 next_page:
-  url: /04_sci-programming/00_why-sci-programming.html
-  title: 'Scientific Programming (Coming soon)'
+  url: /03_python/07/00_data-structs.html
+  title: 'Advanced Data Types'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
