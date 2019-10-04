@@ -30,8 +30,7 @@ url: https://cjtu.github.io # the base hostname & protocol for your site, e.g. h
 # Jupyter Book settings
 
 # Main page settings
-footer_text: This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The
-  Jupyter Book Community</a>
+footer_text: 
 
 # Sidebar settings
 show_sidebar: true                # Show the sidebar. Only set to false if your only wish to host a single page.
