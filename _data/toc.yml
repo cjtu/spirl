@@ -112,17 +112,17 @@
     url: /03_python/05/00_conditionals
   - title: Loops
     url: /03_python/06/00_loops
-  # - title: Advanced Data Types
-  #   url: /03_python/06/00_data-structs
-  #   subsections:
-
-  #   - title: Dictionaries
-  #     url: /03_python/06/02_set-dict
-  #   - title: Tables
-  #     url: /03_python/06/03_dataframe
-
-  # - title: Modules
-  #   url: /03_python/08/00_modules
+  - title: Advanced Data Types
+    url: /03_python/07/00_data-structs
+    subsections:
+    - title: Set (set)
+      url: /03_python/07/01_set
+    - title: Dictionary (dict)
+      url: /03_python/07/02_dict
+    # - title: Tables
+    #   url: /03_python/06/03_dataframe
+  - title: Modules
+    url: /03_python/08/00_modules
   # - title: Testing
   #   url: /03_python/09/00_testing
   #   subsections:
@@ -162,15 +162,15 @@
   #     url: /03_python/11/08_decorators
 
 # Chapter 4
-- title: Scientific Programming (Coming soon)
+- title: Scientific Programming
   url: /04_sci-programming/00_why-sci-programming
-#   sections:
-#   - title: Jupyter
-#     url: /04_sci-programming/01/00_jupyter
-#   - title: Numpy and Scipy
-#     url: /04_sci-programming/02/00_numpy-scipy
-#   - title: Matplotlib
-#     url: /04_sci-programming/03/00_matplotlib
+  sections:
+  - title: Jupyter
+    url: /04_sci-programming/01/00_jupyter
+  - title: Numpy
+    url: /04_sci-programming/02/00_numpy
+  - title: Matplotlib
+    url: /04_sci-programming/03/00_matplotlib
 #   - title: Pandas
 #     url: /04_sci-programming/04/00_pandas
 #   - title: Astropy
