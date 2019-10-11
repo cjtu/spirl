@@ -179,11 +179,11 @@
 #     url: /04_sci-programming/05/00_astropy
 
 # Chapter 5
-- title: Anaconda (Coming soon)
+- title: Anaconda
   url: /05_anaconda/00_why-anaconda
-#   sections:
-#   - title: Installing Anaconda
-#     url: /05_anaconda/01/00_installing
+  sections:
+  - title: Installing Anaconda
+    url: /05_anaconda/01/00_installing
 #   - title: Environments
 #     url: /05_anaconda/02/00_environments
 #   - title: Packages
