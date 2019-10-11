@@ -14,7 +14,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 This schedule is for students taking the SpIRL course, currently offered at Northern Arizona University. It will be updated in real time as the course progresses.
 
-## Last edit: Sep 20, 2019
+## Last edit: Oct 11, 2019
 
 ## Class Schedule
 
@@ -26,6 +26,6 @@ This schedule is for students taking the SpIRL course, currently offered at Nort
 | Sep 20 | 4 ([link](./03_python/03/03_str)) | String, list, tuple, functions, conditionals, loops | N/A |
 | Sep 27 | - | (break - no class) | TBA |
 | Oct 4 | 5 ([link](./03_python/07/00_data-structs)) | Dictionaries, sets, modules, testing/debugging, numpy, matplotlib)  | TBA |
-| Oct 11 | 6 | scipy, pandas, astropy, rasterio) | TBA |
-| Oct 18 | 7 | Managing environments, reproducibility (jupyter), day-to-day workflow | TBA |
+| Oct 11 | 6 ([link](./04_sci-programming/04/00_scipy)) | scipy, pandas) | TBA |
+| Oct 18 | 7 | Managing environments, reproducibility (jupyter), day-to-day workflow | Install Anaconda |
 | Oct 25 | 8 | Putting it all together | TBA |

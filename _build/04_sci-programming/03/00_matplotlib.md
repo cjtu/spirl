@@ -9,8 +9,8 @@ prev_page:
   url: /04_sci-programming/02/00_numpy.html
   title: 'Numpy'
 next_page:
-  url: /05_anaconda/00_why-anaconda.html
-  title: 'Anaconda (Coming soon)'
+  url: /04_sci-programming/04/00_scipy.html
+  title: 'Scipy'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
