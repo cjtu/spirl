@@ -171,8 +171,10 @@
     url: /04_sci-programming/02/00_numpy
   - title: Matplotlib
     url: /04_sci-programming/03/00_matplotlib
-#   - title: Pandas
-#     url: /04_sci-programming/04/00_pandas
+  - title: Scipy
+    url: /04_sci-programming/04/00_scipy
+  - title: Pandas
+    url: /04_sci-programming/05/00_pandas
 #   - title: Astropy
 #     url: /04_sci-programming/05/00_astropy
 
