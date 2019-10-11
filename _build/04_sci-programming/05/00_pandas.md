@@ -10,7 +10,7 @@ prev_page:
   title: 'Scipy'
 next_page:
   url: /05_anaconda/00_why-anaconda.html
-  title: 'Anaconda (Coming soon)'
+  title: 'Anaconda'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
