@@ -2,7 +2,7 @@
 redirect_from:
   - "/03-python/05/00-conditionals"
 interact_link: content/03_python/05/00_conditionals.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'Conditionals'
 prev_page:
@@ -23,7 +23,7 @@ Conditional (or, *if statements*) are ways to break up code based on certain con
 
 If statements allow you to change the execution of your code based on whether or not a condition is met. They consist of a **condition** (the boolean expression) and a **clause** (the stuff to do if the condition is `True`).
 
-If statements will often use **comaprison operators** like `==` (is equal to) to determine whether the following code is run.
+If statements will often use **comparison operators** like `==` (is equal to) to determine whether the following code is run.
 
 The if statement follows the following form:
 

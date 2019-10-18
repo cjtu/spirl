@@ -2,7 +2,7 @@
 redirect_from:
   - "/03-python/07/01-set"
 interact_link: content/03_python/07/01_set.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'Set (set)'
 prev_page:
@@ -264,7 +264,7 @@ print(sold_sizes)
 
 
 
-This `shoe_set` shows the 8 sizes that were sold that day. Now we want to see which of our sizes were *not* sold. THere's a set method for that!
+This `shoe_set` shows the 8 sizes that were sold that day. Now we want to see which of our sizes were *not* sold. There's a set method for that!
 
 Remember, you can always use the `help()` function to see methods of an object in Python
 

@@ -2,7 +2,7 @@
 redirect_from:
   - "/03-python/07/02-dict"
 interact_link: content/03_python/07/02_dict.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'Dictionary (dict)'
 prev_page:
@@ -390,7 +390,7 @@ shoe_dict['Thursday']
 <div class="input_area" markdown="1">
 ```python
 # return True if all of the same shoe sizes and number of each were sold on thursday and friday
-# regarless of the order they were sold in
+# regardless of the order they were sold in
 # hint: compare two sorted lists
 
 

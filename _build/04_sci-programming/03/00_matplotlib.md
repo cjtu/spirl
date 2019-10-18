@@ -2,7 +2,7 @@
 redirect_from:
   - "/04-sci-programming/03/00-matplotlib"
 interact_link: content/04_sci-programming/03/00_matplotlib.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'Matplotlib'
 prev_page:
@@ -101,7 +101,7 @@ plt.legend()
 ## Parts of the Figure
 
 **Figure**
-The entire plot is called a figure. It is an object that keeps track of all parts of the figure including the axes and any number of special artists (ie: title, legend, labels, etc. The figure also keeps track of the canvas, but for now we will ignore this. When using matplotlib any interaction with the canvas should happen under the hood, making it virutally invisible.
+The entire plot is called a figure. It is an object that keeps track of all parts of the figure including the axes and any number of special artists (ie: title, legend, labels, etc. The figure also keeps track of the canvas, but for now we will ignore this. When using matplotlib any interaction with the canvas should happen under the hood, making it virtually invisible.
 
 **Axes**
 The axes part of a figure contains all of the information for both axis of a 2D plot (ie: axis labels, tick mark spacing and numbering, the title, etc). You can have multiple axis on a figure, as you will see below, but each axes can only be on one figure. The attributes of the axes can be controlled with a set of methods, such as set_xlabel(), set_ylabel(), set_title(), and many more. 

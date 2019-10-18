@@ -2,7 +2,7 @@
 redirect_from:
   - "/03-python/06/00-loops"
 interact_link: content/03_python/06/00_loops.ipynb
-kernel_name: python3
+kernel_name: 
 has_widgets: false
 title: 'Loops'
 prev_page:
@@ -276,7 +276,7 @@ for i in range(37, 42):
 
 
 
-*Note*: Like when slicing, the end index is excluded from the range. Thsi way, if you specify a range from `(37, 42)`, there are `42-37 = 5` numbers in the range, as printed above.
+*Note*: Like when slicing, the end index is excluded from the range. This way, if you specify a range from `(37, 42)`, there are `42-37 = 5` numbers in the range, as printed above.
 
 We can also change the spacing of the elements in our range by specifying a *third* argument to `range()`.
 
