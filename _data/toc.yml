@@ -184,8 +184,11 @@
   sections:
   - title: Installing Anaconda
     url: /05_anaconda/01/00_installing
-#   - title: Environments
-#     url: /05_anaconda/02/00_environments
+  - title: Environments
+    url: /05_anaconda/02/00_environments
+    subsections:
+      - title: Sharing Environments
+        url: /05_anaconda/02/01_share-envs
 #   - title: Packages
 #     url: /05_anaconda/03/00_packages
 #     subsections:

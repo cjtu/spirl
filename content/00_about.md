@@ -12,7 +12,7 @@ Some topics you can learn here are:
 - [Chapter 2](./02_git/00_why-git): Git and version control
 - [Chapter 3](./03_python/00_why-python): Python language basics
 - [Chapter 4](./04_sci-programming/00_why-sci-programming): Python scientific programming stack
-- Chapter 5 (*coming soon*): Python packages, environments and Anaconda
+- [Chapter 5](./05_anaconda/00_why-anaconda): Python packages, environments and Anaconda
 
 ## Getting started
 

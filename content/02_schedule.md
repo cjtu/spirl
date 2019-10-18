@@ -15,5 +15,5 @@ This schedule is for students taking the SpIRL course, currently offered at Nort
 | Sep 27 | - | (break - no class) | TBA |
 | Oct 4 | 5 ([link](./03_python/07/00_data-structs)) | Dictionaries, sets, modules, testing/debugging, numpy, matplotlib)  | TBA |
 | Oct 11 | 6 ([link](./04_sci-programming/04/00_scipy)) | scipy, pandas) | TBA |
-| Oct 18 | 7 | Managing environments, reproducibility | Install Anaconda |
+| Oct 18 | 7 ([link](./05_anaconda/00_why-anaconda)) | Managing environments, reproducibility | Install Anaconda |
 | Oct 25 | 8 | Putting it all together | TBA |
