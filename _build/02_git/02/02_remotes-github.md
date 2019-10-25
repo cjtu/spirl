@@ -6,8 +6,8 @@ prev_page:
   url: /02_git/02/01_git-basics.html
   title: 'Git basics'
 next_page:
-  url: /03_python/00_why-python.html
-  title: 'Programming in Python'
+  url: /02_git/03/00_practice-git.html
+  title: 'GitHub Practice'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Remotes and GitHub
