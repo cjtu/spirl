@@ -28,7 +28,7 @@
 - title: Getting started
   url: /01_overview
   not_numbered: true
-  
+
 - title: Schedule
   url: /02_schedule
   not_numbered: true
@@ -39,7 +39,7 @@
   not_numbered: true
 
 - divider: true
-- header: Scientific Programming IRL 
+- header: Scientific Programming IRL
 
 # Chapter 1
 - title: The Bash Shell
@@ -77,9 +77,9 @@
       url: /02_git/03/01_plutopy
     - title: Open Pixel Art
       url: /02_git/03/02_open-pixel-art
-    - title: More pactice
+    - title: More practice
       url: /02_git/03/03_more-practice
-      
+
 # Chapter 3
 - title: Programming in Python
   url: /03_python/00_why-python
@@ -207,7 +207,7 @@
 #     url: /05_anaconda/04/00_licenses
 #   - title: Open-sourcing Code
 #     url: /05_anaconda/05/00_open-source
-#     subsections: 
+#     subsections:
 #     - title: Packaging code
 #       url: /05_anaconda/05/01_packaging
 #     - title: Cookie cutter
