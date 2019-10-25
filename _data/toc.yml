@@ -70,7 +70,16 @@
       url: /02_git/02/01_git-basics
     - title: Remotes and GitHub
       url: /02_git/02/02_remotes-github
-
+  - title: GitHub Practice
+    url: /02_git/03/00_practice-git
+    subsections:
+    - title: Plutopy
+      url: /02_git/03/01_plutopy
+    - title: Open Pixel Art
+      url: /02_git/03/02_open-pixel-art
+    - title: More pactice
+      url: /02_git/03/03_more-practice
+      
 # Chapter 3
 - title: Programming in Python
   url: /03_python/00_why-python

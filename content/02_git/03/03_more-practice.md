@@ -8,4 +8,4 @@ The following resources recommend accessible contributions you can make to open 
 
 ## Contributing to SpIRL
 
-You can also contribute a pull request to SpIRL, which is also an open-source repository on GitHub ([link](https://github.com/cjtu/spirl)). Feel free to fix typos and grammar, suggest new content on the [issue board](https://github.com/cjtu/spirl/issues), or work on an existing issue, to help make this resource even more useful!
+Since the SpIRL text that you are reading is also an open-source repository on GitHub, you can make contributions to it! The repository is located [here](https://github.com/cjtu/spirl). Feel free to fix typos and grammar, suggest new content on the [issue board](https://github.com/cjtu/spirl/issues), or work on an existing issue, to help make this resource even more useful!
