@@ -25,7 +25,7 @@ Once you confirm with `y`, conda will install these packages in a self-contained
 To activate an environment, we use the `conda activate <envname>` command. To deactivate an environment, type `conda deactivate` (no envname needed in `deactivate`). Try activating your new conda environment and listing the installed packages with `conda list`.
 
 ```bash
-source activate researchenv
+conda activate researchenv
 ```
 
 Check your command prompt to ensure your environment is active (you should see `(researchenv)` at the beginning of the line).
