@@ -7,7 +7,7 @@ prev_page:
   title: 'Plutopy'
 next_page:
   url: /02_git/03/03_more-practice.html
-  title: 'More pactice'
+  title: 'More practice'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 # Open Pixel Art

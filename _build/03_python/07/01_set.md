@@ -42,7 +42,7 @@ non_animals = {42, 'galaxy', None, False, ('Microsoft', 'Apple', 'Google')}
 
 In the above example, we can see that the `set` doesn't care what type our elements are, we can even mix types in a single set (like with the tuple and list). 
 
-You may have notices that we specified `'snake'` twice in the `scales` set. Let's print that set:
+You may have noticed that we specified `'snake'` twice in the `scales` set. Let's print that set:
 
 
 

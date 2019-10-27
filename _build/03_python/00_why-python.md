@@ -4,7 +4,7 @@ redirect_from:
 title: 'Programming in Python'
 prev_page:
   url: /02_git/03/03_more-practice.html
-  title: 'More pactice'
+  title: 'More practice'
 next_page:
   url: /03_python/01/00_why-style.html
   title: 'Style'

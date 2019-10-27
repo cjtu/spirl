@@ -1,7 +1,7 @@
 ---
 redirect_from:
   - "/02-git/03/03-more-practice"
-title: 'More pactice'
+title: 'More practice'
 prev_page:
   url: /02_git/03/02_open-pixel-art.html
   title: 'Open Pixel Art'
