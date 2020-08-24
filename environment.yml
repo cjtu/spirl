@@ -1,9 +1,13 @@
 name: spirl
 channels:
+  - default
   - conda-forge
 dependencies:
-  - python
-  - numpy
+  - python=3.7.*
+  - sphinx=2.4.4
+  - pip
+  - pandas
   - scipy
   - matplotlib
-  - pandas
+  - pip:
+    - jupyter-book>=0.7.0b

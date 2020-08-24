@@ -1,14 +1,14 @@
-# Welcome to SpIRL
+# Welcome to SPIRL
 
 Scientific Programming In Real Life is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](cjtu.github.io/spirl).
 
 ## The textbook
 
-The SpIRL textbook is a [Jupyter Book](https://jupyterbook.org/intro.html) that provides tutorials, and interactive code blocks to help teach practical programming concepts. For more info on how the textbook was made and to get your own template, check out [Jupyterbook](https://jupyter.org/jupyter-book/intro.html).
+The SPIRL textbook is a [Jupyter Book](https://jupyterbook.org/intro.html) that provides tutorials, and interactive code blocks to help teach practical programming concepts. For more info on how the textbook was made and to get your own template, check out [Jupyterbook](https://jupyter.org/jupyter-book/intro.html).
 
 ## The course
 
-The SpIRL textbook supports a scientific programming short course run at Northern Arizona University. The schedule for the course can be found [here](https://cjtu.github.io/spirl/00_guide/02_schedule).
+The SPIRL textbook supports a scientific programming short course run at Northern Arizona University. The schedule for the course can be found [here](https://cjtu.github.io/spirl/00_guide/02_schedule).
 
 ## Reporting errors / typos
 
@@ -16,7 +16,7 @@ If you find errors or typos in the text, check the [GitHub issue board](https://
 
 ## Contributing
 
-Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SpIRL is open for contributions from the community! Comment on an existing [issue](https://github.com/cjtu/spirl/issues) if you'd like to work on it, open a new issue if you have a new idea, or email Christian at cj.taiudovicic@gmail.com for help getting started contributing.
+Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SPIRL is open for contributions from the community! Comment on an existing [issue](https://github.com/cjtu/spirl/issues) if you'd like to work on it, open a new issue if you have a new idea, or email Christian at cj.taiudovicic@gmail.com for help getting started contributing.
 
 ## Acknowledgements
 
