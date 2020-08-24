@@ -15,7 +15,7 @@ To test the site locally, you will need Ruby, bundler, and Jekyll running locall
 
 ## Testing the site locally
 
-Once you have the above dependencies, you should be able to build and test the SpIRL Jupyterbook locally with the following commands. Make sure if you installed `jupyter-book` in a virtual environment, that you have activated that env!
+Once you have the above dependencies, you should be able to build and test the SPIRL Jupyterbook locally with the following commands. Make sure if you installed `jupyter-book` in a virtual environment, that you have activated that env!
 
 - `make book`: Build the static `.html` site files needed to display the content
 - `make serve`: Serves a local build of the website using Jekyll that you can access in a web browser using the link it gives you (probably something like `localhost:4000/spirl/00_about`). The local site will auto-update for most changes (but you will need to `make serve` again if you change the `_config.yml` or `toc.yml`)

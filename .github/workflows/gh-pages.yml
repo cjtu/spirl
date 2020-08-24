@@ -1,0 +1,38 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup conda
+        uses: goanpeca/setup-miniconda@v1
+        with:
+          activate-environment: spirl-deploy
+          environment-file: ./environment.yml
+          python-version: 3.7
+          channels: conda-forge
+          allow-softlinks: true
+          channel-priority: flexible
+          show-channel-urls: true
+          use-only-tar-bz2: true
+      - name: Build jupyterbook
+        shell: bash -l {0}
+        run: |
+          conda info
+          conda list
+          conda config --show-sources
+          conda config --show
+          jupyter-book build spirl
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./spirl/_build
+          # enable_jekyll: false
+          publish_branch: master
