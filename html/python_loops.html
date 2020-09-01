@@ -1,0 +1,633 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>3.7. Loops &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/python_loops.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.8. Advanced Data Types (set, dict)" href="python_adv-types.html" />
+    <link rel="prev" title="3.6. Conditionals" href="python_conditionals.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/python_loops.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Loops" />
+<meta property="og:description" content="Loops  Loops are useful programming concepts that you will find in just about every lanugage because they allow us to repeat a set of instructions many times. W" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html#functions">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/python_loops.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fpython_loops.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indentation">
+   3.7.1. Indentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loop">
+   3.7.2. For loop
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#range">
+   3.7.3. Range
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enumerate">
+   3.7.4. Enumerate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-for-loops">
+   3.7.5. Practice for loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   3.7.6. While loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-while-loops">
+   3.7.7. Practice while loops
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="loops">
+<h1><span class="section-number">3.7. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h1>
+<p>Loops are useful programming concepts that you will find in just about every lanugage because they allow us to repeat a set of instructions many times. We discuss in the <a class="reference internal" href="python_style.html"><span class="doc std std-doc">style</span></a> section how loops can help do repetitions for us, so we don’t need to repeat code.</p>
+<p>Python has two types of loops, the <strong>for</strong> loop and the <strong>while</strong> loop. Any repeated task can be done with <em>either kind of loop</em>, but as we’ll see, you might prefer to choose one type over the other in certain scenarios.</p>
+<div class="section" id="indentation">
+<h2><span class="section-number">3.7.1. </span>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h2>
+<p>In Python, blocks of code are denoted by their <em>indentation level</em>. A loop will repeat only the lines which are indented, then stop once the indentation returns to normal. In the following example, the two indented lines are repeated, but the final line only runs once because it is outside the loop (back to normal indentation).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="for-loop">
+<h2><span class="section-number">3.7.2. </span>For loop<a class="headerlink" href="#for-loop" title="Permalink to this headline">¶</a></h2>
+<p>A <strong>for loop</strong> is most often used to <em>iterate</em> through a collection of objects like a <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, or <code class="docutils literal notranslate"><span class="pre">string</span></code>. At each <em>iteration</em>, we get access to the next element in the collection and can do some work on that element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We printed&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">),</span> <span class="s2">&quot;squares&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list is the collection we are looping through, and <code class="docutils literal notranslate"><span class="pre">square</span></code> is a variable that Python re-defines every iteration to be the next element in <code class="docutils literal notranslate"><span class="pre">squares</span></code>.</p>
+<p>Iteration by iteration, we get:</p>
+<ul class="simple">
+<li><p>On the <em>first</em> iteration, <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">==</span> <span class="pre">1</span></code></p></li>
+<li><p>On the <em>second</em> iteration, <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">==</span> <span class="pre">4</span></code></p></li>
+<li><p>On the <em>third</em> iteration, <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">==</span> <span class="pre">9</span></code></p></li>
+<li><p>On the <em>fourth</em> iteration, <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">==</span> <span class="pre">16</span></code></p></li>
+<li><p>On the <em>fifth</em> iteration, <code class="docutils literal notranslate"><span class="pre">square</span> <span class="pre">==</span> <span class="pre">25</span></code></p></li>
+<li><p>After <code class="docutils literal notranslate"><span class="pre">25</span></code>, there are no more elements in <code class="docutils literal notranslate"><span class="pre">squares</span></code>, so the loop ends and Python runs the next unindented line (the final <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement)</p></li>
+</ul>
+<p>We can choose any variable name that we’d like when define the for loop, it didn’t have to be <code class="docutils literal notranslate"><span class="pre">square</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We printed&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">),</span> <span class="s2">&quot;squares&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">jack_russell_terrier</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">jack_russell_terrier</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We printed&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">),</span> <span class="s2">&quot;squares&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aside: Good naming conventions</strong></p>
+<p>As we have said before in this text and will say again:</p>
+<ul class="simple">
+<li><p>good naming conventions will save you a lot of future headaches</p></li>
+</ul>
+<p>It is good <em>style</em> to name our variables something <em>expressive</em> that reveals what they are. For example, in the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list above, each element is a square number, making <code class="docutils literal notranslate"><span class="pre">square</span></code> a more logical choice for our loop variable than <code class="docutils literal notranslate"><span class="pre">jack_russell_terrier</span></code> (regardless of how much cuter our code is with dogs).</p>
+<p><strong>Readability</strong></p>
+<p>When we use <em>good naming conventions</em> in Python, something <strong>magical</strong> happens: most of the code you write will read like <em>plain English</em> (with a couple words inferred here and there).</p>
+<p>For example, if we wanted to describe what the loop above did, we could say:</p>
+<ul class="simple">
+<li><p>Go through the list of squares one element at a time, and <strong>for each square in the list, print the square</strong></p></li>
+</ul>
+<p>In Python code (with <em>expressive names</em> for our list and loop variable), we can translate it to Engligh by adding very few extra words:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>  <span class="c1"># for [each] square in [the] squares [list],</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>  <span class="c1"># print [the] square</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="range">
+<h2><span class="section-number">3.7.3. </span>Range<a class="headerlink" href="#range" title="Permalink to this headline">¶</a></h2>
+<p>A useful built-in function that we commonly use in <em>for loops</em> is <code class="docutils literal notranslate"><span class="pre">range()</span></code>. Range is a quick way to make sequence of numbers to loop through.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It seems like <code class="docutils literal notranslate"><span class="pre">range</span></code> is its own type in Python. Let’s see what happens when we loop through a <code class="docutils literal notranslate"><span class="pre">range</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="c1"># Loop through numbers 0 to 9</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we want to start at another value, we can specify two arguments in <code class="docutils literal notranslate"><span class="pre">range()</span></code>, the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">37</span><span class="p">,</span> <span class="mi">42</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Note</em>: Like when slicing, the end index is excluded from the range. This way, if you specify a range from <code class="docutils literal notranslate"><span class="pre">(37,</span> <span class="pre">42)</span></code>, there are <code class="docutils literal notranslate"><span class="pre">42-37</span> <span class="pre">=</span> <span class="pre">5</span></code> numbers in the range, as printed above.</p>
+<p>We can also change the spacing of the elements in our range by specifying a <em>third</em> argument to <code class="docutils literal notranslate"><span class="pre">range()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Often the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function is useed to get <em>indices</em> to loop over, and it’s convention to reserve <code class="docutils literal notranslate"><span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">j</span></code>, and <code class="docutils literal notranslate"><span class="pre">k</span></code> for <em>index variables</em>. When we loop over the indices of a <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, or <code class="docutils literal notranslate"><span class="pre">string</span></code>, we can then access each item one at a time with that index.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We are on index&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fruits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We commonly want to loop through all of the elements of a collection of items, like in the code block above. To do this in general (without needing to count up all the elements to pass as a number to range), we can just pass in the <code class="docutils literal notranslate"><span class="pre">len()</span></code> of that collection. This allows us to always loop to the end of the collection, <em>even if its length changes</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;pear&#39;</span><span class="p">,</span> <span class="s1">&#39;tomato&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;pineapple&#39;</span><span class="p">)</span>
+<span class="n">fruits</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;plum&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Oh no! Added more fruit!</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fruits</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">fruits</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="enumerate">
+<h2><span class="section-number">3.7.4. </span>Enumerate<a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h2>
+<p>We will often want to loop a collection of items, but also want to know the indices of those values. To do this, we can do the following which works, but is a little messy:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vegetables</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;carrot&#39;</span><span class="p">,</span> <span class="s1">&#39;lettuce&#39;</span><span class="p">,</span> <span class="s1">&#39;zucchini&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vegetables</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">vegetables</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, we can use the <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> function, which is a shortcut to get the <em>index</em> <strong>and</strong> <em>value</em> in each iteration of the loop.</p>
+<p><em>Note</em>: <code class="docutils literal notranslate"><span class="pre">enumerate()</span></code> completely replaces the ugly <code class="docutils literal notranslate"><span class="pre">range(len())</span></code> and allows us to pick a good variable name for our loop variable!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">vegetable</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">vegetables</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">vegetable</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="practice-for-loops">
+<h2><span class="section-number">3.7.5. </span>Practice for loops<a class="headerlink" href="#practice-for-loops" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Sort the following list of names in alphabetical order (by first name)</p></li>
+<li><p>Loop through the list and</p></li>
+</ol>
+<ul class="simple">
+<li><p>print the rank of the name in alphabetical order</p></li>
+<li><p>print the last name of the person at that rank</p></li>
+</ul>
+<p>Hints: the list method, <code class="docutils literal notranslate"><span class="pre">.sort()</span></code>, and the string method <code class="docutils literal notranslate"><span class="pre">.split()</span></code> may be useful. Also your ranking should start at 1 (not 0)!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cool_scientists</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Marie Curie&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Goodall&#39;</span><span class="p">,</span> <span class="s1">&#39;Vera Rubin&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;Rosalind Franklin&#39;</span><span class="p">,</span> <span class="s1">&#39;Donna Strickland&#39;</span><span class="p">,</span> <span class="s1">&#39;Frances Arnold&#39;</span><span class="p">]</span>
+
+<span class="c1"># Write and test your solution here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="while-loops">
+<h2><span class="section-number">3.7.6. </span>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">¶</a></h2>
+<p>A while loop is similar to the <strong>for loop</strong>, except it is defined in terms of a <em>end condition</em>, rather than a collection of elements.</p>
+<p>While loops should be used when you need to loop <em>until a condition is met</em>, often in these cases, we do not know how many iterations we will need to complete.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capacity</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">people</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">people</span> <span class="o">&lt;</span> <span class="n">capacity</span><span class="p">:</span>
+    <span class="n">people</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of people:&quot;</span><span class="p">,</span> <span class="n">people</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;We&#39;re at capacity!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s unpack the example above:</p>
+<ul class="simple">
+<li><p>Initially, <code class="docutils literal notranslate"><span class="pre">people</span></code> (0) begins <em>less than</em> <code class="docutils literal notranslate"><span class="pre">capacity</span></code> (100), so the while condition is <code class="docutils literal notranslate"><span class="pre">True</span></code> and we enter the loop</p></li>
+<li><p>Each iteration, we increase <code class="docutils literal notranslate"><span class="pre">people</span></code> by 10</p></li>
+<li><p>After 10 iterations, <code class="docutils literal notranslate"><span class="pre">people</span></code> is <em>greater or equal to</em> capacity, so the while condition is no longer <code class="docutils literal notranslate"><span class="pre">True</span></code> and we exit the loop</p></li>
+<li><p>Finally we continue running the next line outside the loop (the final <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement)</p></li>
+</ul>
+<p>Although you generally want to use a <strong>for loop</strong> to iterate over a collection of elements, we can also accomplish the same thing with a while loop, but we have to keep track of our iterator variable manually.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;husky&#39;</span><span class="p">,</span> <span class="s1">&#39;poodle&#39;</span><span class="p">,</span> <span class="s1">&#39;greyhound&#39;</span><span class="p">,</span> <span class="s1">&#39;boxer&#39;</span><span class="p">,</span> <span class="s1">&#39;shibe&#39;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># we need to define our iterator before the loop</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">dogs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Don&#39;t forget to increment the iterator!</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Much wow! Many dog!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What do you think happens if we left out the <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">1</span></code> line? Think about the <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">len(dogs)</span></code> condition. If you’re brave, run the next code block:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dogs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;husky&#39;</span><span class="p">,</span> <span class="s1">&#39;poodle&#39;</span><span class="p">,</span> <span class="s1">&#39;greyhound&#39;</span><span class="p">,</span> <span class="s1">&#39;boxer&#39;</span><span class="p">,</span> <span class="s1">&#39;shibe&#39;</span><span class="p">]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># we need to define our iterator before the loop</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">dogs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dogs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With while loops, it is very important to make sure that the loop can <em>terminate</em>, that is, that the while condition will become <code class="docutils literal notranslate"><span class="pre">False</span></code> at some point. Otherwise we can get sneaky infinite loops in our code.</p>
+</div>
+<div class="section" id="practice-while-loops">
+<h2><span class="section-number">3.7.7. </span>Practice while loops<a class="headerlink" href="#practice-while-loops" title="Permalink to this headline">¶</a></h2>
+<p>Say we want to see how many times we can (integer) divide a number by 2 before it is less than or equal to 1. We don’t know how many times we need to divide the number when we start, but we do know when to stop. We should use a while loop!</p>
+<p>Write the condition that allows the following code to terminate correctly:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">False</span><span class="p">:</span>  <span class="c1"># replace False with the correct condition</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The base 2 log of 99 is&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Given the following list,</p>
+<ol class="simple">
+<li><p>sort the list in alphabetical order (by first name)</p></li>
+<li><p>using a <strong>while loop</strong>, print each name that starts with a letter before ‘n’</p></li>
+</ol>
+<p>Hint: try comparing two letters, e.g. <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">e</span></code> or <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">&lt;</span> <span class="pre">b</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cool_scientists</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Marie Curie&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane Goodall&#39;</span><span class="p">,</span> <span class="s1">&#39;Vera Rubin&#39;</span><span class="p">,</span> <span class="s1">&#39;Mae Jemison&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;Rosalind Franklin&#39;</span><span class="p">,</span> <span class="s1">&#39;Donna Strickland&#39;</span><span class="p">,</span> <span class="s1">&#39;Frances Arnold&#39;</span><span class="p">]</span>
+<span class="c1"># Write and test your solution here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="python_conditionals.html" title="previous page"><span class="section-number">3.6. </span>Conditionals</a>
+    <a class='right-next' id="next-link" href="python_adv-types.html" title="next page"><span class="section-number">3.8. </span>Advanced Data Types (set, dict)</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

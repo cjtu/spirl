@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>3.1. Python Style &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/python_style.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.2. Python basics" href="python_basics.html" />
+    <link rel="prev" title="3. Programming in Python" href="python_about.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/python_style.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Python Style" />
+<meta property="og:description" content="Python Style  One of the reasons Python has exploded in popularity is its readability. Python has style built-in to its design, forcing you to indent certain pa" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html#functions">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/python_style.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fpython_style.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-zen-of-python">
+   3.1.1. The Zen of Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#official-style-guide-pep8">
+   3.1.2. Official style guide (PEP8)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   3.1.3. Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-comments">
+   3.1.4. Python Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-for-writing-good-comments">
+   3.1.5. Tips for Writing Good Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dry-do-not-repeat-yourself">
+   3.1.6. DRY - Do Not Repeat Yourself
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tips-for-writing-dry-code">
+   3.1.7. Tips for Writing Dry Code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   3.1.8. Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="python-style">
+<h1><span class="section-number">3.1. </span>Python Style<a class="headerlink" href="#python-style" title="Permalink to this headline">¶</a></h1>
+<p>One of the reasons Python has exploded in popularity is its <em>readability</em>. Python has <strong>style</strong> built-in to its design, forcing you to indent certain parts of your code and using many language elements that make <em>pythonic</em> code read almost like plain English. For example, the following code is valid python and you can probably guess what it does even if you’ve never read Python before:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">:</span>
+    <span class="nb">list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>How do I write clear, pythonic code?</strong></p>
+<p>The Python community has published several <em>style guidelines</em> which give best practices for making your code easier to read and easier to run.</p>
+<p>This section summarizes a few core best practices for making your code readable so that future you (and your future collaborators) can understand how and why you designed your code the way you did.</p>
+<div class="section" id="the-zen-of-python">
+<h2><span class="section-number">3.1.1. </span>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h2>
+<p>The following poem by Tim Peters summarizes some of the central tenets of Python style. It is so revered that it has been in every version of Python since 2004 (read more <a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">here</a>).</p>
+<p>You can print <strong>The Zen of Python</strong> to the screen if you type <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> in any Python prompt. Don’t worry if it reads like a riddle right now - I encourage you to re-read it at different points in your Python learning journey!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Beautiful is better than ugly.<br />
+Explicit is better than implicit.<br />
+Simple is better than complex.<br />
+Complex is better than complicated.<br />
+Flat is better than nested.<br />
+Sparse is better than dense.<br />
+Readability counts.<br />
+Special cases aren’t special enough to break the rules.<br />
+Although practicality beats purity.<br />
+Errors should never pass silently.<br />
+Unless explicitly silenced.<br />
+In the face of ambiguity, refuse the temptation to guess.<br />
+There should be one– and preferably only one –obvious way to do it.<br />
+Although that way may not be obvious at first unless you’re Dutch.<br />
+Now is better than never.<br />
+Although never is often better than <em>right</em> now.<br />
+If the implementation is hard to explain, it’s a bad idea.<br />
+If the implementation is easy to explain, it may be a good idea.<br />
+Namespaces are one honking great idea – let’s do more of those!</p>
+</div></blockquote>
+</div>
+<div class="section" id="official-style-guide-pep8">
+<h2><span class="section-number">3.1.2. </span>Official style guide (PEP8)<a class="headerlink" href="#official-style-guide-pep8" title="Permalink to this headline">¶</a></h2>
+<p>PEP 8 (<a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">link</a>) is a guide written by the creator of Python, Guido van Rossum, and is updated by the Python community. It specifies best practices for how long your lines should be, how to write clearer equations, and how to name your variables and functions.</p>
+<p>Here are some examples of completely working Python code that adheres to and breaks the PEP8 standard:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Whitespace around operators (but not parentheses)</span>
+<span class="c1"># Use space to indicate order of operations &quot;2*2 + 4&quot;</span>
+<span class="n">y</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span> <span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="p">,(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">z</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span> <span class="p">)</span>  <span class="c1"># Not PEP8</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">z</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># PEP8</span>
+
+<span class="c1"># Max line length: 79</span>
+<span class="c1"># Variables use underscores, not camelCase</span>
+<span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># Not PEP8</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span>
+           <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">]</span>  <span class="c1"># PEP8</span>
+</pre></div>
+</div>
+<p>A core part of programming style is <strong>consistency</strong>. Some of the PEP8 style guidelines seem arbitrary or pedantic, but having one set of best practices allows all Python code to look similar. Once you are learn to read PEP8-compliant code, it makes all future PEP8 code so much easier to read because you know what to expect.</p>
+<p>The same is true for both <em>future you</em> and <em>your collaborators</em>. One of Python’s guiding principles is that <strong>code is read much more often than it is written</strong>. Therefore, taking some time to practice good <em>style</em> (e.g. by using the PEP8 guidelines wherever possible) will help you when you inevitably need to come back and read, update, and debug your code.</p>
+</div>
+<div class="section" id="comments">
+<h2><span class="section-number">3.1.3. </span>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Always write code for your future self who is sleep-deprived, has completely forgotten how it looks after 6 months of not coding, and is trying to run it right before a big deadline. <strong>Future you</strong> is the #1 person who benefits from writing understandable code. A big part of this is adding good, descriptive <strong>comments</strong>.</p>
+<p>Every programming language provides a way to add <em>comments</em>, some text in your code which is completely ignore by the computer running it, but can be critical for future you to remember how that code works.</p>
+<p>Good comments can take seconds to write and save you hours of trying to remember how a piece of code works. .</p>
+</div>
+<div class="section" id="python-comments">
+<h2><span class="section-number">3.1.4. </span>Python Comments<a class="headerlink" href="#python-comments" title="Permalink to this headline">¶</a></h2>
+<p>A comment in Python is ignored when the code is actually run.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Single line comments use the pound symbol</span>
+</pre></div>
+</div>
+<p>PEP8 recommends two spaces before and 1 space after the <code class="docutils literal notranslate"><span class="pre">#</span></code> for comments following a line of code</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>print<span class="o">(</span><span class="s1">&#39;Hello World&#39;</span><span class="o">)</span>  <span class="c1"># Everything after the pound is ignored</span>
+</pre></div>
+</div>
+<p>If the line exceeds 79 characters, PEP8 recommends putting them on their own line (or lines if they remain too long).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># I have a comment that would be longer than 79 characters on the next line</span>
+print<span class="o">(</span><span class="s1">&#39;Hello World&#39;</span><span class="o">)</span>
+
+<span class="c1"># I could have also split it up onto multiple lines</span>
+<span class="c1"># each one starting with the &quot;#&quot; symbol</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tips-for-writing-good-comments">
+<h2><span class="section-number">3.1.5. </span>Tips for Writing Good Comments<a class="headerlink" href="#tips-for-writing-good-comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments should always <strong>add</strong> to the readability of your code. If they are long or confusing themselves, this may suggest that your code is too complicated as is and may need to be split into more steps or <a class="reference internal" href="python_functions.html"><span class="doc std std-doc">functions</span></a>.</p>
+<p><strong>When commenting, DO:</strong></p>
+<ul class="simple">
+<li><p>Be concise</p></li>
+<li><p>Add them to describe parts of your code which you found tricky (if you found it tricky now, imagine sleep-deprived future you trying to understand it)</p></li>
+<li><p>Organize high level sections of your code using comments to keep track of the organization.</p></li>
+<li><p>Consider simplifying complex parts of your code rather than commenting it.</p></li>
+</ul>
+<p>It can also be helpful to sketch out your code in comments before you start. This can help you figure out the high level flow of the code before you get bogged down in too many coding details.</p>
+<p><strong>When commenting, DON’T:</strong></p>
+<ul class="simple">
+<li><p>Be too vague. Explain your code like you remember nothing</p></li>
+<li><p>Be too specific. If it is obvious what a line does, no need to repeat it in the comment.</p></li>
+<li><p>Repeat exactly what the code says. For example:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">y</span> <span class="o">=</span> exponential<span class="o">(</span>x<span class="o">)</span>  <span class="c1"># takes the exponential of x</span>
+print<span class="o">(</span>y<span class="o">)</span>  <span class="c1"># prints y</span>
+</pre></div>
+</div>
+<p>It is possible to <em>overcomment</em>. If it is clear what a line does (good variable and function names help with this!), then it doesn’t need a comment. Adding additional information where it is unnecessary creates a wall of text, making your code harder to read. Try to save comments for when you can’t immediately see what one or more line do just by looking at them.</p>
+<p>How often you should comment is <strong>highly individual</strong> and will likely shift as you get better at reading and understanding code. It is better to err on the side of commenting more when starting out. <strong>The only wrong number of comments is 0!</strong></p>
+</div>
+<div class="section" id="dry-do-not-repeat-yourself">
+<h2><span class="section-number">3.1.6. </span>DRY - Do Not Repeat Yourself<a class="headerlink" href="#dry-do-not-repeat-yourself" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>D</strong>o not <strong>R</strong>epeat <strong>Y</strong>ourself (<strong>DRY</strong>) principle encourages us to not repeat lines of code.</p>
+<p>We shouldn’t repeat ourselves according to the <strong>DRY</strong> principle.</p>
+<p>Whenever possible, <strong>DRY</strong> say to…. you get the point.</p>
+<p>Instead of copy and pasting code multiple times in our programs, DRY encourages us to write code once and re-use it.</p>
+<p><strong>Why write DRY code?</strong></p>
+<p>Really, DRY is all about being lazy! Re-using code makes your life easier. Programming with DRY in mind can also prevent common issues. Imagine the following scenario:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">awesome_fucntion</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We copy and pasted our function many times (maybe in different places in the code). Later, we realize that we misspelled <code class="docutils literal notranslate"><span class="pre">awesome_function</span></code>. Now we have to go search through the code for all the times we copy and pasted that typo! Oh no!</p>
+<p>Also, if you’re keen you may notice that we are calling <code class="docutils literal notranslate"><span class="pre">awesome_function()</span></code> on the same value every time and simply storing it in different variables instead of re-using the result.</p>
+<p>If we use the DRY principle, we would only call <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">awesome_function(0)</span></code> once and reuse the variable <code class="docutils literal notranslate"><span class="pre">a</span></code> throughout our code. This way, if we realize we made a typo - or we want to swap out <code class="docutils literal notranslate"><span class="pre">awesome_function()</span></code> for <code class="docutils literal notranslate"><span class="pre">better_function()</span></code> - we only need to fix it in one place:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">better_function</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Whenever you write code that you think you will need to reuse, think <strong>DRY</strong>. Re-usable code can generally be written into a <strong>function</strong> (we will how to write functions in a future lesson). The function can then be called each time you want to perform that task. Now if you edit the function, your changes will propagate throughout the entire program!</p>
+<p>DRY code is generally more readable and easier for future you to modify and understand.</p>
+</div>
+<div class="section" id="tips-for-writing-dry-code">
+<h2><span class="section-number">3.1.7. </span>Tips for Writing Dry Code<a class="headerlink" href="#tips-for-writing-dry-code" title="Permalink to this headline">¶</a></h2>
+<p>Most programming languages have common built-in concepts that make it easy to re-use code. You will learn how to use these in Python in the upcoming sections:</p>
+<p><strong>Functions</strong></p>
+<p>A function is a reusable block of code that performs a specific task. Having functions for mundane tasks can make your code more readable and maintainable.</p>
+<p>For example, say we have a 5-line code block that computes the location of an object given its x, y, z position and speed. Now say we need to do this computation one hundred times in our code. That’s 500 lines of code!</p>
+<p>Now say we put that 5-line code block in a function called <code class="docutils literal notranslate"><span class="pre">get_location(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">speed)</span></code>. Now we only need to call <code class="docutils literal notranslate"><span class="pre">get_location()</span></code> one hundred times. We reduced our program from 500 lines to 100 by using a function!</p>
+<p><strong>Loops</strong></p>
+<p>A loop is a way to repeat a set of instructions to repeat a set of instructions to repeat a set of instructions multiple times.</p>
+<p>In our example above, we needed to <code class="docutils literal notranslate"><span class="pre">get_location()</span></code> one hundred times. If instead we used a <em>loop</em>, we could do those 100 repeats in only a couple lines:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> i in range<span class="o">(</span><span class="m">100</span><span class="o">)</span>:  <span class="c1"># i.e. do the following 100 times</span>
+    get_location<span class="o">(</span>x, y, z, speed<span class="o">)</span>
+</pre></div>
+</div>
+<p>Now our 100 line program is only 2 lines! Now imagine we wanted to <code class="docutils literal notranslate"><span class="pre">get_location()</span></code> 1 thousand times. Or 1 million times! Loops can significantly reduce repeated code by <em>doing the repetition for us</em>!</p>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">3.1.8. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p><strong>Style</strong> and <strong>readability</strong> are central aspects of programming in Python. There is a single set of generally accepted style guidelines called <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> which should be followed whenever possible (sometimes it isn’t possible and that’s ok!). Commenting code is a good habit to build and commenting effectively takes practice! When in doubt, write for the future you who doesn’t remember anything about your code. DRY (Don’t Repeat Yourself) programming is a way to think about code that will make programming less work overall. If you find yourself copy / pasting code, think DRY and see if a <a class="reference internal" href="python_functions.html"><span class="doc std std-doc">function</span></a> or <a class="reference internal" href="python_loops.html"><span class="doc std std-doc">loop</span></a> could help you cut down on repetition.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="python_about.html" title="previous page"><span class="section-number">3. </span>Programming in Python</a>
+    <a class='right-next' id="next-link" href="python_basics.html" title="next page"><span class="section-number">3.2. </span>Python basics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

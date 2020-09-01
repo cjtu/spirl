@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1.1. Meet the shell &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/bash_shell.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.2. Bash Basics" href="bash_basics.html" />
+    <link rel="prev" title="1. The Bash Shell" href="bash_about.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/bash_shell.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Meet the shell" />
+<meta property="og:description" content="Meet the shell  Terminal? Command line? Shell? Bash? You may have heard different names for that window with the blinky cursor so let’s take a quick step back t" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/bash_shell.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fbash_shell.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#command-line-interface">
+   1.1.1. Command-line Interface
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#windows-users">
+   1.1.2. Windows users
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="meet-the-shell">
+<h1><span class="section-number">1.1. </span>Meet the shell<a class="headerlink" href="#meet-the-shell" title="Permalink to this headline">¶</a></h1>
+<p>Terminal? Command line? Shell? Bash? You may have heard different names for that window with the blinky cursor so let’s take a quick step back to understand what the shell is.</p>
+<div class="section" id="command-line-interface">
+<h2><span class="section-number">1.1.1. </span>Command-line Interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h2>
+<p>Your computer has an <em>operating system</em>, or <strong>OS</strong>, that takes care of the thousands of operations per second that your computer does so that you can browse cat pictures online without a hitch. Most operating systems have a <em>graphical use interface</em>, or <strong>GUI</strong>, that you can navigate with your mouse and get nice visual feedback in return. If you are brand new to programming, you may have only ever used a GUI and didn’t even realize it!</p>
+<p><img alt="mac gui" src="_images/mac_gui.jpg" /></p>
+<p>All operating systems also come with a text-based <em>command-line interface</em>, or <strong>shell</strong>, to interact with the OS directly. The shell has a different name depending on your OS. On Windows it’s called <strong>Command Prompt</strong>, on MacOS it’s the <strong>Terminal</strong>, and on Linux it can vary (e.g., <strong>sh</strong>, <strong>fish</strong>, <strong>csh</strong>) but the most common is <strong>bash</strong> which comes with Ubuntu.</p>
+<p>The purpose of every shell is to send commands directly to the operating system, but each one speaks a different language. This text works with <strong>bash</strong> for a few reasons:</p>
+<ol class="simple">
+<li><p>It is used commonly by scientists and is the default shell on many servers and clusters.</p></li>
+<li><p>The MacOS <strong>Terminal</strong> language (<strong>zsh</strong>) is similar to bash but has more features (so not all zsh things will work in bash). Sticking with bash means this section should apply to MacOS and Linux/Windows users.</p></li>
+<li><p>Since it is now easy to get bash on Windows (see below), we don’t need a separate section for the Windows command prompt.</p></li>
+</ol>
+</div>
+<div class="section" id="windows-users">
+<h2><span class="section-number">1.1.2. </span>Windows users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h2>
+<p>Lament not, ye weary and burdened Windows users! There are many ways to get access to a bash shell on Windows.</p>
+<p><em>Note</em>: None of these are needed for this course, but they are mentioned here for future reference.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Option</p></th>
+<th class="head"><p>Pros</p></th>
+<th class="head"><p>Cons</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/about">Windows Subsystem for Linux</a></p></td>
+<td><p>Official Microsoft-supported method, setup is easy and free, can run any Linux OS without complicated dual-booting or slow virtual machines, full access to all of your Windows files.</p></td>
+<td><p>Requires Windows 10.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://lifehacker.com/how-to-set-up-a-virtual-machine-for-free-1828969527">Virtual Machine (VM)</a></p></td>
+<td><p>Self-contained virtual Linux program that will run in a window and can be started, stopped or completely reset at will.</p></td>
+<td><p>Adds overhead (can be slow) and often limited in terms of CPU power and memory usage.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/">Dual-boot</a></p></td>
+<td><p>Full version of Linux separate but on the same machine as Windows. Full CPU power and memory use.</p></td>
+<td><p>Requires you to reserve space for another full OS on your hard drive. Requires partitioning your hard drive (can accidentally delete all your files: advanced users only!).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://cloud.google.com">Google Cloud</a>, <a class="reference external" href="https://aws.amazon.com/">AWS</a>, <a class="reference external" href="https://azure.microsoft.com">Azure</a></p></td>
+<td><p>Accessible from anywhere, can request more resources as you need them.</p></td>
+<td><p>High initial overhead (requires advanced / technical background to setup). Charges by resources use / by the hour which can get costly.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Of these options, I would recommend the Windows Subsystem for Linux (specifically WSL2 if you have an updated version of Windows 10. Setup intructions <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">here</a>). It gives a seamless shell experience while still being able to use your Windows PC and programs as usual. I would also recommend getting a shell emulator (<a class="reference external" href="https://conemu.github.io/">ConEmu</a> is a good option) and an “X-server” which allows graphical programs to run (e.g. <a class="reference external" href="https://seanthegeek.net/234/graphical-linux-applications-bash-ubuntu-windows/">VcXsrv</a>).</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="bash_about.html" title="previous page"><span class="section-number">1. </span>The Bash Shell</a>
+    <a class='right-next' id="next-link" href="bash_basics.html" title="next page"><span class="section-number">1.2. </span>Bash Basics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

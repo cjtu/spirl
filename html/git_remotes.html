@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2.3. Remotes and GitHub &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/git_remotes.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.4. Practicing Git IRL" href="git_practice.html" />
+    <link rel="prev" title="2.2. Git basics" href="git_basics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/git_remotes.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Remotes and GitHub" />
+<meta property="og:description" content="Remotes and GitHub  Many version control newcomers initially confuse Git and GitHub (myself included!). Git is the software that we’ve introduced in the previou" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/git_remotes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fgit_remotes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#github">
+   2.3.1. GitHub
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-remote">
+   2.3.2. Finding the remote
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-a-github-repo">
+   2.3.3. Making a GitHub repo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#push-and-pull">
+   2.3.4. Push and Pull
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-readme-file">
+   2.3.5. The README file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clones-and-forks">
+   2.3.6. Clones and Forks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#two-forks-diverged-in-a-wood">
+   2.3.7. Two forks diverged in a wood
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#license-file">
+   2.3.8. License file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forking-a-repository">
+   2.3.9. Forking a repository
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#you-did-it">
+   2.3.10. You did it!
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="remotes-and-github">
+<h1><span class="section-number">2.3. </span>Remotes and GitHub<a class="headerlink" href="#remotes-and-github" title="Permalink to this headline">¶</a></h1>
+<p>Many version control newcomers initially confuse <strong>Git</strong> and <strong>GitHub</strong> (myself included!). Git is the software that we’ve introduced in the previous couple chapters and does the heavy lifting of keeping track of versions of our files.</p>
+<div class="section" id="github">
+<h2><span class="section-number">2.3.1. </span>GitHub<a class="headerlink" href="#github" title="Permalink to this headline">¶</a></h2>
+<p><strong>GitHub</strong> is a website where Git repositories are stored/hosted. GitHub is the most popular and widely recognized open source platform in world. It is where many useful scientific packages are developed and made available to the community (e.g. astropy, emcee, scikit-learn). Fun fact, the textbook you are reading right now is simply a repository hosted on GitHub. You can browse a less pretty version of the text you are reading and all the things that make it look pretty at the main repository <a class="reference external" href="https://github.com/cjtu/spirl">here</a>.</p>
+<p><strong>GitHub is currently free for academics</strong></p>
+<p>GitHub allows all of its users free hosting of Git repositories to encourage open source collaboration and sharing of code. GitHub also offers students and academics a <code class="docutils literal notranslate"><span class="pre">developer</span> <span class="pre">pack</span></code> with some potentially useful feature. You won’t need it for this course, but if you’re interested in using GitHub or learning other industry tools, you can apply with your university email at one of the links below:</p>
+<p>The <strong>Student Developer Pack</strong> comes with unlimited private repos and a ton of extra free stuff - grad students are students too! <a class="reference external" href="https://help.github.com/articles/applying-for-a-student-developer-pack/">Apply here</a>.</p>
+<p><strong>Educators and Academic Researchers</strong> can also apply for GitHub Pro <a class="reference external" href="https://help.github.com/articles/about-github-education-for-educators-and-researchers/">here</a>.</p>
+</div>
+<div class="section" id="finding-the-remote">
+<h2><span class="section-number">2.3.2. </span>Finding the remote<a class="headerlink" href="#finding-the-remote" title="Permalink to this headline">¶</a></h2>
+<p>If you followed along from the previous chapter, you created a repository called <code class="docutils literal notranslate"><span class="pre">myfirstrepo/</span></code> on your computer. We can use Git to keep track of this repo locally, but it isn’t yet backed up anywhere! What if we spill coffee on our laptop or we want to share our code?</p>
+<p>This is where <strong>remotes</strong> come in. The remote tells git where another version of your repository is located. In our case, our remote will be on GitHub. You could also use an internal lab server as your remote, to have your code backed up without being on the internet. The nice thing about hosting sites like GitHub is they are accessible from anywhere with an internet connection and you can even have <em>private repositories</em> so that nobody can see them until you are ready to share.</p>
+</div>
+<div class="section" id="making-a-github-repo">
+<h2><span class="section-number">2.3.3. </span>Making a GitHub repo<a class="headerlink" href="#making-a-github-repo" title="Permalink to this headline">¶</a></h2>
+<p>To make our first GitHub repository, first either sign up for a free GitHub account or og in if you already have on at <a class="reference external" href="https://github.com">github.com</a>. Remember to use the same email address you used to configured Git in the previous chapter.</p>
+<p>Next make a <strong>new repository</strong> (either with the new repository button on your profile, or with the <code class="docutils literal notranslate"><span class="pre">+</span></code> in the upper right).</p>
+<p><img alt="new repo" src="_images/new_repo.png" /></p>
+<p>Here, you are given some options. You can name the repository <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> and give it a description if you would like. You will have the option to make your repository <em>public</em> or <em>private</em>. Private repos can only be seen by you (and anyone you explicitly allow to collaborate). Public repos are visible to everyone. Finally, you can leave the last 3 options blank: <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">README</span></code>, <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">.gitignore</span></code>, <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">license</span></code> (more on these later).</p>
+<p><img alt="create new repo" src="_images/create_new_repo.png" /></p>
+<p>You’ve made a GitHub repository! Right now it’s blank, but GitHub offers some suggestions for getting started. Since we want our local <code class="docutils literal notranslate"><span class="pre">myfirstrepo/</span></code> to be tracked by GitHub, we will follow the directions listed under <strong>…or push an existing repository from the command line</strong>.</p>
+<p>The first of two commands will set up your GitHub <strong>myfirstrepo</strong> repository to be the main remote (<code class="docutils literal notranslate"><span class="pre">origin</span></code> for short), for our local version of the repo. The next command will then push the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch to <code class="docutils literal notranslate"><span class="pre">origin</span></code>, so that the content we added to history on our computer will be shown on GitHub too. The <code class="docutils literal notranslate"><span class="pre">-u</span></code> tells git that <code class="docutils literal notranslate"><span class="pre">master</span></code> should always be pushed to <code class="docutils literal notranslate"><span class="pre">origin</span></code> from now on.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git remote add origin https://github.com/&lt;your_github_username&gt;/myfirstrepo.git
+git push -u origin master
+</pre></div>
+</div>
+<p>You will need to input your GitHub username and password here. If all went well, you should get a message like:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># To https://github.com/cjtu/myfirstrepo.git</span>
+<span class="c1">#  * [new branch]      master -&gt; master</span>
+<span class="c1"># Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.</span>
+</pre></div>
+</div>
+<p>Now head back to your GitHub window and click on the <strong>Code</strong> tab on the <strong>myfirstrepo</strong> page (to get back to <strong>myfirstrepo</strong> on GitHub at any point, you can always click the dropdown in the top right and go to <code class="docutils literal notranslate"><span class="pre">Your</span> <span class="pre">repositories</span></code>).</p>
+<p><img alt="code tab" src="_images/code_tab.png" /></p>
+<p>Do you see the beautiful files we committed? You just made your first GitHub repo!</p>
+</div>
+<div class="section" id="push-and-pull">
+<h2><span class="section-number">2.3.4. </span>Push and Pull<a class="headerlink" href="#push-and-pull" title="Permalink to this headline">¶</a></h2>
+<p>Now that your local repository is set up to track the remote repository on GitHub, we can <code class="docutils literal notranslate"><span class="pre">push</span></code> new commits to GitHub at any time. This is how we will back up our code to GitHub, and when you’re ready to make it public, also send updates to be used by collaborators.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">push</span></code> is how we keep our remote repo up to date with our local repo, it would make sense that <code class="docutils literal notranslate"><span class="pre">pull</span></code> will keep our local repo up to date with changes to our remote repo. Let’s create a README on GitHub and practice pulling changes from GitHub.</p>
+</div>
+<div class="section" id="the-readme-file">
+<h2><span class="section-number">2.3.5. </span>The README file<a class="headerlink" href="#the-readme-file" title="Permalink to this headline">¶</a></h2>
+<p>On GitHub, the README is the first thing a visitor will see when they look at your repository. In the main page of your <strong>myfirstrepo</strong> page on GitHub, there should be a link pestering you to add a <code class="docutils literal notranslate"><span class="pre">README</span></code>. Let’s indulge it. From the <code class="docutils literal notranslate"><span class="pre">Code</span></code> tab of your <strong>myfirstrepo</strong> repository on GitHub click on the green <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">README</span></code> button, or if you do not see it, click <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">New</span> <span class="pre">File</span></code>.</p>
+<p><img alt="add README" src="_images/add_readme.png" /></p>
+<p>You will be given a text field to add a README to your project. GitHub auto-formats your README based on the rules of a simple text <em>mark-up</em> language contrarily named <strong>MarkDown</strong> (with file extension <code class="docutils literal notranslate"><span class="pre">.md</span></code>). Fun fact: this whole text is written primarily in MarkDown and all the fancy formatting are just a few simple characters in an otherwise plain text document. Markdown is pretty easy to pick up, see <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">here</a> for a great cheatsheet with all you need to know.</p>
+<p><img alt="readme text" src="_images/readme_text.png" /></p>
+<p>You can be creative with your README, or here is what I wrote in mine.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span># Welcome to myfirstrepo!
+
+Hello World.
+
+This is my first GitHub repository!
+
+![woohoo](https://media.giphy.com/media/l2JdTAyoFqDY6nEis/giphy.gif)
+</pre></div>
+</div>
+<p>Finally, write a desriptive commit message and click the commit button on GitHub.</p>
+<p><img alt="commit readme" src="_images/commit_readme.png" /></p>
+<p>Now we have a commit in our <strong>myfirstrepo</strong> repo on GitHub that is not yet reflected in our local <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> repo (you can check on your PC for a <code class="docutils literal notranslate"><span class="pre">README.md</span></code> and it won’t be there yet).</p>
+<p>Let’s get our repositories back in sync. From your <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> directory, type the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git pull
+<span class="c1"># Unpacking objects: 100% (3/3), done.</span>
+<span class="c1"># From https://github.com/cjtu/myfirstrepo</span>
+<span class="c1">#    8a7625f..b280ade  master     -&gt; origin/master</span>
+<span class="c1"># Updating 8a7625f..b280ade</span>
+<span class="c1"># Fast-forward</span>
+<span class="c1">#  README.md | 7 +++++++</span>
+<span class="c1">#  1 file changed, 7 insertions(+)</span>
+<span class="c1">#  create mode 100644 README.md</span>
+</pre></div>
+</div>
+<p>Finally let’s verify that everything is in order with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
+<span class="c1"># b280ade (HEAD -&gt; master, origin/master) Add README.md</span>
+<span class="c1"># 8a7625f Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Great! The last thing we will do is learn to <strong>clone</strong> an existing repository on GitHub.</p>
+</div>
+<div class="section" id="clones-and-forks">
+<h2><span class="section-number">2.3.6. </span>Clones and Forks<a class="headerlink" href="#clones-and-forks" title="Permalink to this headline">¶</a></h2>
+<p>You can <strong>clone</strong> a local copy of your <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> repository at any time from any machine by clicking the green <code class="docutils literal notranslate"><span class="pre">clone</span> <span class="pre">or</span> <span class="pre">download</span></code> button on GitHub to get the url to clone (i.e. <code class="docutils literal notranslate"><span class="pre">https://github.com/&lt;user&gt;/myfirstrepo.git</span></code>), and then typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;url&gt;</span></code> into the shell.</p>
+<p><img alt="clone myfirstrepo" src="_images/clone_myfirstrepo.png" /></p>
+<p>Only you will be able to clone your private repository because you need to supply your GitHub username and password.</p>
+<p>You can try this out by making a new directory and cloning <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> again.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+mkdir tmp
+<span class="nb">cd</span> tmp
+git clone https://github.com/&lt;user&gt;/myfirstrepo.git
+<span class="nb">cd</span> myfirstrepo
+ls
+bad_file.xls  file1.txt  great_file.py
+</pre></div>
+</div>
+<p>You should see all the files you’ve committed to GitHub in this newly cloned version of <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code>. You can do this on any computer with Git to keep your files in sync across PCs or servers!</p>
+<p>Since it may be confusing to have two different directories called <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> on your computer, let’s remove the one we just made.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+rm -rf tmp
+</pre></div>
+</div>
+</div>
+<div class="section" id="two-forks-diverged-in-a-wood">
+<h2><span class="section-number">2.3.7. </span>Two forks diverged in a wood<a class="headerlink" href="#two-forks-diverged-in-a-wood" title="Permalink to this headline">¶</a></h2>
+<p>What if you want to clone another user’s public repo on GitHub, either to use their work or to contribute to their repository?</p>
+<p>In this case, we will first need to <strong>fork</strong> the repository on GitHub. This will make a complete copy of the repository under your GitHub profile that you can then clone and edit at will.</p>
+<p>To demonstrate this, head over to the repository for this course at <a class="reference external" href="https://github.com/cjtu/spirl">https://github.com/cjtu/spirl</a>.</p>
+</div>
+<div class="section" id="license-file">
+<h2><span class="section-number">2.3.8. </span>License file<a class="headerlink" href="#license-file" title="Permalink to this headline">¶</a></h2>
+<p>Before forking a repository, make sure you check for a <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/LICENSE.md">LICENSE</a> file, which is usually in the top-level directory. The licence tells you how you may use the contents of a repository and who owns the rights to it.</p>
+<p>Since open source licenses can be full of legal jargon, <a class="reference external" href="https://choosealicense.com">ChooseALicense.com</a> is a great resource for understanding what a particular license means. The SPIRL project is made available through the MIT License, which you can read about <a class="reference external" href="https://choosealicense.com/licenses/mit/">here</a>. Here is the TL;DR (Too Long; Didn’t Read) version:</p>
+<p><img alt="mit" src="_images/mit.png" /></p>
+<p>According to the MIT License, anybody can use, modify and distribute this entire course, as long as they cite the author(s). This is great news! We’re free to make a copy!</p>
+</div>
+<div class="section" id="forking-a-repository">
+<h2><span class="section-number">2.3.9. </span>Forking a repository<a class="headerlink" href="#forking-a-repository" title="Permalink to this headline">¶</a></h2>
+<p>On the main page of the <a class="reference external" href="https://github.com/cjtu/spirl">spirl</a> repository, you should see a <strong>Fork</strong> button in the upper right.</p>
+<p><img alt="fork button" src="_images/fork_button.png" /></p>
+<p>Click this button to make a copy of the repository. After a few seconds you should end up on a page that looks like the original spirl repository, but in the upper left, you will see <code class="docutils literal notranslate"><span class="pre">&lt;your_user&gt;/spirl</span></code> and below that, <code class="docutils literal notranslate"><span class="pre">forked</span> <span class="pre">from</span> <span class="pre">cjtu/spirl</span></code>. This is your <em>forked copy</em> of spirl which you are free to clone and modify.</p>
+<p>Remember to click the green <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">or</span> <span class="pre">download</span></code> button to get a url to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+git clone https://github.com/&lt;user&gt;/spirl.git
+<span class="nb">cd</span> spirl
+ls
+</pre></div>
+</div>
+<p>Now you have a copy of the textbook locally which you can edit at will! Since you made a <strong>fork</strong>, this version of spirl is a copy that belongs to you, so nothing that you change or push to GitHub will affect the main <code class="docutils literal notranslate"><span class="pre">spirl</span></code> repository! In a future lesson, we will look at how you can edit a fork of a repo and propose a change to the original repo via a <strong>pull request</strong>. This is how collaborators work on Git projects together, from out humble repo to huge repos with hundreds of contributors like <a class="reference external" href="https://github.com/astropy/astropy">astropy</a>.</p>
+</div>
+<div class="section" id="you-did-it">
+<h2><span class="section-number">2.3.10. </span>You did it!<a class="headerlink" href="#you-did-it" title="Permalink to this headline">¶</a></h2>
+<p>Great job making it to the end of this crash course on remotes and GitHub. With these basics, you know all you need to start backing up your files and how to access other users’ code on GitHub.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="git_basics.html" title="previous page"><span class="section-number">2.2. </span>Git basics</a>
+    <a class='right-next' id="next-link" href="git_practice.html" title="next page"><span class="section-number">2.4. </span>Practicing Git IRL</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

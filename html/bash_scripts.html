@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1.3. Scripts and Permissions &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/bash_scripts.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.4. Extra tips and tricks" href="bash_tips.html" />
+    <link rel="prev" title="1.2. Bash Basics" href="bash_basics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/bash_scripts.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Scripts and Permissions" />
+<meta property="og:description" content="Scripts and Permissions  Each file and folder in a UNIX filesystem has specific permissions defined for who on the system can read, write or execute that file. " />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/bash_scripts.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fbash_scripts.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bash-scripts">
+   1.3.1. Bash scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-whole-shebang">
+     1.3.1.1. The whole shebang
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#permissions">
+   1.3.2. Permissions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-permission-string">
+     1.3.2.1. The permission string
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-permissions">
+     1.3.2.2. Changing permissions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     1.3.2.3. Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="scripts-and-permissions">
+<h1><span class="section-number">1.3. </span>Scripts and Permissions<a class="headerlink" href="#scripts-and-permissions" title="Permalink to this headline">¶</a></h1>
+<p>Each file and folder in a UNIX filesystem has specific permissions defined for who on the system can read, write or execute that file.</p>
+<div class="section" id="bash-scripts">
+<h2><span class="section-number">1.3.1. </span>Bash scripts<a class="headerlink" href="#bash-scripts" title="Permalink to this headline">¶</a></h2>
+<p>To show this, let’s make a special type of text file called a <strong>bash script</strong>. A bash script is a text file with bash commands (like <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">mv</span></code>, <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, etc) that can be run in order just by running the file. This can be a way to organize many commands rather than inputting them one by one into the shell, or a way to save commands that we want to use again and again.</p>
+<div class="section" id="the-whole-shebang">
+<h3><span class="section-number">1.3.1.1. </span>The whole shebang<a class="headerlink" href="#the-whole-shebang" title="Permalink to this headline">¶</a></h3>
+<p>Since a bash script can be any old text file, we need to add a <strong>shebang</strong> (yes that’s what it is called) to the top of the file so that bash knows to run the lines of this file as commands. Bash scripts also end in <code class="docutils literal notranslate"><span class="pre">.sh</span></code> by convention, but the shebang is what really tells your computer it is a bash script.</p>
+<p>Print the shebang (<code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>) to a new file called <code class="docutils literal notranslate"><span class="pre">test_script.sh</span></code> with a redirect. Make sure to use single quotes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;#!/bin/bash&#39;</span> &gt; test_script.sh
+</pre></div>
+</div>
+<p>We added the shebang, but we haven’t added any commands yet. The plain redirect command will make a new file everytime we try to add more text to the file this way. Luckily, we can use the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> command which will add new text to the end of the file.</p>
+<p>Let’s add a basic <code class="docutils literal notranslate"><span class="pre">touch</span></code> command to our bash script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;touch test_script_file.txt&#39;</span> &gt;&gt; <span class="s1">&#39;test_script.sh&#39;</span>
+</pre></div>
+</div>
+<p>Let’s see our fancy new bash script!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>more test_script.sh
+</pre></div>
+</div>
+<p>We generally run a bash script by typing in its path. We expect this script to make a new file called <code class="docutils literal notranslate"><span class="pre">test_script_file.txt</span></code>. Recall that <code class="docutils literal notranslate"><span class="pre">.</span></code> simply means the directory we are currently in. Let’s try it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./test_script.sh
+</pre></div>
+</div>
+<p>When I run this I get an error saying <code class="docutils literal notranslate"><span class="pre">Permission</span> <span class="pre">denied</span></code>. What happened? To understand, we will need to take a quick detour into <strong>permissions</strong></p>
+</div>
+</div>
+<div class="section" id="permissions">
+<h2><span class="section-number">1.3.2. </span>Permissions<a class="headerlink" href="#permissions" title="Permalink to this headline">¶</a></h2>
+<p>So you ran into a permission issue. To diagnose what is going on, let’s list the permissions of the files in our directory with <code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -l
+<span class="c1"># -rw-r--r-- 1 ctaiudovicic users  31 Dec 99 23:59 test_script.sh</span>
+</pre></div>
+</div>
+<div class="section" id="the-permission-string">
+<h3><span class="section-number">1.3.2.1. </span>The permission string<a class="headerlink" href="#the-permission-string" title="Permalink to this headline">¶</a></h3>
+<p>The first 10 characters of gibberish tell you the permissions of your files and folders, as long as you know how to decode it.</p>
+<ul class="simple">
+<li><p><strong>Char 1</strong> has 2 options: <code class="docutils literal notranslate"><span class="pre">d</span></code> means directory, <code class="docutils literal notranslate"><span class="pre">-</span></code> means file.</p></li>
+<li><p><strong>Chars 2-10</strong>: These 9 characters follow a particular order:</p>
+<ul>
+<li><p>User: <code class="docutils literal notranslate"><span class="pre">rwx</span></code> (chars 2, 3, and 4)</p></li>
+<li><p>Group: <code class="docutils literal notranslate"><span class="pre">rwx</span></code> (chars 5, 6, and 7)</p></li>
+<li><p>Others: <code class="docutils literal notranslate"><span class="pre">rwx</span></code> (chars 8, 9, and 10)</p></li>
+<li><p>When the character is shown (e.g. <code class="docutils literal notranslate"><span class="pre">r</span></code> or <code class="docutils literal notranslate"><span class="pre">w</span></code> or <code class="docutils literal notranslate"><span class="pre">x</span></code>), it means yes this person or people have this permission (either <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code> or <code class="docutils literal notranslate"><span class="pre">execute</span></code>, respectively)</p></li>
+<li><p>When there is a <code class="docutils literal notranslate"><span class="pre">-</span></code> in place of the character, it means no they cannot do that action</p></li>
+</ul>
+</li>
+</ul>
+<p>This figure summarizes this more visually:</p>
+<p><img alt="File Permissions in Linux (c) 2017 Clofus innovations" src="_images/permissions.jpg" /></p>
+<p>Let’s break down the permissions for our new bash script:</p>
+<p>My <code class="docutils literal notranslate"><span class="pre">test_script.sh</span></code>, had the permission <code class="docutils literal notranslate"><span class="pre">-rw-r--r--</span></code>. Recall when the first character is <code class="docutils literal notranslate"><span class="pre">-</span></code>, we know it is a file, not a directory.</p>
+<p>Breaking the permission part down into a table:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Who</p></th>
+<th class="head"><p>Read</p></th>
+<th class="head"><p>Write</p></th>
+<th class="head"><p>Execute</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>User</p></td>
+<td><p>r</p></td>
+<td><p>w</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>Group</p></td>
+<td><p>r</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p>Others</p></td>
+<td><p>r</p></td>
+<td><p>-</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+<p>So who are these mysterious people?</p>
+<ul class="simple">
+<li><p><strong>User</strong>: you, because you made and own the file.</p></li>
+<li><p><strong>Group</strong>: you and other users on this machine can be lumped into a group to share files and permissions. If this is your personal computer, this is probably the least relevant.</p></li>
+<li><p><strong>Others</strong>: everyone else that can access this machine that isn’t you and doesn’t belong to your group.</p></li>
+</ul>
+<p>So in plain English, I, the <em>User</em> can <em>read</em> and <em>write</em> <code class="docutils literal notranslate"><span class="pre">test_script.sh</span></code>, but not <em>execute</em> it. All others can only <em>read</em> it. This is typically what we want for new files. It is nice to let others see our files, but we don’t want Kevin from HR to log in and start messing with them.</p>
+</div>
+<div class="section" id="changing-permissions">
+<h3><span class="section-number">1.3.2.2. </span>Changing permissions<a class="headerlink" href="#changing-permissions" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s give ourselves permission to execute our bash script. We do this with the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> (change mode) command. To specify who to change permissions for (user / group / others / all) we will use <code class="docutils literal notranslate"><span class="pre">u/g/o/a</span></code>, and to specify which permission to change, we will use <code class="docutils literal notranslate"><span class="pre">r/w/x</span></code>. To add a permission, we use <code class="docutils literal notranslate"><span class="pre">+</span></code>, and to remove a permission, we use <code class="docutils literal notranslate"><span class="pre">-</span></code>.</p>
+<p>For example if we wanted to hide the contents of a file, we could say <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">o-r</span> <span class="pre">filename</span></code>, meaning others no longer have permission to read that file.</p>
+<p>Let’s give (<code class="docutils literal notranslate"><span class="pre">+</span></code>) ourselves (user or <code class="docutils literal notranslate"><span class="pre">u</span></code>) permission to execute (<code class="docutils literal notranslate"><span class="pre">x</span></code>) the file <code class="docutils literal notranslate"><span class="pre">test_script.sh</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x test_script.sh
+ls -l
+<span class="c1">#-rwxr--r-- 1 ctaiudovicic users  12 Oct 29 13:09 test_script.sh</span>
+</pre></div>
+</div>
+<p>Notice the <code class="docutils literal notranslate"><span class="pre">x</span></code> in the user oart of the permission string? Now try to run the script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./test_script.sh
+ls
+</pre></div>
+</div>
+<p>Did it make <code class="docutils literal notranslate"><span class="pre">test_script_file.txt</span></code> like we expected?</p>
+</div>
+<div class="section" id="summary">
+<h3><span class="section-number">1.3.2.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h3>
+<p>Permissions are a rabbit hole, but for our purposes, the key takeaways are:</p>
+<ul class="simple">
+<li><p>when you make a new file, nobody else can change it unless you give them permission</p></li>
+<li><p>nobody can execute a file on your computer until you give explicit permission</p></li>
+<li><p>make bash scripts executable with <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">u+x</span> <span class="pre">file.sh</span></code></p></li>
+<li><p>don’t worry about breaking your system by deleting system files - you probably don’t have <em>permission</em> to</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="bash_basics.html" title="previous page"><span class="section-number">1.2. </span>Bash Basics</a>
+    <a class='right-next' id="next-link" href="bash_tips.html" title="next page"><span class="section-number">1.4. </span>Extra tips and tricks</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

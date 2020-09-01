@@ -1,0 +1,535 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>3.4. Methods &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/python_functions.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.6. Conditionals" href="python_conditionals.html" />
+    <link rel="prev" title="3.3. Basic Data Types (bool, int, float, str, list, tuple)" href="python_basic-types.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/python_functions.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Methods" />
+<meta property="og:description" content="Methods  Classes have special functions defined only for their own members called class methods, or simply methods. Methods are called on an object by following" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="#functions">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/python_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fpython_functions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/python_functions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/cjtu/spirl/blob/master/spirl/python_functions.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="methods">
+<h1><span class="section-number">3.4. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
+<p>Classes have special functions defined only for their own members called class methods, or simply <strong>methods</strong>. Methods are called on an object by following that object with <code class="docutils literal notranslate"><span class="pre">.methodname()</span></code>. We saw methods like <code class="docutils literal notranslate"><span class="pre">.isround()</span></code> in action above. Built-in classes like <code class="docutils literal notranslate"><span class="pre">str</span></code> have methods too!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The upper() method changes all characters in a string to uppercase</span>
+<span class="n">introduction</span> <span class="o">=</span> <span class="s1">&#39;Hi, my name is...&#39;</span>
+<span class="n">introduction</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The isdigit() method checks if all characters in a string are digits</span>
+<span class="s1">&#39;12345&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function on a class shows all methods available to instances of that class. The <code class="docutils literal notranslate"><span class="pre">__methods__</span></code> are private methods used internally by Python. Skip down to <code class="docutils literal notranslate"><span class="pre">capitalize(...)</span></code> to see the methods available to us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The capitalize method capitalizes the fist letter of the str</span>
+<span class="s1">&#39;united states&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="functions">
+<h1><span class="section-number">3.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<p>Functions are like methods but are independent of a specific class. Any objects that they act on must be passed in as arguments. Let’s break down the anatomy of a function.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcname</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Docstring&quot;&quot;&quot;</span>
+    <span class="c1"># Do stuff here</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>All functions start with a <code class="docutils literal notranslate"><span class="pre">def</span></code> or <strong>define</strong> statement, followed by the name of the function and a list of arguments in parentheses.</p>
+<p>Below the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement is the <strong>docstring</strong> in triple quotes <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span> <span class="pre">&quot;&quot;&quot;</span></code>. Docstrings are important for humans (including you) who need to read / use your code. The docstring explains what the function does, what arguments the function needs to work properly, and can even suggest example usage. The docsting is what is shown when you call <code class="docutils literal notranslate"><span class="pre">help(funcname)</span></code> on your function.</p>
+<p>As we saw with the if blocks, Python uses indentation to organize code. All code indented in the function definition will be run when the function is called.</p>
+<p>Finally, if your function produces an output, it must be <strong>returned</strong> with a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. This signals the end of the function. Python will pick up where it left off before running the function.</p>
+<p>Let’s work through an example. Say we encounter the following function <code class="docutils literal notranslate"><span class="pre">stuff()</span></code>. We may not know what it does initially if we don’t know where it is defined. Let’s try calling <code class="docutils literal notranslate"><span class="pre">help()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">stuff</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">help</span><span class="p">(</span><span class="n">stuff</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hmm. Not very descriptive. And the name of the function is not exactly helpful. I guess we need to try some examples to figure it out.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stuff</span><span class="p">(</span><span class="s1">&#39;hello?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Well it didn’t like the <code class="docutils literal notranslate"><span class="pre">str</span></code>, so let’s try an <code class="docutils literal notranslate"><span class="pre">int</span></code> instead.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stuff</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we’re getting somewhere, maybe <code class="docutils literal notranslate"><span class="pre">stuff</span></code> returns the number it is given!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stuff</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There goes that idea. But this looks like it could be pattern.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">stuff</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="n">stuff</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">stuff</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span><span class="n">stuff</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span><span class="n">stuff</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cool it looks like <code class="docutils literal notranslate"><span class="pre">stuff</span></code> takes the square of the number it is given! Now to do the same trial and error with the function <code class="docutils literal notranslate"><span class="pre">allxsonthelistorunderbutnotboth(x1,</span> <span class="pre">x2,</span> <span class="pre">x3,</span> <span class="pre">x4,</span> <span class="pre">x5,</span> <span class="pre">x6,</span> <span class="pre">list1,</span> <span class="pre">list2)</span></code>. Uhh…</p>
+<p>That was an example of writing a function with poor <em>style</em>. The function worked as intended, but was frustrating to use if you didn’t remember what <code class="docutils literal notranslate"><span class="pre">stuff()</span></code> did. I hope this highlights the importance of readable code. Python comes built-in with features like the <strong>docstring</strong> to avoid situations like the one above. Python won’t force you to use docstrings, but it is highly encouraged to get into the habit, especially if you are working with others. And if not for others, do it for future you who won’t remember what <code class="docutils literal notranslate"><span class="pre">stuff()</span></code> is in 6 months.</p>
+<p>So how do we improve our <code class="docutils literal notranslate"><span class="pre">stuff()</span></code> function for squaring numbers? The first step is giving it a self-evident name, e.g. <code class="docutils literal notranslate"><span class="pre">square(num)</span></code>. Next, we can add a docstring with a description <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Return</span> <span class="pre">the</span> <span class="pre">square</span> <span class="pre">of</span> <span class="pre">num&quot;&quot;&quot;</span></code>. Finally, we can describe the parameters, return values and provide a couple examples of how to use it. Altogether, it might look like this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the square of num.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num: int, float</span>
+<span class="sd">        The number to square.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int, float</span>
+<span class="sd">        The square of num.</span>
+<span class="sd">        </span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    &gt;&gt;&gt; square(2)</span>
+<span class="sd">    4</span>
+<span class="sd">    &gt;&gt;&gt; square(2.5)</span>
+<span class="sd">    6.25</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">num</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Say we encounter <code class="docutils literal notranslate"><span class="pre">square()</span></code> in the wild and want to know how to use it. Now we can call <code class="docutils literal notranslate"><span class="pre">help(square)</span></code> and see a nicely formatted docstring.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can even try the examples it provides to ensure the function is working properly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">square</span><span class="p">(</span><span class="mf">2.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Much less frustrating!</p>
+<p><em>Style</em> is an aspect of writing code that is often overlooked in sciences. Just like writing good <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> messages, it is very important to write code in a way that future you and future collaborators will be able to read and use.</p>
+<p>Another aspect of style is knowing when to break your code down into functions that perform small tasks. This is one of the hardest, but most useful programming skills to master. If you can define function(s) for complex / repetitive code and give those functions good names and good docstrings, you are on your way to writing readable, re-usable code!</p>
+<p>Your turn!</p>
+<div class="section" id="breaking-code-down-into-functions">
+<h2><span class="section-number">3.5.1. </span>Breaking code down into functions<a class="headerlink" href="#breaking-code-down-into-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following example is long and repetitive. See if you can define functions to shorten and simplify the code, and get the same result.</p>
+<p>In this example, we want to see if 3 people like apples, oranges, and are above the age of 20. The data is formatted as such:</p>
+<p>person = ‘likesapples likesoranges age’</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="s1">&#39;yes yes 13&#39;</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="s1">&#39;yes nah 21&#39;</span>
+<span class="n">person3</span> <span class="o">=</span> <span class="s1">&#39;nah nah 80&#39;</span>
+</pre></div>
+</div>
+<p>We want to <code class="docutils literal notranslate"><span class="pre">print('It's</span> <span class="pre">a</span> <span class="pre">match!')</span></code> if all 3 people like apples and oranges and are older than 20. Otherwise, <code class="docutils literal notranslate"><span class="pre">print('It's</span> <span class="pre">not</span> <span class="pre">a</span> <span class="pre">match!')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">person1</span> <span class="o">=</span> <span class="s1">&#39;yes yes 42&#39;</span>
+<span class="n">person2</span> <span class="o">=</span> <span class="s1">&#39;yes yes 64&#39;</span>
+<span class="n">person3</span> <span class="o">=</span> <span class="s1">&#39;yes yes 80&#39;</span>
+
+<span class="c1"># Uncomment these three for an example of not a match</span>
+<span class="c1"># person1 = &#39;yes yes 13&#39;</span>
+<span class="c1"># person2 = &#39;yes nah 21&#39;</span>
+<span class="c1"># person3 = &#39;nah nah 80&#39;</span>
+
+<span class="k">if</span> <span class="n">person1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="n">person1</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">person1</span><span class="p">[</span><span class="mi">8</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">person2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="n">person2</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">person2</span><span class="p">[</span><span class="mi">8</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">person3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="n">person3</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span> <span class="ow">and</span> <span class="nb">int</span><span class="p">(</span><span class="n">person3</span><span class="p">[</span><span class="mi">8</span><span class="p">:])</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s a match!&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not a match!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not a match!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s not a match!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Put your function version of the above code here</span>
+<span class="c1"># Don&#39;t forget the docstrings!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are many possible ways to break up code into functions. How specific you make your functions depends on your particular use case. If you want to see my solution, you can copy and paste it from <a class="reference external" href="https://github.com/cjtu/sci_coding/tree/master/lessons/lesson3/data/function_solution.py">here</a> and compare with yours!</p>
+<p>Great job! You made it to the end of the crash course on objects, methods and functions (oh my). Next, we will be working with <code class="docutils literal notranslate"><span class="pre">Lists</span> <span class="pre">and</span> <span class="pre">Tuples</span></code>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="python_basic-types.html" title="previous page"><span class="section-number">3.3. </span>Basic Data Types (bool, int, float, str, list, tuple)</a>
+    <a class='right-next' id="next-link" href="python_conditionals.html" title="next page"><span class="section-number">3.6. </span>Conditionals</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

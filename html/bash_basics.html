@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1.2. Bash Basics &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/bash_basics.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.3. Scripts and Permissions" href="bash_scripts.html" />
+    <link rel="prev" title="1.1. Meet the shell" href="bash_shell.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/bash_basics.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Bash Basics" />
+<meta property="og:description" content="Bash Basics  If you have access to a Mac Terminal or Bash shell, open it up to practice these basic commands. If not, you can use an online emulator like this o" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/bash_basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fbash_basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hello-world">
+   1.2.1. Hello World
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#navigating-the-shell">
+   1.2.2. Navigating the shell
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-directory">
+     1.2.2.1. Working directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#root-directory">
+     1.2.2.2. Root directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#changing-directories">
+     1.2.2.3. Changing directories
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#listing-files">
+     1.2.2.4. Listing files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seeing-dots">
+     1.2.2.5. Seeing dots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#making-files-and-directories">
+   1.2.3. Making files and directories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-directory">
+     1.2.3.1. Make directory
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-am-empty-file">
+     1.2.3.2. Making am empty file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-a-file-with-text">
+     1.2.3.3. Making a file with text
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#viewing-text-in-files-less-is-more">
+     1.2.3.4. Viewing text in files - less is more
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manipulating-files">
+   1.2.4. Manipulating files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copy">
+     1.2.4.1. Copy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#move">
+     1.2.4.2. Move
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rename">
+     1.2.4.3. Rename
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove">
+     1.2.4.4. Remove
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#info">
+     1.2.4.5. Info
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wildcard">
+     1.2.4.6. Wildcard
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-more">
+   1.2.5. Learning more
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bash-basics">
+<h1><span class="section-number">1.2. </span>Bash Basics<a class="headerlink" href="#bash-basics" title="Permalink to this headline">¶</a></h1>
+<p>If you have access to a Mac Terminal or Bash shell, open it up to practice these basic commands. If not, you can use an online <em>emulator</em> like <a class="reference external" href="https://www.masswerk.at/jsuix/index.html">this one</a>, but your capabilities may be slightly limited. There is also a <a class="reference external" href="https://www.cheatography.com/gregcheater/cheat-sheets/bash/">bash cheat sheet</a> which you may find helpful to have up while working in the shell.</p>
+<div class="section" id="hello-world">
+<h2><span class="section-number">1.2.1. </span>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
+<p>Type the following code into your shell and press enter:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span>
+</pre></div>
+</div>
+<p>Did you type it out? Seriously try it!</p>
+</div>
+<div class="section" id="navigating-the-shell">
+<h2><span class="section-number">1.2.2. </span>Navigating the shell<a class="headerlink" href="#navigating-the-shell" title="Permalink to this headline">¶</a></h2>
+<p>You can navigate your operating system’s files using a few simple commands in the shell.</p>
+<div class="section" id="working-directory">
+<h3><span class="section-number">1.2.2.1. </span>Working directory<a class="headerlink" href="#working-directory" title="Permalink to this headline">¶</a></h3>
+<p>For starters, we can always check where we are, our <em>working directory</em>, with the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> (print working directory) command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>The <em>path</em> that you see tells you where you are. Each <code class="docutils literal notranslate"><span class="pre">/</span></code> denotes a <em>directory</em> (or folder). For example, if your working directory is <code class="docutils literal notranslate"><span class="pre">/home/username</span></code>, it means you are in the <code class="docutils literal notranslate"><span class="pre">username</span></code> folder in the <code class="docutils literal notranslate"><span class="pre">home</span></code> folder.</p>
+</div>
+<div class="section" id="root-directory">
+<h3><span class="section-number">1.2.2.2. </span>Root directory<a class="headerlink" href="#root-directory" title="Permalink to this headline">¶</a></h3>
+<p>On a UNIX system (MacOS or Linux), the initial <code class="docutils literal notranslate"><span class="pre">/</span></code> is called the <em>root directory</em>. It is the very top level of your file system and contains all of your system’s files and folders,</p>
+<p>Your computer’s hierarchy of files are like a branching tree. Starting from the root directory, we will learn to navigate up and down directories (branches) and make new files (leaves).</p>
+<p><img alt="file_tree, CSE 124 Fall 2017. (c) George Porter 2017" src="_images/file_tree.png" /></p>
+<p>Note: The Windows file system is a little different. Windows separates your files and folders from the system-reserved files with different <em>drives</em> (e.g. <code class="docutils literal notranslate"><span class="pre">C://</span></code> or <code class="docutils literal notranslate"><span class="pre">D://</span></code>).</p>
+</div>
+<div class="section" id="changing-directories">
+<h3><span class="section-number">1.2.2.3. </span>Changing directories<a class="headerlink" href="#changing-directories" title="Permalink to this headline">¶</a></h3>
+<p>When you open a new shell, you typically start in your <em>home directory</em>. Each user on a Linux computer has their own home directory, typically at the path <code class="docutils literal notranslate"><span class="pre">/home/&lt;username&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">/Users/&lt;username&gt;</span></code> on MacOS). The symbol <code class="docutils literal notranslate"><span class="pre">~</span></code> (tilde) is shorthand for your home directory.</p>
+<p>Let’s use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> (change directory) command to navigate to the root directory, <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Now we’re in <code class="docutils literal notranslate"><span class="pre">/</span></code>, let’s see what files and folders are here.</p>
+</div>
+<div class="section" id="listing-files">
+<h3><span class="section-number">1.2.2.4. </span>Listing files<a class="headerlink" href="#listing-files" title="Permalink to this headline">¶</a></h3>
+<p>Make sure you’re in the root (<code class="docutils literal notranslate"><span class="pre">/</span></code>) directory with <code class="docutils literal notranslate"><span class="pre">pwd</span></code>. If you are not, <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/</span></code>.</p>
+<p>Now use the <code class="docutils literal notranslate"><span class="pre">ls</span></code> (list) command to see what’s here.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>Here are the files and folders that are in root. Many of them are directories maintained by the operating system that you don’t need to worry about.</p>
+<p>Recall the path to your home directory <code class="docutils literal notranslate"><span class="pre">/home/&lt;your_username&gt;</span></code> (or <code class="docutils literal notranslate"><span class="pre">/Users/&lt;your_username&gt;</span></code> on MacOS). Let’s see if we can get there from the root directory. First we want to change directory to <code class="docutils literal notranslate"><span class="pre">/home/</span></code> (od <code class="docutils literal notranslate"><span class="pre">/Users/</span></code> on MacOS).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> home  <span class="c1"># cd Users</span>
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>If we use <code class="docutils literal notranslate"><span class="pre">ls</span></code> here, we can see all of the users on this machine. If this is your personal computer, you should just see your username.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>Now we’re one step away from our home directory (replace <code class="docutils literal notranslate"><span class="pre">&lt;your_username&gt;</span></code> with your username).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> &lt;your_username&gt;
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="seeing-dots">
+<h3><span class="section-number">1.2.2.5. </span>Seeing dots<a class="headerlink" href="#seeing-dots" title="Permalink to this headline">¶</a></h3>
+<p>We made it back home! Now let’s check out two shortcuts bash has for navigating, (<code class="docutils literal notranslate"><span class="pre">.</span></code>) and (<code class="docutils literal notranslate"><span class="pre">..</span></code>). Try to change directory to (<code class="docutils literal notranslate"><span class="pre">.</span></code>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> .
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Were you surprised you didn’t move? The <code class="docutils literal notranslate"><span class="pre">.</span></code> is shorthand for the current directory that we are in. While we probably never want to change directory to the one we’re already in, this shortcut will come in handy later on.</p>
+<p>Now let’s try to cd to <code class="docutils literal notranslate"><span class="pre">..</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>You should have moved up one level to the <code class="docutils literal notranslate"><span class="pre">/home</span></code> directory. The <code class="docutils literal notranslate"><span class="pre">..</span></code> is shorthand for the parent directory of the directory you are currently in. In our tree analogy <code class="docutils literal notranslate"><span class="pre">..</span></code> is a way to move up the branches towards root <code class="docutils literal notranslate"><span class="pre">/</span></code>. Now change directory to <code class="docutils literal notranslate"><span class="pre">..</span></code> once more.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Great! What do you think happens if we cd <code class="docutils literal notranslate"><span class="pre">..</span></code> while we are in the root directory?</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Root is the highest level directory (it has no parent directory), so cd <code class="docutils literal notranslate"><span class="pre">..</span></code> keeps us here at <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
+<p>Now let’s take our handy <code class="docutils literal notranslate"><span class="pre">~</span></code> shortcut back to home and start making our own directories.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="making-files-and-directories">
+<h2><span class="section-number">1.2.3. </span>Making files and directories<a class="headerlink" href="#making-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>If this is your first time on this Linux machine, your home directory might look pretty empty.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+ls
+</pre></div>
+</div>
+<div class="section" id="make-directory">
+<h3><span class="section-number">1.2.3.1. </span>Make directory<a class="headerlink" href="#make-directory" title="Permalink to this headline">¶</a></h3>
+<p>Let’s make a directory that we can practice in. We do this with the <strong>mkdir</strong> (make directory) command. I will call mine <code class="docutils literal notranslate"><span class="pre">test</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="nb">test</span>
+</pre></div>
+</div>
+<p>You can check if you were successful with the <strong>ls</strong> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<p>Now navigate to your new directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="nb">test</span>
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="making-am-empty-file">
+<h3><span class="section-number">1.2.3.2. </span>Making am empty file<a class="headerlink" href="#making-am-empty-file" title="Permalink to this headline">¶</a></h3>
+<p>Now let’s make a new file. The easiest way to make a file is with the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch myfile.txt
+</pre></div>
+</div>
+<p>Touch makes an empty file with the name that you gave it. Let’s see if it’s there:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="making-a-file-with-text">
+<h3><span class="section-number">1.2.3.3. </span>Making a file with text<a class="headerlink" href="#making-a-file-with-text" title="Permalink to this headline">¶</a></h3>
+<p>Great! Now let’s say we want to quickly make a file with a line of text in it. Bash has a handy trick for this which combines two parts. This first is the <code class="docutils literal notranslate"><span class="pre">echo</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Hello World!&#39;</span>
+</pre></div>
+</div>
+<p>Echo simply prints out the string of characters that you pass to it. The second part is the <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> (redirection) command. Redirection takes the output of the command on the left and puts it into the command or file on the right.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">echo</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> together allows us to make a simple text file quickly! Let’s make a new file called <code class="docutils literal notranslate"><span class="pre">test_file.txt</span></code> containing one line with the words <code class="docutils literal notranslate"><span class="pre">Hello</span> <span class="pre">World</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Hello World!&#39;</span> &gt; test_file.txt
+</pre></div>
+</div>
+<p>Use the list command to see if the file was created:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="viewing-text-in-files-less-is-more">
+<h3><span class="section-number">1.2.3.4. </span>Viewing text in files - less is more<a class="headerlink" href="#viewing-text-in-files-less-is-more" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a text file, we can quickly check its contents with the <code class="docutils literal notranslate"><span class="pre">less</span></code> command. Press <code class="docutils literal notranslate"><span class="pre">q</span></code> to exit <code class="docutils literal notranslate"><span class="pre">less</span></code> (and most command line dialogs you get trapped in).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>less test_file.txt
+</pre></div>
+</div>
+<p>Less allows us to view text interactively on the command line, but what if we just want to print out the contents of a file? Try the <code class="docutils literal notranslate"><span class="pre">more</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>more test_file.txt
+</pre></div>
+</div>
+<p>Although <code class="docutils literal notranslate"><span class="pre">less</span></code> is a new and improved version of <code class="docutils literal notranslate"><span class="pre">more</span></code> (confusingly), <code class="docutils literal notranslate"><span class="pre">more</span></code> can be used to quickly dump files to the shell or even to redirect output into a new file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>more test_file.txt &gt; test_file2.txt
+ls
+</pre></div>
+</div>
+<p>And to see the contents of our new file:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>more test_file2.txt
+</pre></div>
+</div>
+<p>This is a simple way we can copy files with what we already know, but bash make it even easier for us.</p>
+</div>
+</div>
+<div class="section" id="manipulating-files">
+<h2><span class="section-number">1.2.4. </span>Manipulating files<a class="headerlink" href="#manipulating-files" title="Permalink to this headline">¶</a></h2>
+<p>Let’s learn some commands for manipulating files.</p>
+<div class="section" id="copy">
+<h3><span class="section-number">1.2.4.1. </span>Copy<a class="headerlink" href="#copy" title="Permalink to this headline">¶</a></h3>
+<p>To copy a file, we use the <code class="docutils literal notranslate"><span class="pre">cp</span></code> command. Let’s give our copy a creative new name like <code class="docutils literal notranslate"><span class="pre">copy_file.txt</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp test_file.txt copy_file.txt
+ls
+</pre></div>
+</div>
+<p>Check the contents of the copied file with <code class="docutils literal notranslate"><span class="pre">more</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>more copy_file.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="move">
+<h3><span class="section-number">1.2.4.2. </span>Move<a class="headerlink" href="#move" title="Permalink to this headline">¶</a></h3>
+<p>We can move files using the <code class="docutils literal notranslate"><span class="pre">mv</span></code> (move) command. The move command takes a file or directory and moves it to a new path like so: <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">file_or_dir</span> <span class="pre">/new/path</span></code>.</p>
+<p>If you’ve been following along this tutorial, move your <code class="docutils literal notranslate"><span class="pre">test_file.txt</span></code> to the home directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv test_file2.txt ~
+</pre></div>
+</div>
+<p>To see if we were successful, we can use <code class="docutils literal notranslate"><span class="pre">ls</span></code> without changing directories. Just give the path to the directory you want to list, in this case the home directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls ~
+</pre></div>
+</div>
+</div>
+<div class="section" id="rename">
+<h3><span class="section-number">1.2.4.3. </span>Rename<a class="headerlink" href="#rename" title="Permalink to this headline">¶</a></h3>
+<p>Great! The <code class="docutils literal notranslate"><span class="pre">mv</span></code> command also has another fun trick which is renaming files. To do this, you “move” the file to the same directory, but with a new name. Rename <code class="docutils literal notranslate"><span class="pre">test_file2.txt</span></code> to <code class="docutils literal notranslate"><span class="pre">awesome_file.txt</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv test_file2.txt awesome_file.txt
+ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="remove">
+<h3><span class="section-number">1.2.4.4. </span>Remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h3>
+<p>What if we want to delete a file or directory? We do this with the <code class="docutils literal notranslate"><span class="pre">rm</span></code> (remove) command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm awesome_file.txt
+ls
+</pre></div>
+</div>
+<p>We deleted our file, now let’s delete our directory. First navigate up to the parent directory then remove the test directory with <code class="docutils literal notranslate"><span class="pre">rm</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ..
+rm test/
+</pre></div>
+</div>
+<p>Got an error? Here, <code class="docutils literal notranslate"><span class="pre">rm</span></code> is making sure we don’t accidentally delete a directory full of files we may need. To proceed with removing a directory we need to add an <strong>option</strong> to the <code class="docutils literal notranslate"><span class="pre">rm</span></code> command.</p>
+</div>
+<div class="section" id="info">
+<h3><span class="section-number">1.2.4.5. </span>Info<a class="headerlink" href="#info" title="Permalink to this headline">¶</a></h3>
+<p>Options are used to modify the behavior of bash commands. To see what options are available, we can use the <code class="docutils literal notranslate"><span class="pre">info</span></code> (information) command - you can also use the unnecessarily gendered <code class="docutils literal notranslate"><span class="pre">man</span></code> (manual page) command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>info rm
+</pre></div>
+</div>
+<p>Remember to hit <code class="docutils literal notranslate"><span class="pre">q</span></code> to leave most scary dialogs in the shell. Did you notice the <code class="docutils literal notranslate"><span class="pre">-d</span></code> or <code class="docutils literal notranslate"><span class="pre">--dir</span></code> option for removing directories?</p>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">-d</span></code> or <code class="docutils literal notranslate"><span class="pre">--dir</span></code> to <code class="docutils literal notranslate"><span class="pre">rm</span></code> do the same thing, the <code class="docutils literal notranslate"><span class="pre">-d</span></code> is just shorter for us lazy folks who can’t bear to type 3 extra characters.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -d <span class="nb">test</span>
+ls
+</pre></div>
+</div>
+<p>Looks like <code class="docutils literal notranslate"><span class="pre">rm</span></code> is looking out for us again because the directory is not yet empty. Let’s see what is still in there.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+</div>
+<div class="section" id="wildcard">
+<h3><span class="section-number">1.2.4.6. </span>Wildcard<a class="headerlink" href="#wildcard" title="Permalink to this headline">¶</a></h3>
+<p>Inserting a wildcard into a path will match any path with any number of characters replaced by the <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>For example, if a directory called <code class="docutils literal notranslate"><span class="pre">data/</span></code> has <code class="docutils literal notranslate"><span class="pre">a.txt</span> <span class="pre">b.png</span> <span class="pre">c.txt</span></code> in it, the path <code class="docutils literal notranslate"><span class="pre">/data/*.txt</span></code> will match only <code class="docutils literal notranslate"><span class="pre">a.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">c.txt</span></code>. Alternatively, the path <code class="docutils literal notranslate"><span class="pre">data/*</span></code> will match all three files.</p>
+<p>Let’s use the wildcard to delete all files in the <code class="docutils literal notranslate"><span class="pre">test/</span></code> directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm test/*
+ls <span class="nb">test</span>
+</pre></div>
+</div>
+<p>Now test should be empty. Finally, let’s remove <code class="docutils literal notranslate"><span class="pre">test/</span></code> with the <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-d</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -d <span class="nb">test</span>
+</pre></div>
+</div>
+<p>And it’s gone! Like most things in bash that take a few steps, they can be shortened with <strong>options</strong>.</p>
+<p>Remove has a <code class="docutils literal notranslate"><span class="pre">-f</span></code> (force) option and a <code class="docutils literal notranslate"><span class="pre">-r</span></code> (recursive) option. Combining these will remove all file and folders at the given path. The equivalent to clearing the directory and deleting it would have been:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -f <span class="nb">test</span>
+</pre></div>
+</div>
+<p>And if test had sub-directories, we would have needed to use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm -rf <span class="nb">test</span>
+</pre></div>
+</div>
+<p><em>Caution</em>: You can delete a lot of files very quickly using <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span></code>. Make sure you know what is at the path you are deleting before you use this command. That being said, everyone makes mistakes, which is why we encourage everyone to backup their files with <a class="reference internal" href="git_about.html"><span class="doc std std-doc">version control</span></a>, but more on that later.</p>
+</div>
+</div>
+<div class="section" id="learning-more">
+<h2><span class="section-number">1.2.5. </span>Learning more<a class="headerlink" href="#learning-more" title="Permalink to this headline">¶</a></h2>
+<p>Bookmark this <a class="reference external" href="https://www.cheatography.com/gregcheater/cheat-sheets/bash/">cheat sheet</a> for all of the basics we covered here and more. The next section covers <strong>permissions</strong>, which determines who can read, write and run the different files on your computer.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="bash_shell.html" title="previous page"><span class="section-number">1.1. </span>Meet the shell</a>
+    <a class='right-next' id="next-link" href="bash_scripts.html" title="next page"><span class="section-number">1.3. </span>Scripts and Permissions</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

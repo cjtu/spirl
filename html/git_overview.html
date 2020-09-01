@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2.1. Git overview &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/git_overview.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.2. Git basics" href="git_basics.html" />
+    <link rel="prev" title="2. Version control with Git" href="git_about.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/git_overview.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Git overview" />
+<meta property="og:description" content="Git overview  In this section we go over some basics to help get a mental picture of what is happening when we use Git.  What even is Git?  Git is a tool used t" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/git_overview.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fgit_overview.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-even-is-git">
+   2.1.1. What even is Git?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-repositories">
+   2.1.2. Git Repositories
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-commit">
+   2.1.3. Git Commit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-branch">
+   2.1.4. Git Branch
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-head">
+   2.1.5. Git HEAD
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualizing-git">
+   2.1.6. Visualizing Git
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="git-overview">
+<h1><span class="section-number">2.1. </span>Git overview<a class="headerlink" href="#git-overview" title="Permalink to this headline">¶</a></h1>
+<p>In this section we go over some basics to help get a mental picture of what is happening when we use Git.</p>
+<div class="section" id="what-even-is-git">
+<h2><span class="section-number">2.1.1. </span>What even is Git?<a class="headerlink" href="#what-even-is-git" title="Permalink to this headline">¶</a></h2>
+<p>Git is a tool used to <strong>keep track of files</strong> that <strong>change over time</strong>. It excels at tracking differences in <em>text files</em> (e.g. pretty much any code, regardless of the language or file type). With a little guidance, it can be used to <strong>make snapshots</strong> of your files that you can later revert back to, <strong>track changes</strong> made by you or others, and allow collaborators to <strong>merge different versions</strong> of the same files.</p>
+<p>While the inner-workings of Git are mostly left out for brevity, it’s worth noting that Git has very <strong>low overhead</strong> (i.e. it is <strong>very space efficient</strong>). You could imagine that snapshotting a whole folder on your computer - or even your entire computer - several times per day might require lots of extra hard drive space. This isn’t true when using Git, where years-old projects with <strong>thousands of snapshots</strong> are typically <strong>not much larger</strong> than the folder being tracked. This is achieved through the clever algorithms built right into Git (there are many good explanations online if you are interested in learning more about the inner workings of Git).</p>
+</div>
+<div class="section" id="git-repositories">
+<h2><span class="section-number">2.1.2. </span>Git Repositories<a class="headerlink" href="#git-repositories" title="Permalink to this headline">¶</a></h2>
+<p>A Git <strong>repository</strong> (<strong>repo</strong> for short) is simply a directory (i.e. folder) that is “tracked” by Git. Any old directory can be turned into a Git repository with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> command. This command makes a hidden <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder in your directory which Git will use to see if any changes are made in the directory. That’s it.</p>
+<p>Git users often use <strong>repo</strong> synonymously with <strong>project</strong> since the repository generally contains all of the files needed for a single project that you’re working on. So even though it’s just a plain old folder, you can sound technical if you type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code> and start calling your projects <strong>repos</strong>.</p>
+</div>
+<div class="section" id="git-commit">
+<h2><span class="section-number">2.1.3. </span>Git Commit<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
+<p>The backbone of everything that Git does, you can think of a Git <strong>commit</strong> as a snapshot or checkpoint of your repo. Git doesn’t have an auto-save feature, so we’ll learn in the next chapter how we tell Git to make a new snapshot with commits.</p>
+<p>Commits are great because they allow you to go back to an old version of your repository <em>exactly how it was</em> when you made the commit. They even force you to leave a helpful commit message that can jog your memory as to what you were changing all that time ago. Accidentally deleted a file? Did you break a piece of your code that you <em>know</em> was working last week? You can go back to last commit that worked and see what changed since then, all without discarding the changes you made since then.</p>
+<p>One important note is that, since you have complete control over <em>when</em> to make commits and what message you leave to describe your commit, it’s useful to <strong>commit often</strong> and <strong>leave useful commit messages</strong>.</p>
+<p><strong>Good commit messages</strong></p>
+<p>Take a walk with me to the year 2021 (or <code class="docutils literal notranslate"><span class="pre">&lt;current_year&gt;+2</span></code> if you’re joining us from the future). You’ve been tracking your research in a git repo and a collaborator asks for a function, <code class="docutils literal notranslate"><span class="pre">awesome_func()</span></code> that you remember writing about 2 years ago. The problem is you deleted that function because you didn’t need it. Thanks to the magic of git, you should have a checkpoint with it somewhere…</p>
+<p>When you look at your commit history, or <strong>git log</strong> (we’ll learn how to do this next chapter!), which would you rather see?</p>
+<blockquote>
+<div><p>s87f6s9 - I added stuff (Thu Nov 1, 2018)<br />
+klh54as - deleting stuff (Fri Nov 30, 2018)<br />
+f984jst - whoops (Sat Dec 1, 2018)<br />
+un23hc8 - adds a whoooole lotta stuff from December (Fri Dec 28, 2018)</p>
+</div></blockquote>
+<p>Or:</p>
+<blockquote>
+<div><p>s87f6s9 - Add awesome_func() to improve performance of slow_func() (Thu Nov 1, 2018)<br />
+klh54as - Fix a bug in awesome_func() that made it crash (Fri Nov 2, 2018)<br />
+f984jst - Remove awesome_func() because I don’t need it (Fri Nov 9, 2018)<br />
+un23hc8 - Added plotting to even_better_func() (Tue Nov 13, 2018)</p>
+</div></blockquote>
+<p>In the second example, we can see the exact date that we removed <code class="docutils literal notranslate"><span class="pre">awesome_func()</span></code> and can easily go find it, all because we left a useful commit message all those years ago. Future you thanks you!</p>
+<p><strong>Committing like a pro</strong></p>
+<p>An important part of the “philosophy of Git”, or <strong>Gitflow</strong> is making commits that <em>don’t change too much at a time</em> and are retrievable later. Some guiding principles that will have you committing like a pro in no time:</p>
+<ol class="simple">
+<li><p>Commit often</p></li>
+<li><p>Leave descriptive commit messages</p></li>
+<li><p>Make commits atomic (single units of work)</p></li>
+</ol>
+<p>1: How often depends on your work. When in doubt, commit more.</p>
+<p>2: Descriptive messages can save a lot of headache later. This is an easy habit to make if you start off with it, while leaving short, unintelligible messages is a hard habit to break. <em>Sidenote</em>: Convention is to start the commit message with a singular verb (“Add…”, “Fix…”, “Revert…”, etc).</p>
+<p>3: Commits are like the building blocks of your repo. If a mistake slips into your code in an enormous commit, it will be much harder to find that mistake later than if you commit in small, single units of work. This is the hardest of the 3 guidelines and takes a bit of practice. When in doubt, ask yourself: “Does this commit add/change/fix one thing?” If not, consider splitting it up into 2 (or more) commits.</p>
+</div>
+<div class="section" id="git-branch">
+<h2><span class="section-number">2.1.4. </span>Git Branch<a class="headerlink" href="#git-branch" title="Permalink to this headline">¶</a></h2>
+<p>Git repos start out with one main <strong>branch</strong> called <code class="docutils literal notranslate"><span class="pre">master</span></code>. Branches are used to split off from the <code class="docutils literal notranslate"><span class="pre">master</span></code> history for awhile, usually to work on some part of the code that might break things in <code class="docutils literal notranslate"><span class="pre">master</span></code>. When that new code is ready, it can be <strong>merged</strong> back into <code class="docutils literal notranslate"><span class="pre">master</span></code>. This may be a little hard to visualize, so let’s look at a picture!</p>
+<p><img alt="git branches" src="_images/git_branches.png" /></p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch is in gray and is the main “timeline” of the repo. John Doe splits off a new branch called <code class="docutils literal notranslate"><span class="pre">develop</span></code> in order to work on a feature that they do not want to be part of the main code <em>yet</em>. After working on develop for awhile without affecting any files in <code class="docutils literal notranslate"><span class="pre">master</span></code>, they <strong>merge</strong> <code class="docutils literal notranslate"><span class="pre">develop</span></code> into <code class="docutils literal notranslate"><span class="pre">master</span></code>, so that all those new changes are now in the main “timeline”. You can also branch off of a branch like the innocuously named John Feature does to make a “New cool feature” on a branch called <code class="docutils literal notranslate"><span class="pre">myfeature</span></code>. This also eventually gets incorporated into <code class="docutils literal notranslate"><span class="pre">master</span></code>, and Git handles all the nitty gritty of merging 3 different versions of the repo split off at different times and bringing them into one main timeline.</p>
+<p><strong>Ok, but why should I branch?</strong></p>
+<p>Say you have a program <code class="docutils literal notranslate"><span class="pre">code.py</span></code> that reads a bunch of numbers from a text file and does some math on them. This code works and you’re happy with it, but you want to also be able to read from Excel spreadsheets. You might be worried about breaking your code while you add this new feature. Without Git, you could make a copy of your code called <code class="docutils literal notranslate"><span class="pre">code_excel.py</span></code> and add the functionality. You get it working but you had to change <code class="docutils literal notranslate"><span class="pre">code.py</span></code> a bunch and now you have two different programs to do almost the same thing.</p>
+<p>This is where <strong>branches</strong> come in. If, instead you make a branch in Git called <code class="docutils literal notranslate"><span class="pre">import-excel</span></code>. Now when testing your new feature in <code class="docutils literal notranslate"><span class="pre">code.py</span></code>, you don’t have to worry about ever breaking the <code class="docutils literal notranslate"><span class="pre">master</span></code> version of <code class="docutils literal notranslate"><span class="pre">code.py</span></code>. In the meantime, even before your new feature is working, you can continue to use your perfectly good <code class="docutils literal notranslate"><span class="pre">code.py</span></code> on <code class="docutils literal notranslate"><span class="pre">master</span></code> just by <em>switching branches</em>. When the new <code class="docutils literal notranslate"><span class="pre">code.py</span></code> is ready and you’ve tested it on both Excel and text files, you can <strong>merge</strong> <code class="docutils literal notranslate"><span class="pre">import-excel</span></code> back into <code class="docutils literal notranslate"><span class="pre">master</span></code>, having never broken any functionality in your <code class="docutils literal notranslate"><span class="pre">master</span></code> branch.</p>
+<p><strong>Branching when collaborating</strong></p>
+<p>The <strong>Gitflow</strong> guidelines for branching when working with others are:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">master</span></code> branch should always work</p></li>
+<li><p>All changes (new features, bug fixes, etc) should be made on their own <strong>branch</strong> to ensure that you don’t accidentally break the master branch</p></li>
+<li><p>When your feature is ready, a collaborator should <em>review your changes</em> to ensure they do not break <code class="docutils literal notranslate"><span class="pre">master</span></code> when merged in</p></li>
+<li><p>After code review and incorporating feedback, the feature can be <strong>merged</strong> back into <code class="docutils literal notranslate"><span class="pre">master</span></code></p></li>
+</ul>
+<p>These guidelines should help ensure that the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch is always in good working order and usable by you, your collaborators, and anybody else who needs to use your code. Bugs are <em>annoying</em> and Git branches can help reduce the chances of bugs sneaking into code when collaborating with others.</p>
+</div>
+<div class="section" id="git-head">
+<h2><span class="section-number">2.1.5. </span>Git HEAD<a class="headerlink" href="#git-head" title="Permalink to this headline">¶</a></h2>
+<p>The shorthand <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> tells Git where you currently are in history (which <strong>branch</strong> and which <strong>commit</strong>). Usually you’re at the end of a long string of commits that started when you first typed <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>. When you make a new commit, <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> moves with you to that commit. When you undo a commit, <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> moves back to the last commit. If you jump back in time to an old version of your repo to see what was happening then, it is <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> that lets Git know exactly which snapshot you’re at.</p>
+<p><img alt="git commit" src="_images/commit.png" /></p>
+<p>A common error that Git can throw at new users is <code class="docutils literal notranslate"><span class="pre">error:</span> <span class="pre">detached</span> <span class="pre">HEAD</span></code>. While it sounds kind of morbid, this simply means that Git got lost somehow (e.g. if you deleted the branch you were currently on), and it doesn’t know where you wanted to point <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> to next. From here you can simply use the same command we’ll use to move around git history (<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code>) to move to any of your existing branches and re-attach your <code class="docutils literal notranslate"><span class="pre">HEAD</span></code>.</p>
+</div>
+<div class="section" id="visualizing-git">
+<h2><span class="section-number">2.1.6. </span>Visualizing Git<a class="headerlink" href="#visualizing-git" title="Permalink to this headline">¶</a></h2>
+<p>The Git diagrams in this chapter were borrowed from <a class="reference external" href="http://marklodato.github.io/visual-git-guide/index-en.html">A Visual Git Reference</a> by marklodato on GitHub and <a class="reference external" href="https://gitgraphjs.com">Git Graph.js</a>. Both can be useful visual references for seeing what Git commands do.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="git_about.html" title="previous page"><span class="section-number">2. </span>Version control with Git</a>
+    <a class='right-next' id="next-link" href="git_basics.html" title="next page"><span class="section-number">2.2. </span>Git basics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

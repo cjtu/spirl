@@ -1,0 +1,664 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2.2. Git basics &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/git_basics.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.3. Remotes and GitHub" href="git_remotes.html" />
+    <link rel="prev" title="2.1. Git overview" href="git_overview.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/git_basics.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Git basics" />
+<meta property="og:description" content="Git basics  Now let’s learn to start version controlling some files Git!  Checking if Git is installed  First thing’s first, you will need access to a bash shel" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/git_basics.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fgit_basics.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#checking-if-git-is-installed">
+   2.2.1. Checking if Git is installed
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuring-git">
+   2.2.2. Configuring Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-init">
+   2.2.3. Git init
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#make-some-changes">
+   2.2.4. Make some changes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-status">
+   2.2.5. Git status
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-add">
+   2.2.6. Git add
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-commit">
+   2.2.7. Git commit
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-log">
+   2.2.8. Git log
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tl-dr-tracking-files-with-git">
+   2.2.9. TL;DR Tracking files with Git
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-multiple-files">
+   2.2.10. Practice: multiple files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-reset">
+   2.2.11. Git reset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-git-reset">
+   2.2.12. Practice: Git reset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#git-commit-amend">
+   2.2.13. Git commit –amend
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   2.2.14. Summary
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="git-basics">
+<h1><span class="section-number">2.2. </span>Git basics<a class="headerlink" href="#git-basics" title="Permalink to this headline">¶</a></h1>
+<p>Now let’s learn to start version controlling some files Git!</p>
+<div class="section" id="checking-if-git-is-installed">
+<h2><span class="section-number">2.2.1. </span>Checking if Git is installed<a class="headerlink" href="#checking-if-git-is-installed" title="Permalink to this headline">¶</a></h2>
+<p>First thing’s first, you will need access to a bash shell or mac Terminal (see <a class="reference internal" href="bash_about.html"><span class="doc std std-doc">Chapter 1</span></a>) and to check if Git is installed. Open a shell and type <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git --version
+<span class="c1">#git version 2.17.1</span>
+</pre></div>
+</div>
+<p>If there is a version number, great! Skip to <a class="reference external" href="#configuring-your-git">Configuring your Git</a>.</p>
+<p>If there is no version number, you will need to install Git (this requires administrator access).</p>
+<p>In bash, you can run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install git
+</pre></div>
+</div>
+<p>For other Linux distributions, find guidance <a class="reference external" href="https://git-scm.com/download/linux">here</a>.</p>
+<p>For Mac, the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> command should have prompted you to install it.</p>
+<p>For Windows, you should can get access to a bash shell in any of the ways listed <a class="reference internal" href="bash_shell.html"><span class="doc std std-doc">here</span></a>. In that shell, you can use all of the bash commands to install Git and complete the rest of this chapter.</p>
+</div>
+<div class="section" id="configuring-git">
+<h2><span class="section-number">2.2.2. </span>Configuring Git<a class="headerlink" href="#configuring-git" title="Permalink to this headline">¶</a></h2>
+<p>The first thing to do when using git on a new machine is to let Git know who you are so that you get credit for your commits. To do this, we’ll use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span></code> command (<code class="docutils literal notranslate"><span class="pre">--global</span></code> configures all of your repos, while <code class="docutils literal notranslate"><span class="pre">--local</span></code> configures a single repo only).</p>
+<p><em>Note</em>: For your email, use the same one that you used to make your GitHub account (if you have one), or the one you plan to use for GitHub.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --global user.name <span class="s2">&quot;&lt;FirstName FamilyName&gt;&quot;</span>
+git config --global user.email <span class="s2">&quot;&lt;your.email@somewhere.com&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-init">
+<h2><span class="section-number">2.2.3. </span>Git init<a class="headerlink" href="#git-init" title="Permalink to this headline">¶</a></h2>
+<p>In your shell, create a new directory called <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code> and change directories to enter it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir myfirstrepo
+<span class="nb">cd</span> myfirstrepo
+</pre></div>
+</div>
+<p>Let’s make <code class="docutils literal notranslate"><span class="pre">myfirstrepo/</span></code> a Git repository using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>.</p>
+<p><em>Note</em>: I will use the comment (<code class="docutils literal notranslate"><span class="pre">#</span></code>) symbol to show you what the output looked like on my computer so that you can follow along. The exact paths and wording may be slightly different on your machine.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git init
+<span class="c1"># Initialized empty Git repository in ~/projects/myfirstrepo/.git/</span>
+</pre></div>
+</div>
+<p>You can check that the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder was created with <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+<span class="c1"># </span>
+</pre></div>
+</div>
+<p>Oops, since it starts with a <code class="docutils literal notranslate"><span class="pre">.</span></code>, the <code class="docutils literal notranslate"><span class="pre">.git</span></code> folder is hidden, so we need to use the <code class="docutils literal notranslate"><span class="pre">--all</span></code> or <code class="docutils literal notranslate"><span class="pre">-a</span></code> flag for <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -a
+<span class="c1"># .  ..  .git</span>
+</pre></div>
+</div>
+<p>Great! That’s all there is to it. Git will now track all changes we make to files in <code class="docutils literal notranslate"><span class="pre">myfirstrepo/</span></code>.</p>
+</div>
+<div class="section" id="make-some-changes">
+<h2><span class="section-number">2.2.4. </span>Make some changes<a class="headerlink" href="#make-some-changes" title="Permalink to this headline">¶</a></h2>
+<p>Let’s make a new file and see if Git notices. Let’s use our the bash redirection trick to make a new file with some text in it.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;Hello World!&#39;</span> &gt; file1.txt
+</pre></div>
+</div>
+<p>Since Git is tracking <code class="docutils literal notranslate"><span class="pre">myfirstrepo</span></code>, it should have noticed the change.</p>
+</div>
+<div class="section" id="git-status">
+<h2><span class="section-number">2.2.5. </span>Git status<a class="headerlink" href="#git-status" title="Permalink to this headline">¶</a></h2>
+<p>You can always check what Git is seeing with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<span class="c1"># On branch master</span>
+
+<span class="c1"># No commits yet</span>
+
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+
+<span class="c1">#         file1.txt</span>
+
+<span class="c1"># nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<p>Git status tells us that we have an <em>untracked file</em> in our directory, meaning git won’t snapshot this file yet!</p>
+</div>
+<div class="section" id="git-add">
+<h2><span class="section-number">2.2.6. </span>Git add<a class="headerlink" href="#git-add" title="Permalink to this headline">¶</a></h2>
+<p>Before we commit file(s) to history, we must first add them them to the <strong>staging area</strong> with the <code class="docutils literal notranslate"><span class="pre">add</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add file1.txt
+git status
+<span class="c1"># On branch master</span>
+
+<span class="c1"># No commits yet</span>
+
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)</span>
+
+<span class="c1">#         new file:   file1.txt</span>
+</pre></div>
+</div>
+<p>Now Git status shows a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">file:</span> <span class="pre">file1.txt</span></code> in the <strong>staging area</strong> (i.e. under “Changes to be committed”). We can keep using <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code> to collect as many files as we want in the staging area before actually making a snapshot.</p>
+</div>
+<div class="section" id="git-commit">
+<h2><span class="section-number">2.2.7. </span>Git commit<a class="headerlink" href="#git-commit" title="Permalink to this headline">¶</a></h2>
+<p>Once we are happy with all of the <em>staged</em> files, we can use <code class="docutils literal notranslate"><span class="pre">commit</span></code> to make a snapshot that will be remembered in our Git history. Let’s make our first commit (remember to <em>write descriptive commit messages!</em>).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Add hello world to file1.txt&quot;</span>
+<span class="c1"># [master (root-commit) 8a7625f] Add hello world to file1.txt</span>
+<span class="c1">#  1 file changed, 1 insertion(+)</span>
+<span class="c1">#  create mode 100644 file1.txt</span>
+</pre></div>
+</div>
+<p>Great! Let’s double check that everything got cleared from the staging area with one more <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git status
+<span class="c1"># On branch master</span>
+<span class="c1"># nothing to commit, working tree clean</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="git-log">
+<h2><span class="section-number">2.2.8. </span>Git log<a class="headerlink" href="#git-log" title="Permalink to this headline">¶</a></h2>
+<p>Where did our commit go? Into <strong>history</strong>, which we can check on at any time with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+
+<span class="c1"># commit 677ae89418559186a3fa49f726a3ab9bbe97cff3 (HEAD -&gt; master)</span>
+<span class="c1"># Author: Christian Tai Udovicic &lt;cj.taiudovicic@gmail.com&gt;</span>
+<span class="c1"># Date:   Sun Jan 1 07:00:00 1984 -0700</span>
+
+    <span class="c1"># Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Git log shows us the commit ID, author, date and commit message that we provided. After many commits have been made to a repository, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> can help us track down when certain changes were made and by whom.</p>
+</div>
+<div class="section" id="tl-dr-tracking-files-with-git">
+<h2><span class="section-number">2.2.9. </span>TL;DR Tracking files with Git<a class="headerlink" href="#tl-dr-tracking-files-with-git" title="Permalink to this headline">¶</a></h2>
+<p>The <em>Too Long; Didn’t Read</em> summary:</p>
+<p>A file can be in one of “3 locations” according to Git:</p>
+<ol class="simple">
+<li><p>The <strong>working directory</strong>: the most recent changes to your files in your repo</p></li>
+<li><p>The <strong>staging area</strong>: new or updated files ready to be committed</p></li>
+<li><p>In <strong>history</strong>: all commits (snapshots) since the start of the repo</p></li>
+</ol>
+<p>You can move file(s) from your <strong>working directory</strong> to the <strong>staging area</strong> with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p>
+<p>You can then move all files in the <strong>staging area</strong> into <strong>history</strong> (i.e. make a snapshot) with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code>. This is summarized in the following figure.</p>
+<p><img alt="git areas" src="_images/git_at_a_glance.png" /></p>
+</div>
+<div class="section" id="practice-multiple-files">
+<h2><span class="section-number">2.2.10. </span>Practice: multiple files<a class="headerlink" href="#practice-multiple-files" title="Permalink to this headline">¶</a></h2>
+<p>This time, let’s add a couple files to a commit. You can add as many files as you’d like to each commit - all changes in the <em>staging area</em> will be included in a commit.</p>
+<p>Let’s make 3 files, and add two of them to the staging area. We can use the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command to create new empty files.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch good_file.doc
+touch great_file.py
+touch bad_file.xls
+ls
+
+<span class="c1"># bad_file.xls  file1.txt  good_file.doc  great_file.py</span>
+</pre></div>
+</div>
+<p>Say we want to make a commit with <code class="docutils literal notranslate"><span class="pre">good_file.doc</span></code> and <code class="docutils literal notranslate"><span class="pre">great_file.py</span></code> because we’re finished with them, but we’re still working on <code class="docutils literal notranslate"><span class="pre">bad_file.xls</span></code> and aren’t ready to commit it yet.</p>
+<p>Let’s add just the first two to the <em>staging area</em> with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add good_file.doc
+git add great_file.py
+git status
+
+<span class="c1"># On branch master</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#         new file:   good_file.doc</span>
+<span class="c1">#         new file:   great_file.py</span>
+
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="c1">#         bad_file.xls</span>
+</pre></div>
+</div>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> tells us that two of our files are in the <em>staging area</em> and ready to be committed, but <code class="docutils literal notranslate"><span class="pre">bad_file.xls</span></code> is simply in the <em>working directory</em> and will not be included in this commit.</p>
+<p>Now let’s commit these two files. Don’t forget the descriptive commit message!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Add good and great files&quot;</span>
+</pre></div>
+</div>
+<p>Let’s check that our new commit is in history with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log
+<span class="c1"># commit cbc5a6ea58976cb5c0e5f0eb2ec5a2ca5da38f6c (HEAD -&gt; master)</span>
+<span class="c1"># Author: Christian Tai Udovicic &lt;cj.taiudovicic@gmail.com&gt;</span>
+<span class="c1"># Date:   Sun Jan 1 07:01:00 1984 -0700</span>
+
+<span class="c1">#     Add good and great files</span>
+
+<span class="c1"># commit 677ae89418559186a3fa49f726a3ab9bbe97cff3</span>
+<span class="c1"># Author: Christian Tai Udovicic &lt;cj.taiudovicic@gmail.com&gt;</span>
+<span class="c1"># Date:   Sun Jan 1 07:00:00 1984 -0700</span>
+
+<span class="c1">#     Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Git log can be pretty verbose. Let’s make the output cleaner with the <code class="docutils literal notranslate"><span class="pre">--oneline</span></code> flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
+<span class="c1"># cbc5a6e (HEAD -&gt; master) Add good and great files</span>
+<span class="c1"># 677ae89 Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Now we see there are 2 commits - one per line, from most recent to oldest. The <code class="docutils literal notranslate"><span class="pre">HEAD</span> <span class="pre">-&gt;</span> <span class="pre">master</span></code> tells us that we are currently located at the most recent commit on the default branch called <code class="docutils literal notranslate"><span class="pre">master</span></code> (we will explore branches in the next lesson).</p>
+</div>
+<div class="section" id="git-reset">
+<h2><span class="section-number">2.2.11. </span>Git reset<a class="headerlink" href="#git-reset" title="Permalink to this headline">¶</a></h2>
+<p>Say we committed something by mistake, or want to revert our repo to an older version. To do this we use the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command needs a <em>commit ID</em> to tell it which point in history you want to reset to. In my example above, the commit I want to revert to is <strong>677ae89</strong>, but yours will be a different string of letters and numbers shown by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>. You can revert to <em>any point in history</em> by specifying the commit ID you’d like to return to.</p>
+<p><strong>Git reset HEAD</strong></p>
+<p>While we can <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">&lt;commit</span> <span class="pre">ID&gt;</span></code> on the ID of the previous commit if we just want to undo our last commit, we can use the useful shortcut <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span> <span class="pre">HEAD~1</span></code>.</p>
+<p>The shorthand <code class="docutils literal notranslate"><span class="pre">HEAD~&lt;number&gt;</span></code> gives the current location of <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> minus the <code class="docutils literal notranslate"><span class="pre">&lt;number&gt;</span></code>. In our case <code class="docutils literal notranslate"><span class="pre">HEAD~1</span></code> would be the previous commit (<strong>8a7625f</strong>, in my case). Likewise, <code class="docutils literal notranslate"><span class="pre">HEAD~2</span></code> would be the second-last commit, <code class="docutils literal notranslate"><span class="pre">HEAD~3</span></code> would be third-last, etc.).</p>
+<p><strong>Reset options</strong></p>
+<p>Git has 3 options for resetting commits:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--soft</span></code> dumps all of the reverted changes into the <strong>staging area</strong> (used for quick updates, maybe you forgot to stage a file and want to add it to this commit)</p></li>
+<li><p>no flag will dump changes into the <strong>working directory</strong> (you will need to re-stage all changes you want to commit)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--hard</span></code> should be used with caution: it completely deletes all changes since the commit you are reverting to! Use this only if you know you want to delete all changes since a particular commit.</p></li>
+</ul>
+</div>
+<div class="section" id="practice-git-reset">
+<h2><span class="section-number">2.2.12. </span>Practice: Git reset<a class="headerlink" href="#practice-git-reset" title="Permalink to this headline">¶</a></h2>
+<p>Ok, let’s revert our last commit (<code class="docutils literal notranslate"><span class="pre">HEAD~1</span></code>) and put the changes back into the <em>staging area</em> with the <code class="docutils literal notranslate"><span class="pre">--soft</span></code> flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --soft HEAD~1
+git status
+
+<span class="c1"># On branch master</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#         new file:   good_file.doc</span>
+<span class="c1">#         new file:   great_file.py</span>
+
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="c1">#         bad_file.xls</span>
+</pre></div>
+</div>
+<p>Great, now that our changes are back in the staging area, we can confirm that the last commit was removed from history:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
+<span class="c1"># 677ae89 (HEAD -&gt; master) Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>The second commit was removed and <code class="docutils literal notranslate"><span class="pre">HEAD</span></code> was moved back to our “hello world” commit.</p>
+<p>Now, say we decided against committing <code class="docutils literal notranslate"><span class="pre">good_file.doc</span></code> and only want to commit <code class="docutils literal notranslate"><span class="pre">great_file.py</span></code>. We can remove items from the staging area at any point with the normal <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset good_file.doc
+git status
+
+<span class="c1"># On branch master</span>
+<span class="c1"># Changes to be committed:</span>
+<span class="c1">#   (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="c1">#         new file:   great_file.py</span>
+
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="c1">#         bad_file.xls</span>
+<span class="c1">#         good_file.doc</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">great_file.py</span></code> is staged and ready to be committed! Let’s commit it with a new, descriptive commit message.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git commit -m <span class="s2">&quot;Add great file&quot;</span>
+git log --oneline
+
+<span class="c1"># d0051d1 (HEAD -&gt; master) Add great file</span>
+<span class="c1"># 677ae89 Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Great! Now we have a brand new commit (with a new ID) which includes just the changes to <code class="docutils literal notranslate"><span class="pre">great_file.py</span></code> that we wanted.</p>
+</div>
+<div class="section" id="git-commit-amend">
+<h2><span class="section-number">2.2.13. </span>Git commit –amend<a class="headerlink" href="#git-commit-amend" title="Permalink to this headline">¶</a></h2>
+<p>We just learned how to revert the previous commit make a small change and re-commit it.  This can be done in one step with the shortcut <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code>.</p>
+<p>Say we now want to include <code class="docutils literal notranslate"><span class="pre">bad_file.xls</span></code> in our most recent commit. We can add it to the staging area and then use <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">--amend</span></code> to include it in the previous commit. If we want the commit message to remain the same, we can add the <code class="docutils literal notranslate"><span class="pre">--no-edit</span></code> flag.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git add bad_file.xls
+git commit --amend --no-edit
+git status
+
+<span class="c1"># On branch master</span>
+<span class="c1"># Untracked files:</span>
+<span class="c1">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="c1">#         good_file.doc</span>
+
+<span class="c1"># nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</pre></div>
+</div>
+<p>Now <code class="docutils literal notranslate"><span class="pre">bad_file.xls</span></code> has been added to our previous commit. Let’s see if anything changed in our Git history:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git log --oneline
+
+<span class="c1"># c250ab6 (HEAD -&gt; master) Add great file</span>
+<span class="c1"># 677ae89 Add hello world to file1.txt</span>
+</pre></div>
+</div>
+<p>Notice that the commit message remained the same because of the <code class="docutils literal notranslate"><span class="pre">--no-edit</span></code> flag, but the commit ID changed (<code class="docutils literal notranslate"><span class="pre">d0051d1</span></code> became <code class="docutils literal notranslate"><span class="pre">c250ab6</span></code>)! Anytime you amend a commit (or revert and re-commit), Git will make a new unique ID for that commit.</p>
+</div>
+<div class="section" id="summary">
+<h2><span class="section-number">2.2.14. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>You now know how to <strong>version control</strong> your files in Git! This consists of:</p>
+<ul class="simple">
+<li><p>staging files with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span></code></p></li>
+<li><p>committing snapshots of your repository with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code></p></li>
+<li><p>reverting to old snapshots with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">reset</span></code></p></li>
+<li><p>finding old snapshot IDs with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code></p></li>
+</ul>
+<p>With these basics, you can start keeping track of <strong>versions</strong> of your code or files locally over time. So far we’ve learned to use Git on our local computer. In the next lesson, we will learn how to back up our repository.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="git_overview.html" title="previous page"><span class="section-number">2.1. </span>Git overview</a>
+    <a class='right-next' id="next-link" href="git_remotes.html" title="next page"><span class="section-number">2.3. </span>Remotes and GitHub</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>

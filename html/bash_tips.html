@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1.4. Extra tips and tricks &#8212; Scientific Programming In Real Life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/bash_tips.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Version control with Git" href="git_about.html" />
+    <link rel="prev" title="1.3. Scripts and Permissions" href="bash_scripts.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://cjtu.github.io/spirl/bash_tips.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Extra tips and tricks" />
+<meta property="og:description" content="Extra tips and tricks  Here are a collection of other topics in bash that are useful.  Cheat sheet  See this cheat sheet for a summary of useful commands, optio" />
+<meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_spirl.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Scientific Programming In Real Life</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/bash_tips.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fbash_tips.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cheat-sheet">
+   1.4.1. Cheat sheet
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tab-is-king">
+   1.4.2. Tab is king
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aliases">
+   1.4.3. Aliases
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#profiles">
+   1.4.4. Profiles
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#editing-files">
+   1.4.5. Editing files
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="extra-tips-and-tricks">
+<h1><span class="section-number">1.4. </span>Extra tips and tricks<a class="headerlink" href="#extra-tips-and-tricks" title="Permalink to this headline">¶</a></h1>
+<p>Here are a collection of other topics in bash that are useful.</p>
+<div class="section" id="cheat-sheet">
+<h2><span class="section-number">1.4.1. </span>Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permalink to this headline">¶</a></h2>
+<p>See this <a class="reference external" href="https://www.cheatography.com/gregcheater/cheat-sheets/bash/">cheat sheet</a> for a summary of useful commands, options, and other cool things you can do in bash.</p>
+</div>
+<div class="section" id="tab-is-king">
+<h2><span class="section-number">1.4.2. </span>Tab is king<a class="headerlink" href="#tab-is-king" title="Permalink to this headline">¶</a></h2>
+<p>Bash has a built-in completion feature which can be easily accessed with the <code class="docutils literal notranslate"><span class="pre">Tab</span></code> key. When writing a long file path, it can be convenient to type a few characters and press <code class="docutils literal notranslate"><span class="pre">Tab</span></code>. If you wrote enough characters to give you a unique path, it will fill in the characters for you. If not, you can hit <code class="docutils literal notranslate"><span class="pre">Tab</span></code> twice to see all of paths that do match.</p>
+<p>Try typing the following, but only type <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/home/</span></code> and then the first couple letters of your username then press <code class="docutils literal notranslate"><span class="pre">Tab</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /home/&lt;user&gt;
+</pre></div>
+</div>
+<p>I recommend practicing using <code class="docutils literal notranslate"><span class="pre">Tab</span></code> anytime you are navigating the shell or typing in paths. It can make getting around a lot easier.</p>
+</div>
+<div class="section" id="aliases">
+<h2><span class="section-number">1.4.3. </span>Aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h2>
+<p>An alias is a helpful way to make a shortcut for a command we want to use in bash.</p>
+<p>Say you want a shortcut to your <code class="docutils literal notranslate"><span class="pre">~/Documents</span></code> directory. We could define an alias like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">alias</span> <span class="nv">cdd</span><span class="o">=</span><span class="s1">&#39;cd ~/Documents&#39;</span>
+</pre></div>
+</div>
+<p>Now if you type <code class="docutils literal notranslate"><span class="pre">cdd</span></code>, you should find yourself in the Documents directory.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cdd
+<span class="nb">pwd</span>
+</pre></div>
+</div>
+<p>Any alias or variable you set in a shell are particular to that shell windows that is open. If you open a new shell and try to use the <code class="docutils literal notranslate"><span class="pre">cdd</span></code> alias, it will not know that you’ve defined it here. To keep these aliases, we can make a <strong>profile</strong> for our bash shell.</p>
+</div>
+<div class="section" id="profiles">
+<h2><span class="section-number">1.4.4. </span>Profiles<a class="headerlink" href="#profiles" title="Permalink to this headline">¶</a></h2>
+<p>Go to your home directory if you are not already there.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
+</pre></div>
+</div>
+<p>Now list the files, but add the <code class="docutils literal notranslate"><span class="pre">-a</span></code> option, which lists all <em>hidden files</em>, sometimes called <em>dotfiles</em> because they begin with a <code class="docutils literal notranslate"><span class="pre">.</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls -a
+</pre></div>
+</div>
+<p>My home directory has a <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> and a <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> in it (it is ok if you do not have these, especially on a new system). Profiles special bash scripts that are located in your home directory and are run every time you start up a shell.</p>
+<p>On Linux:</p>
+<ul class="simple">
+<li><p>The commands in the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> are run every time you start a new shell locally (i.e. on your computer).</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> commands are run every time you start a remote bash shell (i.e. one that you ssh to).</p></li>
+</ul>
+<p>On MacOS:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> takes the role of <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> and is run every time you open a new terminal</p></li>
+</ul>
+<p>It can be helpful to add helpful commands to your <code class="docutils literal notranslate"><span class="pre">.bash_rc</span></code> or <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>. For instance if we add the alias <code class="docutils literal notranslate"><span class="pre">alias</span> <span class="pre">cdd='cd</span> <span class="pre">~/Documents'</span></code> to the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> (or <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> if you are using a Mac), then the `cdd alias will be available for every new shell we open. Try it out!</p>
+</div>
+<div class="section" id="editing-files">
+<h2><span class="section-number">1.4.5. </span>Editing files<a class="headerlink" href="#editing-files" title="Permalink to this headline">¶</a></h2>
+<p>Interactive editing of files is a contentious topic and programmers and scientists alike are known to go to battle over their favored command line file editors.</p>
+<p>We won’t advocate for one specific tool here, all have strengths and weaknesses. Generally the best one is the <em>one you can use</em>. So pick one, learn the basics, and it’ll make your all of your future file-editing endeavors easier.</p>
+<p>Some command-line editors you may have heard of are:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.guru99.com/the-vi-editor.html">vi</a></p></li>
+<li><p><a class="reference external" href="https://www.linux.com/tutorials/vim-101-beginners-guide-vim/">vim</a>, the upgraded version of vi</p></li>
+<li><p><a class="reference external" href="https://www.gnu.org/software/emacs/">emacs</a></p></li>
+<li><p><a class="reference external" href="https://www.tecmint.com/learn-nano-text-editor-in-linux/">nano</a></p></li>
+<li><p><a class="reference external" href="https://www.lifewire.com/gedit-linux-command-unix-command-4097153">gedit</a></p></li>
+</ul>
+<p>Many basic shells (including the emulator suggested for this chapter) only come loaded with <code class="docutils literal notranslate"><span class="pre">vi</span></code>, so it can be a useful, although challenging, interface to learn. Before the next lecture, it would be useful to pick one, install it on your machine, and learn to open a file with it, edit and save the file, and then quit the editor (yes quitting is something you need to learn to do, especially in <code class="docutils literal notranslate"><span class="pre">vi</span></code>). The links above should be good starting points.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "cjtu/spirl",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="bash_scripts.html" title="previous page"><span class="section-number">1.3. </span>Scripts and Permissions</a>
+    <a class='right-next' id="next-link" href="git_about.html" title="next page"><span class="section-number">2. </span>Version control with Git</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian Tai Udovicic<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+    <!-- Google Analytics -->
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-111642150-3', 'auto');
+      ga('set', 'anonymizeIp', true);
+      ga('send', 'pageview');
+    </script>
+    <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <!-- End Google Analytics -->
+    
+  </body>
+</html>
