@@ -15,7 +15,6 @@ jobs:
         with:
           activate-environment: spirl
           environment-file: ./environment.yml
-          python-version: 3.7
           allow-softlinks: true
           channel-priority: flexible
           show-channel-urls: true
@@ -25,8 +24,6 @@ jobs:
         run: |
           conda info
           conda list
-          conda config --show-sources
-          conda config --show
           jupyter-book build spirl
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

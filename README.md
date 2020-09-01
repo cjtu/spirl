@@ -1,6 +1,8 @@
-# Welcome to SPIRL
+# <img src="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/images/logo/logo_spirl.png" height=25/> Scientific Programming In Real Life
 
-Scientific Programming In Real Life is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](cjtu.github.io/spirl).
+[![DOI](https://zenodo.org/badge/203523815.svg)](https://zenodo.org/badge/latestdoi/203523815)
+
+Scientific Programming In Real Life (SPIRL) is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](cjtu.github.io/spirl).
 
 ## The textbook
 
@@ -8,7 +10,7 @@ The SPIRL textbook is a [Jupyter Book](https://jupyterbook.org/intro.html) that 
 
 ## The course
 
-The SPIRL textbook supports a scientific programming short course run at Northern Arizona University. The schedule for the course can be found [here](https://cjtu.github.io/spirl/00_guide/02_schedule).
+The SPIRL textbook supports a scientific programming short course run at Northern Arizona University. The schedule for the course can be found on the home page [here](https://cjtu.github.io/spirl).
 
 ## Reporting errors / typos
 
@@ -16,12 +18,14 @@ If you find errors or typos in the text, check the [GitHub issue board](https://
 
 ## Contributing
 
-Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SPIRL is open for contributions from the community! Comment on an existing [issue](https://github.com/cjtu/spirl/issues) if you'd like to work on it, open a new issue if you have a new idea, or email Christian at cj.taiudovicic@gmail.com for help getting started contributing.
+Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SPIRL is open for contributions from the community! A good place to start would be to check out the [contributing guide](CONTRIBUTING.md).
 
-## Acknowledgements
-
-This course was developed by Christian Tai Udovicic and Ryleigh Fitzpatrick for students and staff at NAU. It is based on original material developed by Christian Tai Udovicic and Alexandre Boivin at the University of Toronto.
+Comment on an existing [issue](https://github.com/cjtu/spirl/issues) if you'd like to work on it, open a new issue if you have a new idea, or email Christian at cj.taiudovicic@gmail.com for help getting started contributing.
 
 ## License
 
-This course and textbook come with no warranties and are free to use and redistribute in accordance with the MIT open [License](./content/LICENCE.md). Please acknowledge the authors and contributors by citing this textbook in any published or redistributed works.
+This course and textbook are free and open source under the BSD 3-Clause license. It provides no warranties and all materials are free and available to use, re-mix and distribute with attribution and are free to use and redistribute with citation. Cite SPIRL [here](https://zenodo.org/badge/latestdoi/203523815) or see the full license [here](.LICENCE.md).
+
+## Supporting
+
+SPIRL will always be **free** and **open source**. If you'd like to support it, consider *sharing SPIRL with friends or peers* who you think would find it useful. If you can spare the time, you can support this project by contributing (see above). If you *use any of the code or concepts in an article / lesson / publication* (please feel free to!), you can **cite SPIRL** [here](https://zenodo.org/badge/latestdoi/203523815). If you'd like to support SPIRL by buying me a coffee, you can also do that by clicking the link [here](https://www.buymeacoffee.com/cjtu):

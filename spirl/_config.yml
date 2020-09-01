@@ -21,8 +21,8 @@ html:
   use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
-  extra_navbar              : Made by <a href="https://cjtu.github.io">C. J. Tai Udovicic</a><br><a href="https://buymeacoff.ee/cjtu">buymeacoff.ee/cjtu</a><br>Powered by <a href="https://github.com/jupyter/jupyter-book">Jupyter Book</a>  # Will be displayed underneath the left navbar.
-  extra_footer              : ""  # Will be displayed underneath the footer.
+  extra_navbar              : ""  # Will be displayed underneath the left navbar.
+  extra_footer              : "<a href='https://cjtu.github.io'>About Christian</a>"  # Will be displayed underneath the footer.
   google_analytics_id       : "UA-111642150-3"  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : "https://cjtu.github.io/spirl"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
@@ -37,7 +37,7 @@ launch_buttons:
   binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
   jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
   thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
-  colab_url                 : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
+  colab_url                 : "" # The URL of Google Colab (e.g., https://colab.research.google.com)
 
 repository:
   url                       : https://github.com/cjtu/spirl  # The URL to your book's repository
