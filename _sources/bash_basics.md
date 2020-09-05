@@ -152,7 +152,7 @@ cd test
 pwd
 ```
 
-### Making am empty file
+### Making an empty file
 
 Now let's make a new file. The easiest way to make a file is with the `touch` command.
 
@@ -277,7 +277,7 @@ cd ..
 rm test/
 ```
 
-Got an error? Here, `rm` is making sure we don't accidentally delete a directory full of files we may need. To proceed with removing a directory we need to add an **option** to the `rm` command. 
+Got an error? Here, `rm` is making sure we don't accidentally delete a directory full of files we may need. To proceed with removing a directory we need to add an **option** to the `rm` command.
 
 ### Info
 
@@ -335,7 +335,7 @@ And if test had sub-directories, we would have needed to use:
 rm -rf test
 ```
 
-*Caution*: You can delete a lot of files very quickly using `rm -rf`. Make sure you know what is at the path you are deleting before you use this command. That being said, everyone makes mistakes, which is why we encourage everyone to backup their files with [version control](/git_about), but more on that later.
+*Caution*: Unlike the **delete button**, moves your files into the trash can, `rm` will permanently wipe them out from your computer. So you can delete a lot of files very quickly using `rm -rf` and never get them back. Make sure you know what is at the path you are deleting before you use this command. That being said, everyone makes mistakes, which is why we encourage everyone to backup their files with [version control](/git_about), but more on that later.
 
 ## Learning more
 
