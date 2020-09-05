@@ -61,9 +61,9 @@ On Linux:
 
 On MacOS:
 
-- The `.bash_profile` takes the role of `.bashrc` and is run every time you open a new terminal
+- The `.bash_profile` or `.profile` takes the role of `.bashrc` and is run every time you open a new terminal
 
-It can be helpful to add helpful commands to your `.bash_rc` or `.bash_profile`. For instance if we add the alias `alias cdd='cd ~/Documents'` to the `.bashrc` (or `.bash_profile` if you are using a Mac), then the `cdd alias will be available for every new shell we open. Try it out!
+It can be helpful to add helpful commands to your `.bash_rc` or `.bash_profile`. For instance if we add the alias `alias cdd='cd ~/Documents'` to the `.bashrc` (or `.bash_profile` if you are using a Mac), then the `cdd` alias will be available for every new shell we open. Try it out!
 
 ## Editing files
 
