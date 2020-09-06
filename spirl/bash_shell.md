@@ -14,9 +14,19 @@ The purpose of every shell is to send commands directly to the operating system,
 
 1. It is used commonly by scientists and is the default shell on many servers and clusters.
 
-2. The MacOS **Terminal** language (**zsh**) is similar to bash but has more features (so not all zsh things will work in bash). Sticking with bash means this section should apply to MacOS and Linux/Windows users.
+2. Since it is now easy to get bash on Windows (see below), we don't need a separate section for the Windows command prompt.
 
-3. Since it is now easy to get bash on Windows (see below), we don't need a separate section for the Windows command prompt.
+3. It comes by default with the Mac Terminal, you may just need to run an extra command to set it up (see below).
+
+**Mac users:** On Mac versions earlier than Catalina (< macOS 10.15), the Terminal uses **bash** by default. Starting with macOS Catalina (macOS 10.15), the default shell became **zsh**. Although the **zsh** language is similar to **bash**, not all **zsh** things will work in **bash** and vice versa. You can switch your Terminal to **bash** at any time via the command `chsh -s /bin/bash`. Make sure to open a new Terminal and you will see the below if you are using the bash shell.
+
+```bash
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+```
+
+You can switch back at any time, but we recommend sticking to **bash** for the remainder of this chapter.
 
 ## Windows users
 
