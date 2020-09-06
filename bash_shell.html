@@ -249,9 +249,16 @@
 <p>The purpose of every shell is to send commands directly to the operating system, but each one speaks a different language. This text works with <strong>bash</strong> for a few reasons:</p>
 <ol class="simple">
 <li><p>It is used commonly by scientists and is the default shell on many servers and clusters.</p></li>
-<li><p>The MacOS <strong>Terminal</strong> language (<strong>zsh</strong>) is similar to bash but has more features (so not all zsh things will work in bash). Sticking with bash means this section should apply to MacOS and Linux/Windows users.</p></li>
 <li><p>Since it is now easy to get bash on Windows (see below), we don’t need a separate section for the Windows command prompt.</p></li>
+<li><p>It comes by default with the Mac Terminal, you may just need to run an extra command to set it up (see below).</p></li>
 </ol>
+<p><strong>Mac users:</strong> On Mac versions earlier than Catalina (&lt; macOS 10.15), the Terminal uses <strong>bash</strong> by default. Starting with macOS Catalina (macOS 10.15), the default shell became <strong>zsh</strong>. Although the <strong>zsh</strong> language is similar to <strong>bash</strong>, not all <strong>zsh</strong> things will work in <strong>bash</strong> and vice versa. You can switch your Terminal to <strong>bash</strong> at any time via the command <code class="docutils literal notranslate"><span class="pre">chsh</span> <span class="pre">-s</span> <span class="pre">/bin/bash</span></code>. Make sure to open a new Terminal and you will see the below if you are using the bash shell.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>The default interactive shell is now zsh.
+To update your account to use zsh, please run <span class="sb">`</span>chsh -s /bin/zsh<span class="sb">`</span>.
+For more details, please visit https://support.apple.com/kb/HT208050.
+</pre></div>
+</div>
+<p>You can switch back at any time, but we recommend sticking to <strong>bash</strong> for the remainder of this chapter.</p>
 </div>
 <div class="section" id="windows-users">
 <h2><span class="section-number">1.1.2. </span>Windows users<a class="headerlink" href="#windows-users" title="Permalink to this headline">¶</a></h2>
