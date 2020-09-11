@@ -16,19 +16,28 @@ SPIRL Chapter 1 (Bash) and Chapter 2: (Git) were assigned.
 
 **(15 minutes)** Live demo
 
-Part 1: Command line
+Step through how to contribute to a GitHub repository in two ways! First:
 
-- Find the 2020 class folder on the repo
+- Find the 2020 class folder on the repo (if you're reading this, you found it!)
 - Fork the repo
+
+Method 1: Command line
+
+First we set up the textbook locally (see instructions in [CONTRIBUTING.md](https://github.com/cjtu/spirl/blob/master/CONTRIBUTING.md))
+
+- Clone the repo
+- Create conda env
+- Activate conda env
+- Build the textbook locally
+- Check out the local textbook in browser
+
+Now we make our first contribution:
+
 - Make a branch
-- Clone it
-- Add a file
-- Build & activate conda env
-- Build the text
-- Check changes in browser
+- Add a file to the `spirl/course/2020/week01` folder called `myinitials.md`
 - Commit file
-- Push change
-- Make pull request
+- Push change to GitHub
+- Make pull request on the main repository on GitHub
 
 Part 2: GitHub Desktop
 
@@ -36,8 +45,10 @@ Part 2: GitHub Desktop
 
 **(25 minutes)** Breakout room practice
 
-- Everyone does the above steps to make a pull request
+- Work through the above steps to get a clone of SPIRL on you computer, then make a pull request!
+- Feel free to use the command line or try GitHub Desktop!
 - Ask each other questions and make sure everyone is keeping up!
+- Your goal is to make a pull request to add a new file, `myinitials.md`, to the main repository
 
 **(15 minutes)** Debrief and Q&A
 
