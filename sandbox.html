@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>3.6. Conditionals &#8212; Scientific Programming In Real Life</title>
+    <title>Jupyter Sandbox &#8212; Scientific Programming In Real Life</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -32,23 +32,21 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cjtu.github.io/spirl/python_conditionals.html" />
+    <link rel="canonical" href="https://cjtu.github.io/spirl/sandbox.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.7. Loops" href="python_loops.html" />
-    <link rel="prev" title="3.4. Methods" href="python_functions.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://cjtu.github.io/spirl/python_conditionals.html" />
+<meta property="og:url"         content="https://cjtu.github.io/spirl/sandbox.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Conditionals" />
-<meta property="og:description" content="Conditionals  Conditional (or, if statements) are ways to break up code based on certain conditions that are met. Each conditional takes a boolean expression an" />
+<meta property="og:title"       content="Jupyter Sandbox" />
+<meta property="og:description" content="Jupyter Sandbox  Use this page to practice the concepts in the book or to try your own things! You can go to the Binder version of this page here or by clicking" />
 <meta property="og:image"       content="https://cjtu.github.io/spirl/_static/logo_spirl.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -87,7 +85,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="bash_about.html">
    1. The Bash Shell
@@ -98,57 +96,10 @@
    2. Version control with Git
   </a>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1">
   <a class="reference internal" href="python_about.html">
    3. Programming in Python
   </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_style.html">
-     3.1. Python Style
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_basics.html">
-     3.2. Python basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_basic-types.html">
-     3.3. Basic Data Types (bool, int, float, str, list, tuple)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_functions.html">
-     3.4. Methods
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_functions.html#functions">
-     3.5. Functions
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     3.6. Conditionals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_loops.html">
-     3.7. Loops
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_adv-types.html">
-     3.8. Advanced Data Types (set, dict)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="python_modules.html">
-     3.9. Modules
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="sp_about.html">
@@ -202,7 +153,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/python_conditionals.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/sandbox.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -222,7 +173,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fpython_conditionals.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fsandbox.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -242,7 +193,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/python_conditionals.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/sandbox.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -265,19 +216,7 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-statements">
-   3.6.1. If statements
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#if-elif-else-statements">
-   3.6.2. if, elif, else statements
-  </a>
- </li>
-</ul>
-
+            
         </nav>
     </div>
 </div>
@@ -286,83 +225,23 @@
         
               <div>
                 
-  <div class="section" id="conditionals">
-<h1><span class="section-number">3.6. </span>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h1>
-<p>Conditional (or, <em>if statements</em>) are ways to break up code based on certain conditions that are met. Each conditional takes a <em>boolean expression</em> and decides what to do based on whether the expression is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
-<div class="section" id="if-statements">
-<h2><span class="section-number">3.6.1. </span>If statements<a class="headerlink" href="#if-statements" title="Permalink to this headline">¶</a></h2>
-<p>If statements allow you to change the execution of your code based on whether or not a condition is met. They consist of a <strong>condition</strong> (the boolean expression) and a <strong>clause</strong> (the stuff to do if the condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
-<p>If statements will often use <strong>comparison operators</strong> like <code class="docutils literal notranslate"><span class="pre">==</span></code> (is equal to) to determine whether the following code is run.</p>
-<p>The if statement follows the following form:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="s1">&#39;something&#39;</span> <span class="o">==</span> <span class="s1">&#39;something else&#39;</span><span class="p">:</span>
-    <span class="c1"># this is the clause that is run if the condition is true</span>
-    <span class="c1"># it will run this code</span>
-    <span class="c1"># and everything else indented here</span>
-<span class="c1"># This un-indented code is no longer part of the clause</span>
-<span class="c1"># It runs regardless of whether the if block was run</span>
-</pre></div>
-</div>
-<p>Change the value of mynum in the following example to see what happens when an if statement is False. When mynum is not 5, is the print statement exectued?</p>
+  <div class="section" id="jupyter-sandbox">
+<h1>Jupyter Sandbox<a class="headerlink" href="#jupyter-sandbox" title="Permalink to this headline">¶</a></h1>
+<p>Use this page to practice the concepts in the book or to try your own things! You can go to the Binder version of this page <a class="reference external" href="https://cjtu.github.io/spirl/sandbox">here</a> or by clicking the rocket icon at the top.</p>
+<p>Like other interactive pages of this text, this sandbox comes preloaded with core scientific programming packages like numpy, scipy, matplotlib and pandas. For a full like of the packages you can import, you can run the cell below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mynum</span> <span class="o">=</span> <span class="mi">5</span>
-
-<span class="k">if</span> <span class="n">mynum</span> <span class="o">==</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My number is 5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>My number is 5
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>conda list
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="if-elif-else-statements">
-<h2><span class="section-number">3.6.2. </span>if, elif, else statements<a class="headerlink" href="#if-elif-else-statements" title="Permalink to this headline">¶</a></h2>
-<p>Additional clauses can be added to the if statement to modify its behaviour in other cases.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement will run its clause if the previous condition(s) were not met, but this additional condition <em>is</em> met.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement will run its clause if none of the preceeding if and elif statements have their conditions met. The else statement always comes last.</p>
-<p>You can string together many conditions and clauses into one if, elif, else block:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;border collie&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span>
-<span class="k">elif</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;yorkie&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;tiny&#39;</span>
-<span class="k">elif</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;newfoundland&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;huge&#39;</span>
-<span class="k">elif</span> <span class="n">breen</span> <span class="o">==</span> <span class="s1">&#39;basset hound&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;small&#39;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span>
-</pre></div>
-</div>
-<p>Experiment with running this code and changing the breed:</p>
+<p>Happy coding!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Change the breed here</span>
-<span class="n">breed</span> <span class="o">=</span> <span class="s1">&#39;border collie&#39;</span>
-
-<span class="k">if</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;border collie&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span>
-<span class="k">elif</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;yorkie&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;tiny&#39;</span>
-<span class="k">elif</span> <span class="n">breed</span> <span class="o">==</span> <span class="s1">&#39;newfoundland&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;huge&#39;</span>
-<span class="k">elif</span> <span class="n">breen</span> <span class="o">==</span> <span class="s1">&#39;basset hound&#39;</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;small&#39;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;?&#39;</span>
-    
-<span class="c1">#Print the value of size</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The size of the breed is:&#39;</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write your own code here or make new code cells below</span>
+<span class="c1"># Make sure you are on the Binder version of the site by following the link above</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The size of the breed is: medium
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -380,13 +259,13 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python_defaultSpec_1598231905680",
+            kernelName: "python_defaultSpec_1600128451139",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python_defaultSpec_1598231905680'</script>
+    <script>kernelName = 'python_defaultSpec_1600128451139'</script>
 
               </div>
               
@@ -396,8 +275,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="python_functions.html" title="previous page"><span class="section-number">3.4. </span>Methods</a>
-    <a class='right-next' id="next-link" href="python_loops.html" title="next page"><span class="section-number">3.7. </span>Loops</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
