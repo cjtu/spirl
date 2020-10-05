@@ -28,6 +28,7 @@
   - file: python_loops
   - file: python_adv-types
   - file: python_modules
+  - file: python_str-formatting
 
   # - file: python_testing
   #   sections:
@@ -58,6 +59,7 @@
     - file: sp_matplotlib
     - file: sp_scipy
     - file: sp_pandas
+    - file: sp_function-plotting
     # - file: sp_astropy
 
 # Chapter 5: Anaconda
