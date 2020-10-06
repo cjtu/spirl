@@ -15,6 +15,4 @@ The packages above have all been extensively developed because of how central th
 
 Additionally, we will introduce the science-specific package, `astropy` which was built by astronomers for astronomers and bundles many tools for working with astronomical data in Python.
 
-We will begin this chapter with a short intro to the **Jupyter notebook**, a useful document that combines text, code, and plots into one interactive document. The tutorials in this section are built as Jupyter notebooks and can be worked through interactively by pressing the **interact** button at the top of the page. Try it on the next page!
-
-![interact button](images/interact_binder.png =100x50)
+We will begin this chapter with a short intro to the **Jupyter notebook**, a useful document that combines text, code, and plots into one interactive document. The tutorials in this section are built as Jupyter notebooks and can be worked through interactively. Let's try it on the next page!
