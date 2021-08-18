@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/203523815.svg)](https://zenodo.org/badge/latestdoi/203523815)
 
-Scientific Programming In Real Life (SPIRL) is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](cjtu.github.io/spirl).
+Scientific Programming In Real Life (SPIRL) is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](https://cjtu.github.io/spirl).
 
 ## The textbook
 
@@ -18,13 +18,13 @@ If you find errors or typos in the text, check the [GitHub issue board](https://
 
 ## Contributing
 
-Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SPIRL is open for contributions from the community! A good place to start would be to check out the [contributing guide](CONTRIBUTING.md).
+Have new concepts to add? Want to help fix some typos? Have a cool tutorial to contribute? SPIRL is open for contributions from the community! A good place to start would be to check out the [contributing guide](https://github.com/cjtu/spirl/blob/master/CONTRIBUTING.md).
 
 Comment on an existing [issue](https://github.com/cjtu/spirl/issues) if you'd like to work on it, open a new issue if you have a new idea, or email Christian at cj.taiudovicic@gmail.com for help getting started contributing.
 
 ## License
 
-This course and textbook are free and open source under the BSD 3-Clause license. It provides no warranties and all materials are free and available to use, re-mix and distribute with attribution and are free to use and redistribute with citation. Cite SPIRL [here](https://zenodo.org/badge/latestdoi/203523815) or see the full license [here](.LICENCE.md).
+This course and textbook are free and open source under the BSD 3-Clause license. It provides no warranties and all materials are free and available to use, re-mix and distribute with attribution and are free to use and redistribute with citation. Cite SPIRL [here](https://zenodo.org/badge/latestdoi/203523815) or see the full license [here](https://github.com/cjtu/spirl/blob/master/LICENCE.md).
 
 ## Supporting
 

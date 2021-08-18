@@ -1,23 +1,20 @@
-- file: about
+format: jb-article
+root: about
+options:
   numbered: true
-
-# Chapter 1: Bash
+sections:
 - file: bash_about
   sections:
   - file: bash_shell
   - file: bash_basics
   - file: bash_scripts
   - file: bash_tips
-
-# Chapter 2: Git
 - file: git_about
   sections:
   - file: git_overview
   - file: git_basics
   - file: git_remotes
   - file: git_practice
-
-# Chapter 3: Python
 - file: python_about
   sections:
   - file: python_style
@@ -29,47 +26,16 @@
   - file: python_adv-types
   - file: python_modules
   - file: python_str-formatting
-
-  # - file: python_testing
-  #   sections:
-  #     - file: python_debugging
-  #     - file: python_unittesting
-  #   - file: python_optimization
-  #   subsections:
-  #     - file: python_timing
-  #     - file: python_complexity
-  #     - file: python_sorting
-  #     - file: python_algorithms
-  #   - file: python_advanced
-  #   subsections:
-  #     - file: python_files
-  #     - file: python_classes
-  #     - file: python_fancy-indexing
-  #     - file: python_cli
-  #     - file: python_ternary-if
-  #     - file: python_comprehensions
-  #     - file: python_generators
-  #     - file: python_decorators
-
-# Chapter 4: Scientific Programming
 - file: sp_about
   sections:
-    - file: sp_jupyter
-    - file: sp_numpy
-    - file: sp_matplotlib
-    - file: sp_scipy
-    - file: sp_pandas
-    - file: sp_function-plotting
-    # - file: sp_astropy
-
-# Chapter 5: Anaconda
+  - file: sp_jupyter
+  - file: sp_numpy
+  - file: sp_matplotlib
+  - file: sp_scipy
+  - file: sp_pandas
+  - file: sp_function-plotting
+  - file: sandbox
 - file: anaconda_about
   sections:
-    - file: anaconda_installing
-    - file: anaconda_environments
-    # - file: anaconda_packages
-    # - file: anaconda_dependencies
-    # - file: anaconda_licenses
-    # - file: anaconda_open-source
-    # - file: anaconda_packaging
-    # - file: anaconda_cookie-cutter
+  - file: anaconda_installing
+  - file: anaconda_environments

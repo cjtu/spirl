@@ -39,7 +39,7 @@ Check the [issue board](https://github.com/cjtu/spirl/issues) for planned conten
 
 ## Contributing your changes
 
-When you have built your changes locally and proofread your content on the local version of the website, you can push your changes to your fork and open a pull request! You will receive feedback on your PR and may need to update and commit new changes which will be added to your PR automatically. When all of the changes look good, your PR will be merged and the site will be built automatically. You can check the [Actions](https://github.com/cjtu/spirl/actions) page to check the progress of your accepted PR. If all of the Actions have green checkmarks, your changes are live and you can see them at [cjtu.github.io/spirl](cjtu.github.io/spirl)! Thanks for helping make this resource even better!
+When you have built your changes locally and proofread your content on the local version of the website, you can push your changes to your fork and open a pull request! You will receive feedback on your PR and may need to update and commit new changes which will be added to your PR automatically. When all of the changes look good, your PR will be merged and the site will be built automatically. You can check the [Actions](https://github.com/cjtu/spirl/actions) page to check the progress of your accepted PR. If all of the Actions have green checkmarks, your changes are live and you can see them at [cjtu.github.io/spirl](https://cjtugithub.io/spirl)! Thanks for helping make this resource even better!
 
 ## I want to make my own JupyterBook
 
