@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Programming in Python &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    <title>Fall 2021 &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,13 +49,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://cjtu.github.io/spirl/python_about.html" />
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_about.html" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="author" title="About these documents" href="about.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3.1. Python Style" href="python_style.html" />
-    <link rel="prev" title="2.4. Practicing Git IRL" href="git_practice.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Scientific Programming IRL" href="about.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -97,9 +97,9 @@
   SPIRL Course
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="f21_about.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Fall 2021
   </a>
  </li>
@@ -109,7 +109,7 @@
   SPIRL Textbook
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="bash_about.html">
    1. The Bash Shell
@@ -174,11 +174,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
    3. Programming in Python
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
@@ -341,7 +341,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/python_about.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/f21_about.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -361,7 +361,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Fpython_about.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_about.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -382,6 +382,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#syllabus">
+   Syllabus
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-started">
+   Getting Started
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -390,20 +408,104 @@
         
               <div>
                 
-  <div class="section" id="programming-in-python">
-<h1><span class="section-number">3. </span>Programming in Python<a class="headerlink" href="#programming-in-python" title="Permalink to this headline">¶</a></h1>
-<p>Programming is a dialogue between you and your computer. With the right words - and a little persuasion - you can tell your computer to do more work in an instant than you could do in a lifetime. Programming is possibly the most in-demand skill in 2019, and has become ubiquitous in the sciences due to the enormous datasets, statistical analyses and complex simulations enabled by the recent explosion in computing power.</p>
-<p>In this chapter, we will explore the Python programming language and learn some fundamentals that will have you writing correct and efficient programs in no time.</p>
-<p><strong>Why Python?</strong></p>
-<p>Python has quickly risen in popularity among programmers and scientists alike. It is relatively young language compared to <strong>C</strong> and <strong>JAVA</strong>, but is has become the <a class="reference external" href="https://www.tiobe.com/tiobe-index/">third most popular programming language</a> as of 2019. One reason Python has become so popular is that it is <em>relatively easy to read and learn</em>. Python was designed to put <strong>style</strong> and <strong>readability</strong> first, making it easier for beginners to pick up and for experts to prototype programs quickly.</p>
-<p>A major reason we chose Python is because of its emergence as an industry (and academic) standard. There are countless online resources - and <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">StackOverflow posts</a> - to help learn and troubleshoot Python. Freely available <strong>open-source</strong> tools are actively being made and updated for Python, allowing us to do scientific analysis, image processing, and machine learning without reinventing the wheel.</p>
-<p><strong>But isn’t it slow?</strong></p>
-<p>Python detractors give it a bad rap, saying things like “Python is slow compared to C, Java and FORTRAN (or other language of choice)”. This is sometimes true because Python is an <strong>interpreted language</strong>, meaning each line of code is run one at a time. Programs written in C or FORTRAN are <strong>compiled</strong> into highly optimized machine-code before being run, meaning the same program <em>could</em> be faster.</p>
-<p>In practice, the efficiency gains are often minor compared to the larger time investment it takes to craft programs in the compiled language of choice. If the language lacks a robust, optimized numerical data package like <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, you may need to write a lot of code from scratch (most of which is likely not as optimized <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package which has been developed by dozens of computer scientists).</p>
-<p>Another reason Python is a good choice is because it is more <em>legible</em> than many compiled languages. Being able to read and understand programs quickly reduces the chances of making errors in the code (debugging code is much more time consuming than writing it). It is infinitely better to have a <em>slower and correct</em> program than a <em>speedy, but broken</em>.</p>
-<p><strong>Style</strong></p>
-<p>This chapter will also give a brief introduction to programming style which are a set of best-practices to keep in mind whenever you write code. Having good style will make your programs easier to debug and re-use later; future you will thank you.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="fall-2021">
+<h1>Fall 2021<a class="headerlink" href="#fall-2021" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the Fall 2021 SPIRL Short Course!</p>
+<p>Make sure to complete all items in <a class="reference external" href="#getting-started">Getting Started</a> below before the first class <strong>Tues Sep 14, 2021</strong>.</p>
+<div class="section" id="syllabus">
+<h2>Syllabus<a class="headerlink" href="#syllabus" title="Permalink to this headline">¶</a></h2>
+<p>Class meets <strong>Tuesdays at 9 AM (MST)</strong> from <strong>Sep 14 - Nov 16</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Zoom lecture recordings will be posted as they become available.</p>
+</div>
+<p><strong>Last edit: Sep 8, 2021</strong></p>
+<table class="colwidths-auto table" id="f21-syllabus">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Fall 2021 Syllabus (subject to change during the course)</span><a class="headerlink" href="#f21-syllabus" title="Permalink to this table">¶</a></caption>
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Week</p></th>
+<th class="text-align:left head"><p>Date</p></th>
+<th class="text-align:left head"><p>Lecture Topics</p></th>
+<th class="text-align:left head"><p>Assignment</p></th>
+<th class="text-align:left head"><p>Zoom Video</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>0</p></td>
+<td class="text-align:left"><p>Sep 14</p></td>
+<td class="text-align:left"><p>Intro and setting up an environment</p></td>
+<td class="text-align:left"><p>A0 due Sep 17</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>1</p></td>
+<td class="text-align:left"><p>Sep 21</p></td>
+<td class="text-align:left"><p>Git, Python arrays, <code class="docutils literal notranslate"><span class="pre">numpy.1dfit()</span></code></p></td>
+<td class="text-align:left"><p>A1 due Sep 24</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>2</p></td>
+<td class="text-align:left"><p>Sep 28</p></td>
+<td class="text-align:left"><p>GitHub <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></p></td>
+<td class="text-align:left"><p>A2 due Oct 01</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>3</p></td>
+<td class="text-align:left"><p>Oct 05</p></td>
+<td class="text-align:left"><p>Importing tabular data with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></td>
+<td class="text-align:left"><p>A3 due Oct 08</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>4</p></td>
+<td class="text-align:left"><p>Oct 12</p></td>
+<td class="text-align:left"><p>Advanced <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, cleaning data</p></td>
+<td class="text-align:left"><p>A4 due Oct 15</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>5</p></td>
+<td class="text-align:left"><p>Oct 19</p></td>
+<td class="text-align:left"><p>Monte Carlo (bootstrap) methods</p></td>
+<td class="text-align:left"><p>A5 due Oct 22</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>6</p></td>
+<td class="text-align:left"><p>Oct 26</p></td>
+<td class="text-align:left"><p>Markov-chain Monte Carlo (MCMC)</p></td>
+<td class="text-align:left"><p>A6 due Oct 29</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>7</p></td>
+<td class="text-align:left"><p>Nov 02</p></td>
+<td class="text-align:left"><p>Timing code, efficiency, vectorizing</p></td>
+<td class="text-align:left"><p>A7 due Nov 05</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>8</p></td>
+<td class="text-align:left"><p>Nov 09</p></td>
+<td class="text-align:left"><p>Installing new packages, review</p></td>
+<td class="text-align:left"><p>A8 due Nov 12</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>9</p></td>
+<td class="text-align:left"><p>Nov 16</p></td>
+<td class="text-align:left"><p>(optional) Questions, BYOProject</p></td>
+<td class="text-align:left"><p>N/A</p></td>
+<td class="text-align:left"><p>link TBD</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+<p>To prepare for the first SPIRL class, you will need to:</p>
+<ul class="simple">
+<li><p>Join the class <strong>Slack</strong>: link sent via email</p></li>
+<li><p>Register for a <strong>GitHub account</strong>: <a class="reference external" href="https://github.com/signup">link</a></p></li>
+<li><p>Install <strong>Anaconda</strong> (say yes to VS Code if prompted): <a class="reference external" href="https://www.anaconda.com/products/individual-d">link</a></p></li>
+<li><p>Install <strong>VS Code</strong> (only if not included in Anaconda): <a class="reference external" href="https://code.visualstudio.com/download">link</a></p></li>
+<li><p>(<strong>Windows users only</strong>): Install <strong>WSL</strong> <a class="reference external" href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">link</a></p></li>
+</ul>
+<p>Don’t hesitate to reach out via Slack / email if you have any issues with the above.</p>
+<p>See you in class!</p>
 </div>
 </div>
 
@@ -437,19 +539,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="git_practice.html" title="previous page">
+        <a class="left-prev" href="about.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">2.4. </span>Practicing Git IRL</p>
+                <p class="prevnext-title">Scientific Programming IRL</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="python_style.html" title="next page">
+        <a class="right-next" href="bash_about.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">3.1. </span>Python Style</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
