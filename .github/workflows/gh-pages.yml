@@ -8,24 +8,32 @@ on:
 jobs:
   deploy:
     runs-on: "ubuntu-latest"
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - uses: actions/checkout@v2
       - name: Setup conda
-        uses: goanpeca/setup-miniconda@v1
+        uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: spirl
           environment-file: ./environment.yml
+          auto-update-conda: true
+          auto-activate-base: false
+          channels: conda-forge
           allow-softlinks: true
           channel-priority: flexible
           show-channel-urls: true
           use-only-tar-bz2: true
-      - name: Build jupyterbook
-        shell: bash -l {0}
+      - name: Check conda env
         run: |
           conda info
           conda list
-          jupyter-book build spirl
-      - name: Deploy
+          conda config --show-sources
+          conda config --show
+      - name: Build SPIRL JupyterBook
+        run: jupyter-book build spirl
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

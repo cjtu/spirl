@@ -1,8 +1,9 @@
 name: 'Trigger-Binder-build'
 on:
-  push:
-    branches:
-      - master
+  workflow_run:
+    workflows: ["github pages"]
+    types:
+      - completed
 
 jobs:
   trigger-binder-build:
