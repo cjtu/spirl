@@ -1,41 +1,47 @@
-format: jb-article
+format: jb-book
 root: about
-options:
-  numbered: true
-sections:
-- file: bash_about
-  sections:
-  - file: bash_shell
-  - file: bash_basics
-  - file: bash_scripts
-  - file: bash_tips
-- file: git_about
-  sections:
-  - file: git_overview
-  - file: git_basics
-  - file: git_remotes
-  - file: git_practice
-- file: python_about
-  sections:
-  - file: python_style
-  - file: python_basics
-  - file: python_basic-types
-  - file: python_functions
-  - file: python_conditionals
-  - file: python_loops
-  - file: python_adv-types
-  - file: python_modules
-  - file: python_str-formatting
-- file: sp_about
-  sections:
-  - file: sp_jupyter
-  - file: sp_numpy
-  - file: sp_matplotlib
-  - file: sp_scipy
-  - file: sp_pandas
-  - file: sp_function-plotting
-  - file: sandbox
-- file: anaconda_about
-  sections:
-  - file: anaconda_installing
-  - file: anaconda_environments
+parts:
+  - caption: SPIRL Course
+    chapters:
+    - file: f21_about
+      # sections: 
+      # - file: f21_week00
+  - caption: SPIRL Textbook
+    numbered: True
+    chapters:
+    - file: bash_about
+      sections:
+      - file: bash_shell
+      - file: bash_basics
+      - file: bash_scripts
+      - file: bash_tips
+    - file: git_about
+      sections:
+      - file: git_overview
+      - file: git_basics
+      - file: git_remotes
+      - file: git_practice
+    - file: python_about
+      sections:
+      - file: python_style
+      - file: python_basics
+      - file: python_basic-types
+      - file: python_functions
+      - file: python_conditionals
+      - file: python_loops
+      - file: python_adv-types
+      - file: python_modules
+      - file: python_str-formatting
+    - file: sp_about
+      sections:
+      - file: sp_jupyter
+      - file: sp_numpy
+      - file: sp_matplotlib
+      - file: sp_scipy
+      - file: sp_pandas
+      - file: sp_function-plotting
+      - file: sandbox
+    - file: anaconda_about
+      sections:
+      - file: anaconda_installing
+      - file: anaconda_environments

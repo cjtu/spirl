@@ -1,8 +1,8 @@
 #######################################################################################
 # Book settings
-title: Scientific Programming In Real Life
-author: Christian Tai Udovicic
-copyright: "2020"
+title: Scientific Programming<br>In Real Life
+author: Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a>
+copyright: "2021"
 email: cj.taiudovicic@gmail.com
 logo: images/logo/logo_spirl.png
 exclude: []
@@ -22,7 +22,7 @@ html:
   use_repository_button     : true  # Whether to add a link to your repository button
   use_issues_button         : true  # Whether to add an "open an issue" button
   extra_navbar              : "Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>"  # Will be displayed underneath the left navbar.
-  extra_footer              : "<a href='https://cjtu.github.io'>About Christian</a>"  # Will be displayed underneath the footer.
+  extra_footer              : "<a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>"  # Will be displayed underneath the footer.
   google_analytics_id       : "UA-111642150-3"  # A GA id that can be used to track book views.
   home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
   baseurl                   : "https://cjtu.github.io/spirl"  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
