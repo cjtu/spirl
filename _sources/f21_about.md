@@ -31,6 +31,16 @@ Zoom lecture recordings will be posted as they become available.
 | 9 | Nov 16 | (optional) Questions, BYOProject     | N/A | link TBD |
 ```
 
+## Instructors
+
+The instructors for the Fall 2021 SPIRL course are Christian J. Tai Udovicic and Shih-Yun Tang 👋.
+
+<p align="center">
+  <img alt="Christian" src="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/images/instructors/christian.jpg" width="45%">
+&nbsp; &nbsp; &nbsp; &nbsp;
+  <img alt="Shih-Yun" src="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/images/instructors/shih-yun.jpg" width="45%">
+</p>
+
 ## Getting Started
 
 To prepare for the first SPIRL class, you will need to:
