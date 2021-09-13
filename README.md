@@ -1,13 +1,13 @@
 # <img src="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/images/logo/logo_spirl.png" height=25/> Scientific Programming In Real Life
 
 [![DOI](https://zenodo.org/badge/203523815.svg)](https://zenodo.org/badge/latestdoi/203523815)
-[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://jupyterbook.org)
+[![Jupyter Book Badge](https://jupyterbook.org/badge.svg)](https://cjtu.github.io/spirl)
 
 Scientific Programming In Real Life (SPIRL) is an introduction to core concepts for scientists to get started with programming in Python, scripting in bash, and version control with Git. The open source textbook is free and available at [cjtu.github.io/spirl](https://cjtu.github.io/spirl).
 
 ## The textbook
 
-The SPIRL textbook is a [Jupyter Book](https://jupyterbook.org/intro.html) that provides tutorials, and interactive code blocks to help teach practical programming concepts. For more info on how the textbook was made and to get your own template, check out [Jupyterbook](https://jupyter.org/jupyter-book/intro.html).
+The SPIRL textbook is a [Jupyter Book](https://jupyterbook.org) that provides tutorials, and interactive code blocks to help teach practical programming concepts. For more info on how the textbook was made and to get your own template, check out [jupyterbook.org](https://jupyterbook.org).
 
 ## The course
 
