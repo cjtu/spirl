@@ -19,7 +19,7 @@ Zoom lecture recordings will be posted as they become available.
 
 | Week   | Date  | Lecture Topics | Assignment | Zoom Video |
 | :--- | :------ | :----- | :--------- | :------------ |
-| 0 | Sep 14 | Intro and setting up an environment  | A0 due Sep 17 | link TBD |
+| 0 | Sep 14 | Intro and setting up an environment  | [A0 due Sep 17](f21_a0.md) | link TBD |
 | 1 | Sep 21 | Git, Python arrays, `numpy.1dfit()`  | A1 due Sep 24 | link TBD |
 | 2 | Sep 28 | GitHub `scipy.optimize.curve_fit()`  | A2 due Oct 01 | link TBD |
 | 3 | Oct 05 | Importing tabular data with `pandas` | A3 due Oct 08 | link TBD |
