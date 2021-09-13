@@ -98,10 +98,27 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="f21_about.html">
    Fall 2021
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -114,8 +131,8 @@
   <a class="reference internal" href="bash_about.html">
    1. The Bash Shell
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -146,8 +163,8 @@
   <a class="reference internal" href="git_about.html">
    2. Version control with Git
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -178,8 +195,8 @@
   <a class="reference internal" href="python_about.html">
    3. Programming in Python
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -235,8 +252,8 @@
   <a class="reference internal" href="sp_about.html">
    4. Scientific Programming
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -282,8 +299,8 @@
   <a class="reference internal" href="anaconda_about.html">
    5. Anaconda
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -569,7 +586,7 @@ rm -rf tmp
 <div class="section" id="forking-a-repository">
 <h2><span class="section-number">2.3.9. </span>Forking a repository<a class="headerlink" href="#forking-a-repository" title="Permalink to this headline">¶</a></h2>
 <p>On the main page of the <a class="reference external" href="https://github.com/cjtu/spirl">spirl</a> repository, you should see a <strong>Fork</strong> button in the upper right.</p>
-<p><img alt="fork button" src="_images/fork_button.png" /></p>
+<p><img alt="fork button" src="_images/fork_button1.png" /></p>
 <p>Click this button to make a copy of the repository. After a few seconds you should end up on a page that looks like the original spirl repository, but in the upper left, you will see <code class="docutils literal notranslate"><span class="pre">&lt;your_user&gt;/spirl</span></code> and below that, <code class="docutils literal notranslate"><span class="pre">forked</span> <span class="pre">from</span> <span class="pre">cjtu/spirl</span></code>. This is your <em>forked copy</em> of spirl which you are free to clone and modify.</p>
 <p>Remember to click the green <code class="docutils literal notranslate"><span class="pre">Clone</span> <span class="pre">or</span> <span class="pre">download</span></code> button to get a url to <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span></code>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~
