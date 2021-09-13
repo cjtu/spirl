@@ -4,8 +4,9 @@ parts:
   - caption: SPIRL Course
     chapters:
     - file: f21_about
-      # sections: 
-      # - file: f21_week00
+      sections: 
+      - file: f21_assignments
+      - file: f21_a0
   - caption: SPIRL Textbook
     numbered: True
     chapters:
