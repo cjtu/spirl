@@ -7,6 +7,8 @@ parts:
       sections: 
       - file: f21_assignments
       - file: f21_a0
+      - file: f21_a1
+      - file: f21_a1_bonus
   - caption: SPIRL Textbook
     numbered: True
     chapters:
@@ -27,6 +29,7 @@ parts:
       - file: python_style
       - file: python_basics
       - file: python_basic-types
+      - file: python_methods
       - file: python_functions
       - file: python_conditionals
       - file: python_loops
