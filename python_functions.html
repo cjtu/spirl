@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.4. Methods &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    <title>3.5. Functions &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="3.6. Conditionals" href="python_conditionals.html" />
-    <link rel="prev" title="3.3. Basic Data Types (bool, int, float, str, list, tuple)" href="python_basic-types.html" />
+    <link rel="prev" title="3.4. Methods" href="python_methods.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -116,6 +116,16 @@
    <li class="toctree-l2">
     <a class="reference internal" href="f21_a0.html">
      Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
     </a>
    </li>
   </ul>
@@ -216,9 +226,14 @@
      3.3. Basic Data Types (bool, int, float, str, list, tuple)
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.4. Methods
+     3.5. Functions
     </a>
    </li>
    <li class="toctree-l2">
@@ -421,22 +436,10 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   3.4. Methods
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#breaking-code-down-into-functions">
+   3.5.1. Breaking code down into functions
   </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   3.5. Functions
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#breaking-code-down-into-functions">
-     3.5.1. Breaking code down into functions
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -449,44 +452,7 @@
         
               <div>
                 
-  <div class="section" id="methods">
-<h1><span class="section-number">3.4. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h1>
-<p>Classes have special functions defined only for their own members called class methods, or simply <strong>methods</strong>. Methods are called on an object by following that object with <code class="docutils literal notranslate"><span class="pre">.methodname()</span></code>. We saw methods like <code class="docutils literal notranslate"><span class="pre">.isround()</span></code> in action above. Built-in classes like <code class="docutils literal notranslate"><span class="pre">str</span></code> have methods too!</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The upper() method changes all characters in a string to uppercase</span>
-<span class="n">introduction</span> <span class="o">=</span> <span class="s1">&#39;Hi, my name is...&#39;</span>
-<span class="n">introduction</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The isdigit() method checks if all characters in a string are digits</span>
-<span class="s1">&#39;12345&#39;</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Using the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function on a class shows all methods available to instances of that class. The <code class="docutils literal notranslate"><span class="pre">__methods__</span></code> are private methods used internally by Python. Skip down to <code class="docutils literal notranslate"><span class="pre">capitalize(...)</span></code> to see the methods available to us.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The capitalize method capitalizes the fist letter of the str</span>
-<span class="s1">&#39;united states&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="functions">
+  <div class="section" id="functions">
 <h1><span class="section-number">3.5. </span>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
 <p>Functions are like methods but are independent of a specific class. Any objects that they act on must be passed in as arguments. Let’s break down the anatomy of a function.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcname</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">):</span>
@@ -670,11 +636,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="python_basic-types.html" title="previous page">
+        <a class="left-prev" href="python_methods.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">3.3. </span>Basic Data Types (bool, int, float, str, list, tuple)</p>
+                <p class="prevnext-title"><span class="section-number">3.4. </span>Methods</p>
             </div>
         </a>
     </div>
