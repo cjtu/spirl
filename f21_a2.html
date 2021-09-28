@@ -1,0 +1,1321 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2 (Sep 28) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a2.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 1 (BONUS)" href="f21_a1_bonus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-optional">
+   Readings (optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-dictionary-dict-objects">
+   Python dictionary (
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+   ) objects
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wtd">
+     WTD?!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keys-are-case-sensitive">
+     Keys are case sensitive!
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shortcut-zip-up-two-lists-into-a-dict">
+   [Shortcut]
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Zip
+    </span>
+   </code>
+   up two lists into a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     dict
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#global-variables">
+   Global Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-for-loops">
+   Python
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     for
+    </span>
+   </code>
+   loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-using-axis-objects">
+   Plotting using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     axis
+    </span>
+   </code>
+   objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#polynomial-fitting-using-np-polyfit">
+   Polynomial fitting using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.polyfit
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convert-polyfit-coefficients-to-a-function-using-np-poly1d">
+   Convert
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     polyfit
+    </span>
+   </code>
+   coefficients to a function using
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     np.poly1d
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#weighting-a-fit-by-its-errors">
+   Weighting a fit by its errors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-determine-the-planet-based-on-free-fall-observations">
+   [Assignment] Determine the planet based on free-fall observations
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-2-sep-28">
+<h1>Assignment 2 (Sep 28)<a class="headerlink" href="#assignment-2-sep-28" title="Permalink to this headline">¶</a></h1>
+<p>Today’s topics will include:</p>
+<ol class="simple">
+<li><p>Python dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) objects</p></li>
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">for</span></code> loops</p></li>
+<li><p>Plotting in <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> using <code class="docutils literal notranslate"><span class="pre">Axes</span></code> objects</p></li>
+<li><p>Simple polynomial fitting using <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code></p></li>
+</ol>
+<div class="section" id="readings-optional">
+<h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
+<p>If you find this week’s material new or challenging, you may want to read through some or all the following resources while working on your assignment:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cjtu.github.io/spirl/python_loops.html#loops">SPIRL Ch. 3.7 Loops</a></p></li>
+<li><p><a class="reference external" href="https://cjtu.github.io/spirl/python_adv-types.html?highlight=dictionary#dictionary-dict">SPIRL Ch. 3.8.4 Dictionary (dict)</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Dggl0fJJ81k&amp;ab_channel=AdamGaweda">NumPy Polyfit Tutorial (7 mins)</a></p></li>
+</ul>
+</div>
+<div class="section" id="python-dictionary-dict-objects">
+<h2>Python dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>) objects<a class="headerlink" href="#python-dictionary-dict-objects" title="Permalink to this headline">¶</a></h2>
+<p>In week 1, we talked about passing the <code class="docutils literal notranslate"><span class="pre">g</span></code> value into the <code class="docutils literal notranslate"><span class="pre">free_fall_h_grav</span></code> function so one can get the free fall distance on different planets in our Solar System.</p>
+<p>However, what if we want to let the user supply the name of the planet instead of its <code class="docutils literal notranslate"><span class="pre">g</span></code> value?</p>
+<p>In this section, we will use the Python dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code> or in the form of <code class="docutils literal notranslate"><span class="pre">{}</span></code>) to do the job.</p>
+<div class="section" id="wtd">
+<h3>WTD?!<a class="headerlink" href="#wtd" title="Permalink to this headline">¶</a></h3>
+<p>A dictionary is Python’s version of a “key-value” store data type, meaning we can access a <code class="docutils literal notranslate"><span class="pre">value</span></code> in a <code class="docutils literal notranslate"><span class="pre">dict</span></code> by supplying its <code class="docutils literal notranslate"><span class="pre">key</span></code> (or “name”).</p>
+<p>The following cell defines a new dictionary where each planet name is a <code class="docutils literal notranslate"><span class="pre">key</span></code> and each <code class="docutils literal notranslate"><span class="pre">g</span></code> value is… well… a <code class="docutils literal notranslate"><span class="pre">value</span></code>!</p>
+<p>Notice the new syntax:</p>
+<ul class="simple">
+<li><p>Curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code></p></li>
+<li><p>Key-value pairs separated by <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+<li><p>Different items separated by <code class="docutils literal notranslate"><span class="pre">,</span></code> (new line is optional but makes it easier to read)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planet_g_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># key    : value</span>
+    <span class="s1">&#39;mercury&#39;</span><span class="p">:</span> <span class="mf">3.61</span><span class="p">,</span>
+    <span class="s1">&#39;venus&#39;</span>  <span class="p">:</span> <span class="mf">8.83</span><span class="p">,</span>
+    <span class="s1">&#39;earth&#39;</span>  <span class="p">:</span> <span class="mf">9.80665</span><span class="p">,</span>
+    <span class="s1">&#39;mars&#39;</span>   <span class="p">:</span> <span class="mf">3.75</span><span class="p">,</span>
+    <span class="s1">&#39;jupiter&#39;</span><span class="p">:</span> <span class="mf">26.0</span><span class="p">,</span>
+    <span class="s1">&#39;saturn&#39;</span> <span class="p">:</span> <span class="mf">11.2</span><span class="p">,</span>
+    <span class="s1">&#39;uranus&#39;</span> <span class="p">:</span> <span class="mf">10.5</span><span class="p">,</span>
+    <span class="s1">&#39;neptune&#39;</span><span class="p">:</span> <span class="mf">13.3</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access a <code class="docutils literal notranslate"><span class="pre">value</span></code> by giving its associated <code class="docutils literal notranslate"><span class="pre">key</span></code> in square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="p">[</span><span class="s1">&#39;mars&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now you don’t have to memorize or copy/paste every g-value! All you need is your <code class="docutils literal notranslate"><span class="pre">planet_g_dict</span></code> and the name of a planet!</p>
+<p>Dictionaries have some useful methods like the <code class="docutils literal notranslate"><span class="pre">.keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">.values()</span></code> methods shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Return all keys or values in a dict</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;mercury&#39;, &#39;venus&#39;, &#39;earth&#39;, &#39;mars&#39;, &#39;jupiter&#39;, &#39;saturn&#39;, &#39;uranus&#39;, &#39;neptune&#39;])
+dict_values([3.61, 8.83, 9.80665, 3.75, 26.0, 11.2, 10.5, 13.3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that these aren’t regular lists, they are special <code class="docutils literal notranslate"><span class="pre">dict_keys()</span></code> and <code class="docutils literal notranslate"><span class="pre">dict_values()</span></code> objects. But it’s pretty straightforward to convert them to the <code class="docutils literal notranslate"><span class="pre">lists</span></code> we know and love:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use `list` function to get a list of keys</span>
+<span class="n">planets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">planets</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mercury&#39;, &#39;venus&#39;, &#39;earth&#39;, &#39;mars&#39;, &#39;jupiter&#39;, &#39;saturn&#39;, &#39;uranus&#39;, &#39;neptune&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="keys-are-case-sensitive">
+<h3>Keys are case sensitive!<a class="headerlink" href="#keys-are-case-sensitive" title="Permalink to this headline">¶</a></h3>
+<p>Be forewarned: dictionary keys are case-sensitive!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planet_g_dict</span><span class="p">[</span><span class="s1">&#39;Earth&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_16910</span><span class="o">/</span><span class="mf">2417589539.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">planet_g_dict</span><span class="p">[</span><span class="s1">&#39;Earth&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;Earth&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>To make sure we don’t get an error if a user tries to pass in a Capitalized (or, heaven-forbid. an ALL CAPS) key, we can convert input strings to lowercase with the <code class="docutils literal notranslate"><span class="pre">str.lower()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planet_name</span> <span class="o">=</span> <span class="s1">&#39;Mars&#39;</span>
+<span class="n">planet_name_lower</span> <span class="o">=</span> <span class="n">planet_name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># Convert to lowercase</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">planet_name_lower</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="p">[</span><span class="n">planet_name_lower</span><span class="p">])</span>  <span class="c1"># All good now :)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mars
+3.75
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shortcut-zip-up-two-lists-into-a-dict">
+<h2>[Shortcut] <code class="docutils literal notranslate"><span class="pre">Zip</span></code> up two lists into a <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#shortcut-zip-up-two-lists-into-a-dict" title="Permalink to this headline">¶</a></h2>
+<p>Say we start with two lists one with <code class="docutils literal notranslate"><span class="pre">keys</span></code> and the other with <code class="docutils literal notranslate"><span class="pre">values</span></code> that we want to turn into a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<p>The long (but completely valid) way of doing this would be by adding each key-value pair to an empty <code class="docutils literal notranslate"><span class="pre">dict</span></code> using a <code class="docutils literal notranslate"><span class="pre">loop</span></code> (we’ll cover loops in the next section!):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mercury&#39;</span><span class="p">,</span> <span class="s1">&#39;venus&#39;</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">,</span> <span class="s1">&#39;jupiter&#39;</span><span class="p">,</span> <span class="s1">&#39;saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;uranus&#39;</span><span class="p">,</span> <span class="s1">&#39;neptune&#39;</span><span class="p">]</span>
+<span class="n">planet_g</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.61</span><span class="p">,</span> <span class="mf">8.83</span><span class="p">,</span> <span class="mf">9.80665</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">,</span> <span class="mf">11.2</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">13.3</span><span class="p">]</span>
+<span class="n">planet_g_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">planets</span><span class="p">)):</span>
+    <span class="n">planet_g_dict</span><span class="p">[</span><span class="n">planets</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">planet_g</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">planet_g_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mercury&#39;: 3.61,
+ &#39;venus&#39;: 8.83,
+ &#39;earth&#39;: 9.80665,
+ &#39;mars&#39;: 3.75,
+ &#39;jupiter&#39;: 26.0,
+ &#39;saturn&#39;: 11.2,
+ &#39;uranus&#39;: 10.5,
+ &#39;neptune&#39;: 13.3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>To simplify this process, we can use a Python function called <code class="docutils literal notranslate"><span class="pre">zip</span></code>. Let’s see what happens when we <code class="docutils literal notranslate"><span class="pre">zip</span></code> our two lists:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">zip</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span> <span class="n">planet_g</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x7f031010dec0&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ok we got a <code class="docutils literal notranslate"><span class="pre">zip</span></code> object… but what’s in there? Like before, let’s convert this weird object to a list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span> <span class="n">planet_g</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mercury&#39;, 3.61),
+ (&#39;venus&#39;, 8.83),
+ (&#39;earth&#39;, 9.80665),
+ (&#39;mars&#39;, 3.75),
+ (&#39;jupiter&#39;, 26.0),
+ (&#39;saturn&#39;, 11.2),
+ (&#39;uranus&#39;, 10.5),
+ (&#39;neptune&#39;, 13.3)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can see it paired up each planet with the associated g-value from the two lists!</p>
+<p>Now what happens if we use the <code class="docutils literal notranslate"><span class="pre">dict</span></code> function instead of <code class="docutils literal notranslate"><span class="pre">list</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planet_g_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span> <span class="n">planet_g</span><span class="p">))</span>
+<span class="n">planet_g_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;mercury&#39;: 3.61,
+ &#39;venus&#39;: 8.83,
+ &#39;earth&#39;: 9.80665,
+ &#39;mars&#39;: 3.75,
+ &#39;jupiter&#39;: 26.0,
+ &#39;saturn&#39;: 11.2,
+ &#39;uranus&#39;: 10.5,
+ &#39;neptune&#39;: 13.3}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have a really quick way to make a dictionary from two associated lists!</p>
+</div>
+<div class="section" id="global-variables">
+<h2>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h2>
+<p>In Python, any variable that is outside of a function is called a <code class="docutils literal notranslate"><span class="pre">global</span></code> variable. While it’s good practice to avoid global variables wherever possible, there is an important style guide to remember if you use <code class="docutils literal notranslate"><span class="pre">globals</span></code>:</p>
+<ul class="simple">
+<li><p>Always name <code class="docutils literal notranslate"><span class="pre">global</span></code> variables in <strong>ALL_CAPS</strong>.</p></li>
+</ul>
+<p>Using the <strong>ALL_CAPS</strong> convention helps us remember the <code class="docutils literal notranslate"><span class="pre">global</span></code> variable was defined somewhere different from our <code class="docutils literal notranslate"><span class="pre">local</span></code> variables.</p>
+<p>Let’s define our <code class="docutils literal notranslate"><span class="pre">planet_g_dict</span></code> as a <code class="docutils literal notranslate"><span class="pre">global</span></code> variable and use it in our free-fall distance function from last week:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Global variables should always be ALL CAPS</span>
+<span class="n">PLANETS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mercury&#39;</span><span class="p">,</span> <span class="s1">&#39;venus&#39;</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">,</span> <span class="s1">&#39;jupiter&#39;</span><span class="p">,</span> <span class="s1">&#39;saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;uranus&#39;</span><span class="p">,</span> <span class="s1">&#39;neptune&#39;</span><span class="p">]</span>
+<span class="n">PLANET_G</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.61</span><span class="p">,</span> <span class="mf">8.83</span><span class="p">,</span> <span class="mf">9.80665</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">,</span> <span class="mf">11.2</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">13.3</span><span class="p">]</span>
+<span class="n">PLANET_G_DICT</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span> <span class="n">planet_g</span><span class="p">))</span>
+
+
+<span class="c1"># Define our free-fall function with planet name as a parameter</span>
+<span class="k">def</span> <span class="nf">free_fall_dist_on_planet</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">planet</span><span class="o">=</span><span class="s1">&#39;mars&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Free fall distance given time t on given planet.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t (float or np.array): </span>
+<span class="sd">            Time in [s].</span>
+<span class="sd">        planet (str, optional): </span>
+<span class="sd">            Planet to calculate the free-fall height for. Default: &#39;mars&#39;.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float or np.array: Free fall distance in [m].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">planet</span> <span class="o">=</span> <span class="n">planet</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>  <span class="c1"># convert planet name to lower case</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">PLANET_G_DICT</span><span class="p">[</span><span class="n">planet</span><span class="p">]</span>  <span class="c1"># get g from global dict</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">H</span>
+
+<span class="c1"># Call the function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">free_fall_dist_on_planet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">free_fall_dist_on_planet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Neptune&#39;</span><span class="p">))</span>  <span class="c1"># Works with caps now!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">free_fall_dist_on_planet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;VENUS&#39;</span><span class="p">))</span>  <span class="c1"># Even all caps!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>490.3325
+665.0
+441.5
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="python-for-loops">
+<h2>Python <code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#python-for-loops" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">for</span></code> loop cycles through each element in a <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, or other <code class="docutils literal notranslate"><span class="pre">iterable</span></code> and runs some commands <strong>for</strong> each one.</p>
+<p>The anatomy of a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop is:</p>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">for</span></code> (it’s in the name after all)</p></li>
+<li><p>The <em>loop variable</em> (this is what will change each cycle)</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">iterable</span></code> (the thing we’re looping through)</p></li>
+<li><p>An <em>indented block</em> (the commands we want to run multiple times in the loop)</p></li>
+</ul>
+<p>See more on <a class="reference external" href="https://cjtu.github.io/spirl/python_loops.html#loops">Ch. 3.7 Loops</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recall our planets list</span>
+<span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mercury&#39;</span><span class="p">,</span> <span class="s1">&#39;venus&#39;</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">,</span> <span class="s1">&#39;jupiter&#39;</span><span class="p">,</span> <span class="s1">&#39;saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;uranus&#39;</span><span class="p">,</span> <span class="s1">&#39;neptune&#39;</span><span class="p">]</span>
+
+<span class="c1"># Below, &quot;planet&quot; is the loop variable and will be replaced by each planet in the list</span>
+<span class="k">for</span> <span class="n">planet</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
+    <span class="c1"># Everything indented here will be run each time in the loop</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="n">planet</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello mercury
+Hello venus
+Hello earth
+Hello mars
+Hello jupiter
+Hello saturn
+Hello uranus
+Hello neptune
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes it’s more useful to have the <em>index</em> that we are on in the loop, rather than the actual value in the list.</p>
+<p>E.g. <code class="docutils literal notranslate"><span class="pre">0</span></code>, then <code class="docutils literal notranslate"><span class="pre">1</span></code>, then <code class="docutils literal notranslate"><span class="pre">2</span></code>… rather than <code class="docutils literal notranslate"><span class="pre">mercury</span></code>, <code class="docutils literal notranslate"><span class="pre">venus</span></code>, <code class="docutils literal notranslate"><span class="pre">earth</span></code>…</p>
+<p>We often use the function <code class="docutils literal notranslate"><span class="pre">range()</span></code> with for loops to get at the current index (generally called <code class="docutils literal notranslate"><span class="pre">i</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>To see every element in this <code class="docutils literal notranslate"><span class="pre">range</span></code> object, we can again convert it to a <code class="docutils literal notranslate"><span class="pre">list</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The main uses of <code class="docutils literal notranslate"><span class="pre">range</span></code> are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">range(val)</span></code>: all integers from 0 to <code class="docutils literal notranslate"><span class="pre">val</span></code>-1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(start_val,</span> <span class="pre">stop_val)</span></code>: all integers from <code class="docutils literal notranslate"><span class="pre">start_val</span></code> to <code class="docutils literal notranslate"><span class="pre">stop_val</span></code>-1</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>: all integers from <code class="docutils literal notranslate"><span class="pre">start</span></code> to <code class="docutils literal notranslate"><span class="pre">stop</span></code>-1 counting by <code class="docutils literal notranslate"><span class="pre">step</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print all odd numbers from 1 to 20</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Without range:&#39;</span><span class="p">)</span>
+<span class="n">odd_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">odd_list</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>  <span class="c1"># end=&#39; &#39; prevents newline</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">With range:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Without range:
+1 3 5 7 9 11 13 15 17 19 
+With range:
+1 3 5 7 9 11 13 15 17 19 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Be mindful of whether you are using the <em>index</em> (e.g. with <code class="docutils literal notranslate"><span class="pre">range</span></code>) or looping through items directly when you make a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. Often we can get at the same info both ways</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop over planet names in the planets list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loop over names&#39;</span><span class="p">)</span>
+<span class="n">planets</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">planet_g_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="k">for</span> <span class="n">planet</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">planet_g_dict</span><span class="p">[</span><span class="n">planet</span><span class="p">]</span>  <span class="c1"># get the g value for each planet</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The g value for </span><span class="si">{</span><span class="n">planet</span><span class="si">:</span><span class="s1">&gt;8</span><span class="si">}</span><span class="s1"> is about </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s1">5.2f</span><span class="si">}</span><span class="s1"> m/s^2&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Loop over the index of the planets list</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Loop over indices:&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">planets</span><span class="p">)):</span>
+    <span class="n">planet</span> <span class="o">=</span> <span class="n">planets</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># get the planet name</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">planet_g_dict</span><span class="p">[</span><span class="n">planet</span><span class="p">]</span>  <span class="c1"># get the g value for each planet</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The g value for </span><span class="si">{</span><span class="n">planet</span><span class="si">:</span><span class="s1">&gt;8</span><span class="si">}</span><span class="s1"> is about </span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s1">5.2f</span><span class="si">}</span><span class="s1"> m/s^2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loop over names
+The g value for  mercury is about  3.61 m/s^2
+The g value for    venus is about  8.83 m/s^2
+The g value for    earth is about  9.81 m/s^2
+The g value for     mars is about  3.75 m/s^2
+The g value for  jupiter is about 26.00 m/s^2
+The g value for   saturn is about 11.20 m/s^2
+The g value for   uranus is about 10.50 m/s^2
+The g value for  neptune is about 13.30 m/s^2
+
+Loop over indices:
+The g value for  mercury is about  3.61 m/s^2
+The g value for    venus is about  8.83 m/s^2
+The g value for    earth is about  9.81 m/s^2
+The g value for     mars is about  3.75 m/s^2
+The g value for  jupiter is about 26.00 m/s^2
+The g value for   saturn is about 11.20 m/s^2
+The g value for   uranus is about 10.50 m/s^2
+The g value for  neptune is about 13.30 m/s^2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-using-axis-objects">
+<h2>Plotting using <code class="docutils literal notranslate"><span class="pre">axis</span></code> objects<a class="headerlink" href="#plotting-using-axis-objects" title="Permalink to this headline">¶</a></h2>
+<p>Here we will introduce the concept of <code class="docutils literal notranslate"><span class="pre">axes</span></code> in matplotlib. These are useful for making subplots and formatting specific portions of your plot area.</p>
+<p>See <a class="reference external" href="https://matplotlib.org/stable/gallery/color/named_colors.html#sphx-glr-gallery-color-named-colors-py">matplotlib color palette sheet</a> for a list of colors we can use in matplotlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below is a simple example of adding axes to a matplotlib Figure object.</p>
+<ol class="simple">
+<li><p>Make the Figure with <code class="docutils literal notranslate"><span class="pre">plt.figure</span></code></p></li>
+<li><p>Add subplot <code class="docutils literal notranslate"><span class="pre">axes</span></code> to the Figure with <code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code></p></li>
+<li><p>Plot different data on each subplot axis (called <code class="docutils literal notranslate"><span class="pre">ax1</span></code> and <code class="docutils literal notranslate"><span class="pre">ax2</span></code>)</p></li>
+<li><p>Label each subplot axis also through <code class="docutils literal notranslate"><span class="pre">ax1</span></code> and <code class="docutils literal notranslate"><span class="pre">ax2</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the main Figure and color it gray</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;tab:gray&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+
+<span class="c1"># Add in subplot axes (give them different colors so we can find them)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># Plot on subplot 1</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;x$^2$&#39;</span><span class="p">)</span>
+
+<span class="c1"># PLot on subplot 2</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">-</span><span class="n">x1</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$-x^2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a2_35_0.png" src="_images/f21_a2_35_0.png" />
+</div>
+</div>
+<p>Below we show an example using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to plot different free-fall curves for each of our planets.</p>
+<p>Note: we only need to set the axis labels once and put the <code class="docutils literal notranslate"><span class="pre">.plot()</span></code> part in the loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># falling time [s]</span>
+
+<span class="c1"># --- plotting setup ----</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+
+<span class="c1"># --- plotting all free-fall curves for SS objects (planets) ----</span>
+<span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">planets</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">free_fall_dist_on_planet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">planet_g_dict</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">/</span><span class="mf">1e3</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;g=</span><span class="si">{</span><span class="n">g</span><span class="si">:</span><span class="s1">05.2f</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">target</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+
+<span class="c1"># --- plotting adjustments ---   </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [sec]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Distance [km]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;Helvetica&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="_images/f21_a2_37_1.png" src="_images/f21_a2_37_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="polynomial-fitting-using-np-polyfit">
+<h2>Polynomial fitting using <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code><a class="headerlink" href="#polynomial-fitting-using-np-polyfit" title="Permalink to this headline">¶</a></h2>
+<p>We will explore simple fitting in Python using NumPy <code class="docutils literal notranslate"><span class="pre">polyfit</span></code>.</p>
+<p>For a more in depth video tutorial, see <a class="reference external" href="https://www.youtube.com/watch?v=Dggl0fJJ81k&amp;ab_channel=AdamGaweda">NumPy Polyfit Tutorial (7 mins)</a>.</p>
+<p><strong>Note:</strong> We use <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> because it is a simple function, but NumPy recommends using the more advanced <code class="docutils literal notranslate"><span class="pre">numpy.polynomial.polynomial</span></code> library instead. You can read more about it <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.polynomials.html">here</a>.</p>
+<p>Like with any function, we can read the documentation right from Python with <code class="docutils literal notranslate"><span class="pre">help()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Below we define some arrays that you can think of as <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> measurements from an experiment.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">3.448</span><span class="p">,</span> <span class="mf">6.897</span><span class="p">,</span> <span class="mf">10.345</span><span class="p">,</span> <span class="mf">13.793</span><span class="p">,</span> <span class="mf">17.241</span><span class="p">,</span> <span class="mf">20.69</span><span class="p">,</span> <span class="mf">24.138</span><span class="p">,</span> <span class="mf">27.586</span><span class="p">,</span> <span class="mf">31.034</span><span class="p">,</span> <span class="mf">34.483</span><span class="p">,</span> <span class="mf">37.931</span><span class="p">,</span> <span class="mf">41.379</span><span class="p">,</span> <span class="mf">44.828</span><span class="p">,</span> <span class="mf">48.276</span><span class="p">,</span> <span class="mf">51.724</span><span class="p">,</span> <span class="mf">55.172</span><span class="p">,</span> <span class="mf">58.621</span><span class="p">,</span> <span class="mf">62.069</span><span class="p">,</span> <span class="mf">65.517</span><span class="p">,</span> <span class="mf">68.966</span><span class="p">,</span> <span class="mf">72.414</span><span class="p">,</span> <span class="mf">75.862</span><span class="p">,</span> <span class="mf">79.31</span><span class="p">,</span> <span class="mf">82.759</span><span class="p">,</span> <span class="mf">86.207</span><span class="p">,</span>  <span class="mf">89.655</span><span class="p">,</span>  <span class="mf">93.103</span><span class="p">,</span> <span class="mf">96.552</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.403</span><span class="p">,</span> <span class="mf">12.761</span><span class="p">,</span> <span class="mf">22.422</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mf">43.701</span><span class="p">,</span> <span class="mf">58.525</span><span class="p">,</span> <span class="mf">67.867</span><span class="p">,</span> <span class="mf">71.998</span><span class="p">,</span> <span class="mf">87.14</span><span class="p">,</span> <span class="mf">86.822</span><span class="p">,</span> <span class="mf">130.066</span><span class="p">,</span> <span class="mf">79.842</span><span class="p">,</span> <span class="mf">104.269</span><span class="p">,</span> <span class="mf">119.987</span><span class="p">,</span> <span class="mf">153.925</span><span class="p">,</span> <span class="mf">86.582</span><span class="p">,</span> <span class="mf">273.286</span><span class="p">,</span> <span class="mf">119.237</span><span class="p">,</span> <span class="mf">211.643</span><span class="p">,</span> <span class="mf">270.858</span><span class="p">,</span> <span class="mf">313.429</span><span class="p">,</span> <span class="mf">253.465</span><span class="p">,</span> <span class="mf">375.543</span><span class="p">,</span>  <span class="mf">65.478</span><span class="p">,</span> <span class="mf">353.615</span><span class="p">,</span> <span class="mf">346.736</span><span class="p">,</span> <span class="mf">434.706</span><span class="p">,</span> <span class="mf">343.462</span><span class="p">,</span> <span class="mf">358.991</span><span class="p">,</span> <span class="mf">477.203</span><span class="p">])</span>
+<span class="n">y_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">1.334</span><span class="p">,</span> <span class="mf">2.369</span><span class="p">,</span> <span class="mf">3.403</span><span class="p">,</span> <span class="mf">4.438</span><span class="p">,</span> <span class="mf">5.472</span><span class="p">,</span> <span class="mf">6.507</span><span class="p">,</span> <span class="mf">7.541</span><span class="p">,</span> <span class="mf">8.576</span><span class="p">,</span> <span class="mf">9.61</span><span class="p">,</span> <span class="mf">35.483</span><span class="p">,</span> <span class="mf">38.931</span><span class="p">,</span> <span class="mf">42.379</span><span class="p">,</span> <span class="mf">45.828</span><span class="p">,</span> <span class="mf">49.276</span><span class="p">,</span> <span class="mf">52.724</span><span class="p">,</span> <span class="mf">56.172</span><span class="p">,</span> <span class="mf">59.621</span><span class="p">,</span> <span class="mf">63.069</span><span class="p">,</span>  <span class="mf">66.517</span><span class="p">,</span> <span class="mf">104.948</span><span class="p">,</span> <span class="mf">110.121</span><span class="p">,</span> <span class="mf">115.293</span><span class="p">,</span> <span class="mf">120.466</span><span class="p">,</span> <span class="mf">125.638</span><span class="p">,</span> <span class="mf">130.81</span> <span class="p">,</span> <span class="mf">135.983</span><span class="p">,</span> <span class="mf">141.155</span><span class="p">,</span> <span class="mf">146.328</span><span class="p">,</span> <span class="mf">151.5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can plot <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and the y-errors <code class="docutils literal notranslate"><span class="pre">y_err</span></code> using the <code class="docutils literal notranslate"><span class="pre">ax.errorbar()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+      
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a2_43_0.png" src="_images/f21_a2_43_0.png" />
+</div>
+</div>
+<p>To fit a line to our data, we can use <code class="docutils literal notranslate"><span class="pre">np.polyfit(x,</span> <span class="pre">y,</span> <span class="pre">order)</span></code>, where order is the highest exponent in the polynomial we’re fitting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit a 1st order (linear) polynomial to our x, y data</span>
+<span class="n">fit_coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fit_coeffs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  4.1371426  -28.15839687]
+</pre></div>
+</div>
+</div>
+</div>
+<p>NumPy <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> returns the coefficients of the of the fit from highest to lowest order. For example, our linear fit gave us the following equation of a line:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="n">fit_coeffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">x + </span><span class="si">{</span><span class="n">fit_coeffs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>y = 4.14x + -28.16
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="convert-polyfit-coefficients-to-a-function-using-np-poly1d">
+<h2>Convert <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> coefficients to a function using <code class="docutils literal notranslate"><span class="pre">np.poly1d</span></code><a class="headerlink" href="#convert-polyfit-coefficients-to-a-function-using-np-poly1d" title="Permalink to this headline">¶</a></h2>
+<p>Another convenient NumPy function is <code class="docutils literal notranslate"><span class="pre">np.poly1d</span></code> which takes our <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> coefficients and turns them into a function. This lets us create a new array from the equation of the line with any x values we choose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- plotting setup ----</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="c1"># --- plot the data with error ----</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="c1"># --- fitting ---</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># These are the linear coefficients</span>
+<span class="n">fit_linear</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>  <span class="c1"># This returns a function object</span>
+
+<span class="c1"># --- plot the fitted line ---</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fit_linear</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># We can call our function to draw the line</span>
+    
+<span class="c1"># --- plotting adjustments ---   </span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a2_49_0.png" src="_images/f21_a2_49_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="weighting-a-fit-by-its-errors">
+<h2>Weighting a fit by its errors<a class="headerlink" href="#weighting-a-fit-by-its-errors" title="Permalink to this headline">¶</a></h2>
+<p>A final useful parameter in <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code> is the <strong>weights</strong> parameter, <code class="docutils literal notranslate"><span class="pre">w</span></code>. This allows us to weight a fit by its errors.</p>
+<p>In our case, we want to weight points with the smallest errors the highest in our fit so we supply <code class="docutils literal notranslate"><span class="pre">w=1/y_err</span></code> to <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- plotting setup ----</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">250</span> <span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="c1"># --- plot the data with error ----</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">y_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+
+<span class="c1"># --- fitting ---</span>
+<span class="n">coeffs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">fit_linear</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coeffs</span><span class="p">)</span>
+
+<span class="c1"># --- fitting with error as weight ---</span>
+<span class="n">coeffs_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">y_err</span><span class="p">)</span>
+<span class="n">fit_linear_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">coeffs_w</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fit_linear</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fitting w/o error considered&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">fit_linear_w</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;fitting w/  error considered&#39;</span><span class="p">)</span>
+    
+    
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;sans-serif&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;xx-small&#39;</span><span class="p">,</span> <span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a2_51_0.png" src="_images/f21_a2_51_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="assignment-determine-the-planet-based-on-free-fall-observations">
+<h2>[Assignment] Determine the planet based on free-fall observations<a class="headerlink" href="#assignment-determine-the-planet-based-on-free-fall-observations" title="Permalink to this headline">¶</a></h2>
+<p>Below are 30 data points taken from an object falling on a unknown Solar System planet by measuring the free-fall distance [m] and time [s].
+Each data of the falling distance is an average value from 10 different measurements and their standard deviation is given as error, fall_distance_err [m].</p>
+<ol class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> to fit the data with a quadratic (2nd order polynomial) function with <strong>no weights</strong>  (no <code class="docutils literal notranslate"><span class="pre">w=</span></code> parameter)</p></li>
+<li><p>Obtain the <code class="docutils literal notranslate"><span class="pre">g</span></code> value from your fit coefficients.</p></li>
+<li><p>Print the name of the most likely planet given <code class="docutils literal notranslate"><span class="pre">g</span></code> with the unweighted fit.</p></li>
+<li><p>Plot the data with errorbars as well as your fit.</p></li>
+<li><p>Make a new <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> fit this time weighted by <code class="docutils literal notranslate"><span class="pre">y_err</span></code> (use the <code class="docutils literal notranslate"><span class="pre">w=</span></code> parameter).</p></li>
+<li><p>Obtain the <code class="docutils literal notranslate"><span class="pre">g</span></code> value from your weighted fit.</p></li>
+<li><p>Print the name of the most likely planet given <code class="docutils literal notranslate"><span class="pre">g</span></code> with the weighted fit.</p></li>
+<li><p>Did you get a different answer?</p></li>
+</ol>
+<p>Make sure to label your plot axes and units. For extra practice, customize your plot to your liking and include the free fall equation using the <code class="docutils literal notranslate"><span class="pre">ax.annotate()</span></code> function.</p>
+<p>Free-fall equation:</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{1}{2} g t^2\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mf">27.966</span><span class="p">,</span> <span class="mf">35.931</span><span class="p">,</span> <span class="mf">43.897</span><span class="p">,</span> <span class="mf">51.862</span><span class="p">,</span> <span class="mf">59.828</span><span class="p">,</span> <span class="mf">67.793</span><span class="p">,</span> <span class="mf">75.759</span><span class="p">,</span> <span class="mf">83.724</span><span class="p">,</span> <span class="mf">91.69</span><span class="p">,</span> <span class="mf">99.655</span><span class="p">,</span> <span class="mf">107.621</span><span class="p">,</span> <span class="mf">115.586</span><span class="p">,</span> <span class="mf">123.552</span><span class="p">,</span> <span class="mf">131.517</span><span class="p">,</span> <span class="mf">139.483</span><span class="p">,</span> <span class="mf">147.448</span><span class="p">,</span> <span class="mf">155.414</span><span class="p">,</span> <span class="mf">163.379</span><span class="p">,</span> <span class="mf">171.345</span><span class="p">,</span> <span class="mf">179.31</span><span class="p">,</span> <span class="mf">187.276</span><span class="p">,</span> <span class="mf">195.241</span><span class="p">,</span> <span class="mf">203.207</span><span class="p">,</span> <span class="mf">211.172</span><span class="p">,</span> <span class="mf">219.138</span><span class="p">,</span> <span class="mf">227.103</span><span class="p">,</span> <span class="mf">235.069</span><span class="p">,</span> <span class="mf">243.034</span><span class="p">,</span> <span class="mi">251</span><span class="p">])</span>
+<span class="n">fall_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2798.322</span><span class="p">,</span> <span class="mf">4543.523</span><span class="p">,</span> <span class="mf">5459.432</span><span class="p">,</span> <span class="mf">11554.559</span><span class="p">,</span> <span class="mf">15958.431</span><span class="p">,</span> <span class="mf">20023.776</span><span class="p">,</span> <span class="mf">19146.256</span><span class="p">,</span> <span class="mf">22765.371</span><span class="p">,</span> <span class="mf">47183.159</span><span class="p">,</span> <span class="mf">47167.289</span><span class="p">,</span> <span class="mf">22978.494</span><span class="p">,</span> <span class="mf">66253.599</span><span class="p">,</span> <span class="mf">63625.642</span><span class="p">,</span> <span class="mf">91050.12</span><span class="p">,</span> <span class="mf">116941.625</span><span class="p">,</span> <span class="mf">143460.073</span><span class="p">,</span> <span class="mf">106462.323</span><span class="p">,</span> <span class="mf">142584.887</span><span class="p">,</span> <span class="mf">199564.683</span><span class="p">,</span> <span class="mf">83593.839</span><span class="p">,</span> <span class="mf">158030.907</span><span class="p">,</span> <span class="mf">205442.175</span><span class="p">,</span> <span class="mf">206733.665</span><span class="p">,</span> <span class="mf">241555.039</span><span class="p">,</span> <span class="mf">236078.303</span><span class="p">,</span> <span class="mf">240508.665</span><span class="p">,</span> <span class="mf">311193.102</span><span class="p">,</span> <span class="mf">298704.903</span><span class="p">,</span> <span class="mf">339502.307</span><span class="p">,</span> <span class="mf">438338.605</span><span class="p">])</span>
+<span class="n">fall_distance_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">448</span><span class="p">,</span> <span class="mf">875.919</span><span class="p">,</span> <span class="mf">1445.964</span><span class="p">,</span> <span class="mf">2158.136</span><span class="p">,</span> <span class="mf">3012.435</span><span class="p">,</span> <span class="mf">4008.861</span><span class="p">,</span> <span class="mf">5147.413</span><span class="p">,</span>  <span class="mf">6428.093</span><span class="p">,</span>  <span class="mf">7850.899</span><span class="p">,</span>  <span class="mf">9415.832</span><span class="p">,</span> <span class="mf">18538.153</span><span class="p">,</span> <span class="mf">21620.131</span><span class="p">,</span> <span class="mf">24938.986</span><span class="p">,</span> <span class="mf">28494.72</span> <span class="p">,</span> <span class="mf">32287.332</span><span class="p">,</span> <span class="mf">36316.821</span><span class="p">,</span> <span class="mf">40583.189</span><span class="p">,</span> <span class="mf">45086.435</span><span class="p">,</span> <span class="mf">49826.558</span><span class="p">,</span> <span class="mf">54803.56</span> <span class="p">,</span> <span class="mf">18005.232</span><span class="p">,</span> <span class="mf">19640.459</span><span class="p">,</span> <span class="mf">21346.75</span> <span class="p">,</span> <span class="mf">23124.104</span><span class="p">,</span> <span class="mf">24972.521</span><span class="p">,</span> <span class="mf">26892.002</span><span class="p">,</span> <span class="mf">28882.547</span><span class="p">,</span> <span class="mf">30944.154</span><span class="p">,</span> <span class="mf">33076.825</span><span class="p">,</span> <span class="mf">35280.56</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [Your answer and plots here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a1_bonus.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 1 (BONUS)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
