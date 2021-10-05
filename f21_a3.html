@@ -559,14 +559,10 @@
 <h1>Assignment 3 (Oct 05)<a class="headerlink" href="#assignment-3-oct-05" title="Permalink to this headline">¶</a></h1>
 <p>Today’s topics will include:</p>
 <ol class="simple">
-<li><p>Python <code class="docutils literal notranslate"><span class="pre">tuples</span></code> (<code class="docutils literal notranslate"><span class="pre">()</span></code>) and “unpacking” with <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
-<li><p>Wildcard arguments using <code class="docutils literal notranslate"><span class="pre">*arg</span></code> in function definitions</p></li>
-<li><p>Curve fitting with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></p>
-<ol class="simple">
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">tuples</span></code> (<code class="docutils literal notranslate"><span class="pre">()</span></code>) and “unpacking” with <code class="docutils literal notranslate"><span class="pre">*</span></code> operator</p></li>
+<li><p>Curve fitting with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></p></li>
 <li><p>Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) and Reduced Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2_\nu\)</span>)</p></li>
 <li><p>Covariance matrix, getting uncertainty for your fitting results</p></li>
-</ol>
-</li>
 </ol>
 <div class="section" id="readings-optional">
 <h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
@@ -610,7 +606,7 @@ After:  [&#39;periwinkle&#39;, &#39;blue&#39;, &#39;purple&#39;, &#39;yellow&#39
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4926</span><span class="o">/</span><span class="mf">2992810842.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_6183</span><span class="o">/</span><span class="mf">2992810842.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># But what if we want to change the first element in a tuple?</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">color_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">color_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;periwinkle&#39;</span>
@@ -734,7 +730,7 @@ Unpacked: green blue purple yellow black
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4926</span><span class="o">/</span><span class="mf">649650028.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_6183</span><span class="o">/</span><span class="mf">649650028.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># What if we want to pass a list of numbers to multiply?</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">our_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="n">our_list</span><span class="p">))</span>
@@ -863,7 +859,7 @@ green blue
 </div>
 </div>
 </div>
-<p>One extra parameter we had to set was <code class="docutils literal notranslate"><span class="pre">absolute_sigma</span></code>, which means that the uncertainty (<code class="docutils literal notranslate"><span class="pre">sigma</span></code>) that we pass is in the same units as the ydata (e.g., our error is estimated by 1/ydata).</p>
+<p>One extra parameter we had to set was <code class="docutils literal notranslate"><span class="pre">absolute_sigma</span></code>, which means that the uncertainty (<code class="docutils literal notranslate"><span class="pre">sigma</span></code>) we pass in is the standard deviation of the data in the same units (not some relative measure of error, like 1/ydata).</p>
 <p>We get two outputs from <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> (excerpt from <code class="docutils literal notranslate"><span class="pre">help(curve_fit)</span></code>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Returns
 -------
@@ -1003,7 +999,7 @@ pcov : 2d array
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4926/4224393954.py:15: RuntimeWarning: overflow encountered in exp
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6183/4224393954.py:15: RuntimeWarning: overflow encountered in exp
   return I0 * np.exp(-alpha * x)
 </pre></div>
 </div>
@@ -1022,8 +1018,8 @@ pcov : 2d array
     <span class="ne">ValueError</span> <span class="ow">is</span> <span class="n">raised</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>It seems that if you do not provide an initial guess of each parameter, <code class="docutils literal notranslate"><span class="pre">p0</span></code>, they default to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the guesses are too far off, then <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> may find the wrong parameters or not converge at all.</p>
-<p>Let’s try again, this time providing an initial guess as <code class="docutils literal notranslate"><span class="pre">p0</span></code>.</p>
+<p>It seems that if you do not provide an initial guess of each parameter using <code class="docutils literal notranslate"><span class="pre">p0</span></code>, they all default to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the guesses are too far off, then <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> may find the wrong parameters or not converge at all.</p>
+<p>Let’s try again, this time providing an initial guess as <code class="docutils literal notranslate"><span class="pre">p0</span></code>. This sometimes takes a little guess-work, but thinking about what parameter values are reasonable for your specific model can be helpful (and will be more important in the coming weeks!).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial guess</span>
@@ -1062,10 +1058,10 @@ pcov : 2d array
 <p>The Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) is given by</p>
 <div class="math notranslate nohighlight">
 \[\chi^2 = \sum_i \frac{(D_i - M_i)^2}{\sigma_i^2}\]</div>
-<p>where <span class="math notranslate nohighlight">\(D_i\)</span> is the observed data, <span class="math notranslate nohighlight">\(M_i\)</span> is the model fitted result, and <span class="math notranslate nohighlight">\(sigma_i\)</span> is the observed data uncertainty.</p>
+<p>where <span class="math notranslate nohighlight">\(D_i\)</span> is the observed data, <span class="math notranslate nohighlight">\(M_i\)</span> is the model fitted result, and <span class="math notranslate nohighlight">\(\sigma_i\)</span> is the observed data uncertainty.</p>
 <p>The final <span class="math notranslate nohighlight">\(\chi^2_\nu\)</span> value will be a single number that we can interpret with the following simple rules of thumb:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &gt;&gt; 1\)</span>: Fit is poor. The chosen model is unlikely to fit the data.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2_\nu \gg 1\)</span>: Fit is poor. The chosen model is unlikely to fit the data.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &gt; 1\)</span>: Fit does not fully capture the data. It’s possible there are too few data points or the uncertainties are underestimated.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &lt; 1\)</span>: Fit is too good (overfitting). The model fits noise in the data or the uncertainties are overestimated (can be caused by having too many free parameters in fitting).</p></li>
 </ul>
@@ -1121,7 +1117,6 @@ reduced chi-squared = 1.03
 </div>
 </div>
 </div>
-<p>A reduced hi-squared close to 1 indicates the model we chose is doing a good job of fitting our data!</p>
 </div>
 <div class="section" id="fit-uncertainties-and-the-covariance-matrix">
 <h2>Fit uncertainties and the covariance matrix<a class="headerlink" href="#fit-uncertainties-and-the-covariance-matrix" title="Permalink to this headline">¶</a></h2>
@@ -1235,17 +1230,17 @@ Alpha uncertainty: 0.0003
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f21_a3_48_0.png" src="_images/f21_a3_48_0.png" />
+<img alt="_images/f21_a3_47_0.png" src="_images/f21_a3_47_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="assignment-gaussian-curve-fitting">
 <h2>[Assignment] Gaussian curve fitting<a class="headerlink" href="#assignment-gaussian-curve-fitting" title="Permalink to this headline">¶</a></h2>
-<p>A common way to calculate the radial velocity (<strong>RV</strong>) of a stellar object is to do a cross-correlation (CC) between the target spectrum and a template. This tells us the amount of blueshift or redshift of the target, and therefor the radial velocity.</p>
+<p>A common way to calculate the radial velocity (<strong>RV</strong>) of a stellar object is to do a cross-correlation (CC) between the target spectrum and a template. This tells us the amount of blueshift or redshift of the target, and therefore the radial velocity.</p>
 <p>To compute the <strong>RV</strong> of a star from this cross-correlated spectrum, we often use the <em>Gaussian curve fitting</em> technique. To do so, we can fit a Gaussian to the data where:</p>
 <ul class="simple">
-<li><p>The <strong>mean</strong> of the Gaussian is the RV we want</p></li>
-<li><p>The <strong><span class="math notranslate nohighlight">\(\sigma\)</span></strong> of the Gaussian is the RV uncertainty</p></li>
+<li><p>The <strong>mean</strong> of the Gaussian is the <strong>RV</strong> we want</p></li>
+<li><p>The <strong><span class="math notranslate nohighlight">\(\sigma\)</span></strong> of the Gaussian is the <strong>RV Uncertainty</strong></p></li>
 </ul>
 <p>Below are 50 data points showing the cross-correlation result of your target.</p>
 <ol class="simple">
@@ -1253,15 +1248,15 @@ Alpha uncertainty: 0.0003
 <li><p>Pass your function and the data to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> to fit the data</p></li>
 <li><p>Make a plot of the data and the best-fit curve</p></li>
 <li><p>Report the <strong>RV</strong> and <strong>RV uncertainty</strong></p></li>
-<li><p>Compute the uncertainties in your best-fit parameters from the covariance matrix</p></li>
+<li><p>Compute the parameter errors for your fit using the covariance matrix</p></li>
 <li><p>Perform a reduced chi-squared test and comment on whether the Gaussian was a good fit to the data or not</p></li>
 </ol>
 <p>The equation of a Gaussian function is:</p>
 <div class="math notranslate nohighlight">
-\[y = a \exp\left({-\frac{(A-\mu)^2}{2\sigma^2}}\right)\]</div>
-<p>where <span class="math notranslate nohighlight">\(A\)</span> is a scaling factor we’ll call “amplitude”, <span class="math notranslate nohighlight">\(\mu\)</span> is the mean, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation.</p>
+\[y = a \exp\left({-\frac{(x-\mu)^2}{2\sigma^2}}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is a scaling factor we’ll call “amplitude”, <span class="math notranslate nohighlight">\(\mu\)</span> is the mean, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation.</p>
 <blockquote>
-<div><p>Note: We don’t always have well-defined errors for our x and y which can make computing our goodness of fit challenging (e.g., here, we usually can’t get errors for CC values…) but for the sake of practice, we have given the CC errors so you have everything you need to do the 6 steps above!</p>
+<div><p>Note: We don’t always have well-defined errors for our x and y which can make computing our goodness of fit challenging (e.g., here, we usually can’t get errors for CC values…). However, for the sake of practice, we have given the CC errors so you have everything you need to do the 6 steps above!</p>
 </div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1287,7 +1282,7 @@ Alpha uncertainty: 0.0003
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f21_a3_51_0.png" src="_images/f21_a3_51_0.png" />
+<img alt="_images/f21_a3_50_0.png" src="_images/f21_a3_50_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
