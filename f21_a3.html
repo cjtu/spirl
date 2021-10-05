@@ -1,0 +1,1388 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 3 (Oct 05) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a3.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 2 (Sep 28)" href="f21_a2.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a2.html">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 3 (Oct 05)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a3.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-optional">
+   Readings (optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-tuples">
+   Python tuples
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     ()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#unpacking-a-tuple-list-or-numpy-array">
+   Unpacking a
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     tuple
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     list
+    </span>
+   </code>
+   , or NumPy
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     array
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#unpacking-using-the-asterisk">
+     Unpacking using the
+     <strong>
+      asterisk
+     </strong>
+     (
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       *
+      </span>
+     </code>
+     )
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#curve-fitting-with-scipy-optimize-curve-fit">
+   Curve fitting with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     scipy.optimize.curve_fit()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-fitting">
+   Exponential fitting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chi-squared-chi-2-and-reduced-chi-squared-chi-2-nu">
+   Chi-Squared (
+   <span class="math notranslate nohighlight">
+    \(\chi^2\)
+   </span>
+   ) and Reduced Chi-Squared (
+   <span class="math notranslate nohighlight">
+    \(\chi^2_\nu\)
+   </span>
+   )
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fit-uncertainties-and-the-covariance-matrix">
+   Fit uncertainties and the covariance matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-gaussian-curve-fitting">
+   [Assignment] Gaussian curve fitting
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-3-oct-05">
+<h1>Assignment 3 (Oct 05)<a class="headerlink" href="#assignment-3-oct-05" title="Permalink to this headline">¶</a></h1>
+<p>Today’s topics will include:</p>
+<ol class="simple">
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">tuples</span></code> (<code class="docutils literal notranslate"><span class="pre">()</span></code>) and “unpacking” with <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>Wildcard arguments using <code class="docutils literal notranslate"><span class="pre">*arg</span></code> in function definitions</p></li>
+<li><p>Curve fitting with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></p>
+<ol class="simple">
+<li><p>Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) and Reduced Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2_\nu\)</span>)</p></li>
+<li><p>Covariance matrix, getting uncertainty for your fitting results</p></li>
+</ol>
+</li>
+</ol>
+<div class="section" id="readings-optional">
+<h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
+<p>If you find this week’s material new or challenging, you may want to read through some or all the following resources while working on your assignment:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cjtu.github.io/spirl/python_basic-types.html#tuples">SPIRL Ch. 3.3.10. Tuples</a></p></li>
+</ul>
+</div>
+<div class="section" id="python-tuples">
+<h2>Python tuples <code class="docutils literal notranslate"><span class="pre">()</span></code><a class="headerlink" href="#python-tuples" title="Permalink to this headline">¶</a></h2>
+<p>Previously, we learned about lists (made with square brackets, <code class="docutils literal notranslate"><span class="pre">[]</span></code>) and dictionaries (using curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code>). Today we will learn about tuples (which use parentheses, <code class="docutils literal notranslate"><span class="pre">()</span></code>)!</p>
+<p>We can think of the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> as a “locked” version of its cousin the <code class="docutils literal notranslate"><span class="pre">list</span></code> (<code class="docutils literal notranslate"><span class="pre">[]</span></code>). This means that once a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is made, you cannot modify it anymore!</p>
+<p>Below we can see what happens if we try to change a <code class="docutils literal notranslate"><span class="pre">list</span></code> element vs. trying to change a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Review: we can modify lists...</span>
+<span class="n">color_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Before: &#39;</span><span class="p">,</span> <span class="n">color_list</span><span class="p">)</span>
+
+<span class="c1"># Now if we modify the 1st element:</span>
+<span class="n">color_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;periwinkle&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;After: &#39;</span><span class="p">,</span> <span class="n">color_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Before:  [&#39;green&#39;, &#39;blue&#39;, &#39;purple&#39;, &#39;yellow&#39;, &#39;black&#39;]
+After:  [&#39;periwinkle&#39;, &#39;blue&#39;, &#39;purple&#39;, &#39;yellow&#39;, &#39;black&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># But what if we want to change the first element in a tuple?</span>
+<span class="n">color_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">color_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;periwinkle&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4926</span><span class="o">/</span><span class="mf">2992810842.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># But what if we want to change the first element in a tuple?</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">color_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">color_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;periwinkle&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unlike the <code class="docutils literal notranslate"><span class="pre">list</span></code>, we cannot change elements once a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> is made.</p>
+<p>But, like the <code class="docutils literal notranslate"><span class="pre">list</span></code>, we can access elements by their indices or with the <code class="docutils literal notranslate"><span class="pre">slice</span></code> (<code class="docutils literal notranslate"><span class="pre">[a:b]</span></code>) notation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can access tuple values similarly to lists with indexing and slicing</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color_tuple</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">color_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yellow
+(&#39;green&#39;, &#39;blue&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You may recall we have met the <code class="docutils literal notranslate"><span class="pre">tuple</span></code> before!</p>
+<p>In week 2 we explored the <code class="docutils literal notranslate"><span class="pre">zip</span></code> function when using a shortcut to make a dictionary (<code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code>) object. When we printed the <code class="docutils literal notranslate"><span class="pre">zip</span></code> as a <code class="docutils literal notranslate"><span class="pre">list</span></code>, it had several <code class="docutils literal notranslate"><span class="pre">tuple</span></code> objects inside (which we now know are shown with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">planets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mercury&#39;</span><span class="p">,</span> <span class="s1">&#39;venus&#39;</span><span class="p">,</span> <span class="s1">&#39;earth&#39;</span><span class="p">,</span> <span class="s1">&#39;mars&#39;</span><span class="p">,</span> <span class="s1">&#39;jupiter&#39;</span><span class="p">,</span> <span class="s1">&#39;saturn&#39;</span><span class="p">,</span> <span class="s1">&#39;uranus&#39;</span><span class="p">,</span> <span class="s1">&#39;neptune&#39;</span><span class="p">]</span>
+<span class="n">planet_g</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.61</span><span class="p">,</span> <span class="mf">8.83</span><span class="p">,</span> <span class="mf">9.80665</span><span class="p">,</span> <span class="mf">3.75</span><span class="p">,</span> <span class="mf">26.0</span><span class="p">,</span> <span class="mf">11.2</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mf">13.3</span><span class="p">]</span>
+
+<span class="n">zipped_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">planets</span><span class="p">,</span> <span class="n">planet_g</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zipped_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;mercury&#39;, 3.61), (&#39;venus&#39;, 8.83), (&#39;earth&#39;, 9.80665), (&#39;mars&#39;, 3.75), (&#39;jupiter&#39;, 26.0), (&#39;saturn&#39;, 11.2), (&#39;uranus&#39;, 10.5), (&#39;neptune&#39;, 13.3)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The outer list is type &quot;list&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type of full list is:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">zipped_list</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1st element is:&quot;</span><span class="p">,</span> <span class="n">zipped_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Type of 1st element is: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">zipped_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type of full list is: &lt;class &#39;list&#39;&gt;
+1st element is: (&#39;mercury&#39;, 3.61)
+Type of 1st element is: &lt;class &#39;tuple&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="unpacking-a-tuple-list-or-numpy-array">
+<h2>Unpacking a <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, or NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code><a class="headerlink" href="#unpacking-a-tuple-list-or-numpy-array" title="Permalink to this headline">¶</a></h2>
+<p>We can “unpack” a <em>list-like</em> object (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, NumPy <code class="docutils literal notranslate"><span class="pre">array</span></code>, etc.) into several individual variables by setting several variables separated by commas equal (<code class="docutils literal notranslate"><span class="pre">=</span></code>) to that list-like object.</p>
+<p>Be sure to give same number of variables as there are elements in the list!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Whole tuple: &#39;</span><span class="p">,</span> <span class="n">color_tuple</span><span class="p">)</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">color_tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Individual value extracted are:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Whole tuple:  (&#39;green&#39;, &#39;blue&#39;, &#39;purple&#39;, &#39;yellow&#39;, &#39;black&#39;)
+Individual value extracted are: green blue purple yellow black
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="unpacking-using-the-asterisk">
+<h3>Unpacking using the <strong>asterisk</strong> (<code class="docutils literal notranslate"><span class="pre">*</span></code>)<a class="headerlink" href="#unpacking-using-the-asterisk" title="Permalink to this headline">¶</a></h3>
+<p>In the example above, Python knew to unpack each <code class="docutils literal notranslate"><span class="pre">string</span></code> into its own variable because of the pattern we used (variables, equal sign, list). If we want to explicitly tell Python to unpack a list-like object we can use the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator in front of that object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Whole list: &#39;</span><span class="p">,</span> <span class="n">color_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Unpacked:&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">color_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Whole list:  [&#39;green&#39;, &#39;blue&#39;, &#39;purple&#39;, &#39;yellow&#39;, &#39;black&#39;]
+Unpacked: green blue purple yellow black
+</pre></div>
+</div>
+</div>
+</div>
+<p>We often want to use this trick when giving multiple arguments to functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This function takes 5 arguments</span>
+<span class="k">def</span> <span class="nf">multiply_all</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return the product of elements a through e&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">*</span> <span class="n">c</span> <span class="o">*</span> <span class="n">d</span> <span class="o">*</span> <span class="n">e</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># What if we want to pass a list of numbers to multiply?</span>
+<span class="n">our_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="n">our_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_4926</span><span class="o">/</span><span class="mf">649650028.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># What if we want to pass a list of numbers to multiply?</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">our_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="n">our_list</span><span class="p">))</span>
+
+<span class="ne">TypeError</span>: multiply_all() missing 4 required positional arguments: &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, and &#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python is telling us we are not giving the function the correct number of arguments. This is because <code class="docutils literal notranslate"><span class="pre">our_list</span></code> is a single object, and Python assumes it to be the first argument, <code class="docutils literal notranslate"><span class="pre">a</span></code> (which is why the error says arguments ‘b’, ‘c’, ‘d’, and ‘e’ are missing).</p>
+<p>We could pass in each argument of the list individually, but this can get messy quickly…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="n">our_list</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">our_list</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">our_list</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">our_list</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">our_list</span><span class="p">[</span><span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<p>Instead, we can tell Python to <strong>unpack</strong> our list into its 5 elements using <code class="docutils literal notranslate"><span class="pre">*</span></code> and then it recognizes the 5 different arguments to <code class="docutils literal notranslate"><span class="pre">multiply_all</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">(</span><span class="o">*</span><span class="n">our_list</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also use the <code class="docutils literal notranslate"><span class="pre">*</span></code> as a stand-in for multiple arguments in the multiple variable assignment example we saw before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Here, any remaining arguments are unpacked into others</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">others</span> <span class="o">=</span> <span class="n">color_tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">others</span><span class="p">)</span>
+
+<span class="c1"># Here, some arguments in the middle can be unpacked into middle_others</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">middle_others</span><span class="p">,</span> <span class="n">e</span> <span class="o">=</span> <span class="n">color_tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">middle_others</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+
+<span class="c1"># In Python, we use underscore to indicate that we don&#39;t care about a value(s)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="o">*</span><span class="n">_</span> <span class="o">=</span> <span class="n">color_tuple</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>green blue [&#39;purple&#39;, &#39;yellow&#39;, &#39;black&#39;]
+green blue [&#39;purple&#39;, &#39;yellow&#39;] black
+green blue
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="curve-fitting-with-scipy-optimize-curve-fit">
+<h2>Curve fitting with <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code><a class="headerlink" href="#curve-fitting-with-scipy-optimize-curve-fit" title="Permalink to this headline">¶</a></h2>
+<p>Last week’s assignment we were trying to fit the free-fall function</p>
+<div class="math notranslate nohighlight">
+\[H = \frac{1}{2} g t^2\]</div>
+<p>using the <code class="docutils literal notranslate"><span class="pre">np.polyfit</span></code>. But polyfit can only fit polynomials of the form</p>
+<div class="math notranslate nohighlight">
+\[y = a x^2 + b x + c\]</div>
+<p>Which has a couple extra terms that we don’t need.</p>
+<p>Today we will learn to define custom functions with any number of parameters  that we can fit a curve to. We will do our curve-fitting using the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/general.html">Scipy</a> package (<code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit</span></code>). We will also discuss how to quantify the “goodness of fit” with the <em>reduced chi-squared</em> statistic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># same data given in assignment 2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">time_steps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">20.0</span><span class="p">,</span> <span class="mf">27.966</span><span class="p">,</span> <span class="mf">35.931</span><span class="p">,</span> <span class="mf">43.897</span><span class="p">,</span> <span class="mf">51.862</span><span class="p">,</span> <span class="mf">59.828</span><span class="p">,</span> <span class="mf">67.793</span><span class="p">,</span> <span class="mf">75.759</span><span class="p">,</span> <span class="mf">83.724</span><span class="p">,</span> <span class="mf">91.69</span><span class="p">,</span> <span class="mf">99.655</span><span class="p">,</span> <span class="mf">107.621</span><span class="p">,</span> <span class="mf">115.586</span><span class="p">,</span> <span class="mf">123.552</span><span class="p">,</span> <span class="mf">131.517</span><span class="p">,</span> <span class="mf">139.483</span><span class="p">,</span> <span class="mf">147.448</span><span class="p">,</span> <span class="mf">155.414</span><span class="p">,</span> <span class="mf">163.379</span><span class="p">,</span> <span class="mf">171.345</span><span class="p">,</span> <span class="mf">179.31</span><span class="p">,</span> <span class="mf">187.276</span><span class="p">,</span> <span class="mf">195.241</span><span class="p">,</span> <span class="mf">203.207</span><span class="p">,</span> <span class="mf">211.172</span><span class="p">,</span> <span class="mf">219.138</span><span class="p">,</span> <span class="mf">227.103</span><span class="p">,</span> <span class="mf">235.069</span><span class="p">,</span> <span class="mf">243.034</span><span class="p">,</span> <span class="mf">251.0</span><span class="p">])</span>
+<span class="n">fall_distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2798.322</span><span class="p">,</span> <span class="mf">4543.523</span><span class="p">,</span> <span class="mf">5459.432</span><span class="p">,</span> <span class="mf">11554.559</span><span class="p">,</span> <span class="mf">15958.431</span><span class="p">,</span> <span class="mf">20023.776</span><span class="p">,</span> <span class="mf">19146.256</span><span class="p">,</span> <span class="mf">22765.371</span><span class="p">,</span> <span class="mf">47183.159</span><span class="p">,</span> <span class="mf">47167.289</span><span class="p">,</span> <span class="mf">22978.494</span><span class="p">,</span> <span class="mf">66253.599</span><span class="p">,</span> <span class="mf">63625.642</span><span class="p">,</span> <span class="mf">91050.12</span><span class="p">,</span> <span class="mf">116941.625</span><span class="p">,</span> <span class="mf">143460.073</span><span class="p">,</span> <span class="mf">106462.323</span><span class="p">,</span> <span class="mf">142584.887</span><span class="p">,</span> <span class="mf">199564.683</span><span class="p">,</span> <span class="mf">83593.839</span><span class="p">,</span> <span class="mf">158030.907</span><span class="p">,</span> <span class="mf">205442.175</span><span class="p">,</span> <span class="mf">206733.665</span><span class="p">,</span> <span class="mf">241555.039</span><span class="p">,</span> <span class="mf">236078.303</span><span class="p">,</span> <span class="mf">240508.665</span><span class="p">,</span> <span class="mf">311193.102</span><span class="p">,</span> <span class="mf">298704.903</span><span class="p">,</span> <span class="mf">339502.307</span><span class="p">,</span> <span class="mf">438338.605</span><span class="p">])</span>
+<span class="n">fall_distance_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">448.0</span><span class="p">,</span> <span class="mf">875.919</span><span class="p">,</span> <span class="mf">1445.964</span><span class="p">,</span> <span class="mf">2158.136</span><span class="p">,</span> <span class="mf">3012.435</span><span class="p">,</span> <span class="mf">4008.861</span><span class="p">,</span> <span class="mf">5147.413</span><span class="p">,</span> <span class="mf">6428.093</span><span class="p">,</span> <span class="mf">7850.899</span><span class="p">,</span> <span class="mf">9415.832</span><span class="p">,</span> <span class="mf">18538.153</span><span class="p">,</span> <span class="mf">21620.131</span><span class="p">,</span> <span class="mf">24938.986</span><span class="p">,</span> <span class="mf">28494.72</span><span class="p">,</span> <span class="mf">32287.332</span><span class="p">,</span> <span class="mf">36316.821</span><span class="p">,</span> <span class="mf">40583.189</span><span class="p">,</span> <span class="mf">45086.435</span><span class="p">,</span> <span class="mf">49826.558</span><span class="p">,</span> <span class="mf">54803.56</span><span class="p">,</span> <span class="mf">18005.232</span><span class="p">,</span> <span class="mf">19640.459</span><span class="p">,</span> <span class="mf">21346.75</span><span class="p">,</span> <span class="mf">23124.104</span><span class="p">,</span> <span class="mf">24972.521</span><span class="p">,</span> <span class="mf">26892.002</span><span class="p">,</span> <span class="mf">28882.547</span><span class="p">,</span> <span class="mf">30944.154</span><span class="p">,</span> <span class="mf">33076.825</span><span class="p">,</span> <span class="mf">35280.56</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first thing we need to do is define the function we would like to fit our data to. In this case it’s the free-fall function.</p>
+<p><strong>Note:</strong> the independent variable (usually the “x” data on a plot) must be the first argument in your function for Scipy <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code> to work. Here, our independent variable is time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that time must be the first argument</span>
+<span class="k">def</span> <span class="nf">free_fall_h</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Free fall distance given time t on Earth.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        t (float or np.array): Time in [s]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        [float or np.array]: Free fall distance in [m]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">time</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we perform the fit using <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>.</p>
+<p>Input parameters for <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> are below (remember you can use <code class="docutils literal notranslate"><span class="pre">help(function_name))</span></code> to see this info):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">xdata</span><span class="p">,</span> <span class="n">ydata</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> 
+          <span class="n">check_finite</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">inf</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
+          <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We will import curve_fit from scipy.optimize</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">free_fall_h</span><span class="p">,</span>  <span class="c1"># f, function you defined for fitting</span>
+                       <span class="n">time_steps</span><span class="p">,</span>  <span class="c1"># xdata</span>
+                       <span class="n">fall_distance</span><span class="p">,</span>  <span class="c1"># ydata</span>
+                       <span class="n">sigma</span><span class="o">=</span><span class="n">fall_distance_err</span><span class="p">,</span>  <span class="c1"># uncertainty</span>
+                       <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">True</span>  <span class="c1"># See below</span>
+                       <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>One extra parameter we had to set was <code class="docutils literal notranslate"><span class="pre">absolute_sigma</span></code>, which means that the uncertainty (<code class="docutils literal notranslate"><span class="pre">sigma</span></code>) that we pass is in the same units as the ydata (e.g., our error is estimated by 1/ydata).</p>
+<p>We get two outputs from <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> (excerpt from <code class="docutils literal notranslate"><span class="pre">help(curve_fit)</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Returns
+-------
+popt : array
+    Optimal values for the parameters so that the sum of the squared
+    residuals of ``f(xdata, *popt) - ydata`` is minimized
+pcov : 2d array
+    The estimated covariance of popt. The diagonals provide the variance
+    of the parameter estimate. To compute one standard deviation errors
+    on the parameters use ``perr = np.sqrt(np.diag(pcov))``.
+</pre></div>
+</div>
+<p>So, <code class="docutils literal notranslate"><span class="pre">popt</span></code> are the best fit parameters we can pass back into our function like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">free_fall_h</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will talk about <code class="docutils literal notranslate"><span class="pre">pcov</span></code> in the following section. But now we have all we need to plot our original data (<code class="docutils literal notranslate"><span class="pre">ax.errorbar</span></code>), and the fit, <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">time_steps</span><span class="p">,</span> <span class="n">fall_distance</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">fall_distance_err</span><span class="p">,</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> 
+             <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data&#39;</span><span class="p">)</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">251</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">free_fall_h</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Best fit result&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [sec]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Fall distance [m]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Best fit g is abbout </span><span class="si">{</span><span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1"> m/s^2</span>
+<span class="s1">So the data is most likely taken from Saturn</span>
+<span class="s1">&#39;&#39;&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.83</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;x-small&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.03, 0.83, &#39;\nBest fit g is abbout 11.21 m/s^2\nSo the data is most likely taken from Saturn\n&#39;)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;Helvetica&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="_images/f21_a3_30_2.png" src="_images/f21_a3_30_2.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exponential-fitting">
+<h2>Exponential fitting<a class="headerlink" href="#exponential-fitting" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s try fitting a function of two parameters. The following function gives the intensity of light after travelling some distance through a medium:</p>
+<div class="math notranslate nohighlight">
+\[I = I_0 e^{-\alpha x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the distance the light travels, <span class="math notranslate nohighlight">\(\alpha\)</span> is the attenuation coefficient, <span class="math notranslate nohighlight">\(I_0\)</span> is the initial light intensity, and <span class="math notranslate nohighlight">\(I\)</span> is the final light intensity.</p>
+<p>Below are some measurements of intensity (<code class="docutils literal notranslate"><span class="pre">I</span></code>) and errors (<code class="docutils literal notranslate"><span class="pre">I_err</span></code>) of light travelling some distance (<code class="docutils literal notranslate"><span class="pre">dist</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">12.0</span><span class="p">,</span> <span class="mf">13.7959</span><span class="p">,</span> <span class="mf">15.5918</span><span class="p">,</span> <span class="mf">17.3878</span><span class="p">,</span> <span class="mf">19.1837</span><span class="p">,</span> <span class="mf">20.9796</span><span class="p">,</span> <span class="mf">22.7755</span><span class="p">,</span> <span class="mf">24.5714</span><span class="p">,</span> <span class="mf">26.3673</span><span class="p">,</span> <span class="mf">28.1633</span><span class="p">,</span> <span class="mf">29.9592</span><span class="p">,</span> <span class="mf">31.7551</span><span class="p">,</span> <span class="mf">33.551</span><span class="p">,</span> <span class="mf">35.3469</span><span class="p">,</span> <span class="mf">37.1429</span><span class="p">,</span> <span class="mf">38.9388</span><span class="p">,</span> <span class="mf">40.7347</span><span class="p">,</span> <span class="mf">42.5306</span><span class="p">,</span> <span class="mf">44.3265</span><span class="p">,</span> <span class="mf">46.1224</span><span class="p">,</span> <span class="mf">47.9184</span><span class="p">,</span> <span class="mf">49.7143</span><span class="p">,</span> <span class="mf">51.5102</span><span class="p">,</span> <span class="mf">53.3061</span><span class="p">,</span> <span class="mf">55.102</span><span class="p">,</span> <span class="mf">56.898</span><span class="p">,</span> <span class="mf">58.6939</span><span class="p">,</span> <span class="mf">60.4898</span><span class="p">,</span> <span class="mf">62.2857</span><span class="p">,</span> <span class="mf">64.0816</span><span class="p">,</span> <span class="mf">65.8776</span><span class="p">,</span> <span class="mf">67.6735</span><span class="p">,</span> <span class="mf">69.4694</span><span class="p">,</span> <span class="mf">71.2653</span><span class="p">,</span> <span class="mf">73.0612</span><span class="p">,</span> <span class="mf">74.8571</span><span class="p">,</span> <span class="mf">76.6531</span><span class="p">,</span> <span class="mf">78.449</span><span class="p">,</span> <span class="mf">80.2449</span><span class="p">,</span> <span class="mf">82.0408</span><span class="p">,</span> <span class="mf">83.8367</span><span class="p">,</span> <span class="mf">85.6327</span><span class="p">,</span> <span class="mf">87.4286</span><span class="p">,</span> <span class="mf">89.2245</span><span class="p">,</span> <span class="mf">91.0204</span><span class="p">,</span> <span class="mf">92.8163</span><span class="p">,</span> <span class="mf">94.6122</span><span class="p">,</span> <span class="mf">96.4082</span><span class="p">,</span> <span class="mf">98.2041</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">])</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">482.214</span><span class="p">,</span> <span class="mf">389.795</span><span class="p">,</span> <span class="mf">417.421</span><span class="p">,</span> <span class="mf">378.402</span><span class="p">,</span> <span class="mf">393.997</span><span class="p">,</span> <span class="mf">371.42</span><span class="p">,</span> <span class="mf">285.195</span><span class="p">,</span> <span class="mf">347.59</span><span class="p">,</span> <span class="mf">304.29</span><span class="p">,</span> <span class="mf">322.799</span><span class="p">,</span> <span class="mf">300.704</span><span class="p">,</span> <span class="mf">295.73</span><span class="p">,</span> <span class="mf">271.516</span><span class="p">,</span> <span class="mf">239.407</span><span class="p">,</span> <span class="mf">229.565</span><span class="p">,</span> <span class="mf">239.357</span><span class="p">,</span> <span class="mf">191.643</span><span class="p">,</span> <span class="mf">226.5</span><span class="p">,</span> <span class="mf">184.056</span><span class="p">,</span> <span class="mf">176.801</span><span class="p">,</span> <span class="mf">181.224</span><span class="p">,</span> <span class="mf">166.537</span><span class="p">,</span> <span class="mf">164.609</span><span class="p">,</span> <span class="mf">179.143</span><span class="p">,</span> <span class="mf">142.931</span><span class="p">,</span> <span class="mf">159.787</span><span class="p">,</span> <span class="mf">134.377</span><span class="p">,</span> <span class="mf">109.336</span><span class="p">,</span> <span class="mf">167.306</span><span class="p">,</span> <span class="mf">123.342</span><span class="p">,</span> <span class="mf">126.411</span><span class="p">,</span> <span class="mf">81.928</span><span class="p">,</span> <span class="mf">103.654</span><span class="p">,</span> <span class="mf">97.031</span><span class="p">,</span> <span class="mf">109.793</span><span class="p">,</span> <span class="mf">118.463</span><span class="p">,</span> <span class="mf">78.641</span><span class="p">,</span> <span class="mf">50.353</span><span class="p">,</span> <span class="mf">82.108</span><span class="p">,</span> <span class="mf">71.716</span><span class="p">,</span> <span class="mf">89.883</span><span class="p">,</span> <span class="mf">80.013</span><span class="p">,</span> <span class="mf">57.005</span><span class="p">,</span> <span class="mf">67.241</span><span class="p">,</span> <span class="mf">95.849</span><span class="p">,</span> <span class="mf">83.303</span><span class="p">,</span> <span class="mf">41.501</span><span class="p">,</span> <span class="mf">49.54</span><span class="p">,</span> <span class="mf">73.028</span><span class="p">,</span> <span class="mf">73.103</span><span class="p">])</span>
+<span class="n">I_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.723</span><span class="p">,</span> <span class="o">-</span><span class="mf">35.181</span><span class="p">,</span> <span class="mf">11.103</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.076</span><span class="p">,</span> <span class="mf">22.576</span><span class="p">,</span> <span class="mf">16.306</span><span class="p">,</span> <span class="o">-</span><span class="mf">54.328</span><span class="p">,</span> <span class="mf">22.974</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.074</span><span class="p">,</span> <span class="mf">26.061</span><span class="p">,</span> <span class="mf">16.994</span><span class="p">,</span> <span class="mf">24.477</span><span class="p">,</span> <span class="mf">12.172</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.55</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.505</span><span class="p">,</span> <span class="mf">12.695</span><span class="p">,</span> <span class="o">-</span><span class="mf">25.067</span><span class="p">,</span> <span class="mf">19.304</span><span class="p">,</span> <span class="o">-</span><span class="mf">14.043</span><span class="p">,</span> <span class="o">-</span><span class="mf">12.6</span><span class="p">,</span> <span class="mf">0.138</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.598</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.925</span><span class="p">,</span> <span class="mf">20.877</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.387</span><span class="p">,</span> <span class="mf">15.113</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">22.913</span><span class="p">,</span> <span class="mf">40.863</span><span class="p">,</span> <span class="mf">2.451</span><span class="p">,</span> <span class="mf">10.828</span><span class="p">,</span> <span class="o">-</span><span class="mf">28.581</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.003</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.987</span><span class="p">,</span> <span class="mf">13.211</span><span class="p">,</span> <span class="mf">26.121</span><span class="p">,</span> <span class="o">-</span><span class="mf">9.647</span><span class="p">,</span> <span class="o">-</span><span class="mf">34.059</span><span class="p">,</span> <span class="mf">1.402</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.446</span><span class="p">,</span> <span class="mf">16.108</span><span class="p">,</span> <span class="mf">9.478</span><span class="p">,</span> <span class="o">-</span><span class="mf">10.434</span><span class="p">,</span> <span class="mf">2.763</span><span class="p">,</span> <span class="mf">34.203</span><span class="p">,</span> <span class="mf">24.363</span><span class="p">,</span> <span class="o">-</span><span class="mf">14.852</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.338</span><span class="p">,</span> <span class="mf">21.516</span><span class="p">,</span> <span class="mf">23.852</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As we should always do with new data, let’s make a plot to see what we’re dealing with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Init plot</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="c1"># We can plot data and errors with ax.errorbar</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>    
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Light travel distance [m]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity arbitrary units&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a3_35_0.png" src="_images/f21_a3_35_0.png" />
+</div>
+</div>
+<p>Now let’s define our attenuation function that we want to use in <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remember, x is the first argument, any other parameters follow in any order</span>
+<span class="k">def</span> <span class="nf">attenuation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return intensity of light initially I0 after moving x distance through a </span>
+<span class="sd">    medium with attenuation coefficient alpha.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x (float or np.array): Distance travelled in [m]</span>
+<span class="sd">        I0 (float): Initial intensity</span>
+<span class="sd">        alpha (float): Attenuation coefficient</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float or np.array: Final intensity</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">I0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can fit plot our data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do the fitting</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">attenuation</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot data and fit</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">attenuation</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      
+<span class="n">ax1</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Light travel distance [m]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity arbitrary units&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_4926/4224393954.py:15: RuntimeWarning: overflow encountered in exp
+  return I0 * np.exp(-alpha * x)
+</pre></div>
+</div>
+<img alt="_images/f21_a3_39_1.png" src="_images/f21_a3_39_1.png" />
+</div>
+</div>
+<p>Hmmm, something must be wrong… Let’s check the documentation again:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Parameters</span>
+<span class="o">----------</span>
+<span class="o">...</span>
+
+<span class="n">p0</span> <span class="p">:</span> <span class="n">array_like</span><span class="p">,</span> <span class="n">optional</span>
+    <span class="n">Initial</span> <span class="n">guess</span> <span class="k">for</span> <span class="n">the</span> <span class="n">parameters</span> <span class="p">(</span><span class="n">length</span> <span class="n">N</span><span class="p">)</span><span class="o">.</span> <span class="n">If</span> <span class="kc">None</span><span class="p">,</span> <span class="n">then</span> <span class="n">the</span>
+    <span class="n">initial</span> <span class="n">values</span> <span class="n">will</span> <span class="nb">all</span> <span class="n">be</span> <span class="mi">1</span> <span class="p">(</span><span class="k">if</span> <span class="n">the</span> <span class="n">number</span> <span class="n">of</span> <span class="n">parameters</span> <span class="k">for</span> <span class="n">the</span>
+    <span class="n">function</span> <span class="n">can</span> <span class="n">be</span> <span class="n">determined</span> <span class="n">using</span> <span class="n">introspection</span><span class="p">,</span> <span class="n">otherwise</span> <span class="n">a</span>
+    <span class="ne">ValueError</span> <span class="ow">is</span> <span class="n">raised</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>It seems that if you do not provide an initial guess of each parameter, <code class="docutils literal notranslate"><span class="pre">p0</span></code>, they default to <code class="docutils literal notranslate"><span class="pre">1</span></code>. If the guesses are too far off, then <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> may find the wrong parameters or not converge at all.</p>
+<p>Let’s try again, this time providing an initial guess as <code class="docutils literal notranslate"><span class="pre">p0</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial guess</span>
+<span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">]</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">attenuation</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">p0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Plot data and fit</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">attenuation</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Light travel distance [m]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity arbitrary units&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+
+<span class="c1"># Print equation</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;I = </span><span class="si">{</span><span class="n">popt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1"> $e^</span><span class="se">{{</span><span class="s1">-</span><span class="si">{</span><span class="n">popt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1"> x</span><span class="se">}}</span><span class="s1">$&#39;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;monospace&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a3_41_0.png" src="_images/f21_a3_41_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="chi-squared-chi-2-and-reduced-chi-squared-chi-2-nu">
+<h2>Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) and Reduced Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2_\nu\)</span>)<a class="headerlink" href="#chi-squared-chi-2-and-reduced-chi-squared-chi-2-nu" title="Permalink to this headline">¶</a></h2>
+<p>After the fitting, how can we tell if we have a good fit? Well, we can get some help with a “goodness of fit” metric call <strong>Reduced Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2_\nu\)</span>)</strong> which is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\chi^2_\nu = \frac{\chi^2}{\nu}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\chi^2\)</span> is calculated by the below equation, <span class="math notranslate nohighlight">\(\nu\)</span> is the number of data points minus the degrees of freedom (number of model parameters).</p>
+<p>The Chi-Squared (<span class="math notranslate nohighlight">\(\chi^2\)</span>) is given by</p>
+<div class="math notranslate nohighlight">
+\[\chi^2 = \sum_i \frac{(D_i - M_i)^2}{\sigma_i^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(D_i\)</span> is the observed data, <span class="math notranslate nohighlight">\(M_i\)</span> is the model fitted result, and <span class="math notranslate nohighlight">\(sigma_i\)</span> is the observed data uncertainty.</p>
+<p>The final <span class="math notranslate nohighlight">\(\chi^2_\nu\)</span> value will be a single number that we can interpret with the following simple rules of thumb:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &gt;&gt; 1\)</span>: Fit is poor. The chosen model is unlikely to fit the data.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &gt; 1\)</span>: Fit does not fully capture the data. It’s possible there are too few data points or the uncertainties are underestimated.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\chi^2_\nu &lt; 1\)</span>: Fit is too good (overfitting). The model fits noise in the data or the uncertainties are overestimated (can be caused by having too many free parameters in fitting).</p></li>
+</ul>
+<p>In general <span class="math notranslate nohighlight">\(\chi^2_\nu \approx 1\)</span> means that the fit is doing a good job without overfitting. While these guidelines don’t replace full statistical tests, they can be quick check of goodness of fit.</p>
+<p>Below we define a reduced chi-squared function to test our fit:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">chi_squared_reduced</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the reduced chi-squared value for a fit.</span>
+
+<span class="sd">    If no dof is given, returns the chi-squared (non-reduced) value.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    data : array_like</span>
+<span class="sd">        The observed data.</span>
+<span class="sd">    model : array_like</span>
+<span class="sd">        The model data.</span>
+<span class="sd">    sigma : array_like</span>
+<span class="sd">        The uncertainty in the data.</span>
+<span class="sd">    dof : int</span>
+<span class="sd">        Degrees of freedom (len(data) - # of free parameters).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sq_residual</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">model</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">chi_sq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sq_residual</span> <span class="o">/</span> <span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">dof</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">chi_sq</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nu</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">dof</span>
+        <span class="k">return</span> <span class="n">chi_sq</span> <span class="o">/</span> <span class="n">nu</span>
+
+<span class="c1"># Define our data, model, uncertainty, and degrees of freedom</span>
+<span class="n">I_data</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># observed data</span>
+<span class="n">I_modeled</span> <span class="o">=</span> <span class="n">attenuation</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">)</span> <span class="c1"># model fitted result</span>
+<span class="n">I_sigma</span> <span class="o">=</span> <span class="n">I_err</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># uncertainty in the data</span>
+
+<span class="c1"># Calculate the Chi-Squared value (no dof)</span>
+<span class="n">chisq</span> <span class="o">=</span> <span class="n">chi_squared_reduced</span><span class="p">(</span><span class="n">I_data</span><span class="p">,</span> <span class="n">I_modeled</span><span class="p">,</span> <span class="n">I_sigma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;chi-squared statistic = </span><span class="si">{</span><span class="n">chisq</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Calculate the Reduced Chi-Squared value (with dof)</span>
+<span class="n">dof</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># We have two free parameters</span>
+<span class="n">rechisq</span> <span class="o">=</span> <span class="n">chi_squared_reduced</span><span class="p">(</span><span class="n">I_data</span><span class="p">,</span> <span class="n">I_modeled</span><span class="p">,</span> <span class="n">I_sigma</span><span class="p">,</span> <span class="n">dof</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;reduced chi-squared = </span><span class="si">{</span><span class="n">rechisq</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chi-squared statistic = 49.31
+reduced chi-squared = 1.03
+</pre></div>
+</div>
+</div>
+</div>
+<p>A reduced hi-squared close to 1 indicates the model we chose is doing a good job of fitting our data!</p>
+</div>
+<div class="section" id="fit-uncertainties-and-the-covariance-matrix">
+<h2>Fit uncertainties and the covariance matrix<a class="headerlink" href="#fit-uncertainties-and-the-covariance-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Recall we had two outputs of the <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> function, <code class="docutils literal notranslate"><span class="pre">popt</span></code> and <code class="docutils literal notranslate"><span class="pre">pcov</span></code>.</p>
+<p>In the docstring of <code class="docutils literal notranslate"><span class="pre">curve_fit</span></code> we see:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Returns
+-------
+...
+pcov : 2d array
+    The estimated covariance of popt. The diagonals provide the variance
+    of the parameter estimate. To compute one standard deviation errors
+    on the parameters use ``perr = np.sqrt(np.diag(pcov))``.
+</pre></div>
+</div>
+<p>Here we learn the standard deviation errors of each fitted parameter is <code class="docutils literal notranslate"><span class="pre">np.sqrt(np.diag(pcov))</span></code>. To understand why, we’ll do a quick rundown on the <strong>Covariance matrix</strong>:</p>
+<p>The Covariance matrix with only two parameters looks like:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+var(x) &amp; cov(x,y)\\
+cov(x,y) &amp; var(y)
+\end{pmatrix}
+\end{split}\]</div>
+<p>where <em>var</em> is <strong>variance</strong> (<span class="math notranslate nohighlight">\(\sigma^2\)</span>), a measure of the dispersion of a set of data points from the mean. The <strong>standard deviation</strong> (<span class="math notranslate nohighlight">\(\sigma\)</span>) is defined as the square root of the <strong>variance</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code> function recommends using 2 steps to get the parameter errors, <code class="docutils literal notranslate"><span class="pre">perr</span></code>:</p>
+<ul class="simple">
+<li><p>first use the <code class="docutils literal notranslate"><span class="pre">np.diag()</span></code> function to extract the diagonal <strong>variance</strong> terms of the covariance matrix, <code class="docutils literal notranslate"><span class="pre">pcov</span></code>.</p></li>
+<li><p>then use <code class="docutils literal notranslate"><span class="pre">np.sqrt()</span></code> to convert the variance terms to standard deviation</p></li>
+</ul>
+<p>Now we have uncertainties (standard deviations) for each fitted parameter we compute with Scipy’s <code class="docutils literal notranslate"><span class="pre">curve_fit()</span></code> function!</p>
+<p>We break down each step below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can define a 2D array (&quot;matrix&quot;) as a list of lists</span>
+<span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+                   <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Whole matrix: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Only the diagonal terms: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">matrix</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Whole matrix: 
+ [[1 2]
+ [3 4]]
+Only the diagonal terms: 
+ [1 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now working on our data</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Show the covariance matrix: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">pcov</span><span class="p">)</span>
+
+<span class="c1"># Sqrt of the diagonals (variance) of the covariance matrix</span>
+<span class="n">perr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Show the standard deviation: </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">perr</span><span class="p">)</span>
+
+<span class="c1"># Unpack and print</span>
+<span class="n">I0_err</span><span class="p">,</span> <span class="n">alpha_err</span> <span class="o">=</span> <span class="n">perr</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;I_0 uncertainty: </span><span class="si">{</span><span class="n">I0_err</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Alpha uncertainty: </span><span class="si">{</span><span class="n">alpha_err</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Show the covariance matrix: 
+ [[6.03733867e+01 2.08383429e-03]
+ [2.08383429e-03 7.21680376e-08]]
+Show the standard deviation: 
+ [7.77003132e+00 2.68641094e-04]
+I_0 uncertainty: 7.7700
+Alpha uncertainty: 0.0003
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">]</span>
+<span class="n">popt</span><span class="p">,</span> <span class="n">pcov</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">attenuation</span><span class="p">,</span> <span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="n">p0</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">absolute_sigma</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Compute fit errors and unpack</span>
+<span class="n">I0_err</span><span class="p">,</span> <span class="n">alpha_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">pcov</span><span class="p">))</span>
+<span class="n">I0</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">popt</span>  <span class="c1"># we&#39;ll unpack our fit params too for later</span>
+
+<span class="c1"># Make best-fitting curve to plot</span>
+<span class="n">x_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y_fit</span> <span class="o">=</span> <span class="n">attenuation</span><span class="p">(</span><span class="n">x_fit</span><span class="p">,</span> <span class="n">I0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+<span class="c1"># ---------</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">I_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="n">attenuation</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="o">*</span><span class="n">popt</span><span class="p">),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+      
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Light travel distance [m]&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Intensity arbitrary units&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+
+<span class="c1"># Print fit equation and parameter errors</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">(</span><span class="n">I0</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">I0_err</span><span class="p">,</span> <span class="n">alpha_err</span><span class="p">)</span>
+<span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;I = </span><span class="si">{:1.2f}</span><span class="s1">$\pm$</span><span class="si">{:1.3f}</span><span class="s1"> e$^{{-</span><span class="si">{:1.2f}</span><span class="s1">\pm</span><span class="si">{:1.4f}</span><span class="s1"> x}}$&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">params</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;monospace&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a3_48_0.png" src="_images/f21_a3_48_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="assignment-gaussian-curve-fitting">
+<h2>[Assignment] Gaussian curve fitting<a class="headerlink" href="#assignment-gaussian-curve-fitting" title="Permalink to this headline">¶</a></h2>
+<p>A common way to calculate the radial velocity (<strong>RV</strong>) of a stellar object is to do a cross-correlation (CC) between the target spectrum and a template. This tells us the amount of blueshift or redshift of the target, and therefor the radial velocity.</p>
+<p>To compute the <strong>RV</strong> of a star from this cross-correlated spectrum, we often use the <em>Gaussian curve fitting</em> technique. To do so, we can fit a Gaussian to the data where:</p>
+<ul class="simple">
+<li><p>The <strong>mean</strong> of the Gaussian is the RV we want</p></li>
+<li><p>The <strong><span class="math notranslate nohighlight">\(\sigma\)</span></strong> of the Gaussian is the RV uncertainty</p></li>
+</ul>
+<p>Below are 50 data points showing the cross-correlation result of your target.</p>
+<ol class="simple">
+<li><p>Define a Gaussian function (see the equation of a Gaussian below)</p></li>
+<li><p>Pass your function and the data to <code class="docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> to fit the data</p></li>
+<li><p>Make a plot of the data and the best-fit curve</p></li>
+<li><p>Report the <strong>RV</strong> and <strong>RV uncertainty</strong></p></li>
+<li><p>Compute the uncertainties in your best-fit parameters from the covariance matrix</p></li>
+<li><p>Perform a reduced chi-squared test and comment on whether the Gaussian was a good fit to the data or not</p></li>
+</ol>
+<p>The equation of a Gaussian function is:</p>
+<div class="math notranslate nohighlight">
+\[y = a \exp\left({-\frac{(A-\mu)^2}{2\sigma^2}}\right)\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is a scaling factor we’ll call “amplitude”, <span class="math notranslate nohighlight">\(\mu\)</span> is the mean, and <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation.</p>
+<blockquote>
+<div><p>Note: We don’t always have well-defined errors for our x and y which can make computing our goodness of fit challenging (e.g., here, we usually can’t get errors for CC values…) but for the sake of practice, we have given the CC errors so you have everything you need to do the 6 steps above!</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">velocity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">37.535</span><span class="p">,</span> <span class="mf">52.845</span><span class="p">,</span> <span class="mf">53.918</span><span class="p">,</span> <span class="mf">30.931</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">,</span> <span class="mf">39.144</span><span class="p">,</span> <span class="mf">22.699</span><span class="p">,</span> <span class="mf">19.801</span><span class="p">,</span> <span class="mf">17.425</span><span class="p">,</span> <span class="mf">39.381</span><span class="p">,</span> <span class="mf">73.684</span><span class="p">,</span> <span class="mf">9.484</span><span class="p">,</span> <span class="mf">45.404</span><span class="p">,</span> <span class="mf">46.831</span><span class="p">,</span> <span class="mf">55.452</span><span class="p">,</span> <span class="mf">20.019</span><span class="p">,</span> <span class="mf">44.051</span><span class="p">,</span> <span class="mf">18.543</span><span class="p">,</span> <span class="mf">79.721</span><span class="p">,</span> <span class="mf">31.844</span><span class="p">,</span> <span class="mf">64.963</span><span class="p">,</span> <span class="mf">75.49</span><span class="p">,</span> <span class="mf">39.81</span><span class="p">,</span> <span class="mf">9.999</span><span class="p">,</span> <span class="mf">28.751</span><span class="p">,</span> <span class="mf">45.333</span><span class="p">,</span> <span class="mf">23.268</span><span class="p">,</span> <span class="mf">78.313</span><span class="p">,</span> <span class="mf">76.148</span><span class="p">,</span> <span class="mf">62.0</span><span class="p">,</span> <span class="mf">47.152</span><span class="p">,</span> <span class="mf">60.666</span><span class="p">,</span> <span class="mf">34.733</span><span class="p">,</span> <span class="mf">15.867</span><span class="p">,</span> <span class="mf">12.259</span><span class="p">,</span> <span class="mf">17.917</span><span class="p">,</span> <span class="mf">76.266</span><span class="p">,</span> <span class="mf">64.811</span><span class="p">,</span> <span class="mf">55.157</span><span class="p">,</span> <span class="mf">56.686</span><span class="p">,</span> <span class="mf">73.041</span><span class="p">,</span> <span class="mf">40.553</span><span class="p">,</span> <span class="mf">53.292</span><span class="p">,</span> <span class="mf">55.885</span><span class="p">,</span> <span class="mf">32.44</span><span class="p">,</span> <span class="mf">41.581</span><span class="p">,</span> <span class="mf">67.152</span><span class="p">,</span> <span class="mf">48.553</span><span class="p">,</span> <span class="mf">15.797</span><span class="p">,</span> <span class="mf">61.86</span><span class="p">])</span>
+<span class="n">cc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">19.169</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.234</span><span class="p">,</span> <span class="mf">0.897</span><span class="p">,</span> <span class="mf">45.039</span><span class="p">,</span> <span class="mf">17.204</span><span class="p">,</span> <span class="mf">17.93</span><span class="p">,</span> <span class="mf">55.546</span><span class="p">,</span> <span class="mf">44.068</span><span class="p">,</span> <span class="mf">39.233</span><span class="p">,</span> <span class="mf">13.922</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.699</span><span class="p">,</span> <span class="mf">11.723</span><span class="p">,</span> <span class="mf">1.399</span><span class="p">,</span> <span class="mf">8.346</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.435</span><span class="p">,</span> <span class="mf">39.067</span><span class="p">,</span> <span class="mf">4.272</span><span class="p">,</span> <span class="mf">35.141</span><span class="p">,</span> <span class="mf">1.099</span><span class="p">,</span> <span class="mf">33.662</span><span class="p">,</span> <span class="mf">9.232</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.758</span><span class="p">,</span> <span class="mf">5.609</span><span class="p">,</span> <span class="mf">14.435</span><span class="p">,</span> <span class="mf">52.204</span><span class="p">,</span> <span class="mf">8.086</span><span class="p">,</span> <span class="mf">38.945</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.799</span><span class="p">,</span> <span class="mf">3.969</span><span class="p">,</span> <span class="mf">6.933</span><span class="p">,</span> <span class="mf">2.702</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.327</span><span class="p">,</span> <span class="mf">22.832</span><span class="p">,</span> <span class="mf">32.447</span><span class="p">,</span> <span class="mf">23.415</span><span class="p">,</span> <span class="mf">34.154</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.133</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.918</span><span class="p">,</span> <span class="mf">4.573</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.673</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.608</span><span class="p">,</span> <span class="mf">20.915</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.282</span><span class="p">,</span> <span class="mf">0.947</span><span class="p">,</span> <span class="mf">44.091</span><span class="p">,</span> <span class="mf">4.933</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.385</span><span class="p">,</span> <span class="mf">2.817</span><span class="p">,</span> <span class="mf">28.38</span><span class="p">,</span> <span class="mf">4.481</span><span class="p">])</span>
+<span class="n">cc_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.0371</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.9829</span><span class="p">,</span> <span class="mf">0.3501</span><span class="p">,</span> <span class="mf">7.2887</span><span class="p">,</span> <span class="mf">8.3716</span><span class="p">,</span> <span class="mf">2.6817</span><span class="p">,</span> <span class="mf">7.9506</span><span class="p">,</span> <span class="mf">0.1183</span><span class="p">,</span> <span class="mf">0.5635</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7848</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6988</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0142</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.4584</span><span class="p">,</span> <span class="mf">4.8028</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.7763</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.2763</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.158</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.2191</span><span class="p">,</span> <span class="mf">1.0985</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.6264</span><span class="p">,</span> <span class="mf">9.2215</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.7585</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.1463</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.577</span><span class="p">,</span> <span class="mf">9.327</span><span class="p">,</span> <span class="mf">3.1537</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.927</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.7991</span><span class="p">,</span> <span class="mf">3.9685</span><span class="p">,</span> <span class="mf">6.8977</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5885</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.385</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.1511</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0367</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6787</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.7387</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.1329</span><span class="p">,</span> <span class="o">-</span><span class="mf">7.93</span><span class="p">,</span> <span class="mf">4.1986</span><span class="p">,</span> <span class="o">-</span><span class="mf">8.9031</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.6084</span><span class="p">,</span> <span class="mf">8.7182</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.9393</span><span class="p">,</span> <span class="mf">0.6498</span><span class="p">,</span> <span class="mf">10.4736</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.3009</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.3893</span><span class="p">,</span> <span class="mf">0.4611</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.9066</span><span class="p">,</span> <span class="mf">4.4444</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span> <span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">velocity</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">cc_err</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+      
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">labelsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>   
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Velocity [km/s]&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;CC&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a3_51_0.png" src="_images/f21_a3_51_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 2 (Sep 28)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
