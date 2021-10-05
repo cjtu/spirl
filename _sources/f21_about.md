@@ -19,10 +19,10 @@ Zoom lecture recordings will be posted as they become available.
 
 | Week   | Date  | Lecture Topics | Assignment | Zoom Video |
 | :--- | :------ | :----- | :--------- | :------------ |
-| 0 | Sep 14 | Intro and setting up an environment        | [A0 due Sep 17](f21_a0.md)    | [link](https://nau.zoom.us/rec/share/vBA8k_h06jNTOY7DcFi9nRxiDluvGAzUQ0AjkvqwvVY4KvFAe1bM7jsZzs9nNC8O.lyK3LmwOw3vy0Q6S?startTime=1631633661000) |
-| 1 | Sep 21 | Git, Python arrays, function, and plotting | [A1 due Sep 24](f21_a1.ipynb) | [link](https://nau.zoom.us/rec/share/iV-U7WPfgQ0ygSgU4KyqQFZ8jgKm50NbihCbmIi5I9FHKIoKvSX6or7nYEy5O0Wl.QcejRiKvXofl3_RJ?startTime=1632239410000) |
+| 0 | Sep 14 | Intro and setting up an environment                    | [A0 due Sep 17](f21_a0.md)    | [link](https://nau.zoom.us/rec/share/vBA8k_h06jNTOY7DcFi9nRxiDluvGAzUQ0AjkvqwvVY4KvFAe1bM7jsZzs9nNC8O.lyK3LmwOw3vy0Q6S?startTime=1631633661000) |
+| 1 | Sep 21 | Git, Python arrays, function, and plotting             | [A1 due Sep 24](f21_a1.ipynb) | [link](https://nau.zoom.us/rec/share/iV-U7WPfgQ0ygSgU4KyqQFZ8jgKm50NbihCbmIi5I9FHKIoKvSX6or7nYEy5O0Wl.QcejRiKvXofl3_RJ?startTime=1632239410000) |
 | 2 | Sep 28 | Git branch and merge, for loops, `np.polyfit()`        | [A2 due Oct 01](f21_a2.ipynb) | [link](https://nau.zoom.us/rec/share/UA3x-HP6QY3ft_4rETr9QmK634s3JgzCcSxUSQMWzhyGQo7675b7ezYFfQLMXVAp.Wfqe34e62ABZljqu?startTime=1632844220000) |
-| 3 | Oct 05 | GitHub, `scipy.optimixe.curve_fit()`       | A3 due Oct 08 | link TBD |
+| 3 | Oct 05 | GitHub, `scipy.optimixe.curve_fit()`                   | [A3 due Oct 08](f21_a3.ipynb) | link TBD |
 | 4 | Oct 12 | Advanced `pandas`, cleaning data           | A4 due Oct 15 | link TBD |
 | 5 | Oct 19 | Monte Carlo (bootstrap) methods            | A5 due Oct 22 | link TBD |
 | 6 | Oct 26 | Markov-chain Monte Carlo (MCMC)            | A6 due Oct 29 | link TBD |
