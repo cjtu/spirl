@@ -23,8 +23,8 @@ Zoom lecture recordings will be posted as they become available.
 | 1 | Sep 21 | Git, Python arrays, function, and plotting             | [A1 due Sep 24](f21_a1.ipynb) | [link](https://nau.zoom.us/rec/share/iV-U7WPfgQ0ygSgU4KyqQFZ8jgKm50NbihCbmIi5I9FHKIoKvSX6or7nYEy5O0Wl.QcejRiKvXofl3_RJ?startTime=1632239410000) |
 | 2 | Sep 28 | Git branch and merge, for loops, `np.polyfit()`        | [A2 due Oct 01](f21_a2.ipynb) | [link](https://nau.zoom.us/rec/share/UA3x-HP6QY3ft_4rETr9QmK634s3JgzCcSxUSQMWzhyGQo7675b7ezYFfQLMXVAp.Wfqe34e62ABZljqu?startTime=1632844220000) |
 | 3 | Oct 05 | GitHub, `scipy.optimixe.curve_fit()`                   | [A3 due Oct 08](f21_a3.ipynb) | [link](https://nau.zoom.us/rec/share/aPBfUNLEXnHOoVAL_9lDLLUaAnheSrQFjC8uGIAd5DO0zQWKjEIASLKbHvnZd2M.nN3CYl-6rUtB_TbI?startTime=1633449062000) |
-| 4 | Oct 12 | Advanced `pandas`, cleaning data           | A4 due Oct 15 | link TBD |
-| 5 | Oct 19 | Monte Carlo (bootstrap) methods            | A5 due Oct 22 | link TBD |
+| 4 | Oct 12 | Monte Carlo (bootstrap) methods                        | [A4 due Oct 15](f21_a4.ipynb) | link TBD |
+| 5 | Oct 19 | Advanced `pandas`, cleaning data           | A5 due Oct 22 | link TBD |
 | 6 | Oct 26 | Markov-chain Monte Carlo (MCMC)            | A6 due Oct 29 | link TBD |
 | 7 | Nov 02 | Timing code, efficiency, vectorizing       | A7 due Nov 05 | link TBD |
 | 8 | Nov 09 | Installing new packages, review            | A8 due Nov 12 | link TBD |
