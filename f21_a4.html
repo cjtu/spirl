@@ -531,8 +531,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#challenge-assignment">
-   [Challenge assignment]
+  <a class="reference internal nav-link" href="#assignment-1">
+   [Assignment 1]
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#challenge">
+   [Challenge!]
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -541,8 +546,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment-what-s-the-value-for-pi">
-   [Assignment] What’s the value for
+  <a class="reference internal nav-link" href="#assignment-2-what-s-the-value-for-pi">
+   [Assignment 2] What’s the value for
    <span class="math notranslate nohighlight">
     \(\pi\)
    </span>
@@ -564,7 +569,7 @@
 <h1>SPIRL Fall 2021 Course – Week 4 (Oct 12)<a class="headerlink" href="#spirl-fall-2021-course-week-4-oct-12" title="Permalink to this headline">¶</a></h1>
 <p>Today we will talk about <strong>Monte Carlo (MC)</strong> methods, techniques that involve random sampling. But before we dive into that,
 we will need to learn a little bit about random numbers in Python.</p>
-<p>This will we will go over:</p>
+<p>We will go over:</p>
 <ol class="simple">
 <li><p>Python Numpy Random Generator: <code class="docutils literal notranslate"><span class="pre">np.random.default_rng()</span></code></p></li>
 <li><p>Plot histogram</p></li>
@@ -593,17 +598,17 @@ we will need to learn a little bit about random numbers in Python.</p>
 <div class="section" id="pseudo-random-number-generators-prng">
 <h3>Pseudo-random number generators (PRNG)<a class="headerlink" href="#pseudo-random-number-generators-prng" title="Permalink to this headline">¶</a></h3>
 <p>It might sound easy to come up with a random number, but many surveys have found this to not be the case (e.g. <a class="reference external" href="https://www.reddit.com/r/dataisbeautiful/comments/acow6y/asking_over_8500_students_to_pick_a_random_number/">Asking 8500 students to pick a random number</a>).</p>
-<p>Because computers are deterministic (a collection of switches that can be “on” or “off”), it is surprisingly hard to produce a set of numbers that are truly random.  Luckily, we often don’t need a <em>truly</em> random set of numbers. Usually when we say we want random numbers, we want numbers that are:</p>
+<p>Because computers are deterministic (a collection of switches that can be “on” or “off”), it is surprisingly hard to produce a set of numbers that are truly random.  Luckily, we often don’t need a <em>truly</em> random set of numbers. Usually when we say we want random numbers, we want a set of numbers that are:</p>
 <ul class="simple">
 <li><p>not biased to any particular value</p></li>
-<li><p>contains no repeated or recognizable patterns</p></li>
+<li><p>contain no repeated or recognizable patterns</p></li>
 </ul>
 <p>This is where a <strong>pseudorandom number generator (PRNG)</strong> can help.</p>
 <p>See what Wikipedia tell us about the PRNG:</p>
 <blockquote>
 <div><p>A pseudorandom number generator (PRNG), also known as a deterministic random bit generator (DRBG), is an algorithm for generating a sequence of numbers whose properties approximate the properties of sequences of random numbers. The PRNG-generated sequence is not truly random, because it is completely determined by an initial value, called the PRNG’s seed (which may include truly random values).</p>
 </div></blockquote>
-<p>The key “flaw” with a PRNG is that if you know a special value called the <strong>seed</strong>, you can regenerate the exact same sequence of random numbers again. But this ends up being as much a <em>feature</em> of a PRNG than as a <em>bug</em> which we’ll see later.</p>
+<p>The key “flaw” with a PRNG is that if you know a special value called the <strong>seed</strong>, you can regenerate the exact same sequence of random numbers again. But this ends up being a useful <em>feature</em> of PRNGs as we’ll see later.</p>
 <p>Since all computer generated random number generators are PRNGs, we often just drop the “P” and simply call them <strong>random number generators (RNGs)</strong> (but now you know their secret).</p>
 <p>Read more about <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">Pseudorandom number generators on Wikipedia</a>.</p>
 </div>
@@ -651,12 +656,12 @@ from 0 to `low`.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2 4 2 7 7 1 2 2]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6 5 5 4 9 5 9 2]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now use <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to run it many times to see if any is duplicated</p>
+<p>Now use <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to run it many times to see if any are duplicated:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
@@ -667,16 +672,16 @@ from 0 to `low`.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run 0:  [5 5 3 7 0 0 0 2]
-Run 1:  [5 2 4 7 4 1 9 7]
-Run 2:  [3 7 8 7 8 4 3 9]
-Run 3:  [5 3 2 8 2 8 5 2]
-Run 4:  [4 2 8 1 8 7 3 6]
-Run 5:  [0 7 6 1 6 1 7 5]
-Run 6:  [6 8 4 3 2 2 7 9]
-Run 7:  [5 0 9 3 8 7 6 1]
-Run 8:  [6 7 1 4 8 2 9 5]
-Run 9:  [3 2 4 1 2 5 5 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run 0:  [5 9 7 3 6 6 4 3]
+Run 1:  [5 6 4 7 4 9 2 5]
+Run 2:  [4 6 8 8 7 5 6 3]
+Run 3:  [5 5 9 3 1 2 1 4]
+Run 4:  [9 3 6 1 2 7 7 7]
+Run 5:  [1 4 8 9 1 9 5 1]
+Run 6:  [1 5 8 2 6 7 6 4]
+Run 7:  [0 4 4 5 2 6 5 1]
+Run 8:  [5 8 9 2 4 6 9 3]
+Run 9:  [6 6 5 9 3 4 8 1]
 </pre></div>
 </div>
 </div>
@@ -690,7 +695,7 @@ Run 9:  [3 2 4 1 2 5 5 3]
 <span class="n">seed</span> <span class="o">=</span> <span class="mi">100</span>
  
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># seed the default RNG</span>
+    <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># seed the default RNG</span>
     <span class="n">random_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="o">*</span><span class="n">draw_range</span><span class="p">,</span> <span class="n">ndraws</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> give: &#39;</span><span class="p">,</span> <span class="n">random_ints</span><span class="p">)</span>
 </pre></div>
@@ -778,7 +783,7 @@ run 9 give:  [7 8 1 5 0 2 4 0 5 9]
 <span class="n">random_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="o">*</span><span class="n">draw_range</span><span class="p">,</span> <span class="n">ndraws</span><span class="p">)</span>
 
 <span class="c1"># Set up plot and plot the histogram</span>
-<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
 
 <span class="c1"># Default hist</span>
 <span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">random_ints</span><span class="p">)</span>
@@ -789,6 +794,12 @@ run 9 give:  [7 8 1 5 0 2 4 0 5 9]
 <span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">random_ints</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">9.5</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> 
                           <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">)</span>
 <span class="n">set_plot_axis_label</span><span class="p">(</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span>  <span class="c1"># Our helper function</span>
+
+<span class="c1"># add subticks for both axises</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="n">AutoMinorLocator</span>
+<span class="k">for</span> <span class="n">axi</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">axi</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">axi</span><span class="p">]</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -808,14 +819,14 @@ run 9 give:  [7 8 1 5 0 2 4 0 5 9]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number in each bins: [1037. 1027.  989. 1011.  983.  980. 1003.  967.  964. 1039.]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number in each bins: [1012.  999.  998.  956. 1009.  980. 1034.  959. 1051. 1002.]
 Edges of each bin: [-0.5  0.5  1.5  2.5  3.5  4.5  5.5  6.5  7.5  8.5  9.5]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now, let’s overplot these data points back to the histogram.
-But, before that, we need to find out the center values of the each bins.</p>
+<p>Now, let’s overplot these data points back to the histogram.</p>
+<p>But, before that, we need to find out the center values of the each bins (we only have the left and right edges currently).</p>
 <div class="section" id="short-quiz-find-the-bin-centers-from-edges-array">
 <h3>[Short Quiz] Find the bin centers from <code class="docutils literal notranslate"><span class="pre">edges</span></code> array<a class="headerlink" href="#short-quiz-find-the-bin-centers-from-edges-array" title="Permalink to this headline">¶</a></h3>
 <p>Try to write code to covert bin edges to bin centers (copying the following list is cheating! We want to do it in general).</p>
@@ -899,6 +910,7 @@ True
 </div>
 </div>
 <p>Getting back to our problem of converting bin edges to bin centers, we can do this with a list comprehension!</p>
+<p><strong>Note:</strong> This is about as complicated as a list comprehension should ever get. It is already a little tricky to read as is which can make bugs harder to spot. When in doubt, you can just use a traditional <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lay each step out so it’s easier to understand later!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer 2 -- using the list comprehension</span>
@@ -914,7 +926,7 @@ True
 </div>
 </div>
 </div>
-<p>Finally, we have a 3rd solution which takes advantage of NumPy array indexing, slicing, and element-wise math. We call this <strong>vectorization</strong> and it is usually the most efficient way to solve a problem. It also often uses less code which can be good, since less code has less room for errors.</p>
+<p>Finally, we have a 3rd solution which takes advantage of NumPy array indexing, slicing, and element-wise math. We call this <strong>vectorization</strong> and it is usually the most efficient way to solve a mathematical problem with code. It also often uses less code which can be good, since less code has less room for errors.</p>
 <p>Vectorizing code takes a little practice. The main idea is to think about arrays as collections of numbers we can do math on all at once.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -939,7 +951,7 @@ True
 
 <span class="c1"># Now we have 2 arrays of elements but they are offset by 1</span>
 <span class="c1"># Now we want to take the avg of these adjacent elements to get the centers</span>
-<span class="nb">print</span><span class="p">((</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Mean is just (el1 + el2) / 2</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Mean is just (prev_el + next_el) / 2</span>
 </pre></div>
 </div>
 </div>
@@ -951,14 +963,14 @@ True
 </div>
 </div>
 </div>
-<p>Whichever way you figured out how to compute the centers, we can now plot the bin centers on our histogram!</p>
+<p>Whichever way you figured out how to compute the bin centers, we can now plot them on our histogram!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># random number setup</span>
 <span class="n">draw_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">ndraws</span> <span class="o">=</span> <span class="mi">1000</span>
 
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>       <span class="c1"># this time put in the seed value    </span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">()</span>
 <span class="n">random_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="o">*</span><span class="n">draw_range</span><span class="p">,</span> 
                             <span class="n">ndraws</span><span class="p">)</span>
 
@@ -972,6 +984,11 @@ True
 <span class="n">bin_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span><span class="o">/</span><span class="mi">2</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bin_center</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;tab:red&#39;</span><span class="p">)</span>
 <span class="n">set_plot_axis_label</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1020,8 +1037,8 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9.97565298 10.09256    10.2937732  10.29901997 10.37028591  9.78453144
-  9.83783624  9.64644095 10.16691142 10.20341755]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10.26328418 10.3240441   9.83246516 10.09594067  9.76207887 10.02519489
+ 10.05872649  9.99262692 10.3918269   9.99809471]
 </pre></div>
 </div>
 </div>
@@ -1042,6 +1059,8 @@ True
 
 <span class="n">n</span><span class="p">,</span> <span class="n">edges</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">draws</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;step&#39;</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">set_plot_axis_label</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="s1">&#39;Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+
+<span class="c1"># ax.ticklabel_format(style=&#39;sci&#39;, axis=&#39;y&#39;, scilimits=(0,0))</span>
 </pre></div>
 </div>
 </div>
@@ -1061,99 +1080,96 @@ True
 <p><img alt="Uncertainty Propagation" src="http://science.clemson.edu/physics/labs/tutorials/errorp/eptable.gif" /></p>
 <p>(from Clemson University)</p>
 <p>This is the “analytical” way to propagate errors since we have well defined functions and can plug values in to compute the final errors.</p>
-<p>For example, say we had a study where we measured a participant’s height and then the length of their hair. We want to find what their “total height” is if they were to pull their hair straight up.</p>
-<p>You might imagine we used different tools to measure the person’s height (say a meter stick) and their hair length (say a ruler), and that those will have different precisions (error) associated with them. As good scientists, we want an accurate way to estimate the error of the “total height” so we’ll use the formula above.</p>
-<ul class="simple">
-<li><p>Meter stick precision: <span class="math notranslate nohighlight">\(1 cm = 0.01 m\)</span></p></li>
-<li><p>Ruler precision: <span class="math notranslate nohighlight">\(5 mm = 0.005 m\)</span></p></li>
-</ul>
-<p><span class="math notranslate nohighlight">\(H_{total} = Height + Hair\)</span></p>
-<p>After our first measurement our average height and hair length is:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Height = 1.7 \pm 0.01 m\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(Hair Length = 0.27 \pm 0.005 m\)</span></p></li>
-</ul>
-<p>So we can get the total height simply as <span class="math notranslate nohighlight">\(H_{total} = 1.971 m\)</span></p>
-<p>We can also get the uncertainty using the addition equation above:</p>
-<p><span class="math notranslate nohighlight">\(\sigma_{H} = \sqrt{\sigma_{Height}^2 + \sigma_{Hair}^2}\)</span></p>
+<p>For example, say we had a study where we measured a participant’s height (<span class="math notranslate nohighlight">\(H_{\rm height}\)</span>) and then the length of their hair (<span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>). We want to find what their “total height (<span class="math notranslate nohighlight">\(H_{\rm total}\)</span>)” is if they were to pull their hair straight up.</p>
+<p><span class="math notranslate nohighlight">\(H_{\rm total} = H_{\rm height} + H_{\rm hair}\)</span></p>
+<p>You might imagine that a single measurement will sometimes give biases values, so multiple measurements of both parameters (<span class="math notranslate nohighlight">\(H_{\rm height}\)</span>, <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>) are the way to go. The more measurements you get from both parameters the closer the mean value will be to the true value and the smaller the uncertainty (the standard deviation, std) will be.</p>
+<p>Now, suppose you done 10 measurements for both <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>. As good scientists, we want an accurate way to estimate the error of the <span class="math notranslate nohighlight">\(H_{\rm total}\)</span>. One way to do it will be just add up those 10 sets of <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span> values to get 10 <span class="math notranslate nohighlight">\(H_{\rm total}\)</span>, and take a the std. The other way will be using the first formula above in the table with the means and stds of <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\sigma_{H_{\rm total}} = \sqrt{\sigma_{H_{\rm height}}^2 + \sigma_{H_{\rm hair}}^2}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">height</span> <span class="o">=</span> <span class="mf">1.7</span>
-<span class="n">height_err</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">hair_length</span> <span class="o">=</span> <span class="mf">0.27</span>
-<span class="n">hair_err</span> <span class="o">=</span> <span class="mf">0.005</span>
-
-<span class="n">htotal</span> <span class="o">=</span> <span class="n">height</span> <span class="o">+</span> <span class="n">hair_length</span>
-<span class="n">h_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">height_err</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hair_err</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This person&#39;s total height was </span><span class="si">{</span><span class="n">htotal</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">h_err</span><span class="si">:</span><span class="s2">1.5f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This person&#39;s total height was 1.97 +/- 0.01118 m
-</pre></div>
-</div>
-</div>
-</div>
-<p>Then say we got the mean total height of 9 participants, we would have to use the “average” error propagation rule on our <code class="docutils literal notranslate"><span class="pre">h_err</span></code> to get the total uncertainty on our average. Below the <span class="math notranslate nohighlight">\(\bar{H}\)</span> indicates the average and N is the total number of measurements (participants).</p>
-<p><span class="math notranslate nohighlight">\(\sigma_{\bar{H}} = \sqrt{\frac{\Sigma(H_i - \bar{H})^2}{N-1}}\)</span></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.93</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="mf">2.08</span><span class="p">,</span> <span class="mf">2.01</span><span class="p">,</span> <span class="mf">1.46</span><span class="p">,</span> <span class="mf">1.34</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.2</span> <span class="p">,</span> <span class="mf">1.95</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># measurements</span>
+<span class="n">heights</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.93</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="mf">2.08</span><span class="p">,</span> <span class="mf">2.01</span><span class="p">,</span> <span class="mf">1.46</span><span class="p">,</span> <span class="mf">1.34</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.2</span> <span class="p">,</span> <span class="mf">1.95</span><span class="p">])</span>
 <span class="n">hair_lengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.56</span><span class="p">,</span> <span class="mf">0.23</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.1</span> <span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">])</span>
 
-<span class="n">h_totals</span> <span class="o">=</span> <span class="n">heights</span> <span class="o">+</span> <span class="n">hair_lengths</span>
-<span class="n">h_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">height_err</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hair_err</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># the same as before for each sum</span>
+<span class="c1"># Fist moethod:</span>
+<span class="n">htotal</span> <span class="o">=</span> <span class="n">heights</span> <span class="o">+</span> <span class="n">hair_lengths</span>
 
-<span class="c1"># Take the mean total height</span>
-<span class="n">h_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">h_totals</span><span class="p">)</span>
+<span class="n">htotal_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">htotal</span><span class="p">)</span>
+<span class="n">htotal_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">htotal</span><span class="p">)</span>
 
-<span class="c1"># Find average uncertainty</span>
-<span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>  <span class="c1"># Number of participants</span>
-<span class="n">h_mean_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">h_mean</span><span class="o">-</span><span class="n">h_totals</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean total height (N=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">h_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">h_mean_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This person&#39;s total height using method 1 is </span><span class="si">{</span><span class="n">htotal_avg</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">htotal_std</span><span class="si">:</span><span class="s2">1.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean total height (N=9): 2.02 +/- 0.329
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This person&#39;s total height using method 1 is 2.02 +/- 0.310 m
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Second method:</span>
+
+<span class="n">heights_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">hair_lengths_avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">)</span>
+
+<span class="n">heights_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">heights</span><span class="p">)</span>
+<span class="n">hair_lengths_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The H_height = </span><span class="si">{</span><span class="n">heights_avg</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">heights_std</span><span class="si">:</span><span class="s2">1.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The H_hair = </span><span class="si">{</span><span class="n">hair_lengths_avg</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">hair_lengths_std</span><span class="si">:</span><span class="s2">1.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+
+<span class="n">htotal_avg</span> <span class="o">=</span> <span class="n">heights_avg</span> <span class="o">+</span> <span class="n">hair_lengths_avg</span>
+<span class="n">htotal_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">heights_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hair_lengths_std</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This person&#39;s total height using method 2 is </span><span class="si">{</span><span class="n">htotal_avg</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">htotal_std</span><span class="si">:</span><span class="s2">1.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The H_height = 1.84 +/- 0.266 m
+The H_hair = 0.18 +/- 0.158 m
+This person&#39;s total height using method 2 is 2.02 +/- 0.310 m
 </pre></div>
 </div>
 </div>
 </div>
 <p>Yay we got to report errors like good scientists! But we said this section was about randomness…</p>
-<p>Let’s see another way to compute errors using only our measurements and our handy RNG object - no fancy error propagation formulas.</p>
-<p>The idea here is that as long as our errors are normal (Gaussian), we can just feed random number drawn from a Gaussian through the same steps as our data analysis (in this example just a sum and a mean) and the resulting Gaussian will estimate our final errors!</p>
+<p>Say now you only know the mean and std of <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>, is it still possible to get the uncertainty of <span class="math notranslate nohighlight">\(H_{\rm total}\)</span> using the first method?? Want to avoid the fancy error propagation formulas… Here is when the MC error propagation come it!</p>
+<p>The idea here is that as long as our errors are normal (Gaussian), we can randomly draw <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span> values from a Gaussian distribution based on the mean and std of <span class="math notranslate nohighlight">\(H_{\rm height}\)</span> and <span class="math notranslate nohighlight">\(H_{\rm hair}\)</span>. With these values, we can calculate the <span class="math notranslate nohighlight">\(\sigma_{H_{\rm total}}\)</span> using the first method.</p>
 <p>We already know how to draw values from a Gaussian using our RNG so let’s try it!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Start with the same data and add it, compute the mean as usual</span>
 <span class="n">heights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.93</span><span class="p">,</span> <span class="mf">1.82</span><span class="p">,</span> <span class="mf">2.08</span><span class="p">,</span> <span class="mf">2.01</span><span class="p">,</span> <span class="mf">1.46</span><span class="p">,</span> <span class="mf">1.34</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">,</span> <span class="mf">2.2</span> <span class="p">,</span> <span class="mf">1.95</span><span class="p">])</span>
 <span class="n">hair_lengths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.56</span><span class="p">,</span> <span class="mf">0.23</span><span class="p">,</span> <span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="mf">0.1</span> <span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">])</span>
+
 <span class="n">h_totals</span> <span class="o">=</span> <span class="n">heights</span> <span class="o">+</span> <span class="n">hair_lengths</span>
 
-<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">1000000</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>  <span class="c1"># &lt;- remove seed to see other random results</span>
 
 <span class="c1"># Make our random arrays using the mean, standard dev of our measurements</span>
 <span class="n">g_height</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
-<span class="n">g_hair</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
+<span class="n">g_hair</span>   <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
 
 <span class="c1"># Feed the gaussian samples through the sum</span>
 <span class="n">g_total_arr</span> <span class="o">=</span> <span class="n">g_height</span> <span class="o">+</span> <span class="n">g_hair</span>
+<span class="n">h_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">g_total_arr</span><span class="p">)</span>
 
 <span class="c1"># Because the error propagation formula for mean is just a standard deviation</span>
 <span class="c1"># we can estimate the error of the mean with the stdev of our total array</span>
 <span class="n">g_mean_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_total_arr</span><span class="p">)</span>
 
 <span class="c1"># Now we report the same meanbut can use the gaussian standard dev as the err</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean total height (N=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">h_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean total height (N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">h_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean total height (N=9): 2.02 +/- 0.277
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean total height (N=1000000): 2.02 +/- 0.310
 </pre></div>
 </div>
 </div>
@@ -1161,37 +1177,84 @@ True
 <p>The larger the ndraws you use, the more stable the g_mean_err will be.</p>
 <p>We can try increasing the number of draws by hand to see when it levels out, but we have the power of code!</p>
 <p>Let’s write up some code to see how many draws we need to get a stable g_mean_err.</p>
-<p>We can define stable as <em>changes by less than</em> <span class="math notranslate nohighlight">\(10^{-3}\)</span> for now.</p>
+<p>We can define stable as <em>changes by less than</em> <span class="math notranslate nohighlight">\(10^{-4}\)</span> for now.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># &lt;- something big to start us off</span>
-<span class="n">g_mean_err</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">delta_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_mean_err</span> <span class="o">-</span> <span class="n">g_mean_err_old</span><span class="p">)</span>
-<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># &lt;- we&#39;ll multiply by a factor of 10 each time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using for loop</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># Pick large value to start us off</span>
 
-<span class="c1"># Stop loop when the difference drops below 1e-6</span>
-<span class="k">while</span> <span class="n">delta_err</span> <span class="o">&gt;=</span> <span class="mf">1e-3</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">ndraws</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="n">ndraws</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
     <span class="n">g_height</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
     <span class="n">g_hair</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
     <span class="n">g_total_arr</span> <span class="o">=</span> <span class="n">g_height</span> <span class="o">+</span> <span class="n">g_hair</span>
     <span class="n">g_mean_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_total_arr</span><span class="p">)</span>
-
-    <span class="n">delta_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_mean_err</span> <span class="o">-</span> <span class="n">g_mean_err_old</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">:</span><span class="s1">.0e</span><span class="si">}</span><span class="s1"> gives err </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> with delta </span><span class="si">{</span><span class="n">delta_err</span><span class="si">:</span><span class="s1">.2e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="n">delta_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_mean_err_old</span> <span class="o">-</span> <span class="n">g_mean_err</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">:</span><span class="s1">.1e</span><span class="si">}</span><span class="s1">: err=</span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (changed by </span><span class="si">{</span><span class="n">delta_err</span><span class="si">:</span><span class="s1">.1e</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">delta_err</span> <span class="o">&lt;</span> <span class="mf">1e-4</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Changed by &lt; 1e-4! Exiting loop...&#39;</span><span class="p">)</span>
+        <span class="k">break</span>
     <span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">g_mean_err</span>
-    <span class="n">ndraws</span> <span class="o">*=</span> <span class="mi">10</span>  <span class="c1"># double our draws each time</span>
-<span class="c1"># Now we can report our mean with confidence in our error precision</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean total height (N=</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">h_mean</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>    
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> The uncertainty of the total height is about: </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=1e+01 gives err 0.237 with delta inf
-N=1e+02 gives err 0.260 with delta 2.29e-02
-N=1e+03 gives err 0.309 with delta 4.83e-02
-N=1e+04 gives err 0.308 with delta 3.94e-04
-Mean total height (N=9): 2.02 +/- 0.308
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=1.0e+01: err=0.237 (changed by inf)
+N=4.6e+01: err=0.282 (changed by 4.4e-02)
+N=2.2e+02: err=0.306 (changed by 2.4e-02)
+N=1.0e+03: err=0.305 (changed by 1.7e-03)
+N=4.6e+03: err=0.313 (changed by 8.8e-03)
+N=2.2e+04: err=0.310 (changed by 3.4e-03)
+N=1.0e+05: err=0.310 (changed by 3.2e-05)
+Changed by &lt; 1e-4! Exiting loop...
+
+ The uncertainty of the total height is about: 0.310 N=100000
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using while loop</span>
+<span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>  <span class="c1"># &lt;- something big to start us off</span>
+<span class="n">delta_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<span class="n">ndraws_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Stop loop when the difference drops below 1e-4</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">delta_err</span> <span class="o">&gt;=</span> <span class="mf">1e-4</span><span class="p">:</span>
+    <span class="n">ndraws</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ndraws_arr</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">g_height</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">heights</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
+    <span class="n">g_hair</span>   <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">hair_lengths</span><span class="p">),</span> <span class="n">ndraws</span><span class="p">)</span>
+    <span class="n">g_total_arr</span> <span class="o">=</span> <span class="n">g_height</span> <span class="o">+</span> <span class="n">g_hair</span>
+    <span class="n">g_mean_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">g_total_arr</span><span class="p">)</span>
+
+    <span class="n">delta_err</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">g_mean_err</span> <span class="o">-</span> <span class="n">g_mean_err_old</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">:</span><span class="s1">.1e</span><span class="si">}</span><span class="s1">: err=</span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> (changed by </span><span class="si">{</span><span class="n">delta_err</span><span class="si">:</span><span class="s1">.1e</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+    <span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">g_mean_err</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+<span class="c1"># Now we can report our mean with confidence in our error precision </span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> The uncertainty of the total height is about: </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> with N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=1.0e+01: err=0.237 (changed by inf)
+N=4.6e+01: err=0.282 (changed by 4.4e-02)
+N=2.2e+02: err=0.306 (changed by 2.4e-02)
+N=1.0e+03: err=0.305 (changed by 1.7e-03)
+N=4.6e+03: err=0.313 (changed by 8.8e-03)
+N=2.2e+04: err=0.310 (changed by 3.4e-03)
+N=1.0e+05: err=0.310 (changed by 3.2e-05)
+
+ The uncertainty of the total height is about: 0.310 with N=100000
 </pre></div>
 </div>
 </div>
@@ -1200,9 +1263,9 @@ Mean total height (N=9): 2.02 +/- 0.308
 <p>Monte Carlo error propagation is particularly useful when you need to do a lot of manipulations to your data and don’t want to write out all the propagation formulas by hand. It is also useful when your analysis involves more complicated functions than just addition, subtraction, multiplication, division (e.g., exponentials, logarithms, other non-linear functions, etc).</p>
 </div>
 </div>
-<div class="section" id="challenge-assignment">
-<h2>[Challenge assignment]<a class="headerlink" href="#challenge-assignment" title="Permalink to this headline">¶</a></h2>
-<p>But, what if you have something like
+<div class="section" id="assignment-1">
+<h2>[Assignment 1]<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h2>
+<p>If you have something like
 $<span class="math notranslate nohighlight">\(
 \rho = \frac{m}{V} = \frac{m}{\pi r^2 (h/3)} = \frac{3m}{\pi r^2 h}
 \)</span><span class="math notranslate nohighlight">\(
@@ -1235,8 +1298,15 @@ How fast can you get the error of the density (\)</span>\rho<span class="math no
 </table>
 <p>modified from <a class="reference external" href="https://www.youtube.com/watch?v=V4U6RFI6HW8&amp;t=298s">Steve Spicklemire’s youtube video</a></p>
 <ol class="simple">
-<li><p>Find a better/faster way to reach a stable <span class="math notranslate nohighlight">\(\sigma_{\rho}\)</span> value</p></li>
+<li><p>Estimate the error of the density (<span class="math notranslate nohighlight">\(\rho\)</span>)</p></li>
+<li><p>How many draws (<code class="docutils literal notranslate"><span class="pre">ndwars</span></code>) do we need to get a stable <span class="math notranslate nohighlight">\(\rho\)</span> value? (follow the steps in the previous code cell)</p></li>
+</ol>
+</div>
+<div class="section" id="challenge">
+<h2>[Challenge!]<a class="headerlink" href="#challenge" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
 <li><p>Use a more strict stable condition: <code class="docutils literal notranslate"><span class="pre">differ</span> <span class="pre">&lt;</span> <span class="pre">1e-6</span></code> must meet for 10 consecutive <code class="docutils literal notranslate"><span class="pre">ndraws</span></code></p></li>
+<li><p>Find a better/faster way to reach that stable values</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1339,10 +1409,10 @@ p : 1-D array_like, optional
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.34 0.65 0.86 0.65 0.27 0.43 0.16 0.71 0.86 0.16 0.48 0.5  0.86 0.77
- 0.18 0.05 1.08 0.44 0.27 0.59 0.84 0.94 0.21 0.1  1.1  0.04 0.73 0.16
- 0.05 0.87 0.34 0.5  0.81 0.04 1.16 1.23 0.19 0.05 0.4  0.27 0.27 0.34
- 0.5  0.77 0.25 1.33 0.5  0.27 1.1  0.5  1.33 0.27 0.04]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.56 0.63 0.04 0.34 0.94 0.94 0.16 0.41 1.16 0.86 0.05 0.27 0.41 0.04
+ 0.4  0.21 0.48 0.87 0.34 0.34 0.04 0.87 0.48 0.34 0.94 0.43 0.19 0.04
+ 0.19 0.34 0.52 0.04 0.5  0.98 0.16 0.63 0.48 0.04 0.21 0.94 0.19 0.16
+ 1.1  0.1  0.63 0.04 0.52 0.4  0.94 0.18 0.59 0.28 0.59]
 </pre></div>
 </div>
 </div>
@@ -1370,10 +1440,7 @@ p : 1-D array_like, optional
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7f4b633d8a00&gt;
-</pre></div>
-</div>
-<img alt="_images/f21_a4_54_1.png" src="_images/f21_a4_54_1.png" />
+<img alt="_images/f21_a4_54_0.png" src="_images/f21_a4_54_0.png" />
 </div>
 </div>
 <p>It might be surprising that the mean has changed! All we did was resample from the original data and take the mean. If we do this many time, we’ll get a distribution of means which we can think of as a set of possible outcomes if we had taken the measurements again and again.</p>
@@ -1427,7 +1494,7 @@ p : 1-D array_like, optional
 <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pct95_upp</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean mercury in Florida lakes is </span><span class="si">{</span><span class="n">mu</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean mercury in Florida lakes is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">avg_mercury</span><span class="p">)</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; with a 95% confidence interval of [</span><span class="si">{</span><span class="n">pct95_low</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">pct95_upp</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -1443,8 +1510,8 @@ p : 1-D array_like, optional
 <p>Now using the distribution of the bootstrapped means, we can capture the scatter in our data with N=59 observations if we were to repeat the trial many times.</p>
 <p>Now we can say we are 95% confident that the true mean mercury in Florida lakes is within our 95% confidence interval, given the measurements we made.</p>
 </div>
-<div class="section" id="assignment-what-s-the-value-for-pi">
-<h2>[Assignment] What’s the value for <span class="math notranslate nohighlight">\(\pi\)</span>?<a class="headerlink" href="#assignment-what-s-the-value-for-pi" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="assignment-2-what-s-the-value-for-pi">
+<h2>[Assignment 2] What’s the value for <span class="math notranslate nohighlight">\(\pi\)</span>?<a class="headerlink" href="#assignment-2-what-s-the-value-for-pi" title="Permalink to this headline">¶</a></h2>
 <p>In this assignment, you will need to use the MC method to estimate the values of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <p>Assuming you have a quarter circle with the radius of 1 and a square that share it’s edge with the quarter circle’s
 radius (see the plot below).</p>
