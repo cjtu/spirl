@@ -506,6 +506,11 @@
      array
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#side-note-list-comprehensions">
+     [Side note:] List comprehensions
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -624,7 +629,7 @@ we will need to learn a little bit about random numbers in Python.</p>
 </div>
 </div>
 </div>
-<p>Let’s first try to genertae random intergers with</p>
+<p>Let’s first try to generate random intergers with the <code class="docutils literal notranslate"><span class="pre">rng.integers()</span></code> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>integers(low, high=None, size=None, dtype=np.int64, endpoint=False)
 
 Return random integers from `low` (inclusive) to `high` (exclusive), or
@@ -650,6 +655,11 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8 4 7 7 6 1 9 3]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now use <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to run it many times to see if any are duplicated:</p>
 <div class="cell docutils container">
@@ -658,6 +668,20 @@ from 0 to `low`.
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">random_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="o">*</span><span class="n">draw_range</span><span class="p">,</span> <span class="n">ndraws</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Run </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1">: &#39;</span><span class="p">,</span> <span class="n">random_ints</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run 0:  [1 9 8 1 7 2 3 8]
+Run 1:  [6 8 9 3 6 2 4 1]
+Run 2:  [2 2 2 7 8 8 2 4]
+Run 3:  [2 3 5 3 7 2 5 3]
+Run 4:  [0 6 4 3 9 7 5 4]
+Run 5:  [5 1 2 8 3 1 7 1]
+Run 6:  [9 6 2 6 9 5 9 8]
+Run 7:  [6 8 7 2 2 5 2 1]
+Run 8:  [1 7 9 3 1 4 6 0]
+Run 9:  [3 2 9 1 7 2 6 7]
 </pre></div>
 </div>
 </div>
@@ -674,6 +698,20 @@ from 0 to `low`.
     <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># seed the default RNG</span>
     <span class="n">random_ints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="o">*</span><span class="n">draw_range</span><span class="p">,</span> <span class="n">ndraws</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;run </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> give: &#39;</span><span class="p">,</span> <span class="n">random_ints</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>run 0 give:  [7 8 1 5 0 2 4 0 5 9]
+run 1 give:  [7 8 1 5 0 2 4 0 5 9]
+run 2 give:  [7 8 1 5 0 2 4 0 5 9]
+run 3 give:  [7 8 1 5 0 2 4 0 5 9]
+run 4 give:  [7 8 1 5 0 2 4 0 5 9]
+run 5 give:  [7 8 1 5 0 2 4 0 5 9]
+run 6 give:  [7 8 1 5 0 2 4 0 5 9]
+run 7 give:  [7 8 1 5 0 2 4 0 5 9]
+run 8 give:  [7 8 1 5 0 2 4 0 5 9]
+run 9 give:  [7 8 1 5 0 2 4 0 5 9]
 </pre></div>
 </div>
 </div>
@@ -765,12 +803,21 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_12_0.png" src="_images/f21_a4_12_0.png" />
+</div>
 </div>
 <p>Let’s see what our histogram actually gave us in the <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">edges</span></code> it returned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number in each bins: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Edges of each bin: </span><span class="si">{</span><span class="n">edges</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number in each bins: [1019.  986.  970. 1012. 1010. 1021.  965.  977. 1019. 1021.]
+Edges of each bin: [-0.5  0.5  1.5  2.5  3.5  4.5  5.5  6.5  7.5  8.5  9.5]
 </pre></div>
 </div>
 </div>
@@ -791,6 +838,124 @@ from 0 to `low`.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># put you code here, you have 5 mins</span>
 <span class="n">edges</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.5,  0.5,  1.5,  2.5,  3.5,  4.5,  5.5,  6.5,  7.5,  8.5,  9.5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer 1 -- using the for loop</span>
+
+<span class="n">bin_center</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">bin_center</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bin_center</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="side-note-list-comprehensions">
+<h3>[Side note:] List comprehensions<a class="headerlink" href="#side-note-list-comprehensions" title="Permalink to this headline">¶</a></h3>
+<p>List comprehensions are a fancy way to make a list using a simple 1 line <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>The basic syntax is square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> with the familiar <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">blah</span></code> inside.</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">i</span></code> at the beginning is just our loop variable and indicates what we want Python to be put in the final list. So we can also do math or functions on that loop variable, as we would in a for loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squared</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+
+<span class="c1"># This is equivalent to:</span>
+<span class="n">squared2</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">squared2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">squared</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squared2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">squared</span> <span class="o">==</span> <span class="n">squared2</span><span class="p">)</span>  <span class="c1"># &quot;==&quot; tests for equality</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Getting back to our problem of converting bin edges to bin centers, we can do this with a list comprehension!</p>
+<p><strong>Note:</strong> This is about as complicated as a list comprehension should ever get. It is already a little tricky to read as is which can make bugs harder to spot. When in doubt, you can just use a traditional <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and lay each step out so it’s easier to understand later!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer 2 -- using the list comprehension</span>
+
+<span class="n">bin_center</span> <span class="o">=</span> <span class="p">[(</span><span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bin_center</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, we have a 3rd solution which takes advantage of NumPy array indexing, slicing, and element-wise math. We call this <strong>vectorization</strong> and it is usually the most efficient way to solve a mathematical problem with code. It also often uses less code which can be good, since less code has less room for errors.</p>
+<p>Vectorizing code takes a little practice. The main idea is to think about arrays as collections of numbers we can do math on all at once.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Answer 3 -- array slicing (recommended)</span>
+
+<span class="n">bin_center</span> <span class="o">=</span> <span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bin_center</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0. 1. 2. 3. 4. 5. 6. 7. 8. 9.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s break that example down to see what we did:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># All edges except the last one</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>   <span class="c1"># All edges except the first one</span>
+
+<span class="c1"># Now we have 2 arrays of elements but they are offset by 1</span>
+<span class="c1"># Now we want to take the avg of these adjacent elements to get the centers</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">edges</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">edges</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Mean is just (prev_el + next_el) / 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.5  0.5  1.5  2.5  3.5  4.5  5.5  6.5  7.5  8.5]
+[0.5 1.5 2.5 3.5 4.5 5.5 6.5 7.5 8.5 9.5]
+[0. 1. 2. 3. 4. 5. 6. 7. 8. 9.]
 </pre></div>
 </div>
 </div>
@@ -823,6 +988,9 @@ from 0 to `low`.
 <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_29_0.png" src="_images/f21_a4_29_0.png" />
 </div>
 </div>
 </div>
@@ -865,6 +1033,12 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 9.94068927  9.8205405   9.88139722 10.17209103  9.60758777 10.17924149
+ 10.38698644  9.79443812  9.85625561 10.19956023]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Similarly to above, we can see that after many draws, our histogram begins to look like a typical Gaussian “bell curve” centered at the mean with standard deviation spread.</p>
 <div class="cell docutils container">
@@ -886,6 +1060,9 @@ from 0 to `low`.
 <span class="c1"># ax.ticklabel_format(style=&#39;sci&#39;, axis=&#39;y&#39;, scilimits=(0,0))</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_33_0.png" src="_images/f21_a4_33_0.png" />
 </div>
 </div>
 </div>
@@ -922,6 +1099,11 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This person&#39;s total height using method 1 is 2.02 +/- 0.310 m
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,6 +1122,13 @@ from 0 to `low`.
 <span class="n">htotal_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">heights_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hair_lengths_std</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This person&#39;s total height using method 2 is </span><span class="si">{</span><span class="n">htotal_avg</span><span class="si">:</span><span class="s2">1.2f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">htotal_std</span><span class="si">:</span><span class="s2">1.3f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The H_height = 1.84 +/- 0.266 m
+The H_hair = 0.18 +/- 0.158 m
+This person&#39;s total height using method 2 is 2.02 +/- 0.310 m
 </pre></div>
 </div>
 </div>
@@ -976,6 +1165,11 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean total height (N=1000000): 2.02 +/- 0.310
+</pre></div>
+</div>
+</div>
 </div>
 <p>The larger the ndraws you use, the more stable the g_mean_err will be.</p>
 <p>We can try increasing the number of draws by hand to see when it levels out, but we have the power of code!</p>
@@ -1002,6 +1196,20 @@ from 0 to `low`.
     <span class="n">g_mean_err_old</span> <span class="o">=</span> <span class="n">g_mean_err</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1"> The uncertainty of the total height is about: </span><span class="si">{</span><span class="n">g_mean_err</span><span class="si">:</span><span class="s1">1.3f</span><span class="si">}</span><span class="s1"> N=</span><span class="si">{</span><span class="n">ndraws</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=1.0e+01: err=0.237 (changed by inf)
+N=4.6e+01: err=0.282 (changed by 4.4e-02)
+N=2.2e+02: err=0.306 (changed by 2.4e-02)
+N=1.0e+03: err=0.305 (changed by 1.7e-03)
+N=4.6e+03: err=0.313 (changed by 8.8e-03)
+N=2.2e+04: err=0.310 (changed by 3.4e-03)
+N=1.0e+05: err=0.310 (changed by 3.2e-05)
+Changed by &lt; 1e-4! Exiting loop...
+
+ The uncertainty of the total height is about: 0.310 N=100000
 </pre></div>
 </div>
 </div>
@@ -1034,6 +1242,19 @@ from 0 to `low`.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N=1.0e+01: err=0.237 (changed by inf)
+N=4.6e+01: err=0.282 (changed by 4.4e-02)
+N=2.2e+02: err=0.306 (changed by 2.4e-02)
+N=1.0e+03: err=0.305 (changed by 1.7e-03)
+N=4.6e+03: err=0.313 (changed by 8.8e-03)
+N=2.2e+04: err=0.310 (changed by 3.4e-03)
+N=1.0e+05: err=0.310 (changed by 3.2e-05)
+
+ The uncertainty of the total height is about: 0.310 with N=100000
+</pre></div>
+</div>
+</div>
 </div>
 <p>Now we have an “empirical” estimate of our final error which didn’t need error propagation formulas!</p>
 <p>Monte Carlo error propagation is particularly useful when you need to do a lot of manipulations to your data and don’t want to write out all the propagation formulas by hand. It is also useful when your analysis involves more complicated functions than just addition, subtraction, multiplication, division (e.g., exponentials, logarithms, other non-linear functions, etc).</p>
@@ -1041,11 +1262,10 @@ from 0 to `low`.
 </div>
 <div class="section" id="assignment-1">
 <h2>[Assignment 1]<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h2>
-<p>If you have something like
-$<span class="math notranslate nohighlight">\(
-\rho = \frac{m}{V} = \frac{m}{\pi r^2 (h/3)} = \frac{3m}{\pi r^2 h}
-\)</span><span class="math notranslate nohighlight">\(
-How fast can you get the error of the density (\)</span>\rho<span class="math notranslate nohighlight">\() propagated from errors of \)</span>m<span class="math notranslate nohighlight">\(, \)</span>r<span class="math notranslate nohighlight">\(, and \)</span>h$?</p>
+<p>If you have something like</p>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{m}{V} = \frac{m}{\pi r^2 (h/3)} = \frac{3m}{\pi r^2 h}\]</div>
+<p>How fast can you get the error of the density (<span class="math notranslate nohighlight">\(\rho\)</span>) propagated from errors of <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(r\)</span>, and <span class="math notranslate nohighlight">\(h\)</span>?</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -1075,7 +1295,7 @@ How fast can you get the error of the density (\)</span>\rho<span class="math no
 <p>modified from <a class="reference external" href="https://www.youtube.com/watch?v=V4U6RFI6HW8&amp;t=298s">Steve Spicklemire’s youtube video</a></p>
 <ol class="simple">
 <li><p>Estimate the error of the density (<span class="math notranslate nohighlight">\(\rho\)</span>)</p></li>
-<li><p>How many draws (<code class="docutils literal notranslate"><span class="pre">ndwars</span></code>) do we need to get a stable <span class="math notranslate nohighlight">\(\rho\)</span> value? (follow the steps in the previous code cell)</p></li>
+<li><p>How many draws (<code class="docutils literal notranslate"><span class="pre">ndraws</span></code>) do we need to get a stable <span class="math notranslate nohighlight">\(\rho\)</span> value? (follow the steps in the previous code cell)</p></li>
 </ol>
 </div>
 <div class="section" id="challenge">
@@ -1108,6 +1328,11 @@ How fast can you get the error of the density (\)</span>\rho<span class="math no
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N measurements: 53
+</pre></div>
+</div>
+</div>
 </div>
 <p>Let’s make a histogram to see what we’re looking at!</p>
 <div class="cell docutils container">
@@ -1122,6 +1347,9 @@ How fast can you get the error of the density (\)</span>\rho<span class="math no
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_48_0.png" src="_images/f21_a4_48_0.png" />
+</div>
 </div>
 <p>Hmm this histogram doesn’t look very Gaussian… it seems a little skewed (not symmetrical).</p>
 <p>When we have a skewed distribution, the mean of the value is not always the best measure of the center of the values. Also, what would the standard deviation be? So far we’ve only seen symmetrical scatter in our data…</p>
@@ -1129,6 +1357,11 @@ How fast can you get the error of the density (\)</span>\rho<span class="math no
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Mean mercury in Florida lakes is </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">avg_mercury</span><span class="p">)</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">, +/- </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">avg_mercury</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean mercury in Florida lakes is 0.53, +/- 0.338
 </pre></div>
 </div>
 </div>
@@ -1171,6 +1404,14 @@ p : 1-D array_like, optional
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.52 0.17 0.19 0.28 0.5  0.43 0.65 0.18 0.1  0.21 1.2  0.94 0.84 0.94
+ 0.65 0.43 0.04 1.1  0.41 0.94 0.77 0.73 0.44 0.5  0.44 1.16 0.73 1.16
+ 0.34 0.83 1.1  1.2  0.63 0.73 0.52 0.56 0.27 0.56 0.18 0.34 0.48 0.49
+ 0.71 0.59 0.5  0.49 0.56 0.98 0.34 0.49 1.16 0.83 0.27]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Below we’ll plot the original mean as a vertical black line and the mean of the resampled array as a vertical red line using <code class="docutils literal notranslate"><span class="pre">ax.axvline()</span></code>.</p>
 <div class="cell docutils container">
@@ -1193,6 +1434,9 @@ p : 1-D array_like, optional
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_54_0.png" src="_images/f21_a4_54_0.png" />
 </div>
 </div>
 <p>It might be surprising that the mean has changed! All we did was resample from the original data and take the mean. If we do this many time, we’ll get a distribution of means which we can think of as a set of possible outcomes if we had taken the measurements again and again.</p>
@@ -1220,6 +1464,9 @@ p : 1-D array_like, optional
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a4_56_0.png" src="_images/f21_a4_56_0.png" />
 </div>
 </div>
 <p>This looks like a normal (Gaussian) distribution, so we can talk about the dispersion of the mean in terms of the standard deviation!</p>
@@ -1249,6 +1496,12 @@ p : 1-D array_like, optional
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean mercury in Florida lakes is 0.53 with a 95% confidence interval of [0.44, 0.62]
+</pre></div>
+</div>
+<img alt="_images/f21_a4_58_1.png" src="_images/f21_a4_58_1.png" />
+</div>
 </div>
 <p>Now using the distribution of the bootstrapped means, we can capture the scatter in our data with N=59 observations if we were to repeat the trial many times.</p>
 <p>Now we can say we are 95% confident that the true mean mercury in Florida lakes is within our 95% confidence interval, given the measurements we made.</p>
@@ -1259,20 +1512,19 @@ p : 1-D array_like, optional
 <p>Assuming you have a quarter circle with the radius of 1 and a square that share it’s edge with the quarter circle’s
 radius (see the plot below).</p>
 <p><img alt="Monte-Carlo pi" src="https://helloacm.com/wp-content/uploads/2015/11/Monte-Carlo01.jpg" /></p>
-<p>Therefore, we know:
-$<span class="math notranslate nohighlight">\(
+<p>Therefore, we know:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 Area_{\rm quarter\ circle} = \pi r^2/4 \\
 Area_{\rm square} = r^2
-\)</span><span class="math notranslate nohighlight">\(
-The ratio of the two will be
-\)</span><span class="math notranslate nohighlight">\(
-\frac{Area_{\rm quarter\ circle}}{Area_{\rm square}} = \frac{\pi r^2/4}{r^2} = \frac{\pi}{4}
-\)</span><span class="math notranslate nohighlight">\(
-Rearange the equation and changes the area with the number of points we have:
-\)</span><span class="math notranslate nohighlight">\(
-\pi = 4 \frac{Area_{\rm quarter\ circle}}{Area_{\rm square}} = 4 \frac{N_{\rm quarter\ circle}}{N_{\rm square}}
-\)</span><span class="math notranslate nohighlight">\(
-where \)</span>N_{\rm quarter\ circle}<span class="math notranslate nohighlight">\( is the number of points within the quarter circle and \)</span>N_{\rm square}$ is the number of points
+\end{split}\]</div>
+<p>The ratio of the two will be</p>
+<div class="math notranslate nohighlight">
+\[\frac{Area_{\rm quarter\ circle}}{Area_{\rm square}} = \frac{\pi r^2/4}{r^2} = \frac{\pi}{4}\]</div>
+<p>Rearange the equation and changes the area with the number of points we have:</p>
+<div class="math notranslate nohighlight">
+\[\pi = 4 \frac{Area_{\rm quarter\ circle}}{Area_{\rm square}} = 4 \frac{N_{\rm quarter\ circle}}{N_{\rm square}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_{\rm quarter\ circle}\)</span> is the number of points within the quarter circle and <span class="math notranslate nohighlight">\(N_{\rm square}\)</span> is the number of points
 within the square.</p>
 <p>Tips:</p>
 <ol class="simple">
