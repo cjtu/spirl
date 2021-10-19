@@ -12,6 +12,7 @@ parts:
       - file: f21_a2
       - file: f21_a3
       - file: f21_a4
+      - file: f21_a5
   - caption: SPIRL Textbook
     numbered: True
     chapters:
