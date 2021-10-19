@@ -1,0 +1,3650 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 5 (Oct 19) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a5.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 4 (Oct 12)" href="f21_a4.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a2.html">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a3.html">
+     Assignment 3 (Oct 05)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a4.html">
+     Assignment 4 (Oct 12)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 5 (Oct 19)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a5.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-optional">
+   Readings (optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#intro-to-pandas">
+   Intro to Pandas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-i-o-importing-a-csv">
+   Data I/O: Importing a CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecting-data-with-pandas">
+   Selecting data with Pandas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-with-square-brackets-and-dot">
+     Selecting with square brackets
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       []
+      </span>
+     </code>
+     and dot
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-with-loc">
+     Selecting with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .loc[]
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#selecting-with-iloc">
+     Selecting with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       .iloc[]
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setting-a-new-index-in-pandas">
+     Setting a new index in pandas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary-selecting-from-dataframes">
+     Summary: Selecting from DataFrames
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-a-new-column">
+   Adding a new column
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#saving-to-a-file">
+   Saving to a file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-useful-dataframe-methods">
+   Other useful DataFrame methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filtering-dataframes">
+   Filtering DataFrames
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-with-dataframe-plot">
+   Plotting with DataFrame.plot
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-1">
+   [Assignment 1]
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-csv-comma-separated">
+     1a) CSV (comma-separated)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-tsv-tab-separated">
+     1b) TSV (tab-separated)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-excel-xls-xlsx">
+     1c) Excel (.xls, .xlsx)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-ascii-text-file">
+     1d) ASCII text file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-ascii-text-file-with-header-rows">
+     1e) ASCII text file with header rows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-bonus-fits-table-file">
+     1f) BONUS: FITS table file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-2">
+   [Assignment 2]
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-convert-apparent-magnitude-to-absolute-magnitude">
+     2a) Convert apparent magnitude to absolute magnitude
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-calculate-the-color">
+     2b) Calculate the color
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-plot-the-hr-diagram">
+     2c) Plot the HR diagram
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-identify-and-select-the-white-dwarfs">
+     2d) Identify and select the white dwarfs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-identify-and-select-the-supergiants">
+     2e) Identify and select the supergiants
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-plot-the-white-dwarfs-and-supergiants-separately">
+     2f) Plot the white dwarfs and supergiants separately
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#g-bonus-label-the-white-dwarfs-and-supergiants">
+     2g) BONUS: Label the white dwarfs and supergiants
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-5-oct-19">
+<h1>Assignment 5 (Oct 19)<a class="headerlink" href="#assignment-5-oct-19" title="Permalink to this headline">¶</a></h1>
+<p>Today we will learn to import data into Python, manipulate 2D tabular data (think spreadsheets) with <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, and save our data to text files like CSV (comma-separated values).</p>
+<p>Outline:</p>
+<ol class="simple">
+<li><p>Intro to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p>Data I/O</p></li>
+<li><p>Manipulating and plotting with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+</ol>
+<div class="section" id="readings-optional">
+<h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
+<p>If you find this week’s material new or challenging, you may want to read through some or all the following resources while working on your assignment:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cjtu.github.io/spirl/sp_pandas.html">SPIRL Ch. 4.5 Pandas</a></p></li>
+<li><p><a class="reference external" href="https://wavedatalab.github.io/datawithpython/">Python for Data Science pandas tutorials</a></p></li>
+</ul>
+<p>Below we have our regular imports, but this time with <code class="docutils literal notranslate"><span class="pre">pandas</span></code> which most people alias to <code class="docutils literal notranslate"><span class="pre">pd</span></code>. The Pandas package is included with Anaconda, so you shouldn’t need to install anything.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="intro-to-pandas">
+<h2>Intro to Pandas<a class="headerlink" href="#intro-to-pandas" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a> is a package at the heart of most data analysis tasks with Python. It is quick at opening, selecting, manipulating and plotting 2D data with columns and rows (like tables and spreadsheets) which pandas calls <strong>DataFrames</strong>.</p>
+<p>Below we make a simple <code class="docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code> to see what Pandas can do. One way to make a DataFrame is with two zipped lists, which we saw when making dictionaries in assignment 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">,</span> <span class="s1">&#39;pears&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;kiwis&#39;</span><span class="p">,</span> <span class="s1">&#39;cherries&#39;</span><span class="p">]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">142</span><span class="p">,</span> <span class="mi">119</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">187</span><span class="p">]</span>
+<span class="n">inventory</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="n">count</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;apples&#39;, 142), (&#39;oranges&#39;, 119), (&#39;pears&#39;, 248), (&#39;bananas&#39;, 84), (&#39;kiwis&#39;, 41), (&#39;cherries&#39;, 187)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To turn this into a Pandas <strong>DataFrame</strong>, we call <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> and specify the <code class="docutils literal notranslate"><span class="pre">data</span></code> as our zipped lists and also the <code class="docutils literal notranslate"><span class="pre">columns</span></code> names in order.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">inventory</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fruit&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;df is type: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>df is type:  &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>oranges</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>cherries</td>
+      <td>187</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we see we have a table version of our inventory data with named columns, “Fruit”, and “Count”. Let’s see what we can learn about these data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>  <span class="c1"># show first 5 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>oranges</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>41</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># show first n rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>oranges</td>
+      <td>119</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>cherries</td>
+      <td>187</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>  <span class="c1"># number of rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>  <span class="c1"># column names</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>  <span class="c1"># as a normal list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Fruit&#39;, &#39;Count&#39;], dtype=&#39;object&#39;)
+[&#39;Fruit&#39;, &#39;Count&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>  <span class="c1"># see data types for each column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fruit    object
+Count     int64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Each column in a DataFrame is assigned a type. We can change the type of a column with <code class="docutils literal notranslate"><span class="pre">.astype</span></code>. This is sometimes needed to ensure that you are working with numerical data, dates, etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;Fruit&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fruit     object
+Count    float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>A quirk of pandas is that it doesn’t recognize the <code class="docutils literal notranslate"><span class="pre">str</span></code> type. All we need to do is spell out <code class="docutils literal notranslate"><span class="pre">&quot;string&quot;</span></code> in this case.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="s2">&quot;Fruit&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;Count&quot;</span><span class="p">:</span> <span class="nb">float</span><span class="p">})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fruit     string
+Count    float64
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="data-i-o-importing-a-csv">
+<h2>Data I/O: Importing a CSV<a class="headerlink" href="#data-i-o-importing-a-csv" title="Permalink to this headline">¶</a></h2>
+<p>Data I/O (in/out) operations are an essential and often tedious part of analyzing scientific data. Pandas offers some help and can read simple structured data files with little trouble. These are mainly through the <code class="docutils literal notranslate"><span class="pre">pd.read_</span></code> functions listed <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html">here</a>, some of which include:</p>
+<ul class="simple">
+<li><p>CSV: <code class="docutils literal notranslate"><span class="pre">pd.read_csv()</span></code></p></li>
+<li><p>Fixed-width: <code class="docutils literal notranslate"><span class="pre">pd.read_fwf()</span></code></p></li>
+<li><p>Excel: <code class="docutils literal notranslate"><span class="pre">pd.read_excel()</span></code></p></li>
+<li><p>and more…</p></li>
+</ul>
+<p>Here we read in a <strong>CSV</strong> from a public URL. You can also read in CSVs on your local computer by passing in the path.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/guipsamora/pandas_exercises/master/05_Merge/Auto_MPG/cars1.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>Unnamed: 9</th>
+      <th>Unnamed: 10</th>
+      <th>Unnamed: 11</th>
+      <th>Unnamed: 12</th>
+      <th>Unnamed: 13</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>130</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>chevrolet chevelle malibu</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>165</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>buick skylark 320</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>150</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>plymouth satellite</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>150</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>amc rebel sst</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford torino</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>It seems this CSV was imported with a bunch of empty columns. We can cut those off after importing, or adjust our <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> to only include certain columns. This can be done by giving a list of indices to the <code class="docutils literal notranslate"><span class="pre">usecols</span></code> argument, but a range works just as well. Here we want the first 9 columns, meaning <code class="docutils literal notranslate"><span class="pre">range(0,</span> <span class="pre">9)</span></code> in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">csv_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/guipsamora/pandas_exercises/master/05_Merge/Auto_MPG/cars1.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_url</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>130</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>165</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>150</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>plymouth satellite</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>150</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>amc rebel sst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford torino</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> can also read in other character delimited file formats, e.g. space or tab-separated (TSV) files. All we need to do is change the delimiter. Ex.</p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(f,</span> <span class="pre">delimiter='\t')</span></code>  # Tab-separated values</p>
+<p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(f,</span> <span class="pre">delimiter='\s+')</span></code>  # Whitespace separated</p>
+</div>
+<div class="section" id="selecting-data-with-pandas">
+<h2>Selecting data with Pandas<a class="headerlink" href="#selecting-data-with-pandas" title="Permalink to this headline">¶</a></h2>
+<p>Pandas offers several ways to access and filter data in DataFrames. The most basic are <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> and <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
+<div class="section" id="selecting-with-square-brackets-and-dot">
+<h3>Selecting with square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and dot <code class="docutils literal notranslate"><span class="pre">.</span></code><a class="headerlink" href="#selecting-with-square-brackets-and-dot" title="Permalink to this headline">¶</a></h3>
+<p>Selecting with square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> gives us the column that we specify.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">]</span>  <span class="c1"># Select a column by its name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      chevrolet chevelle malibu
+1              buick skylark 320
+2             plymouth satellite
+3                  amc rebel sst
+4                    ford torino
+                 ...            
+193                ford maverick
+194                   amc hornet
+195           chevrolet chevette
+196              chevrolet woody
+197                    vw rabbit
+Name: car, Length: 198, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, we can access DataFrame columns with <code class="docutils literal notranslate"><span class="pre">.columnname</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">car</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      chevrolet chevelle malibu
+1              buick skylark 320
+2             plymouth satellite
+3                  amc rebel sst
+4                    ford torino
+                 ...            
+193                ford maverick
+194                   amc hornet
+195           chevrolet chevette
+196              chevrolet woody
+197                    vw rabbit
+Name: car, Length: 198, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is no major difference between the two methods, it’s a matter of personal preference. The dot (<code class="docutils literal notranslate"><span class="pre">.</span></code>) version is less typing, but is harder to use when you have your column name stored as a variable, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;mpg&#39;</span>
+<span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span>  <span class="c1"># This works!</span>
+<span class="c1"># df.col  # This doesn&#39;t! AttributeError since &quot;col&quot; is not a column name</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      18.0
+1      15.0
+2      18.0
+3      16.0
+4      17.0
+       ... 
+193    24.0
+194    22.5
+195    29.0
+196    24.5
+197    29.0
+Name: mpg, Length: 198, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selecting-with-loc">
+<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code><a class="headerlink" href="#selecting-with-loc" title="Permalink to this headline">¶</a></h3>
+<p>We can also select labelled columns or rows in our DataFrames with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">]</span>
+<span class="c1"># KeyError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>While DataFrame <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> allows us to select by the row name and column name, we have to do it in the proper order <code class="docutils literal notranslate"><span class="pre">[rows,</span> <span class="pre">columns]</span></code>. To select the <code class="docutils literal notranslate"><span class="pre">car</span></code> columns, we can use the <code class="docutils literal notranslate"><span class="pre">:</span></code> as a placeholder meaning “all rows”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;car&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      chevrolet chevelle malibu
+1              buick skylark 320
+2             plymouth satellite
+3                  amc rebel sst
+4                    ford torino
+                 ...            
+193                ford maverick
+194                   amc hornet
+195           chevrolet chevette
+196              chevrolet woody
+197                    vw rabbit
+Name: car, Length: 198, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>So now we know <code class="docutils literal notranslate"><span class="pre">df['car']</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">df.loc[:,</span> <span class="pre">'car']</span></code>. We can also select named <strong>rows</strong> of data by their <code class="docutils literal notranslate"><span class="pre">Index</span></code>. Right now our rows are just numbered, but a DataFrame Index could have any unique label (usually <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">str</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># First row of data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mpg                                  18.0
+cylinders                               8
+displacement                          307
+horsepower                            130
+weight                               3504
+acceleration                         12.0
+model                                  70
+origin                                  1
+car             chevrolet chevelle malibu
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also select a single cell of data by specifying the row and column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;car&#39;</span><span class="p">]</span>  <span class="c1"># The car in row 11</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;plymouth &#39;cuda 340&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">]</span>  <span class="c1"># The weight in row 29</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2130
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also select multiple <code class="docutils literal notranslate"><span class="pre">Index</span></code> or <code class="docutils literal notranslate"><span class="pre">columns</span></code> by passing a list to <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;cylinders&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car           buick skylark 320
+horsepower                  165
+cylinders                     8
+Name: 1, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">17</span><span class="p">),</span> <span class="s1">&#39;car&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12      chevrolet monte carlo
+13    buick estate wagon (sw)
+14      toyota corona mark ii
+15            plymouth duster
+16                 amc hornet
+Name: car, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we select along one row or column, we get a 1D slice of our DataFrame. We can also select multiple indices and columns to get a smaller DataFrame. The result keeps the same order as the rows and columns we specify.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;cylinders&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>plymouth fury iii</td>
+      <td>8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>A common task is to make a subset of our DataFrame with only the columns we need. We can do this easily with <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;cylinders&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;acceleration&#39;</span><span class="p">]]</span>
+<span class="n">sub_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>mpg</th>
+      <th>acceleration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>chevrolet chevelle malibu</td>
+      <td>8</td>
+      <td>130</td>
+      <td>3504</td>
+      <td>18.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+      <td>3693</td>
+      <td>15.0</td>
+      <td>11.5</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+      <td>3436</td>
+      <td>18.0</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+      <td>3433</td>
+      <td>16.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ford torino</td>
+      <td>8</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>17.0</td>
+      <td>10.5</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>One limitation of <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> is that we can’t select a range of <code class="docutils literal notranslate"><span class="pre">str</span></code>, in this case our columns. We can choose a range of columns with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> instead.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="c1"># KeyError</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="selecting-with-iloc">
+<h3>Selecting with <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code><a class="headerlink" href="#selecting-with-iloc" title="Permalink to this headline">¶</a></h3>
+<p>With <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>, we can select data by the numbered <code class="docutils literal notranslate"><span class="pre">Index</span></code> or <code class="docutils literal notranslate"><span class="pre">columns</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">sub_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>130</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>165</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>So in pandas, both the order of the rows and columns and their labels are important! We can select by labels using <code class="docutils literal notranslate"><span class="pre">.loc</span></code> and by integer index order using <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;cylinders&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">]]</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>plymouth fury iii</td>
+      <td>8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># mpg was 1st column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      18.0
+1      15.0
+2      18.0
+3      16.0
+4      17.0
+       ... 
+193    24.0
+194    22.5
+195    29.0
+196    24.5
+197    29.0
+Name: mpg, Length: 198, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># car is 1st column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3         amc rebel sst
+2    plymouth satellite
+7     plymouth fury iii
+1     buick skylark 320
+Name: car, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="setting-a-new-index-in-pandas">
+<h3>Setting a new index in pandas<a class="headerlink" href="#setting-a-new-index-in-pandas" title="Permalink to this headline">¶</a></h3>
+<p>We can choose a column of unique values to be our new <code class="docutils literal notranslate"><span class="pre">pandas</span></code> index. Here, let’s use the car names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+    </tr>
+    <tr>
+      <th>car</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>chevrolet chevelle malibu</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>130</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>buick skylark 320</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>165</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>plymouth satellite</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>150</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>amc rebel sst</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>150</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>ford torino</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we can select certain rows by the car name using <code class="docutils literal notranslate"><span class="pre">.loc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;amc rebel sst&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mpg             16.0
+cylinders          8
+displacement     304
+horsepower       150
+weight          3433
+acceleration    12.0
+model             70
+origin             1
+Name: amc rebel sst, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Be careful when working with a numerical <code class="docutils literal notranslate"><span class="pre">Index()</span></code>. You can run into confusing situations where the index associated with your rows is not in the same order as your rows. Recall the earlier example</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="s1">&#39;cylinders&#39;</span><span class="p">,</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">]]</span>
+<span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>plymouth fury iii</td>
+      <td>8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Here, our <code class="docutils literal notranslate"><span class="pre">Index</span></code> has the numbers <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">2,</span> <span class="pre">7,</span> <span class="pre">1]</span></code>, in that order as we can see with the <code class="docutils literal notranslate"><span class="pre">.index</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Int64Index([3, 2, 7, 1], dtype=&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This means we can select any values in our index with <code class="docutils literal notranslate"><span class="pre">.loc</span></code>, or any <em>row</em> number from 0 to 3 with <code class="docutils literal notranslate"><span class="pre">.iloc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>  <span class="c1"># Index 7</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Row 3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car           plymouth fury iii
+cylinders                     8
+horsepower                  215
+Name: 7, dtype: object
+car           plymouth fury iii
+cylinders                     8
+horsepower                  215
+Name: 7, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>But here we need to be careful because we can pick the 1st row with <code class="docutils literal notranslate"><span class="pre">.iloc[0]</span></code>, but there is no row with index <code class="docutils literal notranslate"><span class="pre">0</span></code> (remember our only indices are <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">2,</span> <span class="pre">7,</span> <span class="pre">1]</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">df3</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="c1"># print(df3.loc[0])  # KeyError</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>car           amc rebel sst
+cylinders                 8
+horsepower              150
+Name: 3, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the numerical <code class="docutils literal notranslate"><span class="pre">Index</span></code> assigned by pandas doesn’t matter and we don’t want this situation where there are gaps or different orders of our rows, we can call <code class="docutils literal notranslate"><span class="pre">.reset_index(drop=True)</span></code>. This will renumber our DataFrame rows starting from 0.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df3</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>plymouth fury iii</td>
+      <td>8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df4</span> <span class="o">=</span> <span class="n">df3</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df4</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>car</th>
+      <th>cylinders</th>
+      <th>horsepower</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>amc rebel sst</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>plymouth satellite</td>
+      <td>8</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>plymouth fury iii</td>
+      <td>8</td>
+      <td>215</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>buick skylark 320</td>
+      <td>8</td>
+      <td>165</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="summary-selecting-from-dataframes">
+<h3>Summary: Selecting from DataFrames<a class="headerlink" href="#summary-selecting-from-dataframes" title="Permalink to this headline">¶</a></h3>
+<p>Keep in mind:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">['colname']</span></code> or <code class="docutils literal notranslate"><span class="pre">.colname</span></code> selects columns</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.loc[]</span></code> selects by a <strong>label</strong> (i.e., a value in <code class="docutils literal notranslate"><span class="pre">df.index</span></code> or <code class="docutils literal notranslate"><span class="pre">df.columns</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> selects by a numbered index in row / column order, starting at 0</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="adding-a-new-column">
+<h2>Adding a new column<a class="headerlink" href="#adding-a-new-column" title="Permalink to this headline">¶</a></h2>
+<p>We can add columns to a DataFrame with <code class="docutils literal notranslate"><span class="pre">DataFrame['col']</span> <span class="pre">=</span> <span class="pre">values</span></code>. We need to make sure the new values are the same number of rows as the DataFrame. An easy way to do this is to derive columns from existing DataFrame columns.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert miles per gallons to liters per 100 km</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;lp100km&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="mf">235.214583</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>130</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>chevrolet chevelle malibu</td>
+      <td>13.07</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>165</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>buick skylark 320</td>
+      <td>15.68</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>150</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>plymouth satellite</td>
+      <td>13.07</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>150</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>amc rebel sst</td>
+      <td>14.70</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford torino</td>
+      <td>13.84</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="saving-to-a-file">
+<h2>Saving to a file<a class="headerlink" href="#saving-to-a-file" title="Permalink to this headline">¶</a></h2>
+<p>It’s nice to manipulate and plot our data in Python, but we often want to save the results of our efforts for later.</p>
+<p>The simplest way to do so is with pandas <code class="docutils literal notranslate"><span class="pre">.to_csv</span></code>. Pandas saves the <code class="docutils literal notranslate"><span class="pre">Index</span></code> by default, but since we just have default indices, you can just omit the index from the csv with <code class="docutils literal notranslate"><span class="pre">index=False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;/full/path/to/cars.csv&#39;</span>  <span class="c1"># &lt;- change to real path</span>
+<span class="c1"># df.to_csv(fname, index=False)  # &lt;- uncomment to save to file</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-useful-dataframe-methods">
+<h2>Other useful DataFrame methods<a class="headerlink" href="#other-useful-dataframe-methods" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>  <span class="c1"># last 5 rows</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>193</th>
+      <td>24.0</td>
+      <td>6</td>
+      <td>200</td>
+      <td>81</td>
+      <td>3012</td>
+      <td>17.6</td>
+      <td>76</td>
+      <td>1</td>
+      <td>ford maverick</td>
+      <td>9.80</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>22.5</td>
+      <td>6</td>
+      <td>232</td>
+      <td>90</td>
+      <td>3085</td>
+      <td>17.6</td>
+      <td>76</td>
+      <td>1</td>
+      <td>amc hornet</td>
+      <td>10.45</td>
+    </tr>
+    <tr>
+      <th>195</th>
+      <td>29.0</td>
+      <td>4</td>
+      <td>85</td>
+      <td>52</td>
+      <td>2035</td>
+      <td>22.2</td>
+      <td>76</td>
+      <td>1</td>
+      <td>chevrolet chevette</td>
+      <td>8.11</td>
+    </tr>
+    <tr>
+      <th>196</th>
+      <td>24.5</td>
+      <td>4</td>
+      <td>98</td>
+      <td>60</td>
+      <td>2164</td>
+      <td>22.1</td>
+      <td>76</td>
+      <td>1</td>
+      <td>chevrolet woody</td>
+      <td>9.60</td>
+    </tr>
+    <tr>
+      <th>197</th>
+      <td>29.0</td>
+      <td>4</td>
+      <td>90</td>
+      <td>70</td>
+      <td>1937</td>
+      <td>14.2</td>
+      <td>76</td>
+      <td>2</td>
+      <td>vw rabbit</td>
+      <td>8.11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>  <span class="c1"># summary statistics on each numerical column</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+      <td>198.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>19.719697</td>
+      <td>5.898990</td>
+      <td>223.469697</td>
+      <td>3177.888889</td>
+      <td>15.005556</td>
+      <td>72.818182</td>
+      <td>1.439394</td>
+      <td>13.029293</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>5.814254</td>
+      <td>1.785417</td>
+      <td>115.181017</td>
+      <td>934.783733</td>
+      <td>2.872382</td>
+      <td>1.865332</td>
+      <td>0.708085</td>
+      <td>3.924258</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>9.000000</td>
+      <td>3.000000</td>
+      <td>68.000000</td>
+      <td>1613.000000</td>
+      <td>8.000000</td>
+      <td>70.000000</td>
+      <td>1.000000</td>
+      <td>6.720000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>15.000000</td>
+      <td>4.000000</td>
+      <td>113.250000</td>
+      <td>2302.500000</td>
+      <td>13.000000</td>
+      <td>71.000000</td>
+      <td>1.000000</td>
+      <td>9.650000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>19.000000</td>
+      <td>6.000000</td>
+      <td>228.000000</td>
+      <td>3030.000000</td>
+      <td>15.000000</td>
+      <td>73.000000</td>
+      <td>1.000000</td>
+      <td>12.380000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>24.375000</td>
+      <td>8.000000</td>
+      <td>318.000000</td>
+      <td>4080.750000</td>
+      <td>16.800000</td>
+      <td>74.000000</td>
+      <td>2.000000</td>
+      <td>15.680000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>35.000000</td>
+      <td>8.000000</td>
+      <td>455.000000</td>
+      <td>5140.000000</td>
+      <td>23.500000</td>
+      <td>76.000000</td>
+      <td>3.000000</td>
+      <td>26.130000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;pears&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;kiwis&#39;</span><span class="p">,</span> <span class="s1">&#39;cherries&#39;</span><span class="p">]</span>
+<span class="n">count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">142</span><span class="p">,</span> <span class="mi">142</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">187</span><span class="p">]</span>
+<span class="n">fruit_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">fruit</span><span class="p">,</span> <span class="n">count</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Fruit&#39;</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">])</span>
+<span class="n">fruit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>apples</td>
+      <td>142.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_df</span> <span class="o">=</span> <span class="n">fruit_df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># fill missing values with 0</span>
+<span class="n">fruit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>apples</td>
+      <td>142.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fruit_df</span> <span class="o">=</span> <span class="n">fruit_df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+<span class="n">fruit_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Fruit</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>apples</td>
+      <td>142.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>pears</td>
+      <td>248.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>bananas</td>
+      <td>84.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>kiwis</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>cherries</td>
+      <td>187.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="filtering-dataframes">
+<h2>Filtering DataFrames<a class="headerlink" href="#filtering-dataframes" title="Permalink to this headline">¶</a></h2>
+<p>We often want to select data within a certain range or on a specific condition. There are a couple ways to do this. The simplest (but slowest and most error-prone) way is to use a loop.</p>
+<p>Say we want to select only cars with 4 cylinders. Here we use <code class="docutils literal notranslate"><span class="pre">df.iterrows()</span></code> which will return the <code class="docutils literal notranslate"><span class="pre">Index</span></code> of the row and the row itself on each iteration in the loop.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cars_4cyl</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;cylinders&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+        <span class="n">cars_4cyl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;car&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cars_4cyl</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;toyota corona mark ii&#39;, &#39;datsun pl510&#39;, &#39;volkswagen 1131 deluxe sedan&#39;, &#39;peugeot 504&#39;, &#39;audi 100 ls&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have a list of 4 cylinder cars, but we’ve lost all other information stored about them in the DataFrame. We would need to make a separate list for each column we want to store.</p>
+<p>Instead of using a loop, we can do the <strong>vectorized</strong> solution which keeps our data in a DataFrame and selects info based on our condition (<code class="docutils literal notranslate"><span class="pre">row['cylinders']</span> <span class="pre">==</span> <span class="pre">4</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_4cyl</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">cylinders</span> <span class="o">==</span> <span class="mi">4</span><span class="p">]</span>
+<span class="c1">#  df_4cyl = df[df[&#39;cylinders&#39;] == 4]  # Equivalent to the above</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Max cylinders in DataFrame&#39;</span><span class="p">,</span> <span class="n">df_4cyl</span><span class="o">.</span><span class="n">cylinders</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">df_4cyl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Max cylinders in DataFrame 4
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>113</td>
+      <td>95</td>
+      <td>2372</td>
+      <td>15.0</td>
+      <td>70</td>
+      <td>3</td>
+      <td>toyota corona mark ii</td>
+      <td>9.80</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>97</td>
+      <td>88</td>
+      <td>2130</td>
+      <td>14.5</td>
+      <td>70</td>
+      <td>3</td>
+      <td>datsun pl510</td>
+      <td>8.71</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>97</td>
+      <td>46</td>
+      <td>1835</td>
+      <td>20.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>volkswagen 1131 deluxe sedan</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>110</td>
+      <td>87</td>
+      <td>2672</td>
+      <td>17.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>peugeot 504</td>
+      <td>9.41</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>24.0</td>
+      <td>4</td>
+      <td>107</td>
+      <td>90</td>
+      <td>2430</td>
+      <td>14.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>audi 100 ls</td>
+      <td>9.80</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>To break down what we are doing here, we can look at what <code class="docutils literal notranslate"><span class="pre">df.cylinders</span> <span class="pre">==</span> <span class="pre">4</span></code> gives us.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">cylinders</span> <span class="o">==</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      False
+1      False
+2      False
+3      False
+4      False
+       ...  
+193    False
+194    False
+195     True
+196     True
+197     True
+Name: cylinders, Length: 198, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a <strong>boolean index</strong>, meaning it will be <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> based on the condition we supplied (whether there are 4 cylinders or not).</p>
+<p>When we pass a boolean index to a DataFrame in square brackets (<code class="docutils literal notranslate"><span class="pre">[]</span></code>), it’s similar to supplying specific labels or indices as we learned above. The only difference is it will select only the rows in the DataFrame that have <code class="docutils literal notranslate"><span class="pre">True</span></code>, e.g. rows where the car has 4 cylinders.</p>
+<p>We can supply conditions with any of the comparison operators (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>). Say we want to find cars that get the fewest miles per gallon (mpg &lt; 12):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">mpg</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>25</th>
+      <td>10.0</td>
+      <td>8</td>
+      <td>360</td>
+      <td>215</td>
+      <td>4615</td>
+      <td>14.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford f250</td>
+      <td>23.52</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>10.0</td>
+      <td>8</td>
+      <td>307</td>
+      <td>200</td>
+      <td>4376</td>
+      <td>15.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>chevy c20</td>
+      <td>23.52</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>11.0</td>
+      <td>8</td>
+      <td>318</td>
+      <td>210</td>
+      <td>4382</td>
+      <td>13.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>dodge d200</td>
+      <td>21.38</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>9.0</td>
+      <td>8</td>
+      <td>304</td>
+      <td>193</td>
+      <td>4732</td>
+      <td>18.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>hi 1200d</td>
+      <td>26.13</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>11.0</td>
+      <td>8</td>
+      <td>429</td>
+      <td>208</td>
+      <td>4633</td>
+      <td>11.0</td>
+      <td>72</td>
+      <td>1</td>
+      <td>mercury marquis</td>
+      <td>21.38</td>
+    </tr>
+    <tr>
+      <th>103</th>
+      <td>11.0</td>
+      <td>8</td>
+      <td>400</td>
+      <td>150</td>
+      <td>4997</td>
+      <td>14.0</td>
+      <td>73</td>
+      <td>1</td>
+      <td>chevrolet impala</td>
+      <td>21.38</td>
+    </tr>
+    <tr>
+      <th>124</th>
+      <td>11.0</td>
+      <td>8</td>
+      <td>350</td>
+      <td>180</td>
+      <td>3664</td>
+      <td>11.0</td>
+      <td>73</td>
+      <td>1</td>
+      <td>oldsmobile omega</td>
+      <td>21.38</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can also string conditions together by separating them with parentheses (<code class="docutils literal notranslate"><span class="pre">()</span></code>) and the <strong>union</strong> <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> or <strong>intersection</strong> <code class="docutils literal notranslate"><span class="pre">|</span></code> operators.</p>
+<ul class="simple">
+<li><p>Union (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>): select where condition1 AND condition2 are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>Intersection (<code class="docutils literal notranslate"><span class="pre">|</span></code>): select where condition1 OR condition2 are <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">light_high_accel</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">weight</span> <span class="o">&lt;</span> <span class="mi">2000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">acceleration</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">)]</span>
+<span class="n">light_high_accel</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>19</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>97</td>
+      <td>46</td>
+      <td>1835</td>
+      <td>20.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>volkswagen 1131 deluxe sedan</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>91</td>
+      <td>70</td>
+      <td>1955</td>
+      <td>20.5</td>
+      <td>71</td>
+      <td>1</td>
+      <td>plymouth cricket</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>102</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>97</td>
+      <td>46</td>
+      <td>1950</td>
+      <td>21.0</td>
+      <td>73</td>
+      <td>2</td>
+      <td>volkswagen super beetle</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>131</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>71</td>
+      <td>65</td>
+      <td>1836</td>
+      <td>21.0</td>
+      <td>74</td>
+      <td>3</td>
+      <td>toyota corolla 1200</td>
+      <td>7.35</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heavy_or_8cyl</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">weight</span> <span class="o">&gt;</span> <span class="mi">3000</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">cylinders</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)]</span>
+<span class="n">heavy_or_8cyl</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>190</th>
+      <td>14.5</td>
+      <td>8</td>
+      <td>351</td>
+      <td>152</td>
+      <td>4215</td>
+      <td>12.8</td>
+      <td>76</td>
+      <td>1</td>
+      <td>ford gran torino</td>
+      <td>16.22</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>22.0</td>
+      <td>6</td>
+      <td>225</td>
+      <td>100</td>
+      <td>3233</td>
+      <td>15.4</td>
+      <td>76</td>
+      <td>1</td>
+      <td>plymouth valiant</td>
+      <td>10.69</td>
+    </tr>
+    <tr>
+      <th>192</th>
+      <td>22.0</td>
+      <td>6</td>
+      <td>250</td>
+      <td>105</td>
+      <td>3353</td>
+      <td>14.5</td>
+      <td>76</td>
+      <td>1</td>
+      <td>chevrolet nova</td>
+      <td>10.69</td>
+    </tr>
+    <tr>
+      <th>193</th>
+      <td>24.0</td>
+      <td>6</td>
+      <td>200</td>
+      <td>81</td>
+      <td>3012</td>
+      <td>17.6</td>
+      <td>76</td>
+      <td>1</td>
+      <td>ford maverick</td>
+      <td>9.80</td>
+    </tr>
+    <tr>
+      <th>194</th>
+      <td>22.5</td>
+      <td>6</td>
+      <td>232</td>
+      <td>90</td>
+      <td>3085</td>
+      <td>17.6</td>
+      <td>76</td>
+      <td>1</td>
+      <td>amc hornet</td>
+      <td>10.45</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Finally, we can take the opposite of a comparison with a preceding <strong>negation</strong> operator (<code class="docutils literal notranslate"><span class="pre">~</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use str.contains to match a sub-string</span>
+<span class="n">ford_cars</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">car</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ford&#39;</span><span class="p">)]</span>
+<span class="n">ford_cars</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302</td>
+      <td>140</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford torino</td>
+      <td>13.84</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>429</td>
+      <td>198</td>
+      <td>4341</td>
+      <td>10.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford galaxie 500</td>
+      <td>15.68</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>21.0</td>
+      <td>6</td>
+      <td>200</td>
+      <td>85</td>
+      <td>2587</td>
+      <td>16.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford maverick</td>
+      <td>11.20</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>10.0</td>
+      <td>8</td>
+      <td>360</td>
+      <td>215</td>
+      <td>4615</td>
+      <td>14.0</td>
+      <td>70</td>
+      <td>1</td>
+      <td>ford f250</td>
+      <td>23.52</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>98</td>
+      <td>?</td>
+      <td>2046</td>
+      <td>19.0</td>
+      <td>71</td>
+      <td>1</td>
+      <td>ford pinto</td>
+      <td>9.41</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">high_accel_not_ford</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">acceleration</span> <span class="o">&gt;</span> <span class="mi">15</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">car</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;ford&#39;</span><span class="p">)]</span>
+<span class="n">high_accel_not_ford</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model</th>
+      <th>origin</th>
+      <th>car</th>
+      <th>lp100km</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>22.0</td>
+      <td>6</td>
+      <td>198</td>
+      <td>95</td>
+      <td>2833</td>
+      <td>15.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>plymouth duster</td>
+      <td>10.69</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>18.0</td>
+      <td>6</td>
+      <td>199</td>
+      <td>97</td>
+      <td>2774</td>
+      <td>15.5</td>
+      <td>70</td>
+      <td>1</td>
+      <td>amc hornet</td>
+      <td>13.07</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>26.0</td>
+      <td>4</td>
+      <td>97</td>
+      <td>46</td>
+      <td>1835</td>
+      <td>20.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>volkswagen 1131 deluxe sedan</td>
+      <td>9.05</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>110</td>
+      <td>87</td>
+      <td>2672</td>
+      <td>17.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>peugeot 504</td>
+      <td>9.41</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>25.0</td>
+      <td>4</td>
+      <td>104</td>
+      <td>95</td>
+      <td>2375</td>
+      <td>17.5</td>
+      <td>70</td>
+      <td>2</td>
+      <td>saab 99e</td>
+      <td>9.41</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plotting-with-dataframe-plot">
+<h2>Plotting with DataFrame.plot<a class="headerlink" href="#plotting-with-dataframe-plot" title="Permalink to this headline">¶</a></h2>
+<p>Pandas gives you a convenient interface into plotting with the <code class="docutils literal notranslate"><span class="pre">.plot</span></code> method. It even labels your axes for you!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;mpg&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a5_93_0.png" src="_images/f21_a5_93_0.png" />
+</div>
+</div>
+<p>Of course, we can customize our subplot with the <code class="docutils literal notranslate"><span class="pre">ax</span></code> object it returned, as usual.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mpg</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Fuel economy (mpg)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a5_95_0.png" src="_images/f21_a5_95_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="assignment-1">
+<h2>[Assignment 1]<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment, you will practice reading in several datasets of different formats.</p>
+<div class="section" id="a-csv-comma-separated">
+<h3>1a) CSV (comma-separated)<a class="headerlink" href="#a-csv-comma-separated" title="Permalink to this headline">¶</a></h3>
+<p>We can read in CSV files like above with <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.csv">a5data.csv</a> in the cell provided below (either go to the link and copy the url or right-click then copy link url to use in <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>).</p>
+</div>
+<div class="section" id="b-tsv-tab-separated">
+<h3>1b) TSV (tab-separated)<a class="headerlink" href="#b-tsv-tab-separated" title="Permalink to this headline">¶</a></h3>
+<p>To read in TSV files, we can also use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\t'</span></code> argument. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.tsv">a5data.tsv</a> in the cell provided below.</p>
+</div>
+<div class="section" id="c-excel-xls-xlsx">
+<h3>1c) Excel (.xls, .xlsx)<a class="headerlink" href="#c-excel-xls-xlsx" title="Permalink to this headline">¶</a></h3>
+<p>To read in Excel files, we use <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.xlsx">a5data.xlsx</a> in the cell provided below.</p>
+</div>
+<div class="section" id="d-ascii-text-file">
+<h3>1d) ASCII text file<a class="headerlink" href="#d-ascii-text-file" title="Permalink to this headline">¶</a></h3>
+<p>To read in text files with entries separated by some amount of whitespace (tabs, spaces, etc), we can use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\s+'</span></code> argument. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.txt">a5data.txt</a> in the cell provided below.</p>
+</div>
+<div class="section" id="e-ascii-text-file-with-header-rows">
+<h3>1e) ASCII text file with header rows<a class="headerlink" href="#e-ascii-text-file-with-header-rows" title="Permalink to this headline">¶</a></h3>
+<p>To have pandas skip rows while importing, we can use the <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> argument of <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data_headers.txt">a5data_headers.txt</a> in the space provided below.</p>
+</div>
+<div class="section" id="f-bonus-fits-table-file">
+<h3>1f) BONUS: FITS table file<a class="headerlink" href="#f-bonus-fits-table-file" title="Permalink to this headline">¶</a></h3>
+<p>(Optional): For this question, you will need to read in tabular data in a <code class="docutils literal notranslate"><span class="pre">.fits</span></code> file with <code class="docutils literal notranslate"><span class="pre">astropy.table.Table()</span></code> (note: this only works for FITS tables, not images). Once you’ve read in the table with astropy, convert it to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with the <code class="docutils literal notranslate"><span class="pre">.to_pandas()</span></code> method. You will need the following line to import astropy Table:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">astropy.table</span> <span class="pre">import</span> <span class="pre">Table</span></code>.</p>
+<p>Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.fits">a5data.fits</a> in the cell provided below. See other file formats supported by astropy <a class="reference external" href="https://docs.astropy.org/en/stable/io/unified.html#built-in-table-readers-writers">here</a>.</p>
+<p>This data is from a paper by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019ApJ...877...12T/abstract">Shih-Yun Tang et al. (2019)</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1a code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1b code below]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;RV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1c code below]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1d code below]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;BPmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1e code below]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;BPmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1f code below]</span>
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;RA_ICRS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="assignment-2">
+<h2>[Assignment 2]<a class="headerlink" href="#assignment-2" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment you will plot a Hertzprung-Russell (H-R) diagram which shows stellar magnitude over color and can tell us about the populations of stars we are observing (see image below).</p>
+<p>In the data we imported in assignment 1 (choose any import link / method you’d like), you will find DataFrame columns for G-band magnitude (<code class="docutils literal notranslate"><span class="pre">Gmag</span></code>), and color as magnitude of the blue part (<code class="docutils literal notranslate"><span class="pre">BPmag</span></code>), and magnitude of the red part (<code class="docutils literal notranslate"><span class="pre">RPmag</span></code>).</p>
+<p>On H-R diagrams (see image), we want absolute magnitude on the y-axis with the brightest stars at the top (<strong>note</strong>: low stellar magnitudes are brighter). We also want to plot color as <code class="docutils literal notranslate"><span class="pre">BPmag</span></code> - <code class="docutils literal notranslate"><span class="pre">RPmag</span></code> on the x-axis.</p>
+<p>In our DataFrame, we only have an apparent magnitude, so we will need to derive the absolute magnitude before we can make our plot.</p>
+<p>We can compute <em>Absolute magnitude</em> (<span class="math notranslate nohighlight">\(M\)</span>)  if we know the <em>apparent magnitude</em> (<span class="math notranslate nohighlight">\(m\)</span>) and the <em>distance modulus</em> (<span class="math notranslate nohighlight">\(\mu\)</span>) by:</p>
+<div class="math notranslate nohighlight">
+\[\mu = m - M\]</div>
+<p>The <em>distance modulus</em> can be calculated from the distance to a star in <em>parsecs</em> (pc):</p>
+<div class="math notranslate nohighlight">
+\[\mu = 5log_{10}\left(\frac{d_{pc}}{10 \ pc}\right)\]</div>
+<p>Finally, we can determine a star’s distance in parsecs from the measured parallax in milliarcseconds (mas) by:</p>
+<div class="math notranslate nohighlight">
+\[d_{pc} = \frac{1000}{parallax}\]</div>
+<p>Note parallax is <code class="docutils literal notranslate"><span class="pre">Plx</span></code> in our DataFrame. Now we know all we need to make an H-R diagram and identify some stars!</p>
+<p><img alt="HR diagram" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/HRDiagram.png" /></p>
+<div class="section" id="a-convert-apparent-magnitude-to-absolute-magnitude">
+<h3>2a) Convert apparent magnitude to absolute magnitude<a class="headerlink" href="#a-convert-apparent-magnitude-to-absolute-magnitude" title="Permalink to this headline">¶</a></h3>
+<p>Using the equations in the question, derive the absolute G magnitude (<span class="math notranslate nohighlight">\(M\)</span>) from the apparent G magnitude for each star in the DataFrame. Hint: you will need columns <code class="docutils literal notranslate"><span class="pre">Gmag</span></code>, <code class="docutils literal notranslate"><span class="pre">BPmag</span></code>, <code class="docutils literal notranslate"><span class="pre">RPmag</span></code>, and <code class="docutils literal notranslate"><span class="pre">Plx</span></code>.</p>
+<p>In each step, save the result as a new column in your DataFrame, for example:</p>
+<p><code class="docutils literal notranslate"><span class="pre">df['distance_modulus']</span> <span class="pre">=</span> <span class="pre">#</span> <span class="pre">calculation</span> <span class="pre">for</span> <span class="pre">distance</span> <span class="pre">modulus</span> <span class="pre">here</span></code></p>
+<p>Your final DataFrame should have columns for <code class="docutils literal notranslate"><span class="pre">distance_modulus</span></code>, <code class="docutils literal notranslate"><span class="pre">distance_parsecs</span></code>, and <code class="docutils literal notranslate"><span class="pre">absolute_magnitude</span></code>.</p>
+</div>
+<div class="section" id="b-calculate-the-color">
+<h3>2b) Calculate the color<a class="headerlink" href="#b-calculate-the-color" title="Permalink to this headline">¶</a></h3>
+<p>With the data provided, we can find color using blue part (<code class="docutils literal notranslate"><span class="pre">BPmag</span></code>) - red part (<code class="docutils literal notranslate"><span class="pre">RPmag</span></code>). Save this <code class="docutils literal notranslate"><span class="pre">color</span></code> difference as a column of your DataFrame.</p>
+</div>
+<div class="section" id="c-plot-the-hr-diagram">
+<h3>2c) Plot the HR diagram<a class="headerlink" href="#c-plot-the-hr-diagram" title="Permalink to this headline">¶</a></h3>
+<p>Using pandas <code class="docutils literal notranslate"><span class="pre">DataFrame.plot(x='color',</span> <span class="pre">y='absolute_magnitude')</span></code>, plot the H-R diagram. Make sure to label your axes!</p>
+</div>
+<div class="section" id="d-identify-and-select-the-white-dwarfs">
+<h3>2d) Identify and select the white dwarfs<a class="headerlink" href="#d-identify-and-select-the-white-dwarfs" title="Permalink to this headline">¶</a></h3>
+<p>White dwarfs on the H-R diagram are outliers in the lower left.</p>
+<p>Using a <strong>conditional</strong> statement (or two) on absolute magnitude and color, select all white dwarfs and save them to their own DataFrame. Call <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> on this new DataFrame to get summary statistics of the white dwarfs.</p>
+</div>
+<div class="section" id="e-identify-and-select-the-supergiants">
+<h3>2e) Identify and select the supergiants<a class="headerlink" href="#e-identify-and-select-the-supergiants" title="Permalink to this headline">¶</a></h3>
+<p>Supergiants on the H-R diagram are outliers in the top middle to right section of the diagram.</p>
+<p>Using a <strong>conditional</strong> statement (or two) on absolute magnitude and color, select all supergiants and save them to their own DataFrame. Call <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> on this new DataFrame to get summary statistics of the supergiants.</p>
+</div>
+<div class="section" id="f-plot-the-white-dwarfs-and-supergiants-separately">
+<h3>2f) Plot the white dwarfs and supergiants separately<a class="headerlink" href="#f-plot-the-white-dwarfs-and-supergiants-separately" title="Permalink to this headline">¶</a></h3>
+<p>Using your white dwarf and supergiant DataFrames, plot each on the same axes as your H-R diagram with distinct markers and colors (hint: try changing the <code class="docutils literal notranslate"><span class="pre">markerstyle</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">markersize</span></code> options of <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>).</p>
+<p>To plot all on the same axes, make a subplot and pass in ax to each <code class="docutils literal notranslate"><span class="pre">.plot</span></code> call, e.g.</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">df2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="g-bonus-label-the-white-dwarfs-and-supergiants">
+<h3>2g) BONUS: Label the white dwarfs and supergiants<a class="headerlink" href="#g-bonus-label-the-white-dwarfs-and-supergiants" title="Permalink to this headline">¶</a></h3>
+<p>Research the <code class="docutils literal notranslate"><span class="pre">ax.annotate()</span></code> method of matplotlib axes and label the white dwarf and supergiant points on your plot as “white dwarf” and “supergiant” with arrows pointing to each. As always, bonus points for any other plot aesthetics you add!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a4.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 4 (Oct 12)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
