@@ -478,6 +478,43 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-1">
+   [Assignment 1]
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-csv-comma-separated">
+     1a) CSV (comma-separated)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-tsv-tab-separated">
+     1b) TSV (tab-separated)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-excel-xls-xlsx">
+     1c) Excel (.xls, .xlsx)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-ascii-text-file">
+     1d) ASCII text file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#e-ascii-text-file-with-header-rows">
+     1e) ASCII text file with header rows
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#f-bonus-fits-table-file">
+     1f) BONUS: FITS table file
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#selecting-data-with-pandas">
    Selecting data with Pandas
   </a>
@@ -556,43 +593,6 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#assignment-1">
-   [Assignment 1]
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-csv-comma-separated">
-     1a) CSV (comma-separated)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#b-tsv-tab-separated">
-     1b) TSV (tab-separated)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#c-excel-xls-xlsx">
-     1c) Excel (.xls, .xlsx)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#d-ascii-text-file">
-     1d) ASCII text file
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#e-ascii-text-file-with-header-rows">
-     1e) ASCII text file with header rows
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#f-bonus-fits-table-file">
-     1f) BONUS: FITS table file
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#assignment-2">
    [Assignment 2]
   </a>
@@ -628,8 +628,13 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#g-bonus-label-the-white-dwarfs-and-supergiants">
-     2g) BONUS: Label the white dwarfs and supergiants
+    <a class="reference internal nav-link" href="#g-write-the-white-dwarfs-and-supergiants-to-csvs">
+     2g) Write the white dwarfs and supergiants to CSVs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#h-bonus-label-the-white-dwarfs-and-supergiants">
+     2h) BONUS: Label the white dwarfs and supergiants
     </a>
    </li>
   </ul>
@@ -1208,6 +1213,92 @@ dtype: object
 <p>The pandas <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> can also read in other character delimited file formats, e.g. space or tab-separated (TSV) files. All we need to do is change the delimiter. Ex.</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(f,</span> <span class="pre">delimiter='\t')</span></code>  # Tab-separated values</p>
 <p><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">=</span> <span class="pre">pd.read_csv(f,</span> <span class="pre">delimiter='\s+')</span></code>  # Whitespace separated</p>
+</div>
+<div class="section" id="assignment-1">
+<h2>[Assignment 1]<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment, you will practice reading in several datasets of different formats.</p>
+<div class="section" id="a-csv-comma-separated">
+<h3>1a) CSV (comma-separated)<a class="headerlink" href="#a-csv-comma-separated" title="Permalink to this headline">¶</a></h3>
+<p>We can read in CSV files like above with <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data.csv">a5data.csv</a> in the cell provided below (either go to the link and copy the url or right-click then copy link url to use in <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>).</p>
+</div>
+<div class="section" id="b-tsv-tab-separated">
+<h3>1b) TSV (tab-separated)<a class="headerlink" href="#b-tsv-tab-separated" title="Permalink to this headline">¶</a></h3>
+<p>To read in TSV files, we can also use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\t'</span></code> argument. Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data.tsv">a5data.tsv</a> in the cell provided below.</p>
+</div>
+<div class="section" id="c-excel-xls-xlsx">
+<h3>1c) Excel (.xls, .xlsx)<a class="headerlink" href="#c-excel-xls-xlsx" title="Permalink to this headline">¶</a></h3>
+<p>To read in Excel files, we use <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>. Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data.xlsx">a5data.xlsx</a> in the cell provided below.</p>
+</div>
+<div class="section" id="d-ascii-text-file">
+<h3>1d) ASCII text file<a class="headerlink" href="#d-ascii-text-file" title="Permalink to this headline">¶</a></h3>
+<p>To read in text files with entries separated by some amount of whitespace (tabs, spaces, etc), we can use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\s+'</span></code> argument. Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data.txt">a5data.txt</a> in the cell provided below.</p>
+</div>
+<div class="section" id="e-ascii-text-file-with-header-rows">
+<h3>1e) ASCII text file with header rows<a class="headerlink" href="#e-ascii-text-file-with-header-rows" title="Permalink to this headline">¶</a></h3>
+<p>To have pandas skip rows while importing, we can use the <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> argument of <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data_headers.txt">a5data_headers.txt</a> in the space provided below.</p>
+</div>
+<div class="section" id="f-bonus-fits-table-file">
+<h3>1f) BONUS: FITS table file<a class="headerlink" href="#f-bonus-fits-table-file" title="Permalink to this headline">¶</a></h3>
+<p>(Optional): For this question, you will need to read in tabular data in a <code class="docutils literal notranslate"><span class="pre">.fits</span></code> file with <code class="docutils literal notranslate"><span class="pre">astropy.table.Table()</span></code> (note: this only works for FITS tables, not images). Once you’ve read in the table with astropy, convert it to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with the <code class="docutils literal notranslate"><span class="pre">.to_pandas()</span></code> method. You will need the following line to import astropy Table:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">astropy.table</span> <span class="pre">import</span> <span class="pre">Table</span></code>.</p>
+<p>Try it on <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/blob/master/spirl/data/a5data.fits">a5data.fits</a> in the cell provided below. See other file formats supported by astropy <a class="reference external" href="https://docs.astropy.org/en/stable/io/unified.html#built-in-table-readers-writers">here</a>.</p>
+<p>This data is from a paper by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019ApJ...877...12T/abstract">Shih-Yun Tang et al. (2019)</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1a code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1b code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1c code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1d code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1e code below]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1f code below]</span>
+<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="selecting-data-with-pandas">
 <h2>Selecting data with Pandas<a class="headerlink" href="#selecting-data-with-pandas" title="Permalink to this headline">¶</a></h2>
@@ -3388,7 +3479,7 @@ Name: cylinders, Length: 198, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f21_a5_93_0.png" src="_images/f21_a5_93_0.png" />
+<img alt="_images/f21_a5_100_0.png" src="_images/f21_a5_100_0.png" />
 </div>
 </div>
 <p>Of course, we can customize our subplot with the <code class="docutils literal notranslate"><span class="pre">ax</span></code> object it returned, as usual.</p>
@@ -3401,97 +3492,7 @@ Name: cylinders, Length: 198, dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f21_a5_95_0.png" src="_images/f21_a5_95_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="assignment-1">
-<h2>[Assignment 1]<a class="headerlink" href="#assignment-1" title="Permalink to this headline">¶</a></h2>
-<p>In this assignment, you will practice reading in several datasets of different formats.</p>
-<div class="section" id="a-csv-comma-separated">
-<h3>1a) CSV (comma-separated)<a class="headerlink" href="#a-csv-comma-separated" title="Permalink to this headline">¶</a></h3>
-<p>We can read in CSV files like above with <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.csv">a5data.csv</a> in the cell provided below (either go to the link and copy the url or right-click then copy link url to use in <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>).</p>
-</div>
-<div class="section" id="b-tsv-tab-separated">
-<h3>1b) TSV (tab-separated)<a class="headerlink" href="#b-tsv-tab-separated" title="Permalink to this headline">¶</a></h3>
-<p>To read in TSV files, we can also use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\t'</span></code> argument. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.tsv">a5data.tsv</a> in the cell provided below.</p>
-</div>
-<div class="section" id="c-excel-xls-xlsx">
-<h3>1c) Excel (.xls, .xlsx)<a class="headerlink" href="#c-excel-xls-xlsx" title="Permalink to this headline">¶</a></h3>
-<p>To read in Excel files, we use <code class="docutils literal notranslate"><span class="pre">pd.read_excel</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.xlsx">a5data.xlsx</a> in the cell provided below.</p>
-</div>
-<div class="section" id="d-ascii-text-file">
-<h3>1d) ASCII text file<a class="headerlink" href="#d-ascii-text-file" title="Permalink to this headline">¶</a></h3>
-<p>To read in text files with entries separated by some amount of whitespace (tabs, spaces, etc), we can use <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> with the <code class="docutils literal notranslate"><span class="pre">delimiter='\s+'</span></code> argument. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.txt">a5data.txt</a> in the cell provided below.</p>
-</div>
-<div class="section" id="e-ascii-text-file-with-header-rows">
-<h3>1e) ASCII text file with header rows<a class="headerlink" href="#e-ascii-text-file-with-header-rows" title="Permalink to this headline">¶</a></h3>
-<p>To have pandas skip rows while importing, we can use the <code class="docutils literal notranslate"><span class="pre">skiprows</span></code> argument of <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code>. Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data_headers.txt">a5data_headers.txt</a> in the space provided below.</p>
-</div>
-<div class="section" id="f-bonus-fits-table-file">
-<h3>1f) BONUS: FITS table file<a class="headerlink" href="#f-bonus-fits-table-file" title="Permalink to this headline">¶</a></h3>
-<p>(Optional): For this question, you will need to read in tabular data in a <code class="docutils literal notranslate"><span class="pre">.fits</span></code> file with <code class="docutils literal notranslate"><span class="pre">astropy.table.Table()</span></code> (note: this only works for FITS tables, not images). Once you’ve read in the table with astropy, convert it to a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> with the <code class="docutils literal notranslate"><span class="pre">.to_pandas()</span></code> method. You will need the following line to import astropy Table:</p>
-<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">astropy.table</span> <span class="pre">import</span> <span class="pre">Table</span></code>.</p>
-<p>Try it on <a class="reference external" href="https://github.com/cjtu/spirl/blob/master/spirl/data/a5data.fits">a5data.fits</a> in the cell provided below. See other file formats supported by astropy <a class="reference external" href="https://docs.astropy.org/en/stable/io/unified.html#built-in-table-readers-writers">here</a>.</p>
-<p>This data is from a paper by <a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2019ApJ...877...12T/abstract">Shih-Yun Tang et al. (2019)</a></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1a code below]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1b code below]</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;RV&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1c code below]</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Plx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1d code below]</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;BPmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1e code below]</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;BPmag&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [1f code below]</span>
-<span class="kn">from</span> <span class="nn">astropy.table</span> <span class="kn">import</span> <span class="n">Table</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;RA_ICRS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
+<img alt="_images/f21_a5_102_0.png" src="_images/f21_a5_102_0.png" />
 </div>
 </div>
 </div>
@@ -3548,8 +3549,12 @@ Name: cylinders, Length: 198, dtype: bool
 </pre></div>
 </div>
 </div>
-<div class="section" id="g-bonus-label-the-white-dwarfs-and-supergiants">
-<h3>2g) BONUS: Label the white dwarfs and supergiants<a class="headerlink" href="#g-bonus-label-the-white-dwarfs-and-supergiants" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="g-write-the-white-dwarfs-and-supergiants-to-csvs">
+<h3>2g) Write the white dwarfs and supergiants to CSVs<a class="headerlink" href="#g-write-the-white-dwarfs-and-supergiants-to-csvs" title="Permalink to this headline">¶</a></h3>
+<p>Write your white dwarf and supergiants DataFrames to CSV files with <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>, using the <code class="docutils literal notranslate"><span class="pre">index=False</span></code> option. Include these CSV files in the assignment 5 directory and in your commit / PR.</p>
+</div>
+<div class="section" id="h-bonus-label-the-white-dwarfs-and-supergiants">
+<h3>2h) BONUS: Label the white dwarfs and supergiants<a class="headerlink" href="#h-bonus-label-the-white-dwarfs-and-supergiants" title="Permalink to this headline">¶</a></h3>
 <p>Research the <code class="docutils literal notranslate"><span class="pre">ax.annotate()</span></code> method of matplotlib axes and label the white dwarf and supergiant points on your plot as “white dwarf” and “supergiant” with arrows pointing to each. As always, bonus points for any other plot aesthetics you add!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
