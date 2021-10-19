@@ -618,23 +618,23 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#e-identify-and-select-the-supergiants">
-     2e) Identify and select the supergiants
+    <a class="reference internal nav-link" href="#e-identify-and-select-the-giants">
+     2e) Identify and select the giants
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#f-plot-the-white-dwarfs-and-supergiants-separately">
-     2f) Plot the white dwarfs and supergiants separately
+    <a class="reference internal nav-link" href="#f-plot-the-white-dwarfs-and-giants-separately">
+     2f) Plot the white dwarfs and giants separately
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#g-write-the-white-dwarfs-and-supergiants-to-csvs">
-     2g) Write the white dwarfs and supergiants to CSVs
+    <a class="reference internal nav-link" href="#g-write-the-white-dwarfs-and-giants-to-csvs">
+     2g) Write the white dwarfs and giants to CSVs
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#h-bonus-label-the-white-dwarfs-and-supergiants">
-     2h) BONUS: Label the white dwarfs and supergiants
+    <a class="reference internal nav-link" href="#h-bonus-label-the-white-dwarfs-and-giants">
+     2h) BONUS: Label the white dwarfs and giants
     </a>
    </li>
   </ul>
@@ -656,8 +656,10 @@
 <p>Outline:</p>
 <ol class="simple">
 <li><p>Intro to <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
-<li><p>Data I/O</p></li>
-<li><p>Manipulating and plotting with <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p></li>
+<li><p>Data I/O (reading and writing)</p></li>
+<li><p>Selecting data</p></li>
+<li><p>Manipulating data</p></li>
+<li><p>Plotting</p></li>
 </ol>
 <div class="section" id="readings-optional">
 <h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
@@ -3533,13 +3535,13 @@ Name: cylinders, Length: 198, dtype: bool
 <p>White dwarfs on the H-R diagram are outliers in the lower left.</p>
 <p>Using a <strong>conditional</strong> statement (or two) on absolute magnitude and color, select all white dwarfs and save them to their own DataFrame. Call <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> on this new DataFrame to get summary statistics of the white dwarfs.</p>
 </div>
-<div class="section" id="e-identify-and-select-the-supergiants">
-<h3>2e) Identify and select the supergiants<a class="headerlink" href="#e-identify-and-select-the-supergiants" title="Permalink to this headline">¶</a></h3>
-<p>Supergiants on the H-R diagram are outliers in the top middle to right section of the diagram.</p>
-<p>Using a <strong>conditional</strong> statement (or two) on absolute magnitude and color, select all supergiants and save them to their own DataFrame. Call <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> on this new DataFrame to get summary statistics of the supergiants.</p>
+<div class="section" id="e-identify-and-select-the-giants">
+<h3>2e) Identify and select the giants<a class="headerlink" href="#e-identify-and-select-the-giants" title="Permalink to this headline">¶</a></h3>
+<p>Giants on the H-R diagram are outliers in the top middle to right section of the diagram.</p>
+<p>Using a <strong>conditional</strong> statement (or two) on absolute magnitude and color, select all giants and save them to their own DataFrame. Call <code class="docutils literal notranslate"><span class="pre">.describe()</span></code> on this new DataFrame to get summary statistics of the giants.</p>
 </div>
-<div class="section" id="f-plot-the-white-dwarfs-and-supergiants-separately">
-<h3>2f) Plot the white dwarfs and supergiants separately<a class="headerlink" href="#f-plot-the-white-dwarfs-and-supergiants-separately" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="f-plot-the-white-dwarfs-and-giants-separately">
+<h3>2f) Plot the white dwarfs and giants separately<a class="headerlink" href="#f-plot-the-white-dwarfs-and-giants-separately" title="Permalink to this headline">¶</a></h3>
 <p>Using your white dwarf and supergiant DataFrames, plot each on the same axes as your H-R diagram with distinct markers and colors (hint: try changing the <code class="docutils literal notranslate"><span class="pre">markerstyle</span></code>, <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">markersize</span></code> options of <code class="docutils literal notranslate"><span class="pre">.plot()</span></code>).</p>
 <p>To plot all on the same axes, make a subplot and pass in ax to each <code class="docutils literal notranslate"><span class="pre">.plot</span></code> call, e.g.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
@@ -3549,12 +3551,12 @@ Name: cylinders, Length: 198, dtype: bool
 </pre></div>
 </div>
 </div>
-<div class="section" id="g-write-the-white-dwarfs-and-supergiants-to-csvs">
-<h3>2g) Write the white dwarfs and supergiants to CSVs<a class="headerlink" href="#g-write-the-white-dwarfs-and-supergiants-to-csvs" title="Permalink to this headline">¶</a></h3>
-<p>Write your white dwarf and supergiants DataFrames to CSV files with <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>, using the <code class="docutils literal notranslate"><span class="pre">index=False</span></code> option. Include these CSV files in the assignment 5 directory and in your commit / PR.</p>
+<div class="section" id="g-write-the-white-dwarfs-and-giants-to-csvs">
+<h3>2g) Write the white dwarfs and giants to CSVs<a class="headerlink" href="#g-write-the-white-dwarfs-and-giants-to-csvs" title="Permalink to this headline">¶</a></h3>
+<p>Write your white dwarf and giants DataFrames to CSV files with <code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code>, using the <code class="docutils literal notranslate"><span class="pre">index=False</span></code> option. Include these CSV files in the assignment 5 directory and in your commit / PR.</p>
 </div>
-<div class="section" id="h-bonus-label-the-white-dwarfs-and-supergiants">
-<h3>2h) BONUS: Label the white dwarfs and supergiants<a class="headerlink" href="#h-bonus-label-the-white-dwarfs-and-supergiants" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="h-bonus-label-the-white-dwarfs-and-giants">
+<h3>2h) BONUS: Label the white dwarfs and giants<a class="headerlink" href="#h-bonus-label-the-white-dwarfs-and-giants" title="Permalink to this headline">¶</a></h3>
 <p>Research the <code class="docutils literal notranslate"><span class="pre">ax.annotate()</span></code> method of matplotlib axes and label the white dwarf and supergiant points on your plot as “white dwarf” and “supergiant” with arrows pointing to each. As always, bonus points for any other plot aesthetics you add!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
