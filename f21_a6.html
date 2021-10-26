@@ -578,8 +578,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#initialize-the-pymc3-model">
-     Initialize the PyMC3 model
+    <a class="reference internal nav-link" href="#read-in-data">
+     Read in data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -617,6 +617,15 @@
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#both-with-a-gaussian-priors">
      3. Both with a Gaussian priors:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-did-we-learn-about-priors">
+     4. What did we learn about
+     <strong>
+      priors
+     </strong>
+     ?
     </a>
    </li>
   </ul>
@@ -867,6 +876,8 @@ rm environment.yml
 <p>If a package you want to install isn’t in the default or conda-forge channels, you may be able to install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, short for “Python Install Package”. This is the original way to install packages in Python, but does not handle dependencies and dependency conflicts as well as <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
 <p>As a general rule, using <code class="docutils literal notranslate"><span class="pre">conda</span></code> whenever possible and <code class="docutils literal notranslate"><span class="pre">pip</span></code> <em>only when necessary</em> will cut down on errors when working with Python packages.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pip</span></code> command installs from the <a class="reference external" href="https://pypi.org/">Python Package Index</a> (PyPI or <a class="reference external" href="https://www.youtube.com/watch?v=Hz1JWzyvv8A&amp;ab_channel=AndrewBoynton">Cheese Shop</a> for short).</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> will install NumPy, but since NumPy is available from conda, we should always prefer <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code>.</p>
+<p><strong>Note:</strong> Just like <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command will install a package only into the currently active environment. Make sure to activate your desired environment before installing a package!</p>
 </div>
 </div>
 <div class="section" id="installing-pymc3-and-corner">
@@ -927,7 +938,7 @@ Running on corner v2.2.1
 </div>
 <div class="section" id="markov-chain-monte-carlo-mcmc">
 <h2>Markov-chain Monte Carlo (MCMC)<a class="headerlink" href="#markov-chain-monte-carlo-mcmc" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Markov-chain Monte Carlo (MCMC)</strong> technique offers us a way to explore the possible parameters of a model fit to some data. Unlike ordinary linear regression which can be solved directly, MCMC uses Bayesian stats and random sampling to build up confidence in models that are too complicated or have too many parameters to simply solve by fitting a curve.</p>
+<p>The <strong>Markov-chain Monte Carlo (MCMC)</strong> technique offers us a way to explore the possible parameters of a model fit to some data. Unlike ordinary linear regression which can be solved directly, MCMC uses Bayesian stats and random sampling to build up confidence in model fits that are too complicated or have too many parameters to simply solve by fitting a curve.</p>
 <p>The basic idea of MCMC is:</p>
 <ul class="simple">
 <li><p>We have an equation or <em>model</em> we want to fit to some data</p>
@@ -937,10 +948,10 @@ Running on corner v2.2.1
 </li>
 <li><p>We also start with some <em>prior</em> knowledge about these model parameters</p>
 <ul>
-<li><p>Maybe we know the max/min value they can be or a range they usually fall in</p></li>
+<li><p>Maybe we know the max/min value they can be, or a range each parameter usually falls in</p></li>
 </ul>
 </li>
-<li><p>MCMC will vary the parameters in a <em>random but smart</em> way (using some math we’ll mostly gloss over)</p></li>
+<li><p>MCMC will vary the parameters in a <em>random but smart</em> way (using some math we’ll mostly gloss over - see optional readings for more info!)</p></li>
 </ul>
 <p>Then, if the data can be fit by the model <em>and</em> we had well constrained priors for the parameters <em>and</em> we let MCMC run long enough <em>and</em> we re-ran MCMC enough times independently, then something cool happens:</p>
 <ul class="simple">
@@ -952,11 +963,12 @@ Running on corner v2.2.1
 <div class="section" id="how-does-it-work">
 <h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h3>
 <p>Mostly Bayes’ theorem and magic… but we can give a sense for how MCMC works without going too deep (see readings/videos for <em>lots</em> more info).</p>
-<p>As the name suggests, MCMC is a combination of <strong>Markov chain</strong> and <strong>Monte Carlo</strong> methods that explore the possible parameters of our fit in many dimensions. A <em>Markov chain</em> is a series of events that only look at the current state (e.g., position in parameter space) to determine the next state. The <em>Monte Carlo</em> aspect is that at each position in parameter space, we move in a random direction to a new position. Together, this amounts to a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_walk">random walk</a> (usually called a <strong>walker</strong>) through our parameters that will build up an erratic pattern over time:</p>
+<p>As the name suggests, MCMC is a combination of <strong>Markov chain</strong> and <strong>Monte Carlo</strong> methods that explore the possible parameters of our fit in many dimensions. A <em>Markov chain</em> is a series of events that only look at the current state (e.g., position in parameter space) to determine the next state. The <em>Monte Carlo</em> aspect is that at each position in parameter space, we move in a random direction to a new position (new set of parameters to try). Together, this amounts to a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_walk">random walk</a> (usually called a <strong>walker</strong>) through our parameters that will build up an erratic pattern over time:</p>
 <p><img alt="Random Walk Wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Random_walk_2500.svg" /></p>
-<p>The clever part is that even though our <strong>walker</strong> picks a random direction to move at each step, sometimes <em>it just stays put</em>. Our <strong>walker</strong> friend typically only moves if doing so gives us parameters that better fit our data (with some leeway). There are several algorithms for deciding whether to move our walker or not but those are outside the scope of this lesson. What’s important is that our walker will <em>sample</em> our parameter space over time, and (hopefully) <em>converge</em> to a set of parameters that make our model fit our data. The below <a class="reference external" href="https://blog.revolutionanalytics.com/2013/09/an-animated-peek-into-the-workings-of-bayesian-statistics.html">gif by M. Joseph</a> shows how walkers can start in random parts of parameter space and eventually converge to a set of parameters (here, <em>mu</em> and <em>sigma</em>) that best fit the data (here, the peak <em>posterior distribution</em> which we’ll talk about below).</p>
-<p><img alt="MCMC gif" src="_images/mcmc.gif" /></p>
-<p>Since many models have <em>local minima</em> in parameter space, which could make a bad fit look good to a walker (essentially getting them stuck in a bad zone in parameter space), we generally run multiple walkers to see where most of them end up. If most of our walkers converge to a particular zone in parameter space, we can be confident that zone gives us our best fitting parameters.</p>
+<p>The clever part is that even though our <strong>walker</strong> picks a random direction to move at each step, sometimes <em>it just stays put</em>. Our <strong>walker</strong> friend typically only moves if doing so gives us parameters that better fit our data (with some leeway). There are several algorithms for deciding whether to move our walker or not but those are outside the scope of this lesson. What’s important is that our walker will <em>sample</em> our parameter space over time, and (hopefully) <em>converge</em> to a set of parameters that make our model fit our data.</p>
+<p>The below <a class="reference external" href="https://blog.revolutionanalytics.com/2013/09/an-animated-peek-into-the-workings-of-bayesian-statistics.html">gif by M. Joseph</a> shows how walkers can start in random parts of parameter space (here only 2 parameters, <em>mu</em> and <em>sigma</em>), then eventually converge via an MCMC random walk to a set of parameters that best fit the data. We know we’re at the best fit parameters when the <em>posterior distribution</em> is 1 nice peak (we’ll talk about what that means later!).</p>
+<p><img alt="MCMC gif" src="https://cjtu.github.io/spirl/_images/mcmc.gif" /></p>
+<p>Since many models have <em>local minima</em> in parameter space, which could make a bad fit look good (essentially getting a walker stuck in a poorly fitting zone in parameter space), we generally run multiple walkers to see where most of them end up. If most of our walkers converge to a particular zone in parameter space, we can be more confident that this zone gives us our best fitting parameters.</p>
 </div>
 </div>
 <div class="section" id="simple-example-with-mcmc-finding-planet-mass-and-radius">
@@ -967,54 +979,93 @@ Running on corner v2.2.1
 <p>However, what if we want to know something about the planet mass (<strong>M</strong>) and planet Radius (<strong>R</strong>)? Pulling out the old Physics I textbook, we can use the definition of <strong>g</strong> and <span class="math notranslate nohighlight">\(F=ma\)</span> to get:</p>
 <div class="math notranslate nohighlight">
 \[g = \frac{GM}{R^2}\]</div>
-<p>Now we can write height (<strong>z</strong>) in terms of <strong>M</strong>, <strong>R</strong>, <strong>t</strong>, and the constant gravitational constant (<strong>G</strong> = 6.674 <span class="math notranslate nohighlight">\(\times 10^{-11} m^3/kg/s^2\)</span>)</p>
+<p>Now we can write height (<strong>z</strong>) in terms of <strong>M</strong>, <strong>R</strong>, <strong>t</strong>, and the universal gravitational constant (<strong>G</strong> = 6.674 <span class="math notranslate nohighlight">\(\times 10^{-11} m^3/kg/s^2\)</span>)</p>
 <div class="math notranslate nohighlight">
 \[z(t,M,R) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
-<p>Now we have an expression with 4 variables (z, t, m, R), but we’ve only measured 2 (z and t). It seems hopeless to solve for <strong>M</strong> and <strong>R</strong>… in fact there are an infinite number of possible values we can plug in to make the above equation work…</p>
-<p>Luckily, we know a little bit about planet masses and radii! For one, neither can be negative. Also, there are maximum values a planet mass / radius can have before it becomes a different object entirely. While this may not seem like much, these are <strong>priors</strong>, knowledge we have about our unknown parameters. For priors to be useful, we need one more component: Bayes’ Theorem</p>
+<p>Now we have an expression with 4 variables (z, t, m, R), but we’ve only measured 2 (z and t). It seems hopeless to solve for our 2 unknowns, <strong>M</strong> and <strong>R</strong>, with normal algebra… in fact there are an infinite number of possible values we can plug in to make the above equation work…</p>
+<p>Luckily, we know a little bit about planet masses and radii! For one, neither can be negative. Also, there are maximum values a planet mass / radius can have before it becomes a different object entirely. While this may not seem like much, these are <strong>priors</strong>, knowledge we have about our unknown parameters. To use our priors to inform the most likely M and R, we need one more concept: Bayes’ Theorem.</p>
 <div class="section" id="bayes-theorem">
 <h3>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h3>
-<p>The Bayes Theorem tells us about probabilities <em>given some condition</em> or <em>prior knowledge</em>:</p>
+<p>The Bayes Theorem tells us about probabilities <em>given some condition</em> or <em>given prior knowledge</em>. A simplified form of the Theorem is:</p>
 <div class="math notranslate nohighlight">
-\[P(x|y) \propto P(y|x)P(x)\]</div>
-<p>Where <span class="math notranslate nohighlight">\(P(x|y)\)</span> means “the probability of x given that we know y”, conversely <span class="math notranslate nohighlight">\(P(x|y)\)</span> means “the probability of y given that we know x” and <span class="math notranslate nohighlight">\(P(x)\)</span> is just the probability that <span class="math notranslate nohighlight">\(x\)</span> occurs. We can translate Bayes’ theorem to MCMC speak where these 3 terms become:</p>
+\[P(x|y) \propto P(y|x) \cdot P(x)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(P(x|y)\)</span> means “the probability of x given that we know y”, conversely <span class="math notranslate nohighlight">\(P(y|x)\)</span> means “the probability of y given that we know x” and <span class="math notranslate nohighlight">\(P(x)\)</span> is just the probability that event <span class="math notranslate nohighlight">\(x\)</span> occurs. We can translate Bayes’ theorem to MCMC speak where these 3 terms have different names but the same form:</p>
 <div class="math notranslate nohighlight">
-\[{\rm posterior} \propto ({\rm likelihood\ function}) ({\rm prior})\]</div>
-<p>Because this is a lot of stats and jargon, we’ll use a short story to help us build intuition for Bayes’ theorem:</p>
+\[{\rm posterior probability} \propto ({\rm likelihood\ function}) \cdot ({\rm prior})\]</div>
+<p>Because this is a lot of stats and jargon that we don’t have time to dive deep on, we’ll use a short story to help us build intuition for Bayes’ theorem:</p>
 <blockquote>
 <div><p>One afternoon, you and your friend Lauren are talking about Bayes’ theorem when your brother, Ben, comes out of his room. You both notice that Ben is wearing a Yankees cap and an old worn-out T-shirt with a Yankees logo. Lauren says, “based on Ben’s outfit, I bet he’s going to a Yankees game!” You reply, “Ah, so based on your <strong>prior</strong> experience of people wearing matching caps and T-shirts to Yankees games, your Bayesian intuition says there is a high <strong>probability</strong> he is going to a baseball game”.</p>
-<p>Lauren thinks for a second and then says, “Oh I get it! If I had to guess, I’d say there’s about an 80% chance that people are <strong>wearing a Yankees cap and T-shirt</strong> <em>given</em> they are <strong>going to a Yankees game</strong>. This would be our <strong>likelihood function</strong>, <em>P(y|x)</em>. So then my <strong>prior</strong> is how likely it is that Ben is going to a Yankees game, <em>P(x)</em>. Well, the Yankees are playing in town today and I know that Ben has season tickets so I’d say my <strong>prior</strong> is Ben has a 95% chance of going to the game today. So when I multiply my <strong>likelihood</strong> by my <strong>prior</strong>, I get my <strong>posterior probability</strong> of Ben <strong>going to a Yankees game</strong> <em>given</em> he is <strong>wearing a Yankees cap and T-shirt</strong>, which is 80% times 95%, so <strong>76%!</strong>.” Ben rolls his eyes, grabs his keys and leaves, wondering why anyone would ruin a perfectly good Saturday talking about stats…</p>
-<p>You reply, “Yes that is well reasoned based on your priors, but as Ben’s sister, I know for a fact he is going on a date with his partner and not to a ball game.” Lauren was skeptical of your certainty. “How could you possibly know that?” You eagerly reply, “Well, I agree on the <strong>likelihood function</strong> that 80% of people wear matching caps and T-shirts given they are going to a Yankees game. BUT my <strong>priors</strong> are that</p>
+<p>Lauren thinks for a second and then says, “Oh I get it! If I had to guess, I’d say there’s about an 80% chance that people are <strong>wearing a Yankees cap and T-shirt</strong> <em>given</em> they are <strong>going to a Yankees game</strong>. This would be our <strong>likelihood function</strong>, <em>P(y|x)</em>. So then my <strong>prior</strong> is how likely it is that Ben is <strong>going to a Yankees game</strong>, <em>P(x)</em>. Well, the Yankees are playing in town today and I know that Ben has season tickets so I’d say my <strong>prior</strong> is Ben has a 95% chance of going to the game today. So when I multiply my <strong>likelihood function</strong> by my <strong>prior</strong>, I get my <strong>posterior probability</strong> of Ben <strong>going to a Yankees game</strong> <em>given</em> he is <strong>wearing a Yankees cap and T-shirt</strong>, which is 80% times 95%, so <strong>76%!</strong>.” Ben rolls his eyes, grabs his keys and leaves, wondering why anyone would ruin a perfectly good Saturday talking about stats…</p>
+<p>You reply, “Nice! That’s well reasoned based on your priors and Bayes’ Theorem. But as Ben’s sister, I know for a fact he is going on a date with his partner and not to a ball game.”</p>
+<p>Lauren was skeptical of your certainty. “How could you possibly know that?”</p>
+<p>You eagerly reply, “Well, I agree on the <strong>likelihood function</strong> that 80% of people wear matching caps and T-shirts given they are going to a Yankees game. BUT my <strong>priors</strong> are that</p>
 <ol class="simple">
 <li><p>Ben got that shirt as a gift from his partner for their first-year anniversary,</p></li>
 <li><p>Ben only wears that shirt when he sees his partner,</p></li>
-<li><p>Ben’s partner hates baseball.
-Therefore, my <strong>priors</strong> tell me that Ben has only a 1% chance of going to a Yankees game with his partner today. Therefore, my <strong>posterior probability</strong> that Ben is going to a baseball game given his outfit is 80% times 1%, <strong>less than 1%!</strong>! So you see, having less informed priors can have a huge effect on your <strong>posterior probability</strong>!”</p></li>
+<li><p>Ben’s partner hates baseball.</p></li>
 </ol>
+<p>Therefore, from my <strong>priors</strong>, I’d guess Ben has only a 1% chance of going to a Yankees game with his partner today. Therefore, my <strong>posterior probability</strong> that Ben is going to a baseball game given his outfit is 80% times 1%, <strong>less than 1%!</strong>! So you see, having less informed priors can have a huge effect on your Bayesian prediction!”</p>
 </div></blockquote>
-<p>In the coming weeks we’ll learn more about the <strong>likelihood function</strong> and <strong>posterior probability</strong>, but some MCMC packages like <strong>PyMC3</strong> will handle that for us in simple cases as long as we have a model, data, and priors. Today our main focus is going to be on running an MCMC analysis and choosing good <strong>priors</strong>!</p>
+<p>In the coming weeks we’ll learn more about the <strong>likelihood function</strong> and <strong>posterior probability</strong>, but some MCMC packages like <strong>PyMC3</strong> will handle those for us in simple cases as long as we have a model, data, and priors. Today our main focus is going to be on running an MCMC analysis and choosing good <strong>priors</strong>!</p>
 </div>
 <div class="section" id="prior-probability-prior-functions">
 <h3>Prior probability / Prior functions:<a class="headerlink" href="#prior-probability-prior-functions" title="Permalink to this headline">¶</a></h3>
 <p>Our <strong>prior</strong> knowledge of the unknown parameters can be very important for having MCMC converge to the correct final parameters. Priors in MCMC analyses are defined as <em>probability distributions</em>. The two most commonly used prior distributions are the <strong>uniform</strong> and <strong>normal</strong> distributions.</p>
-<p>The <strong>uniform prior</strong>, <span class="math notranslate nohighlight">\(\mathcal{U}(lower,upper)\)</span>, is the simpler of the two. If the sampled parameter is in the range <code class="docutils literal notranslate"><span class="pre">(lower,</span> <span class="pre">upper)</span></code>, the prior’s probability is 1, otherwise the probability is 0. For example, say we set our Mass (M) prior to <span class="math notranslate nohighlight">\(\mathcal{U}(0, 1)\)</span> kg. This means that if means that if your walker goes to a part of parameter space where M=2, the prior probability will be 0 and therefore our <strong>posterior probability</strong> will also be 0. The uniform prior puts a hard range on a parameter, but every value in that range is equiprobable.</p>
+<p>The <strong>uniform prior</strong>, <span class="math notranslate nohighlight">\(\mathcal{U}(lower,upper)\)</span>, is the simpler of the two. If the sampled parameter is in the range <code class="docutils literal notranslate"><span class="pre">(lower,</span> <span class="pre">upper)</span></code>, the prior’s probability is 1, otherwise the probability is 0.</p>
+<p>For example, say we set our Mass (M) prior to <span class="math notranslate nohighlight">\(\mathcal{U}(0, 1)\)</span> kg. This means that if means that if your walker goes to a part of parameter space where M=2 kg, the prior probability will be 0 and therefore our <strong>posterior probability</strong> will also be 0. The uniform prior puts a hard range on a parameter, but every value in that range is equally likely.</p>
 <p>The <strong>normal (Gaussian) prior</strong>, assigns a bell-curve probability to a parameter with peak probability near the mean and lower probability with increasing standard deviations from the mean:</p>
 <div class="math notranslate nohighlight">
 \[p(x) = \frac{1}{\sqrt{2\pi \sigma^2}}exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)\]</div>
-<p>For example, assuming we measure M with some uncertainty as <span class="math notranslate nohighlight">\(0.50\pm0.1\)</span> kg, we can set a Gaussian prior with <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>. Walkers nearer to 0.5 will have a higher <strong>posterior probability</strong>, but the walkers will still explore lower probability space further from the mean.</p>
-<p>There is also a combination of the above two priors, sometimes called a <strong>truncated normal prior</strong>. This is a Gaussian prior with <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, except we can also set a lower or upper bound, beyond which the probability is 0. For example, since we know mass (M) cannot be negative, we could the same mean and sigma as the previous example as <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>, but also set <span class="math notranslate nohighlight">\(lower=0\)</span> to make sure we don’t get any fits with negative mass.</p>
+<p>For example, assuming we measure M with some uncertainty as <span class="math notranslate nohighlight">\(0.50\pm0.1\)</span> kg, we can set a Gaussian prior with <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>. Walkers nearer to 0.5 will have a higher <strong>prior probability</strong>, but the walkers will still explore lower probability space further from the mean.</p>
+<p>There is also a combination of the above two priors, sometimes called a <strong>truncated normal prior</strong>. This is a Gaussian prior with <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, except we can also set a lower or upper bound, beyond which the probability is 0.</p>
+<p>For example, since we know mass (M) cannot be negative, we could use the same mean and sigma as the previous example as <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>, but also set <span class="math notranslate nohighlight">\(lower=0\)</span> to make sure we don’t get any fits with negative mass.</p>
+</div>
+</div>
+<div class="section" id="mcmc-with-pymc3">
+<h2>MCMC with PyMC3<a class="headerlink" href="#mcmc-with-pymc3" title="Permalink to this headline">¶</a></h2>
+<p>Finally know all we need to start building MCMC models in Python! To get started with <code class="docutils literal notranslate"><span class="pre">pymc3</span></code>, we only need a couple components: <strong>data</strong>, a <strong>model</strong>, and <strong>priors</strong>. Then we just need to tweak some MCMC parameters and PyMC3 will do all the random walking for us!</p>
+<p>The main steps are:</p>
+<ol class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">pymc3.model()</span></code> instance</p></li>
+<li><p>Setup our PyMC3 object with <strong>priors</strong>, <strong>model</strong>, and <strong>observed data</strong></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">.sample()</span></code> to make the walkers explore parameter space!</p></li>
+</ol>
+<div class="section" id="using-mcmc-to-learn-mass-and-radius-from-free-fall">
+<h3>Using MCMC to learn mass and radius from Free-fall!<a class="headerlink" href="#using-mcmc-to-learn-mass-and-radius-from-free-fall" title="Permalink to this headline">¶</a></h3>
+<p>Recall: We want to estimate the planet mass (M) and radius (R) using this model:</p>
+<div class="math notranslate nohighlight">
+\[z(t) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
+<p>We have free-fall data (<strong>z</strong>, <strong>t</strong>), and we do have some extra (prior) knowledge on M and R.</p>
+<ul class="simple">
+<li><p>When recording the free-fall height over time, we managed to measure the mass to some precision as M=<span class="math notranslate nohighlight">\(0.30\pm0.015\)</span> Jupiter masses. We also know we can’t have a negative mass. Therefore, we can use a truncated normal distribution prior for M.</p></li>
+<li><p>For R, we only know that it cannot be larger than 2 Jupiter radius, and cannot have be negative value. Therefore, we can use a uniform distribution with an upper and lower bound</p></li>
+<li><p>Our model can also be defined with a probability distribution, here we have well-behaved errors on our data points, so we will use a normal distribution for our model</p></li>
+</ul>
+<p>For our priors and model, we will use the following 3 probability distributions provided by PyMC3 (which we alias to <code class="docutils literal notranslate"><span class="pre">pm</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.Uniform()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.Normal()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.TruncatedNormal()</span></code></p></li>
+</ul>
+<p>You can find all built-in distributions at <a class="reference external" href="https://docs.pymc.io/en/stable/api/distributions/continuous.html#pymc3.distributions">PyMC3 Distributions</a>.</p>
+</div>
+<div class="section" id="read-in-data">
+<h3>Read in data<a class="headerlink" href="#read-in-data" title="Permalink to this headline">¶</a></h3>
+<p>We will read in a free-fall data set from this <a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/data/position_measurement.csv">link</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">corner</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># See plt styles: https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 
 <span class="c1"># read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/position_measurement.csv&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/cjtu/spirl/master/spirl/data/position_measurement.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1096,7 +1147,7 @@ Therefore, my <strong>priors</strong> tell me that Ben has only a 1% chance of g
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;Helvetica&#39;] not found. Falling back to DejaVu Sans.
 </pre></div>
 </div>
-<img alt="_images/f21_a6_9_1.png" src="_images/f21_a6_9_1.png" />
+<img alt="_images/f21_a6_10_1.png" src="_images/f21_a6_10_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1115,38 +1166,6 @@ Therefore, my <strong>priors</strong> tell me that Ben has only a 1% chance of g
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="mcmc-with-pymc3">
-<h2>MCMC with PyMC3<a class="headerlink" href="#mcmc-with-pymc3" title="Permalink to this headline">¶</a></h2>
-<p>To get started with <code class="docutils literal notranslate"><span class="pre">pymc3</span></code>, we only need a couple components: <strong>data</strong>, a <strong>model</strong>, and <strong>priors</strong>. Then we just need to tweak some MCMC parameters and PyMC3 will do all the random walking for us!</p>
-<p>The main steps are:</p>
-<ol class="simple">
-<li><p>Create a <code class="docutils literal notranslate"><span class="pre">pymc3.model()</span></code> instance</p></li>
-<li><p>Setup our PyMC3 object with <strong>priors</strong> and the <strong>model</strong> (likelihood function)</p></li>
-<li><p>Run <code class="docutils literal notranslate"><span class="pre">.sample()</span></code> to make the walkers explore parameter space!</p></li>
-</ol>
-<div class="section" id="using-mcmc-to-learn-mass-and-radius-from-free-fall">
-<h3>Using MCMC to learn mass and radius from Free-fall!<a class="headerlink" href="#using-mcmc-to-learn-mass-and-radius-from-free-fall" title="Permalink to this headline">¶</a></h3>
-<p>Recall: We want to estimate the planet mass (M) and radius (R) using this model:</p>
-<div class="math notranslate nohighlight">
-\[z(t) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
-<p>We have free-fall data (<strong>z</strong>, <strong>t</strong>), and we do have some extra (prior) knowledge on M and R.</p>
-<ul class="simple">
-<li><p>When recording the free-fall height over time, we managed to measure the mass to some precision as M=<span class="math notranslate nohighlight">\(0.30\pm0.015\)</span> Jupiter masses. We also know we can’t have a negative mass. Therefore, we can use a truncated normal distribution prior for M.</p></li>
-<li><p>For R, we only know that it cannot be larger than 2 Jupiter radius, and cannot have be negative value. Therefore, we can use a uniform distribution with an upper and lower bound</p></li>
-<li><p>Our model can also be defined with a probability distribution, here we have well-behaved errors on our data points, so we will use a normal distribution for our model</p></li>
-</ul>
-<p>For our priors and model, we will use the following 3 probability distributions provided by PyMC3 (which we alias to <code class="docutils literal notranslate"><span class="pre">pm</span></code>):</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pm.Uniform()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pm.Normal()</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pm.TruncatedNormal()</span></code></p></li>
-</ul>
-<p>You can find all built-in distributions at <a class="reference external" href="https://docs.pymc.io/en/stable/api/distributions/continuous.html#pymc3.distributions">PyMC3 Distributions</a>.</p>
-</div>
-<div class="section" id="initialize-the-pymc3-model">
-<h3>Initialize the PyMC3 model<a class="headerlink" href="#initialize-the-pymc3-model" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Initialize PyMC3 model object</span>
@@ -1376,7 +1395,7 @@ Wonderful!</p>
 <div class="section" id="assignment-finding-planet-mass-and-radius-by-choosing-good-priors">
 <h2>[Assignment] – Finding Planet Mass and Radius by choosing good priors!<a class="headerlink" href="#assignment-finding-planet-mass-and-radius-by-choosing-good-priors" title="Permalink to this headline">¶</a></h2>
 <p>In this assignment, we will repeat the MCMC analysis above, but explore how <strong>priors</strong> can change our results.</p>
-<p>You will get a different set of free-fall data to fit for the planet R and M with the same model:</p>
+<p>You will get a different set of free-fall data (<a class="reference external" href="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/data/position_measurement_as.csv">link</a>) to fit for the planet R and M with the same model:</p>
 <div class="math notranslate nohighlight">
 \[z(t) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
 <p>In each question you will set up the same model as before, but try different priors for R and M:</p>
@@ -1390,7 +1409,7 @@ Wonderful!</p>
 <span class="n">true_M</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.6810E25</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">M_jup</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
 </pre></div>
 </div>
-<p>Include these values in the final corner plots to see how close your MCMC results are.</p>
+<p>Like before, include these values as blue lines in the final corner plots to see how close your MCMC results are.</p>
 <p>Tips:</p>
 <ol class="simple">
 <li><p>If your resulting corner plot looks weird, try to increase the steps rather than number of walkers (you shouldn’t need more than 4 walkers!).</p></li>
@@ -1399,7 +1418,8 @@ Wonderful!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/position_measurement_as.csv&#39;</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/cjtu/spirl/master/spirl/data/position_measurement_as.csv&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 
 <span class="c1"># plot the data</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span> <span class="p">)</span>
@@ -1476,6 +1496,10 @@ Wonderful!</p>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="what-did-we-learn-about-priors">
+<h3>4. What did we learn about <strong>priors</strong>?<a class="headerlink" href="#what-did-we-learn-about-priors" title="Permalink to this headline">¶</a></h3>
+<p>In your Pull Request description, write a sentence or two explaining in your words what you learned about <strong>priors</strong> in this assignment.</p>
 </div>
 </div>
 </div>
