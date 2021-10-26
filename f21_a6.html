@@ -677,8 +677,9 @@ See this nice article <a class="reference external" href="https://mattpitkin.git
 <div class="section" id="why-environments">
 <h3>Why Environments<a class="headerlink" href="#why-environments" title="Permalink to this headline">¶</a></h3>
 <p>By default when we open a terminal after installing <strong>Anaconda</strong>, we should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> at the left, indicating that we are in the default <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment.</p>
-<div class="highlight-note notranslate"><div class="highlight"><pre><span></span>To open a terminal in VS Code, type `CTRL SHIFT ~` (Mac: `CMD SHIFT ~`) or in the top bar go to `View -&gt; Terminal`.
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To open a terminal in VS Code, type <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">SHIFT</span> <span class="pre">~</span></code> (Mac: <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">SHIFT</span> <span class="pre">~</span></code>) or in the top bar go to <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">-&gt;</span> <span class="pre">Terminal</span></code>.</p>
 </div>
 <p>Terminology:</p>
 <ul class="simple">
@@ -877,7 +878,10 @@ rm environment.yml
 <p>As a general rule, using <code class="docutils literal notranslate"><span class="pre">conda</span></code> whenever possible and <code class="docutils literal notranslate"><span class="pre">pip</span></code> <em>only when necessary</em> will cut down on errors when working with Python packages.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">pip</span></code> command installs from the <a class="reference external" href="https://pypi.org/">Python Package Index</a> (PyPI or <a class="reference external" href="https://www.youtube.com/watch?v=Hz1JWzyvv8A&amp;ab_channel=AndrewBoynton">Cheese Shop</a> for short).</p>
 <p>For example <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> will install NumPy, but since NumPy is available from conda, we should always prefer <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">numpy</span></code>.</p>
-<p><strong>Note:</strong> Just like <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command will install a package only into the currently active environment. Make sure to activate your desired environment before installing a package!</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Just like <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> will install to the currently active environment. Remember to activate your environment before installing packages!</p>
+</div>
 </div>
 </div>
 <div class="section" id="installing-pymc3-and-corner">
@@ -967,7 +971,7 @@ Running on corner v2.2.1
 <p><img alt="Random Walk Wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Random_walk_2500.svg" /></p>
 <p>The clever part is that even though our <strong>walker</strong> picks a random direction to move at each step, sometimes <em>it just stays put</em>. Our <strong>walker</strong> friend typically only moves if doing so gives us parameters that better fit our data (with some leeway). There are several algorithms for deciding whether to move our walker or not but those are outside the scope of this lesson. What’s important is that our walker will <em>sample</em> our parameter space over time, and (hopefully) <em>converge</em> to a set of parameters that make our model fit our data.</p>
 <p>The below <a class="reference external" href="https://blog.revolutionanalytics.com/2013/09/an-animated-peek-into-the-workings-of-bayesian-statistics.html">gif by M. Joseph</a> shows how walkers can start in random parts of parameter space (here only 2 parameters, <em>mu</em> and <em>sigma</em>), then eventually converge via an MCMC random walk to a set of parameters that best fit the data. We know we’re at the best fit parameters when the <em>posterior distribution</em> is 1 nice peak (we’ll talk about what that means later!).</p>
-<p><img alt="MCMC gif" src="https://cjtu.github.io/spirl/_images/mcmc.gif" /></p>
+<p><img alt="MCMC gif" src="https://raw.githubusercontent.com/cjtu/spirl/master/spirl/images/mcmc.gif" /></p>
 <p>Since many models have <em>local minima</em> in parameter space, which could make a bad fit look good (essentially getting a walker stuck in a poorly fitting zone in parameter space), we generally run multiple walkers to see where most of them end up. If most of our walkers converge to a particular zone in parameter space, we can be more confident that this zone gives us our best fitting parameters.</p>
 </div>
 </div>
@@ -1370,7 +1374,10 @@ This is done by the <code class="docutils literal notranslate"><span class="pre"
 <p>In a corner plot, the counter plots at the lower left are showing the posterior distribution between two of your fitting parameters. The more circular (more 2D gaussian shape) the counter plots are, the nicer you fitting results are! The histograms on top of them are the marginalized posterior probability distributions of each the unknown parameters, i.e., their probability distributions.</p>
 <p>And you can see that MCMC do help us recover the correct answer to M and R (the location of the blue lines)!
 Wonderful!</p>
-<p><strong>Note</strong>: We add blue lines here as the “true” values use used to generate the data we used. We don’t generally know the true values, we just wanted to get a sense for how closely the MCMC converged to our desired values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We add “true” values as blue lines here, but we don’t generally know the true values. In this toy example, we include true values to see how close MCMC got to our parameters.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># True values of M and R, which is from the Saturn.</span>

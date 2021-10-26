@@ -24,10 +24,10 @@ Zoom lecture recordings will be posted as they become available.
 | 2 | Sep 28 | Git branch and merge, for loops, `np.polyfit()`  | [A2 due Oct 01](f21_a2.ipynb) | [link](https://nau.zoom.us/rec/share/UA3x-HP6QY3ft_4rETr9QmK634s3JgzCcSxUSQMWzhyGQo7675b7ezYFfQLMXVAp.Wfqe34e62ABZljqu?startTime=1632844220000) |
 | 3 | Oct 05 | GitHub, `scipy.optimize.curve_fit()`             | [A3 due Oct 08](f21_a3.ipynb) | [link](https://nau.zoom.us/rec/share/aPBfUNLEXnHOoVAL_9lDLLUaAnheSrQFjC8uGIAd5DO0zQWKjEIASLKbHvnZd2M.nN3CYl-6rUtB_TbI?startTime=1633449062000)  |
 | 4 | Oct 12 | Monte Carlo (bootstrap) methods                  | [A4 due Oct 15](f21_a4.ipynb) | [link](https://nau.zoom.us/rec/share/iM4k-8g8faD3Dl5UOBfrB1gvht7wjMbY7n0l3V5GLCm2btIJwPG5pN7-VSomeMsv.Ef-9xpGgr5mHoE4g?startTime=1634053849000) |
-| 5 | Oct 19 | Advanced `pandas`, cleaning data                 | [A5 due Oct 22](f21_a5.ipynb))| [link](https://nau.zoom.us/rec/share/w185ggU49Krji13gKxU2da7av1JKVFpuWz6ThXUAxBbbfe1-C0Epgb-XGFRWyBLe.yvojx57uD1Dpiepm?startTime=1634658626000) |
-| 6 | Oct 26 | Markov-chain Monte Carlo (MCMC)                  | A6 due Oct 29 | link TBD |
+| 5 | Oct 19 | Advanced `pandas`, cleaning data                 | [A5 due Oct 22](f21_a5.ipynb) | [link](https://nau.zoom.us/rec/share/w185ggU49Krji13gKxU2da7av1JKVFpuWz6ThXUAxBbbfe1-C0Epgb-XGFRWyBLe.yvojx57uD1Dpiepm?startTime=1634658626000) |
+| 6 | Oct 26 | Markov-chain Monte Carlo (MCMC)                  | [A6 due Oct 29](f21_a6.ipynb) | [link](https://nau.zoom.us/rec/share/xOtGWJ3VIyTxF3RPHy2CNbKRZBh6lFPrluwcb0nXi5vOlyDvlJCRz2LByglUGT2j.iKe3Ls4Sti4SjvXb?startTime=1635263580000) |
 | 7 | Nov 02 | Timing code, efficiency, vectorizing             | A7 due Nov 05 | link TBD |
-| 8 | Nov 09 | Installing new packages, review                  | A8 due Nov 12 | link TBD |
+| 8 | Nov 09 | Installing new packages, review, Advance MCMC    | A8 due Nov 12 | link TBD |
 | 9 | Nov 16 | (optional) Questions, BYOProject                 | N/A | link TBD |
 ```
 
