@@ -1,0 +1,1568 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 6 (Oct 26) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a6.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 5 (Oct 19)" href="f21_a5.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a2.html">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a3.html">
+     Assignment 3 (Oct 05)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a4.html">
+     Assignment 4 (Oct 12)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a5.html">
+     Assignment 5 (Oct 19)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 6 (Oct 26)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a6.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-optional">
+   Readings (optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-conda-environments">
+   Managing Conda Environments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-environments">
+     Why Environments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-environments">
+     Working with Environments
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hands-on-5-mins">
+     [Hands-on] 5 mins
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conda-tips">
+     Conda Tips
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-new-packages">
+   Installing New Packages
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-with-conda-conda-forge">
+     Installing with conda / conda-forge
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-with-pip">
+     Installing with pip
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-pymc3-and-corner">
+   Installing PyMC3 and Corner
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-pymc3">
+     Install PyMC3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#install-corner">
+     Install Corner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#activating-a-new-environment-in-vs-code">
+   Activating a new environment in VS Code
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markov-chain-monte-carlo-mcmc">
+   Markov-chain Monte Carlo (MCMC)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-it-work">
+     How does it work?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-example-with-mcmc-finding-planet-mass-and-radius">
+   Simple Example with MCMC – Finding Planet Mass and Radius
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-theorem">
+     Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prior-probability-prior-functions">
+     Prior probability / Prior functions:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mcmc-with-pymc3">
+   MCMC with PyMC3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-mcmc-to-learn-mass-and-radius-from-free-fall">
+     Using MCMC to learn mass and radius from Free-fall!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-the-pymc3-model">
+     Initialize the PyMC3 model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-the-mcmc">
+     Run the MCMC!
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#explore-the-results">
+     Explore the results
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-parameters-with-corner">
+     Plot parameters with Corner
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-finding-planet-mass-and-radius-by-choosing-good-priors">
+   [Assignment] – Finding Planet Mass and Radius by choosing good priors!
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#both-with-uniform-priors">
+     1. Both with uniform priors:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gaussian-prior-for-m-and-uniform-prior-for-r">
+     2. Gaussian prior for M, and Uniform prior for R:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#both-with-a-gaussian-priors">
+     3. Both with a Gaussian priors:
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-6-oct-26">
+<h1>Assignment 6 (Oct 26)<a class="headerlink" href="#assignment-6-oct-26" title="Permalink to this headline">¶</a></h1>
+<p>Today’s topics are:</p>
+<ol class="simple">
+<li><p>Conda Environments</p></li>
+<li><p>Package installation</p></li>
+<li><p>Basic Markov-chain Monte Carlo (MCMC)</p></li>
+</ol>
+<p>There are many MCMC samplers in python, we are only going to go through one today, <code class="docutils literal notranslate"><span class="pre">PyMC3</span></code>.
+See this nice article <a class="reference external" href="https://mattpitkin.github.io/samplers-demo/">Samplers demo</a> by Matthew Pitkin where he demos 13 popular samplers in python.</p>
+<div class="section" id="readings-optional">
+<h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
+<p>If you find this week’s material new or challenging, you may want to read through some or all the following resources while working on your assignment:</p>
+<p><strong>Conda Environments</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://cjtu.github.io/spirl/anaconda_environments.html">SPIRL: 5.2. Conda environments</a></p></li>
+<li><p><a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda official page: Managing environments</a></p></li>
+</ul>
+<p><strong>MCMC</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://prappleizer.github.io/Tutorials/MCMC/MCMC_Tutorial.html">MCMC: A (very) Beginnner’s Guide</a></p></li>
+<li><p><a class="reference external" href="https://twiecki.io/blog/2015/11/10/mcmc-sampling/">MCMC sampling for dummies</a></p></li>
+<li><p><a class="reference external" href="https://people.duke.edu/~ccc14/sta-663/MCMC.html">Markov Chain Monte Carlo (MCMC)</a></p></li>
+</ul>
+<p><strong>YouTube Videos (highly recommended)</strong>:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=yApmR-c_hKU">Markov Chain Monte Carlo (MCMC): Data Science Concepts</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=yCv2N7wGDCw">Metropolis - Hastings: Data Science Concepts</a></p></li>
+</ul>
+</div>
+<div class="section" id="managing-conda-environments">
+<h2>Managing Conda Environments<a class="headerlink" href="#managing-conda-environments" title="Permalink to this headline">¶</a></h2>
+<p>At the start of the term, we installed <strong>Anaconda</strong> which gave us access to Python and some popular Python packages. While Anaconda comes with several useful packages by default, we can also install brand new packages with a few simple commands. Once we’re all <code class="docutils literal notranslate"><span class="pre">conda</span></code> wizards, we’ll have the wealth of open source Python code at our fingertips!</p>
+<div class="section" id="why-environments">
+<h3>Why Environments<a class="headerlink" href="#why-environments" title="Permalink to this headline">¶</a></h3>
+<p>By default when we open a terminal after installing <strong>Anaconda</strong>, we should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> at the left, indicating that we are in the default <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment.</p>
+<div class="highlight-note notranslate"><div class="highlight"><pre><span></span>To open a terminal in VS Code, type `CTRL SHIFT ~` (Mac: `CMD SHIFT ~`) or in the top bar go to `View -&gt; Terminal`.
+</pre></div>
+</div>
+<p>Terminology:</p>
+<ul class="simple">
+<li><p><strong>Anaconda</strong>: the program we installed that comes with <code class="docutils literal notranslate"><span class="pre">conda</span></code> and a bunch of packages</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conda</span></code>: the command line tool that helps us manage our Python packages and environments</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: the name of the default <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment</p></li>
+</ul>
+<p>This <code class="docutils literal notranslate"><span class="pre">base</span></code> environment is where Anaconda keeps all of its default programs and inner workings, so it’s recommended to <em>never install packages to <code class="docutils literal notranslate"><span class="pre">base</span></code> directly</em>. Instead, we want to make a new <strong>environment</strong>.</p>
+<p>Having different <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments allows us to tailor the packages we are using to each of our projects. Sometimes we will need <code class="docutils literal notranslate"><span class="pre">astropy</span></code>, sometimes we will need <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Sometimes we need neither! Today, we’ll need a package called <code class="docutils literal notranslate"><span class="pre">pymc3</span></code> which is very specific to MCMC analysis.</p>
+<p>The reason we don’t want all of these packages in <code class="docutils literal notranslate"><span class="pre">base</span></code> is that they may have incompatible prerequisites (also called <em>dependency conflicts</em>). For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">package1</span></code> can only run on <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">v2.7</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">package2</span></code> needs at least <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">v3.9</span></code></p></li>
+</ul>
+<p>Since we can only have 1 version of Python at a time, if we try to install both of these packages, one is guaranteed to not work correctly!</p>
+<p>Instead, we can install each package to its own <code class="docutils literal notranslate"><span class="pre">conda</span></code> <strong>environment</strong>. We can even get different versions of Python working on the same computer in only a couple steps!</p>
+</div>
+<div class="section" id="working-with-environments">
+<h3>Working with Environments<a class="headerlink" href="#working-with-environments" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we will use the terminal. These commands are also available through the user friendly <a class="reference external" href="https://docs.anaconda.com/anaconda/navigator/getting-started/#navigator-managing-environments">Anaconda Navigator</a> GUI if you prefer to use that instead.</p>
+<p>A summary of the most important conda commands is below (we abbreviate environment as env):</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span></code></p></td>
+<td><p>List all packages and their versions in current env</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">list</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">pkg</span></code></p></td>
+<td><p>Search for pkg in current env and show its version</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pkg1</span> <span class="pre">pkg2</span> <span class="pre">...</span></code></p></td>
+<td><p>Install pkg 1, pkg 2, … with <code class="docutils literal notranslate"><span class="pre">conda</span></code> in current env (see installing below)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">list</span></code></p></td>
+<td><p>Show all environments and their locations (file paths)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">env-name</span></code></p></td>
+<td><p>Create a new env called <em>env-name</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">-n</span> <span class="pre">env-name</span> <span class="pre">python=3.X</span> <span class="pre">pkg1</span> <span class="pre">pkg2</span> <span class="pre">...</span></code></p></td>
+<td><p>Create a new env with python v3.X and install pkg1, pkg2, …</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">env-name</span></code></p></td>
+<td><p>Activate <em>env-name</em> (running Python from this terminal will use packages in this env)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code></p></td>
+<td><p>Deactivate the current env (takes you to your previous env, usually <code class="docutils literal notranslate"><span class="pre">base</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">remove</span> <span class="pre">--name</span> <span class="pre">env-name</span> <span class="pre">--all</span></code></p></td>
+<td><p>Delete an environment and all packages in it</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p></td>
+<td><p>Create a file with all packages in current env (use to reproduce env on same machine)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">--from-history</span> <span class="pre">&gt;</span> <span class="pre">environment.yml</span></code></p></td>
+<td><p>Create a file with only packages you installed in current env (use to reproduce env on different machines)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code></p></td>
+<td><p>Re-build an env from an environment.yml file (see previous 2 commands)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hands-on-5-mins">
+<h3>[Hands-on] 5 mins<a class="headerlink" href="#hands-on-5-mins" title="Permalink to this headline">¶</a></h3>
+<p>Type the following commands into a terminal as an interactive tour of the main <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands</p>
+<p>You will create, activate and install packages into a new <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment. You will then save the environment to an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file, delete the environment, and re-build it from your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># We want to use a package called seaborn. Let&#39;s see if it&#39;s installed in base</span>
+conda list <span class="p">|</span> grep seaborn
+
+<span class="c1"># Create Python 3.7 env with seaborn package v0.8 (type &quot;y&quot; then Enter)</span>
+conda create -n new-env <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7 <span class="nv">seaborn</span><span class="o">=</span><span class="m">0</span>.8
+
+<span class="c1"># List all envs (you should see new-env among them)</span>
+conda env list
+
+<span class="c1"># Activate our env</span>
+conda activate new-env
+
+<span class="c1"># Check that we have seaborn v0.8 installed now</span>
+conda list <span class="p">|</span> grep seaborn
+
+<span class="c1"># We also want a package called bokeh (v2.1). Let&#39;s install it here</span>
+conda install <span class="nv">bokeh</span><span class="o">=</span><span class="m">2</span>.1
+
+<span class="c1"># Check that bokeh v2.1 is also installed</span>
+conda list <span class="p">|</span> grep bokeh
+
+<span class="c1"># Export our environment to an environment.yml file so we can rebuild it later</span>
+conda env <span class="nb">export</span> &gt; environment.yml
+
+<span class="c1"># Check to see we have an environment.yml file now</span>
+ls environment.yml
+
+<span class="c1"># Deactivate our environment</span>
+conda deactivate
+
+<span class="c1"># Check if we have seaborn v0.8 installed here (blank means no)</span>
+conda list <span class="p">|</span> grep seaborn
+
+<span class="c1"># Delete our env and all packages in it (type &quot;y&quot; then Enter)</span>
+conda remove --name new-env --all
+
+<span class="c1"># List all envs again (new-env should be gone)</span>
+conda env list
+
+<span class="c1"># Check if we have access to seaborn and bokeh now :(</span>
+conda list <span class="p">|</span> grep seaborn
+conda list <span class="p">|</span> grep bokeh
+
+<span class="c1"># Re-create our env from the file we saved</span>
+conda env create -f environment.yml
+
+<span class="c1"># List all envs again (new-env is back in town)</span>
+conda env list
+
+<span class="c1"># Activate our resurrected new-env</span>
+conda activate new-env
+
+<span class="c1"># Check that we can access seaborn and bokeh again!</span>
+conda list <span class="p">|</span> grep seaborn
+conda list <span class="p">|</span> grep bokeh
+
+<span class="c1"># All done! You can remove this test env by following the same steps as before</span>
+conda deactivate
+conda remove --name new-env --all
+
+<span class="c1"># You can also remove the environment.yml file</span>
+rm environment.yml
+</pre></div>
+</div>
+<p>The above steps show that with only a few commands, we can have completely separate Python environments happily co-existing on our computers.</p>
+<p>Even if you only ever use 1 environment, it is <strong>very important</strong> to export an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> periodically so that if your computer dies or <code class="docutils literal notranslate"><span class="pre">conda</span></code> breaks, you can always reinstall the exact environment you were using to run your code.</p>
+<p>If you want to share this environment file with your collaborators, make sure to use the <code class="docutils literal notranslate"><span class="pre">--from-history</span></code> flag (see table above). This makes it more likely the env will be installable on other machines and that <code class="docutils literal notranslate"><span class="pre">conda</span></code> won’t install OS-specific packages on the wrong operating system.</p>
+</div>
+<div class="section" id="conda-tips">
+<h3>Conda Tips<a class="headerlink" href="#conda-tips" title="Permalink to this headline">¶</a></h3>
+<p>Some common pitfalls, gotchas, and tips to remember with <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<ul class="simple">
+<li><p>Make sure to activate the desired environment each time you open a new terminal</p></li>
+<li><p>It doesn’t matter what directory you run <code class="docutils literal notranslate"><span class="pre">conda</span></code> commands from:</p>
+<ul>
+<li><p>Activating an env activates it for the whole terminal even if you switch directories</p></li>
+<li><p>1 exception: if you are loading/saving an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, you need to be in same directory (or give the full path)</p></li>
+</ul>
+</li>
+<li><p>Before uninstalling Anaconda, make sure to save <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> files for each environment you want to restore later</p></li>
+<li><p>If you re-install a new version of Anaconda, you can load <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> files saved with older versions</p></li>
+<li><p>Update Anaconda periodically with the below commands (see <a class="reference external" href="https://repo.anaconda.com/archive/">Anaconda versions</a> and choose the most recent):</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">update</span> <span class="n">conda</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">anaconda</span><span class="o">=</span><span class="n">VersionNumber</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-new-packages">
+<h2>Installing New Packages<a class="headerlink" href="#installing-new-packages" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know how to make a new <code class="docutils literal notranslate"><span class="pre">conda</span></code> environment, it’s important to know that <code class="docutils literal notranslate"><span class="pre">conda</span></code> isn’t the only way to install Python packages (in fact sometimes we need to use other ways).</p>
+<p>The three ways to install new Python packages are:</p>
+<ol class="simple">
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">pkg</span></code></p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pkg</span></code></p></li>
+<li><p>Install from <strong>source file</strong> directly (we will talk about this in week 9!)</p></li>
+</ol>
+<p>It’s important to carefully read the documentation of a new package to see what the preferred installation method is - this can prevent errors and headaches down the line! This is particularly important for the package we are using today, <code class="docutils literal notranslate"><span class="pre">pymc3</span></code>, which has different installation instructions for different operating systems.</p>
+<div class="section" id="installing-with-conda-conda-forge">
+<h3>Installing with conda / conda-forge<a class="headerlink" href="#installing-with-conda-conda-forge" title="Permalink to this headline">¶</a></h3>
+<p>We already talked about how to install packages with <code class="docutils literal notranslate"><span class="pre">conda</span></code>, but there are a couple more things to know.</p>
+<p>When we run <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code>, the <code class="docutils literal notranslate"><span class="pre">conda</span></code> command checks a list of packages maintained by the Anaconda team and will install it and all of its dependencies once it makes sure there are no conflicts.</p>
+<p>To check if a package exists and is installable with <code class="docutils literal notranslate"><span class="pre">conda</span></code>, we can use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code> command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try this in the terminal!</span>
+<span class="n">conda</span> <span class="n">search</span> <span class="n">seaborn</span><span class="o">=</span><span class="mf">0.8</span>
+</pre></div>
+</div>
+<p>If anything shows up, we can just switch the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">search</span></code> to <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span></code> and we have a new package (pending dependency checks)!</p>
+<p>But what if we try searching a package like <a class="reference external" href="https://lweb.cfa.harvard.edu/~lkreidberg/batman/">batman</a>?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try this in the terminal!</span>
+<span class="n">conda</span> <span class="n">search</span> <span class="n">batman</span><span class="o">=</span><span class="mf">1.9</span>
+</pre></div>
+</div>
+<p>All hope is not lost! In addition to the main Anaconda list of packages, there is also a community-driven list of packages that has rapidly grown much larger than any one team can maintain. This list is called <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> and we can access it with the <strong>channel</strong> or <code class="docutils literal notranslate"><span class="pre">-c</span></code> option.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try this in the terminal!</span>
+<span class="n">conda</span> <span class="n">search</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">batman</span><span class="o">=</span><span class="mf">1.9</span>
+</pre></div>
+</div>
+<p>Now this indicates we need to do <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">batman=1.9</span></code> to install the package from <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> (e.g., plain old <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">batman=1.9</span></code> won’t work).</p>
+</div>
+<div class="section" id="installing-with-pip">
+<h3>Installing with pip<a class="headerlink" href="#installing-with-pip" title="Permalink to this headline">¶</a></h3>
+<p>If a package you want to install isn’t in the default or conda-forge channels, you may be able to install it with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, short for “Python Install Package”. This is the original way to install packages in Python, but does not handle dependencies and dependency conflicts as well as <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>As a general rule, using <code class="docutils literal notranslate"><span class="pre">conda</span></code> whenever possible and <code class="docutils literal notranslate"><span class="pre">pip</span></code> <em>only when necessary</em> will cut down on errors when working with Python packages.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pip</span></code> command installs from the <a class="reference external" href="https://pypi.org/">Python Package Index</a> (PyPI or <a class="reference external" href="https://www.youtube.com/watch?v=Hz1JWzyvv8A&amp;ab_channel=AndrewBoynton">Cheese Shop</a> for short).</p>
+</div>
+</div>
+<div class="section" id="installing-pymc3-and-corner">
+<h2>Installing PyMC3 and Corner<a class="headerlink" href="#installing-pymc3-and-corner" title="Permalink to this headline">¶</a></h2>
+<p>Now that we know the basics of environments and installing packages, we’re ready to install the packages needed for this assignment!</p>
+<div class="section" id="install-pymc3">
+<h3>Install PyMC3<a class="headerlink" href="#install-pymc3" title="Permalink to this headline">¶</a></h3>
+<p>Remember: always <strong>read the documentation</strong> to learn the best way of installing a package. The Markov-Chain Monte Carlo package, <a class="reference external" href="https://docs.pymc.io/en/stable/">PyMC3 documentation</a> has different installation instructions depending on your OS, so read the instructions carefully before running any commands.</p>
+<p>The basic structure of the command will be to create a new <code class="docutils literal notranslate"><span class="pre">conda</span></code> env, pulling from the <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> channel as we learned above.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check docs for the full command for your machine!</span>
+conda install -c conda-forge pymc3 ...
+</pre></div>
+</div>
+<p>Beyond this, the packages to use and python version required may differ on Linux, Mac (M1 CPU), Mac (Intel CPU), and Windows, so please consult the installation instructions in the official <a class="reference external" href="https://docs.pymc.io/en/stable/">PyMC3 documentation</a></p>
+<p>Once you have installed <code class="docutils literal notranslate"><span class="pre">pymc3</span></code>, you will need to activate the environment:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pymc3</span></code></p>
+<p>Then, we will install 2 additional packages, <code class="docutils literal notranslate"><span class="pre">astropy</span></code> which you’ve seen before and <code class="docutils literal notranslate"><span class="pre">ipykernel</span></code> which will allow us to use this environment in Jupyter notebooks, e.g. the one you’re reading now!</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">astropy</span> <span class="pre">ipykernel</span></code></p>
+</div>
+<div class="section" id="install-corner">
+<h3>Install Corner<a class="headerlink" href="#install-corner" title="Permalink to this headline">¶</a></h3>
+<p>If we go to the official <a class="reference external" href="https://corner.readthedocs.io/en/latest/index.html">Corner documentation</a> and head to the installation page, we will see a recommendation to install with <code class="docutils literal notranslate"><span class="pre">conda</span></code>, but a command that says to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>. We can always check if <code class="docutils literal notranslate"><span class="pre">corner</span></code> is available from <code class="docutils literal notranslate"><span class="pre">conda</span></code> with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try this in the terminal!</span>
+conda search corner
+conda search -c conda-forge corner
+</pre></div>
+</div>
+<p>It looks like it is available from <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> (which we should usually prefer over <code class="docutils literal notranslate"><span class="pre">pip</span></code>)!</p>
+<p>Make sure you are in the <code class="docutils literal notranslate"><span class="pre">pymc3</span></code> environment (should be in parentheses in your terminal, if not <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">pymc3</span></code>, then go ahead and install <code class="docutils literal notranslate"><span class="pre">corner</span></code> with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">corner</span></code></p>
+</div>
+</div>
+<div class="section" id="activating-a-new-environment-in-vs-code">
+<h2>Activating a new environment in VS Code<a class="headerlink" href="#activating-a-new-environment-in-vs-code" title="Permalink to this headline">¶</a></h2>
+<p>Finally, we’re ready to get going with PyMC3 and Corner, we just need to tell VS Code about our new environment. To do so:</p>
+<ol class="simple">
+<li><p>Reload VS Code with <strong>CTRL+SHIFT+P</strong> (Mac: <strong>CMD+SHIFT+P</strong>) -&gt; Type “Reload window” + <strong>ENTER</strong></p></li>
+<li><p>Set workspace Python env with <strong>CTRL+SHIFT+P</strong> (Mac: <strong>CMD+SHIFT+P</strong>) -&gt; Type “Select Python Interpreter” + <strong>ENTER</strong> and choose <code class="docutils literal notranslate"><span class="pre">pymc3</span></code> from the list</p></li>
+<li><p>Also set the Jupyter notebook kernel to <code class="docutils literal notranslate"><span class="pre">pymc3</span></code> with upper right button (should say <strong>Select Kernel</strong> or <strong>Python 3.X…</strong>)</p></li>
+<li><p>Run the below cell to see if it worked! If not let us know!</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">corner</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running on PyMC3 v</span><span class="si">{</span><span class="n">pm</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Running on corner v</span><span class="si">{</span><span class="n">corner</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Running on PyMC3 v3.11.2
+Running on corner v2.2.1
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="markov-chain-monte-carlo-mcmc">
+<h2>Markov-chain Monte Carlo (MCMC)<a class="headerlink" href="#markov-chain-monte-carlo-mcmc" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Markov-chain Monte Carlo (MCMC)</strong> technique offers us a way to explore the possible parameters of a model fit to some data. Unlike ordinary linear regression which can be solved directly, MCMC uses Bayesian stats and random sampling to build up confidence in models that are too complicated or have too many parameters to simply solve by fitting a curve.</p>
+<p>The basic idea of MCMC is:</p>
+<ul class="simple">
+<li><p>We have an equation or <em>model</em> we want to fit to some data</p>
+<ul>
+<li><p>This model may have many parameters, or complicated non-linear functions of some parameters (yuck)</p></li>
+</ul>
+</li>
+<li><p>We also start with some <em>prior</em> knowledge about these model parameters</p>
+<ul>
+<li><p>Maybe we know the max/min value they can be or a range they usually fall in</p></li>
+</ul>
+</li>
+<li><p>MCMC will vary the parameters in a <em>random but smart</em> way (using some math we’ll mostly gloss over)</p></li>
+</ul>
+<p>Then, if the data can be fit by the model <em>and</em> we had well constrained priors for the parameters <em>and</em> we let MCMC run long enough <em>and</em> we re-ran MCMC enough times independently, then something cool happens:</p>
+<ul class="simple">
+<li><p>MCMC will find the zones in parameter space that make the model best fit the data</p></li>
+<li><p>We will get a statistical average and <span class="math notranslate nohighlight">\(\pm\)</span> uncertainty for all parameters simultaneously</p></li>
+<li><p>We can get precise fits to data we couldn’t fit any other way (except trial &amp; error)!</p></li>
+</ul>
+<p>This technique is great for models with many parameters or sneaky local minima that can look like the best fit while hiding even better fit parameters. MCMC allows us to fit a whole set of parameters simultaneously so that we can avoid simplifying assumptions that weaken our model.</p>
+<div class="section" id="how-does-it-work">
+<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Permalink to this headline">¶</a></h3>
+<p>Mostly Bayes’ theorem and magic… but we can give a sense for how MCMC works without going too deep (see readings/videos for <em>lots</em> more info).</p>
+<p>As the name suggests, MCMC is a combination of <strong>Markov chain</strong> and <strong>Monte Carlo</strong> methods that explore the possible parameters of our fit in many dimensions. A <em>Markov chain</em> is a series of events that only look at the current state (e.g., position in parameter space) to determine the next state. The <em>Monte Carlo</em> aspect is that at each position in parameter space, we move in a random direction to a new position. Together, this amounts to a <a class="reference external" href="https://en.wikipedia.org/wiki/Random_walk">random walk</a> (usually called a <strong>walker</strong>) through our parameters that will build up an erratic pattern over time:</p>
+<p><img alt="Random Walk Wikipedia" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Random_walk_2500.svg" /></p>
+<p>The clever part is that even though our <strong>walker</strong> picks a random direction to move at each step, sometimes <em>it just stays put</em>. Our <strong>walker</strong> friend typically only moves if doing so gives us parameters that better fit our data (with some leeway). There are several algorithms for deciding whether to move our walker or not but those are outside the scope of this lesson. What’s important is that our walker will <em>sample</em> our parameter space over time, and (hopefully) <em>converge</em> to a set of parameters that make our model fit our data. The below <a class="reference external" href="https://blog.revolutionanalytics.com/2013/09/an-animated-peek-into-the-workings-of-bayesian-statistics.html">gif by M. Joseph</a> shows how walkers can start in random parts of parameter space and eventually converge to a set of parameters (here, <em>mu</em> and <em>sigma</em>) that best fit the data (here, the peak <em>posterior distribution</em> which we’ll talk about below).</p>
+<p><img alt="MCMC gif" src="_images/mcmc.gif" /></p>
+<p>Since many models have <em>local minima</em> in parameter space, which could make a bad fit look good to a walker (essentially getting them stuck in a bad zone in parameter space), we generally run multiple walkers to see where most of them end up. If most of our walkers converge to a particular zone in parameter space, we can be confident that zone gives us our best fitting parameters.</p>
+</div>
+</div>
+<div class="section" id="simple-example-with-mcmc-finding-planet-mass-and-radius">
+<h2>Simple Example with MCMC – Finding Planet Mass and Radius<a class="headerlink" href="#simple-example-with-mcmc-finding-planet-mass-and-radius" title="Permalink to this headline">¶</a></h2>
+<p>Let’s return to our trusty free-fall gravity example. Recall we measured the height (<strong>z</strong>) of an object over time on some planet with unknown gravity. Previously we used curve fitting techniques to get the gravitational acceleration (<strong>g</strong>) with the equation:</p>
+<div class="math notranslate nohighlight">
+\[z(t) = \frac{1}{2}gt^2\]</div>
+<p>However, what if we want to know something about the planet mass (<strong>M</strong>) and planet Radius (<strong>R</strong>)? Pulling out the old Physics I textbook, we can use the definition of <strong>g</strong> and <span class="math notranslate nohighlight">\(F=ma\)</span> to get:</p>
+<div class="math notranslate nohighlight">
+\[g = \frac{GM}{R^2}\]</div>
+<p>Now we can write height (<strong>z</strong>) in terms of <strong>M</strong>, <strong>R</strong>, <strong>t</strong>, and the constant gravitational constant (<strong>G</strong> = 6.674 <span class="math notranslate nohighlight">\(\times 10^{-11} m^3/kg/s^2\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[z(t,M,R) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
+<p>Now we have an expression with 4 variables (z, t, m, R), but we’ve only measured 2 (z and t). It seems hopeless to solve for <strong>M</strong> and <strong>R</strong>… in fact there are an infinite number of possible values we can plug in to make the above equation work…</p>
+<p>Luckily, we know a little bit about planet masses and radii! For one, neither can be negative. Also, there are maximum values a planet mass / radius can have before it becomes a different object entirely. While this may not seem like much, these are <strong>priors</strong>, knowledge we have about our unknown parameters. For priors to be useful, we need one more component: Bayes’ Theorem</p>
+<div class="section" id="bayes-theorem">
+<h3>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h3>
+<p>The Bayes Theorem tells us about probabilities <em>given some condition</em> or <em>prior knowledge</em>:</p>
+<div class="math notranslate nohighlight">
+\[P(x|y) \propto P(y|x)P(x)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(P(x|y)\)</span> means “the probability of x given that we know y”, conversely <span class="math notranslate nohighlight">\(P(x|y)\)</span> means “the probability of y given that we know x” and <span class="math notranslate nohighlight">\(P(x)\)</span> is just the probability that <span class="math notranslate nohighlight">\(x\)</span> occurs. We can translate Bayes’ theorem to MCMC speak where these 3 terms become:</p>
+<div class="math notranslate nohighlight">
+\[{\rm posterior} \propto ({\rm likelihood\ function}) ({\rm prior})\]</div>
+<p>Because this is a lot of stats and jargon, we’ll use a short story to help us build intuition for Bayes’ theorem:</p>
+<blockquote>
+<div><p>One afternoon, you and your friend Lauren are talking about Bayes’ theorem when your brother, Ben, comes out of his room. You both notice that Ben is wearing a Yankees cap and an old worn-out T-shirt with a Yankees logo. Lauren says, “based on Ben’s outfit, I bet he’s going to a Yankees game!” You reply, “Ah, so based on your <strong>prior</strong> experience of people wearing matching caps and T-shirts to Yankees games, your Bayesian intuition says there is a high <strong>probability</strong> he is going to a baseball game”.</p>
+<p>Lauren thinks for a second and then says, “Oh I get it! If I had to guess, I’d say there’s about an 80% chance that people are <strong>wearing a Yankees cap and T-shirt</strong> <em>given</em> they are <strong>going to a Yankees game</strong>. This would be our <strong>likelihood function</strong>, <em>P(y|x)</em>. So then my <strong>prior</strong> is how likely it is that Ben is going to a Yankees game, <em>P(x)</em>. Well, the Yankees are playing in town today and I know that Ben has season tickets so I’d say my <strong>prior</strong> is Ben has a 95% chance of going to the game today. So when I multiply my <strong>likelihood</strong> by my <strong>prior</strong>, I get my <strong>posterior probability</strong> of Ben <strong>going to a Yankees game</strong> <em>given</em> he is <strong>wearing a Yankees cap and T-shirt</strong>, which is 80% times 95%, so <strong>76%!</strong>.” Ben rolls his eyes, grabs his keys and leaves, wondering why anyone would ruin a perfectly good Saturday talking about stats…</p>
+<p>You reply, “Yes that is well reasoned based on your priors, but as Ben’s sister, I know for a fact he is going on a date with his partner and not to a ball game.” Lauren was skeptical of your certainty. “How could you possibly know that?” You eagerly reply, “Well, I agree on the <strong>likelihood function</strong> that 80% of people wear matching caps and T-shirts given they are going to a Yankees game. BUT my <strong>priors</strong> are that</p>
+<ol class="simple">
+<li><p>Ben got that shirt as a gift from his partner for their first-year anniversary,</p></li>
+<li><p>Ben only wears that shirt when he sees his partner,</p></li>
+<li><p>Ben’s partner hates baseball.
+Therefore, my <strong>priors</strong> tell me that Ben has only a 1% chance of going to a Yankees game with his partner today. Therefore, my <strong>posterior probability</strong> that Ben is going to a baseball game given his outfit is 80% times 1%, <strong>less than 1%!</strong>! So you see, having less informed priors can have a huge effect on your <strong>posterior probability</strong>!”</p></li>
+</ol>
+</div></blockquote>
+<p>In the coming weeks we’ll learn more about the <strong>likelihood function</strong> and <strong>posterior probability</strong>, but some MCMC packages like <strong>PyMC3</strong> will handle that for us in simple cases as long as we have a model, data, and priors. Today our main focus is going to be on running an MCMC analysis and choosing good <strong>priors</strong>!</p>
+</div>
+<div class="section" id="prior-probability-prior-functions">
+<h3>Prior probability / Prior functions:<a class="headerlink" href="#prior-probability-prior-functions" title="Permalink to this headline">¶</a></h3>
+<p>Our <strong>prior</strong> knowledge of the unknown parameters can be very important for having MCMC converge to the correct final parameters. Priors in MCMC analyses are defined as <em>probability distributions</em>. The two most commonly used prior distributions are the <strong>uniform</strong> and <strong>normal</strong> distributions.</p>
+<p>The <strong>uniform prior</strong>, <span class="math notranslate nohighlight">\(\mathcal{U}(lower,upper)\)</span>, is the simpler of the two. If the sampled parameter is in the range <code class="docutils literal notranslate"><span class="pre">(lower,</span> <span class="pre">upper)</span></code>, the prior’s probability is 1, otherwise the probability is 0. For example, say we set our Mass (M) prior to <span class="math notranslate nohighlight">\(\mathcal{U}(0, 1)\)</span> kg. This means that if means that if your walker goes to a part of parameter space where M=2, the prior probability will be 0 and therefore our <strong>posterior probability</strong> will also be 0. The uniform prior puts a hard range on a parameter, but every value in that range is equiprobable.</p>
+<p>The <strong>normal (Gaussian) prior</strong>, assigns a bell-curve probability to a parameter with peak probability near the mean and lower probability with increasing standard deviations from the mean:</p>
+<div class="math notranslate nohighlight">
+\[p(x) = \frac{1}{\sqrt{2\pi \sigma^2}}exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)\]</div>
+<p>For example, assuming we measure M with some uncertainty as <span class="math notranslate nohighlight">\(0.50\pm0.1\)</span> kg, we can set a Gaussian prior with <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>. Walkers nearer to 0.5 will have a higher <strong>posterior probability</strong>, but the walkers will still explore lower probability space further from the mean.</p>
+<p>There is also a combination of the above two priors, sometimes called a <strong>truncated normal prior</strong>. This is a Gaussian prior with <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span>, except we can also set a lower or upper bound, beyond which the probability is 0. For example, since we know mass (M) cannot be negative, we could the same mean and sigma as the previous example as <span class="math notranslate nohighlight">\(\mu=0.5, \sigma=0.1\)</span>, but also set <span class="math notranslate nohighlight">\(lower=0\)</span> to make sure we don’t get any fits with negative mass.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">arviz</span> <span class="k">as</span> <span class="nn">az</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pymc3</span> <span class="k">as</span> <span class="nn">pm</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="c1"># See plt styles: https://matplotlib.org/stable/gallery/style_sheets/style_sheets_reference.html</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+
+<span class="c1"># read in data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/position_measurement.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time(s)</th>
+      <th>z(m)</th>
+      <th>z_err(m)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.05</td>
+      <td>0.013114</td>
+      <td>0.001400</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.06</td>
+      <td>0.022205</td>
+      <td>0.001962</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.07</td>
+      <td>0.025082</td>
+      <td>0.002617</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.08</td>
+      <td>0.035259</td>
+      <td>0.003368</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.09</td>
+      <td>0.042766</td>
+      <td>0.004213</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the data</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span> <span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time(s)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z(m)&#39;</span><span class="p">],</span> <span class="n">yerr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z_err(m)&#39;</span><span class="p">],</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+             <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;z (m)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;Helvetica&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="_images/f21_a6_9_1.png" src="_images/f21_a6_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+<span class="kn">from</span> <span class="nn">astropy</span> <span class="kn">import</span> <span class="n">constants</span> <span class="k">as</span> <span class="n">const</span>
+
+<span class="n">Mj2si</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">M_jup</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> <span class="c1"># constant to transfer Jupiter mass to kg</span>
+<span class="n">Rj2si</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">R_jup</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> <span class="c1"># constant to transfer Jupiter radius to m</span>
+<span class="n">G_cgs</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> 
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time(s)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z(m)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> 
+<span class="n">z_err</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z_err(m)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mcmc-with-pymc3">
+<h2>MCMC with PyMC3<a class="headerlink" href="#mcmc-with-pymc3" title="Permalink to this headline">¶</a></h2>
+<p>To get started with <code class="docutils literal notranslate"><span class="pre">pymc3</span></code>, we only need a couple components: <strong>data</strong>, a <strong>model</strong>, and <strong>priors</strong>. Then we just need to tweak some MCMC parameters and PyMC3 will do all the random walking for us!</p>
+<p>The main steps are:</p>
+<ol class="simple">
+<li><p>Create a <code class="docutils literal notranslate"><span class="pre">pymc3.model()</span></code> instance</p></li>
+<li><p>Setup our PyMC3 object with <strong>priors</strong> and the <strong>model</strong> (likelihood function)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">.sample()</span></code> to make the walkers explore parameter space!</p></li>
+</ol>
+<div class="section" id="using-mcmc-to-learn-mass-and-radius-from-free-fall">
+<h3>Using MCMC to learn mass and radius from Free-fall!<a class="headerlink" href="#using-mcmc-to-learn-mass-and-radius-from-free-fall" title="Permalink to this headline">¶</a></h3>
+<p>Recall: We want to estimate the planet mass (M) and radius (R) using this model:</p>
+<div class="math notranslate nohighlight">
+\[z(t) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
+<p>We have free-fall data (<strong>z</strong>, <strong>t</strong>), and we do have some extra (prior) knowledge on M and R.</p>
+<ul class="simple">
+<li><p>When recording the free-fall height over time, we managed to measure the mass to some precision as M=<span class="math notranslate nohighlight">\(0.30\pm0.015\)</span> Jupiter masses. We also know we can’t have a negative mass. Therefore, we can use a truncated normal distribution prior for M.</p></li>
+<li><p>For R, we only know that it cannot be larger than 2 Jupiter radius, and cannot have be negative value. Therefore, we can use a uniform distribution with an upper and lower bound</p></li>
+<li><p>Our model can also be defined with a probability distribution, here we have well-behaved errors on our data points, so we will use a normal distribution for our model</p></li>
+</ul>
+<p>For our priors and model, we will use the following 3 probability distributions provided by PyMC3 (which we alias to <code class="docutils literal notranslate"><span class="pre">pm</span></code>):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.Uniform()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.Normal()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pm.TruncatedNormal()</span></code></p></li>
+</ul>
+<p>You can find all built-in distributions at <a class="reference external" href="https://docs.pymc.io/en/stable/api/distributions/continuous.html#pymc3.distributions">PyMC3 Distributions</a>.</p>
+</div>
+<div class="section" id="initialize-the-pymc3-model">
+<h3>Initialize the PyMC3 model<a class="headerlink" href="#initialize-the-pymc3-model" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1) Initialize PyMC3 model object</span>
+<span class="n">planet_model</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Model</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">free_fall</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">G</span><span class="o">=</span><span class="n">G_cgs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Model (likelihood) function for a free-falling object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    t : array_like</span>
+<span class="sd">        Time array.</span>
+<span class="sd">    m : float</span>
+<span class="sd">        Mass of object in kg.</span>
+<span class="sd">    r : float</span>
+<span class="sd">        Radius of object in m.</span>
+<span class="sd">    G : float</span>
+<span class="sd">        Gravitational constant in m^3 / kg / s^2.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">G</span> <span class="o">*</span> <span class="n">m</span> <span class="o">/</span> <span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="c1"># Set up the PyMC3 object with its prior and likelihood functions</span>
+<span class="k">with</span> <span class="n">planet_model</span><span class="p">:</span>
+    <span class="c1"># Priors for unknown model parameters</span>
+    <span class="c1"># TruncatedNormal prior to make sure mass &gt; 0 Jupiter masses</span>
+    <span class="n">mass_j</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">TruncatedNormal</span><span class="p">(</span><span class="s1">&#39;mass_j&#39;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="mf">0.015</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+    <span class="c1"># Uniform prior for radius, Make sure 0 &lt; R &lt; 2 Jupiter masses</span>
+    <span class="n">radius_j</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Uniform</span><span class="p">(</span><span class="s1">&#39;radius_j&#39;</span><span class="p">,</span> <span class="n">lower</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> 
+    
+    <span class="c1"># Convert to SI units</span>
+    <span class="n">mass_si</span> <span class="o">=</span> <span class="n">Mj2si</span> <span class="o">*</span> <span class="n">mass_j</span>
+    <span class="n">radius_si</span> <span class="o">=</span> <span class="n">Rj2si</span> <span class="o">*</span> <span class="n">radius_j</span>
+    
+    <span class="c1"># Expected value of outcome, aka &quot;the model&quot;</span>
+    <span class="n">z_model</span> <span class="o">=</span> <span class="n">free_fall</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">mass_si</span><span class="p">,</span> <span class="n">radius_si</span><span class="p">,</span> <span class="n">G_cgs</span><span class="p">)</span>
+
+    <span class="c1"># Gaussian likelihood (sampling distribution) of observations</span>
+    <span class="c1"># Passing z to the &quot;observed&quot; arg makes PyMC3 recognize this as the model to fit</span>
+    <span class="n">obs</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="s1">&#39;obs&#39;</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="n">z_model</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="n">z_err</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="n">z</span><span class="p">)</span>
+    
+    <span class="c1"># No need to setup the posterior function as PyMC3 does it for you!</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="run-the-mcmc">
+<h3>Run the MCMC!<a class="headerlink" href="#run-the-mcmc" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setup number of CPUs to use (won&#39;t effect result, only the run time)</span>
+<span class="n">cpus</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="c1"># Setup number of walkers</span>
+<span class="n">walkers</span> <span class="o">=</span> <span class="mi">4</span> 
+<span class="c1"># Setup number of steps each walkers walk</span>
+<span class="n">Nsamples</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Do the sampling (let your walkers walk! MCMC! Woohoo!)</span>
+<span class="k">with</span> <span class="n">planet_model</span><span class="p">:</span>
+    <span class="n">trace</span> <span class="o">=</span> <span class="n">pm</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">Nsamples</span><span class="p">,</span> <span class="n">chains</span><span class="o">=</span><span class="n">walkers</span><span class="p">,</span> <span class="n">cores</span><span class="o">=</span><span class="n">cpus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_16764/2167632412.py:10: FutureWarning: In v4.0, pm.sample will return an `arviz.InferenceData` object instead of a `MultiTrace` by default. You can pass return_inferencedata=True or return_inferencedata=False to be safe and silence this warning.
+  trace = pm.sample(Nsamples, chains=walkers, cores=cpus)
+Auto-assigning NUTS sampler...
+Initializing NUTS using jitter+adapt_diag...
+Multiprocess sampling (4 chains in 4 jobs)
+NUTS: [radius_j, mass_j]
+</pre></div>
+</div>
+<div class="output text_html">
+<div>
+    <style>
+        /* Turns off some styling */
+        progress {
+            /* gets rid of default border in Firefox and Opera. */
+            border: none;
+            /* Needs to be in here for Safari polyfill so background images work as expected. */
+            background-size: auto;
+        }
+        .progress-bar-interrupted, .progress-bar-interrupted::-webkit-progress-bar {
+            background: #F44336;
+        }
+    </style>
+  <progress value='8000' class='' max='8000' style='width:300px; height:20px; vertical-align: middle;'></progress>
+  100.00% [8000/8000 00:06<00:00 Sampling 4 chains, 0 divergences]
+</div>
+</div><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sampling 4 chains for 1_000 tune and 1_000 draw iterations (4_000 + 4_000 draws total) took 8 seconds.
+The number of effective samples is smaller than 25% for some parameters.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="explore-the-results">
+<h3>Explore the results<a class="headerlink" href="#explore-the-results" title="Permalink to this headline">¶</a></h3>
+<p>After the sampling is done, your walker’s travel history (parameters they stepped on per step) is saved under <code class="docutils literal notranslate"><span class="pre">trace</span></code>. You can access the travel history of each of you walker’s steps on different parameters by <code class="docutils literal notranslate"><span class="pre">trace['par</span> <span class="pre">name']</span></code>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trace</span><span class="p">[</span><span class="s1">&#39;mass_j&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.28389524, 0.2866226 , 0.30959293, ..., 0.29864788, 0.31566691,
+       0.31405673])
+</pre></div>
+</div>
+</div>
+</div>
+<p>But a more intuitive way to view the <code class="docutils literal notranslate"><span class="pre">trace</span></code> is to use <code class="docutils literal notranslate"><span class="pre">arviz</span></code> pkg.</p>
+<p>ArviZ is a Python package for exploratory analysis of Bayesian models. Includes functions for posterior analysis, data storage, sample diagnostics, model checking, and comparison.</p>
+<p>(from <a class="reference external" href="https://arviz-devs.github.io/arviz/">ArviZ</a> site)</p>
+<p>On the left of the plot show the marginalized posterior probability distributions of each of your unknown parameters. On the right, are panels for each unknown parameters showing your walker’s travel histories.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">planet_model</span><span class="p">:</span>
+    <span class="n">az</span><span class="o">.</span><span class="n">plot_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a6_18_0.png" src="_images/f21_a6_18_0.png" />
+</div>
+</div>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">ArviZ</span></code>’s <code class="docutils literal notranslate"><span class="pre">summary</span></code> function to show <code class="docutils literal notranslate"><span class="pre">trace</span></code>’s statistical results.
+This is done by the <code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">describe</span></code> function in the backend; thus, you can save it out and use it later!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">planet_model</span><span class="p">:</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">az</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">round_to</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mean</th>
+      <th>sd</th>
+      <th>hdi_3%</th>
+      <th>hdi_97%</th>
+      <th>mcse_mean</th>
+      <th>mcse_sd</th>
+      <th>ess_bulk</th>
+      <th>ess_tail</th>
+      <th>r_hat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>mass_j</th>
+      <td>0.30</td>
+      <td>0.02</td>
+      <td>0.27</td>
+      <td>0.33</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>641.59</td>
+      <td>685.56</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>radius_j</th>
+      <td>0.82</td>
+      <td>0.02</td>
+      <td>0.78</td>
+      <td>0.86</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>647.70</td>
+      <td>671.44</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-parameters-with-corner">
+<h3>Plot parameters with Corner<a class="headerlink" href="#plot-parameters-with-corner" title="Permalink to this headline">¶</a></h3>
+<p>Finally, plotting the corner plot!</p>
+<p>In a corner plot, the counter plots at the lower left are showing the posterior distribution between two of your fitting parameters. The more circular (more 2D gaussian shape) the counter plots are, the nicer you fitting results are! The histograms on top of them are the marginalized posterior probability distributions of each the unknown parameters, i.e., their probability distributions.</p>
+<p>And you can see that MCMC do help us recover the correct answer to M and R (the location of the blue lines)!
+Wonderful!</p>
+<p><strong>Note</strong>: We add blue lines here as the “true” values use used to generate the data we used. We don’t generally know the true values, we just wanted to get a sense for how closely the MCMC converged to our desired values.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># True values of M and R, which is from the Saturn.</span>
+<span class="n">true_R</span> <span class="o">=</span> <span class="p">(</span><span class="mi">58232</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">R_jup</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">true_M</span> <span class="o">=</span> <span class="p">(</span><span class="mf">5.6834e26</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">M_jup</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="k">with</span> <span class="n">planet_model</span><span class="p">:</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;hspace&#39;</span><span class="p">:</span> <span class="mf">.05</span><span class="p">,</span> <span class="s1">&#39;wspace&#39;</span><span class="p">:</span> <span class="mf">0.05</span><span class="p">})</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">corner</span><span class="o">.</span><span class="n">corner</span><span class="p">(</span><span class="n">trace</span><span class="p">,</span> <span class="n">quantiles</span><span class="o">=</span><span class="p">[</span><span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.84</span><span class="p">],</span>
+                        <span class="n">show_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;xkcd:olive&#39;</span><span class="p">,</span>
+                        <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$m$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$r$&quot;</span><span class="p">],</span> <span class="n">title_kwargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;size&#39;</span><span class="p">:</span><span class="mi">7</span><span class="p">},</span> <span class="n">title_fmt</span><span class="o">=</span><span class="s1">&#39;1.3f&#39;</span><span class="p">,</span>
+                        <span class="n">truths</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">mass_j</span><span class="o">=</span><span class="n">true_M</span><span class="p">,</span> <span class="n">radius_j</span><span class="o">=</span><span class="n">true_R</span><span class="p">),</span>
+                        <span class="n">fig</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a6_22_0.png" src="_images/f21_a6_22_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="assignment-finding-planet-mass-and-radius-by-choosing-good-priors">
+<h2>[Assignment] – Finding Planet Mass and Radius by choosing good priors!<a class="headerlink" href="#assignment-finding-planet-mass-and-radius-by-choosing-good-priors" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment, we will repeat the MCMC analysis above, but explore how <strong>priors</strong> can change our results.</p>
+<p>You will get a different set of free-fall data to fit for the planet R and M with the same model:</p>
+<div class="math notranslate nohighlight">
+\[z(t) = \frac{1}{2}\frac{GM}{R^2}t^2\]</div>
+<p>In each question you will set up the same model as before, but try different priors for R and M:</p>
+<ol class="simple">
+<li><p>Both with a uniform priors (the worst constraints).</p></li>
+<li><p>Uniform prior for M, and Gaussian prior for R.</p></li>
+<li><p>Both with a Gaussian priors (the best constraints).</p></li>
+</ol>
+<p>The true values of M and R for this data set are:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">true_R</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25559</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">km</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">R_jup</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+<span class="n">true_M</span> <span class="o">=</span> <span class="p">(</span><span class="mf">8.6810E25</span><span class="o">*</span><span class="n">u</span><span class="o">.</span><span class="n">kg</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">M_jup</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+<p>Include these values in the final corner plots to see how close your MCMC results are.</p>
+<p>Tips:</p>
+<ol class="simple">
+<li><p>If your resulting corner plot looks weird, try to increase the steps rather than number of walkers (you shouldn’t need more than 4 walkers!).</p></li>
+<li><p>If you already have your steps (<code class="docutils literal notranslate"><span class="pre">Nsamples</span></code>) &gt; 1e6, but don’t see any difference in results, it’s ok to call it quits - which question did this happen for? Why do you think it didn’t converge?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read in data</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/position_measurement_as.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot the data</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span> <span class="p">)</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;time(s)&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z(m)&#39;</span><span class="p">],</span> <span class="n">yerr</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z_err(m)&#39;</span><span class="p">],</span> <span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> 
+             <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tab:blue&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;time (s)&#39;</span><span class="p">,</span>    <span class="n">size</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;z (m)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a6_24_0.png" src="_images/f21_a6_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mj2si</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">M_jup</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> <span class="c1"># constant to transfer Jupiter mass to kg</span>
+<span class="n">Rj2si</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">R_jup</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> <span class="c1"># constant to transfer Jupiter radius to m</span>
+<span class="n">G_cgs</span> <span class="o">=</span> <span class="n">const</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">si</span><span class="o">.</span><span class="n">value</span> 
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;time(s)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z(m)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span> 
+<span class="n">z_err</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;z_err(m)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="both-with-uniform-priors">
+<h3>1. Both with uniform priors:<a class="headerlink" href="#both-with-uniform-priors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prior for M: <span class="math notranslate nohighlight">\(\mathcal{U}(0, 0.1)\)</span></p></li>
+<li><p>Prior for R: <span class="math notranslate nohighlight">\(\mathcal{U}(0, 1.0)\)</span></p></li>
+</ul>
+<p>Please show both the walker history plot and the corner plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gaussian-prior-for-m-and-uniform-prior-for-r">
+<h3>2. Gaussian prior for M, and Uniform prior for R:<a class="headerlink" href="#gaussian-prior-for-m-and-uniform-prior-for-r" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prior for M: <span class="math notranslate nohighlight">\(\mathcal{G}(0.045, 0.02)\)</span></p></li>
+<li><p>Prior for R: <span class="math notranslate nohighlight">\(\mathcal{U}(0, 1)\)</span></p></li>
+</ul>
+<p>Hint: Can mass be negative? Can you account for this with your choice of prior distribution?</p>
+<p>Please show both the walker history plot and the corner plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="both-with-a-gaussian-priors">
+<h3>3. Both with a Gaussian priors:<a class="headerlink" href="#both-with-a-gaussian-priors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Prior for M: <span class="math notranslate nohighlight">\(\mathcal{G}(0.045, 0.02)\)</span></p></li>
+<li><p>Prior for R: <span class="math notranslate nohighlight">\(\mathcal{G}(0.357, 0.05)\)</span></p></li>
+</ul>
+<p>Hint: Can mass or radius be negative? Can you account for this with your choice of prior distribution?</p>
+<p>Please show both the walker history plot and the corner plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a5.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 5 (Oct 19)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
