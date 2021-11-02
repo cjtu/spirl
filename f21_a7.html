@@ -1,0 +1,1652 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 7 (Nov 2) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a7.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 6 (Oct 26)" href="f21_a6.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a2.html">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a3.html">
+     Assignment 3 (Oct 05)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a4.html">
+     Assignment 4 (Oct 12)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a5.html">
+     Assignment 5 (Oct 19)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a6.html">
+     Assignment 6 (Oct 26)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 7 (Nov 2)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a7.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#readings-optional">
+   Readings (optional)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficiency">
+   Efficiency
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#timing-code">
+     Timing code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#built-in-vectorized-methods">
+   Built-in vectorized methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#efficiency-pro-tips">
+   Efficiency pro tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-scaling">
+   Time scaling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parallel-computing-multiprocessing">
+   Parallel computing (multiprocessing)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pqdm">
+   PQDM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numba">
+   Numba
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-1-python-code-only-for-loop-no-numpy-no-numba">
+     Method 1: Python code only (for loop, no NumPy, no Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-2-use-numpy-random-for-loop-numpy-no-numba">
+     Method 2: Use NumPy random (for loop, NumPy, no Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-3-use-numpy-arrays-vectors-numpy-no-numba">
+     Method 3: Use NumPy arrays (vectors, NumPy, no Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-4-use-numba-to-speed-up-python-loop-for-loop-no-numpy-numba">
+     Method 4: Use Numba to speed up Python loop (for loop, no NumPy, Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-5-use-numba-with-numpy-loop-for-loop-numpy-numba">
+     Method 5: Use Numba with NumPy loop (for loop, NumPy, Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-7-use-numba-with-vectorized-code-vector-numpy-numba">
+     Method 7: Use Numba with vectorized code (vector, NumPy, Numba)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#method-8-use-numba-in-parallel-for-loop-numpy-numba-parallel">
+     Method 8: Use Numba in parallel (for loop, NumPy, Numba parallel)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-1-improving-code-efficiency">
+   [Assignment 1] Improving code efficiency
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment-2">
+   [Assignment 2]
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-7-nov-2">
+<h1>Assignment 7 (Nov 2)<a class="headerlink" href="#assignment-7-nov-2" title="Permalink to this headline">¶</a></h1>
+<p>Today’s topics are:</p>
+<ol class="simple">
+<li><p>Efficiency</p></li>
+<li><p>Timing code</p></li>
+<li><p>Using vectorized functions/methods</p></li>
+<li><p>Easy parallelization with Numba</p></li>
+</ol>
+<div class="section" id="readings-optional">
+<h2>Readings (optional)<a class="headerlink" href="#readings-optional" title="Permalink to this headline">¶</a></h2>
+<p>If you find this week’s material new or challenging, you may want to read through some or all the following resources while working on your assignment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;seaborn&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="efficiency">
+<h2>Efficiency<a class="headerlink" href="#efficiency" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve learned several workflows in Python, some of which can take a long time (Monte Carlo methods and MCMC), we are going to talk about:</p>
+<ul class="simple">
+<li><p>how to time your code</p></li>
+<li><p>how to estimate how long your code will take (and when you can’t)</p></li>
+<li><p>how to use vectorization to avoid slow loops</p></li>
+<li><p>how to use Numba to speed up slow loops</p></li>
+</ul>
+<div class="section" id="timing-code">
+<h3>Timing code<a class="headerlink" href="#timing-code" title="Permalink to this headline">¶</a></h3>
+<p>To understand how fast / efficient our code is, we will first need to learn how long our code takes to run.</p>
+<p>The most basic way to time code is using the built-in Python <code class="docutils literal notranslate"><span class="pre">time</span></code> module.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">time.time()</span></code> gives us a timestamp from when it is called. This timstamp is a number in seconds with ~microsecond (6 decimal) precision on Linux / Mac.</p>
+<p>Note: The precision of <code class="docutils literal notranslate"><span class="pre">time</span></code> on Windows is actually closer to 0.01 seconds in practice, so be careful comparing very short time periods.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">time_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">time_end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+<span class="n">time_delta</span> <span class="o">=</span> <span class="n">time_end</span> <span class="o">-</span> <span class="n">time_start</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Time to sort </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">.0e</span><span class="si">}</span><span class="s2"> numbers: </span><span class="si">{</span><span class="n">time_delta</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time to sort 1e+07 numbers: 1.624 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try re-running the above cell several times.</p>
+<p>You should notice that the timing for each run changes slightly. This can be due to:</p>
+<ul class="simple">
+<li><p>How much work there is to do (e.g. since randomness is involved)</p></li>
+<li><p>How many background tasks are running on your computer when you run the cell</p></li>
+</ul>
+<p>To get an accurate estimate of how long our code takes to run, as scientists we can run an experiment by:</p>
+<ol class="simple">
+<li><p>Closing all background programs so only Python is running</p></li>
+<li><p>Time our code chunk several times</p></li>
+<li><p>Take the average and standard deviation of all of the runs</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">timings</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">time_start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">time_end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">time_delta</span> <span class="o">=</span> <span class="n">time_end</span> <span class="o">-</span> <span class="n">time_start</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Run </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> Time to sort </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">.0e</span><span class="si">}</span><span class="s2"> numbers: </span><span class="si">{</span><span class="n">time_delta</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s&quot;</span><span class="p">)</span>
+    <span class="n">timings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time_delta</span><span class="p">)</span>
+
+<span class="n">time_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
+<span class="n">time_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">timings</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Avg time to sort </span><span class="si">{</span><span class="n">n</span><span class="si">:</span><span class="s2">.0e</span><span class="si">}</span><span class="s2"> numbers: </span><span class="si">{</span><span class="n">time_mean</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> +/- </span><span class="si">{</span><span class="n">time_std</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> s (ntrials: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">timings</span><span class="p">)</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Run 0 Time to sort 1e+07 numbers: 2.335 s
+Run 1 Time to sort 1e+07 numbers: 1.477 s
+Run 2 Time to sort 1e+07 numbers: 1.234 s
+Run 3 Time to sort 1e+07 numbers: 1.311 s
+Run 4 Time to sort 1e+07 numbers: 1.330 s
+Run 5 Time to sort 1e+07 numbers: 1.433 s
+Run 6 Time to sort 1e+07 numbers: 1.325 s
+Run 7 Time to sort 1e+07 numbers: 1.469 s
+Run 8 Time to sort 1e+07 numbers: 1.681 s
+Run 9 Time to sort 1e+07 numbers: 1.690 s
+Avg time to sort 1e+07 numbers: 1.529 +/- 0.305 s (ntrials: 10)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conveniently, the <strong>IPython</strong> framework that Jupyter runs on has some built-in functions for timing code. Called <em>IPython magics</em>, we can invoke them with <code class="docutils literal notranslate"><span class="pre">%</span></code> and the main ones we’ll use are <code class="docutils literal notranslate"><span class="pre">time</span></code> and <code class="docutils literal notranslate"><span class="pre">timeit</span></code> (See all IPython magics <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">here</a>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2.12 s, sys: 10.1 ms, total: 2.13 s
+Wall time: 2.12 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we get a dew outputs, but the one we care about is <strong>Wall time</strong> (the total time to runn the cell).</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">%%time</span></code> will time an entire cell If we want to time a specific line of code, we can use <code class="docutils literal notranslate"><span class="pre">%time</span></code> instead:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="o">%</span><span class="k">time</span> y = np.sort(x)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 1.54 s, sys: 10.2 ms, total: 1.55 s
+Wall time: 1.55 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>We saw above that we often want to run our code multiple times to get the average runtime. We can do this with the <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> magic.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.55 s ± 248 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="built-in-vectorized-methods">
+<h2>Built-in vectorized methods<a class="headerlink" href="#built-in-vectorized-methods" title="Permalink to this headline">¶</a></h2>
+<p>Here we will use what we learned about timing code to investigate a few different ways of computing the maximum of a list / array. Our four options for computing the max are:</p>
+<ol class="simple">
+<li><p>Using a for loop</p></li>
+<li><p>Python built-in <code class="docutils literal notranslate"><span class="pre">max()</span></code></p></li>
+<li><p>NumPy function <code class="docutils literal notranslate"><span class="pre">np.max()</span></code></p></li>
+<li><p>NumPy array method <code class="docutils literal notranslate"><span class="pre">np.ndarray.max()</span></code></p></li>
+</ol>
+<p>First let’s set up an example array to pull the maximum from:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s show our 4 options of computing the max and make sure they work!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">max_loop</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the maximum value in an array.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">maxval</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">maxval</span><span class="p">:</span>
+            <span class="n">maxval</span> <span class="o">=</span> <span class="n">val</span>
+    <span class="k">return</span> <span class="n">maxval</span>
+
+<span class="c1"># 1. For loop</span>
+<span class="n">max1</span> <span class="o">=</span> <span class="n">max_loop</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For loop: </span><span class="si">{</span><span class="n">max1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 2. Python max()</span>
+<span class="n">max2</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python max(): </span><span class="si">{</span><span class="n">max2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 3. NumPy np.max()</span>
+<span class="n">max3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy np.max(): </span><span class="si">{</span><span class="n">max3</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># 4. NumPy array.max()</span>
+<span class="n">max4</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NumPy array.max(): </span><span class="si">{</span><span class="n">max4</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>For loop: 9
+Python max(): 9
+NumPy np.max(): 9
+NumPy array.max(): 9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have 4 ways of computing the maximum of an array, but we’ll have to test on much longer arrays to start to see differences in speed. Let’s use <code class="docutils literal notranslate"><span class="pre">np.random</span></code> to make a long random array.</p>
+<p>Let’s also time our loop function with the <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> IPython magic (see <a class="reference external" href="https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit">docs</a>).</p>
+<p>Remember: <code class="docutils literal notranslate"><span class="pre">%%magic</span></code> is for a whole cell, <code class="docutils literal notranslate"><span class="pre">%magic</span></code> is when using inline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># Change for different random results</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Init RNG</span>
+<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Number of random numbers to generate</span>
+
+<span class="c1"># Random array of length ndraws (values between 0 and 1)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
+
+<span class="n">max1</span> <span class="o">=</span> <span class="n">max_loop</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>88.3 ms ± 7.59 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Q: What is wrong with the above example?</p>
+<p>Hint: Recall we want to time the <code class="docutils literal notranslate"><span class="pre">max_loop</span></code> function only.</p>
+<p>A: What we’re actually timing above is the entire cell, including making our random array. If we want a fair comparison between our max methods, we need to isolate only the work of each function.</p>
+<p>Let’s use the inline <code class="docutils literal notranslate"><span class="pre">%timeit</span></code> to time our 4 max functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute this ahead of time so we don&#39;t time it</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># Change for different random results</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Init RNG</span>
+<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Number of random numbers to generate</span>
+
+<span class="c1"># Random array of length ndraws (values between 0 and 1)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
+
+<span class="c1"># Time our 4 different methods</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. For loop&#39;</span><span class="p">)</span>
+<span class="n">max1</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> max_loop(arr)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">2. Python max()&#39;</span><span class="p">)</span>
+<span class="n">max2</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> max(arr)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">3. NumPy np.max()&#39;</span><span class="p">)</span>
+<span class="n">max3</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> np.max(arr)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">4. NumPy array.max()&#39;</span><span class="p">)</span>
+<span class="n">max4</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> arr.max()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. For loop
+86.4 ms ± 6.76 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+2. Python max()
+57.9 ms ± 416 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+3. NumPy np.max()
+483 µs ± 914 ns per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+4. NumPy array.max()
+492 µs ± 36.7 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seems like we have our ranking!</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.array.max()</span></code> faster than <code class="docutils literal notranslate"><span class="pre">np.max()</span></code> but within errors</p></li>
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">max()</span></code></p></li>
+<li><p>for loop</p></li>
+</ol>
+<p>We should get the same ranking if we feed in a Python list <code class="docutils literal notranslate"><span class="pre">[]</span></code> rather than NumPy array right?</p>
+<p>Let’s try it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compute this ahead of time so we don&#39;t time it</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># Change for different random results</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Init RNG</span>
+<span class="n">ndraws</span> <span class="o">=</span> <span class="mi">1000000</span>  <span class="c1"># Number of random numbers to generate</span>
+
+<span class="c1"># Random array of length ndraws (values between 0 and 1)</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
+<span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+<span class="c1"># Time our 4 different methods</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1. For loop&#39;</span><span class="p">)</span>
+<span class="n">max1</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> max_loop(lst)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">2. Python max()&#39;</span><span class="p">)</span>
+<span class="n">max2</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> max(lst)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">3. NumPy np.max()&#39;</span><span class="p">)</span>
+<span class="n">max3</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> np.max(lst)
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">4. NumPy array.max()&#39;</span><span class="p">)</span>
+<span class="n">max4</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> np.array(lst).max()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. For loop
+39.5 ms ± 792 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+2. Python max()
+23.7 ms ± 178 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+3. NumPy np.max()
+42.1 ms ± 98.7 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+
+4. NumPy array.max()
+42.1 ms ± 455 µs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>What happened here? It seems like the ranking switched:</p>
+<ol class="simple">
+<li><p>Python <code class="docutils literal notranslate"><span class="pre">max()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.max()</span></code> faster than <code class="docutils literal notranslate"><span class="pre">np.array.max()</span></code> but within errors</p></li>
+<li><p>for loop</p></li>
+</ol>
+<p>This brings up an interesting subtlety about coding in Python (and in general):</p>
+<p><strong>The data structure you choose can affect the efficiency of your program</strong></p>
+<p>Why is this happening? To find out, we’ll notice 2 things about our timings.</p>
+<ol class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">np.max</span></code> and <code class="docutils literal notranslate"><span class="pre">np.array.max()</span></code> methods were faster on NumPy arrays</p></li>
+<li><p>The built-in Python <code class="docutils literal notranslate"><span class="pre">max</span></code> method was faster on the Python list <code class="docutils literal notranslate"><span class="pre">[]</span></code></p></li>
+</ol>
+<p>We could chalk this up to a platitude like,</p>
+<p><em>“Python <code class="docutils literal notranslate"><span class="pre">max()</span></code> is optimized for Python lists, while <code class="docutils literal notranslate"><span class="pre">np.max()</span></code> is optimized for NumPy arrays”</em>.</p>
+<p>While this is partially true, if we understand the differences between lists and arrays, we can see there’s a bit more going on here.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Python list</p></th>
+<th class="head"><p>NumPy array</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Can contain any object</p></td>
+<td><p>Contains numerical data</p></td>
+</tr>
+<tr class="row-odd"><td><p>No fixed type (size) of elements</p></td>
+<td><p>Fixed data type (size) of elements</p></td>
+</tr>
+<tr class="row-even"><td><p>No <code class="docutils literal notranslate"><span class="pre">.max()</span></code> method</p></td>
+<td><p>Has <code class="docutils literal notranslate"><span class="pre">.max()</span></code> method defined</p></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s verify the data type of our NumPy array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dtype(&#39;float64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The fact that a NumPy array has a fixed data type and a defined length means that functions like <code class="docutils literal notranslate"><span class="pre">np.max()</span></code> can take advantage of super fast low-level algorithms (which run as compiled <code class="docutils literal notranslate"><span class="pre">C</span></code> code) to search, do math, comparisons, etc on our array.</p>
+<p>When a NumPy array is created, it blocks out a certain chunk of your computer’s memory so that all future operations on the array are speedy! BUT this takes a bit of time to save time later.</p>
+<p>To find a maximum, all of our methods need to look at every element in the list/array, BUT NumPy is faster for 2 reasons:</p>
+<ul class="simple">
+<li><p>it blocks off a place in memory</p></li>
+<li><p>the max function can very quickly in <strong>C</strong></p></li>
+</ul>
+<p>So why aren’t the NumPy functions faster on lists as well?</p>
+<p>As you can see in the line <code class="docutils literal notranslate"><span class="pre">%timeit</span> <span class="pre">np.array(lst).max()</span></code>, the Python list had no <code class="docutils literal notranslate"><span class="pre">.max()</span></code> so we had to first <em>convert the data type</em> from list to NumPy array and then call <code class="docutils literal notranslate"><span class="pre">.max()</span></code>. This is also what is happening below the hood when we call <code class="docutils literal notranslate"><span class="pre">np.max(lst)</span></code> on a regular list.</p>
+<p>So the reason Python <code class="docutils literal notranslate"><span class="pre">max()</span></code> is slower on arrays is that NumPy has to block off memory and then convert the list to an array (which takes time), before running the speedier NumPy algorithm on it. Overall, converting to an array and then finding the max is slower than just finding the max (like Python does with <code class="docutils literal notranslate"><span class="pre">max()</span></code>).</p>
+<p>This leads us to our rules of thumb for efficient science code:</p>
+</div>
+<div class="section" id="efficiency-pro-tips">
+<h2>Efficiency pro tips<a class="headerlink" href="#efficiency-pro-tips" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Use the proper data structure for the job</p>
+<ul class="simple">
+<li><p>NumPy arrays are suited for numerical data</p></li>
+<li><p>Pandas DataFrames are suited for table data</p></li>
+<li><p>Python Lists are suited to non-numerical or mixed type data</p></li>
+</ul>
+</li>
+<li><p>Use the optimized built-in functions</p>
+<ul class="simple">
+<li><p>Use NumPy’s functions/methods on arrays</p></li>
+<li><p>Use the Pandas methods on DataFrames</p></li>
+</ul>
+</li>
+<li><p>Avoid converting back and forth between data types</p>
+<ul class="simple">
+<li><p>Keep your numerical data in NumPy arrays wherever possible</p></li>
+<li><p>Keep your table data in DataFrames wherever possible</p></li>
+<li><p>If you need to compute values in a loop, initialize your arrays (e.g with <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code>) before the loop</p></li>
+</ul>
+</li>
+<li><p>Avoid custom Python loops wherever possible (see rule 2)</p></li>
+</ol>
+</div>
+<div class="section" id="time-scaling">
+<h2>Time scaling<a class="headerlink" href="#time-scaling" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>scaling</strong> behavior of our code describes how quickly it runs as the inputs get larger. Let’s use our max situation again.</p>
+<p>There were 8 situations total:</p>
+<ol class="simple">
+<li><p>np.max(array) and np.max(list)</p></li>
+<li><p>array.max() and np.array(list).max()</p></li>
+<li><p>max(array) and max(list)</p></li>
+<li><p>max_loop(array) and max_loop(list)</p></li>
+</ol>
+<p>Let’s look at the best from each category we identified before, so:</p>
+<ol class="simple">
+<li><p>np.max(array)</p></li>
+<li><p>array.max()</p></li>
+<li><p>max(list)</p></li>
+<li><p>max_loop(list)</p></li>
+</ol>
+<p>To investigate the scaling behavior, we will run the timing code with increasing <code class="docutils literal notranslate"><span class="pre">ndraws</span></code> (length of random array).</p>
+<p><strong>Note:</strong> Most operations (like max) will take exponentially longer as the array size increases. For now, we will only show <code class="docutils literal notranslate"><span class="pre">ndraws</span> <span class="pre">=</span> <span class="pre">[10,</span> <span class="pre">100,</span> <span class="pre">1000]</span></code>, but will use parallel programming (multiprocessing) later to speed things up!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">time</span>
+
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># Change for different random results</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>  <span class="c1"># Init RNG</span>
+<span class="n">ndraws_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>  <span class="c1"># Number of random numbers to generate</span>
+
+<span class="n">timings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">),</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ndraws</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">):</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="n">t1</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -o -q max_loop(lst)
+    <span class="n">timings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -o -q max(lst)
+    <span class="n">timings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -o -q np.max(arr)
+    <span class="n">timings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">t3</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t4</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -o -q arr.max()
+    <span class="n">timings</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">t4</span><span class="o">.</span><span class="n">average</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 2 µs, sys: 0 ns, total: 2 µs
+Wall time: 5.01 µs
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">label_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;max_loop(lst)&#39;</span><span class="p">,</span> <span class="s1">&#39;max(lst)&#39;</span><span class="p">,</span> <span class="s1">&#39;np.max(arr)&#39;</span><span class="p">,</span> <span class="s1">&#39;arr.max()&#39;</span><span class="p">]</span>
+
+<span class="c1"># plot the data</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">label_names</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">,</span> <span class="n">timings</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;ndraws&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;run time [sec]&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;array = np.random(ndraws)</span><span class="se">\n</span><span class="s2">list = list(array)&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> 
+        <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;monospace&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>findfont: Font family [&#39;Helvetica&#39;] not found. Falling back to DejaVu Sans.
+</pre></div>
+</div>
+<img alt="_images/f21_a7_27_1.png" src="_images/f21_a7_27_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="parallel-computing-multiprocessing">
+<h2>Parallel computing (multiprocessing)<a class="headerlink" href="#parallel-computing-multiprocessing" title="Permalink to this headline">¶</a></h2>
+<p>Every compute these days has several CPUs or <em>“cores”</em> which can each run several <em>“threads”</em> to do work / run code / render cat pictures at a time. By default, Python is <em>single-threaded</em> and can only use one thread / process at a time.</p>
+<p>Using the built-in <code class="docutils literal notranslate"><span class="pre">multiprocessing</span></code> library, or some packages that we’ll introduce here, we will see how to run our code in <em>parallel</em> using multiple threads or processes at a time. This a deep topic, so we will only have time to introduce the concepts and will point you towards deeper tutorials with more info on parallel computing as we go along.</p>
+<p>Reading:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2021/04/a-beginners-guide-to-multi-processing-in-python/">A beginners guide to Multi-Processing in Python</a></p></li>
+</ul>
+</div>
+<div class="section" id="pqdm">
+<h2>PQDM<a class="headerlink" href="#pqdm" title="Permalink to this headline">¶</a></h2>
+<p>One way of parallelizing our code is using the <code class="docutils literal notranslate"><span class="pre">pqdm</span></code> module (see docs at <a class="reference external" href="https://pqdm.readthedocs.io/en/latest/readme.html">Parallel TQDM (pqdm)</a>), an extension of the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> module which lets us time our code with a cool progress bar.</p>
+<p>To get pqdm, activate your conda environment and run:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">pqdm</span></code></p>
+<p>It will come with the package, <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> which means “progress” in Arabic (<a class="reference external" href="https://tqdm.github.io">see docs here</a>).</p>
+<p>The main function of <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> is to have a progress bar for your loops. Just wrap your loop iterable e.g. <code class="docutils literal notranslate"><span class="pre">tqdm(range(10))</span></code> and you’ll see a progress bar with the average time to run each iteration and estimated total run time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)):</span>
+    <span class="c1"># Choose random sleep time between 0 and 3 seconds</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 10/10 [00:11&lt;00:00,  1.10s/it]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is cool, but we really care about the parallel functionality provided by <code class="docutils literal notranslate"><span class="pre">pqdm</span></code>. To use it, we need to choose between <em>threads</em> and <em>processes</em> (if you don’t know the difference, stick to <em>processes</em> for now!).</p>
+<ul class="simple">
+<li><p>threads: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pqdm.threads</span> <span class="pre">import</span> <span class="pre">pqdm</span></code></p></li>
+<li><p>processes: <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pqdm.processes</span> <span class="pre">import</span> <span class="pre">pqdm</span></code></p></li>
+</ul>
+<p>The program we will parallelize is a function that computes the nth Fibonacci number.</p>
+<p>The Fibonacci sequence is defined as the sequence starting at 1, where each term is added to the previous one. E.g.</p>
+<p><code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">8,</span> <span class="pre">13,</span> <span class="pre">...</span></code></p>
+<p>To compute the nth Fibonacci number, we can use the following <em>recursive</em> function. A recursive function is one that calls itself. See more about recursion in this <a class="reference external" href="https://www.youtube.com/watch?v=zbfRgC3kukk&amp;ab_channel=RealPython">Real Python video</a>.</p>
+<p>The important thing to note is that to compute the <em>nth</em> Fibonacci number, we also need the (n-1), (n-2), (n-3)… terms until we get to 1. The time to compute all these numbers gets exponentially longer at bigger <em>n</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pqdm.processes</span> <span class="kn">import</span> <span class="n">pqdm</span>
+<span class="c1"># from pqdm.threads import pqdm</span>
+
+<span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the nth Fibonacci number recursively.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Test the program works</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0,1,1,2,3,5,8,13,21,34,...
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s time how long our code takes with larger n. This is overkill, but we’ll use both the <code class="docutils literal notranslate"><span class="pre">%%time</span></code> and the <code class="docutils literal notranslate"><span class="pre">tqdm</span></code> progress bar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">)):</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 36/36 [00:06&lt;00:00,  5.38it/s] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465]
+CPU times: user 6.71 s, sys: 0 ns, total: 6.71 s
+Wall time: 6.7 s
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now let’s break up our loop and let <code class="docutils literal notranslate"><span class="pre">pqdm</span></code> do it’s magic. To run <code class="docutils literal notranslate"><span class="pre">pqdm</span></code>, we need the list of inputs to the function (in the above loop, it’s just <code class="docutils literal notranslate"><span class="pre">range(36)</span></code>), the name of the function (<code class="docutils literal notranslate"><span class="pre">fibonacci</span></code>), and the number of jobs we want to split the work into (usually the number of cores on your computer is a good choice. I’m on a quad core PC, so i’ll use <code class="docutils literal notranslate"><span class="pre">n_jobs=4</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>
+
+<span class="c1"># To use pqdm, we need the list of values (range(36)), the function</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">36</span><span class="p">),</span> <span class="n">fibonacci</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8f3e1d113d0946ff8cdda8d04e158ec9", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "00e2f5ae3d044e6485d28b426d510c31", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "a872da15764e446a9d1788eec8e46f7b", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465]
+CPU times: user 153 ms, sys: 50.3 ms, total: 204 ms
+Wall time: 3.78 s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Woohoo we cut down the runtime! Try with larger <code class="docutils literal notranslate"><span class="pre">n</span></code> to see how much faster we can get it with the power of parallel computing.</p>
+<p>We can also use <code class="docutils literal notranslate"><span class="pre">pqdm</span></code> to run through our previous example timing the max functions. We should be able to test longer arrays now that we can compute in parallel… Let’s try it on <code class="docutils literal notranslate"><span class="pre">ndraws_list</span> <span class="pre">=</span> <span class="pre">[10,</span> <span class="pre">100,</span> <span class="pre">1000,</span> <span class="pre">10000,</span> <span class="pre">100000,</span> <span class="pre">1000000]</span></code>. All we need to do is wrap our previous code in a function and we’ll be good to go!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">999</span><span class="p">)</span>
+<span class="n">ndraws_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">run_timeit</span><span class="p">(</span><span class="n">ndraws</span><span class="p">):</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">ndraws</span><span class="p">)</span>
+    <span class="n">lst</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+
+    <span class="n">timings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">t1</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -r 4 -o -q max_loop(lst)
+    <span class="n">timings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">t1</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -r 4 -o -q max(lst)
+    <span class="n">timings</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t3</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -r 4 -o -q np.max(arr)
+    <span class="n">timings</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">t3</span><span class="o">.</span><span class="n">average</span>
+    <span class="n">t4</span> <span class="o">=</span> <span class="o">%</span><span class="k">timeit</span> -r 4 -o -q arr.max()
+    <span class="n">timings</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">t4</span><span class="o">.</span><span class="n">average</span>
+    <span class="k">return</span> <span class="n">timings</span>
+
+<span class="c1"># This time we&#39;ll use the same number of jobs as the length of our list</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">pqdm</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">,</span> <span class="n">run_timeit</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">))</span>
+
+<span class="c1"># In a Linux/Mac terminal, use `top` or `htop` to see processes and CPU usage</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "4cd814fec5774ec394eda4bcd4d61163", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "073af487cf274c2abaf5f816a270719d", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "11f0a9c22a7543dea08ae9734f7774ed", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># transfer list to array</span>
+<span class="n">timings</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="n">label_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;max_loop(lst)&#39;</span><span class="p">,</span> <span class="s1">&#39;max(lst)&#39;</span><span class="p">,</span> <span class="s1">&#39;np.max(arr)&#39;</span><span class="p">,</span> <span class="s1">&#39;arr.max()&#39;</span><span class="p">]</span>
+
+<span class="c1"># plot the data</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">label_names</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ndraws_list</span><span class="p">,</span> <span class="n">timings</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;ndraws&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;run time [sec]&#39;</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s1">&#39;Helvetica&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s2">&quot;array = np.random(ndraws)</span><span class="se">\n</span><span class="s2">list = list(array)&quot;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> 
+        <span class="n">va</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;monospace&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f21_a7_38_0.png" src="_images/f21_a7_38_0.png" />
+</div>
+</div>
+<p>Here, we see that our previous scaling test of the max function up to <span class="math notranslate nohighlight">\(10^4\)</span> was misleading because the slope changes a lot for <span class="math notranslate nohighlight">\(n=10^5\)</span> and <span class="math notranslate nohighlight">\(n=10^6\)</span>. This is why it’s important to test timings for “large enough” <strong>n</strong>, and simple parallelization with <code class="docutils literal notranslate"><span class="pre">pqdm</span></code> can help us do it quickly!</p>
+</div>
+<div class="section" id="numba">
+<h2>Numba<a class="headerlink" href="#numba" title="Permalink to this headline">¶</a></h2>
+<p>Here, we will give a quick example of how to use a package called <code class="docutils literal notranslate"><span class="pre">numba</span></code> to automatically compile your Python code to <strong>C</strong> which can <em>magically</em> speed up your code.</p>
+<p>You can install Numba with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">-c</span> <span class="pre">conda-forge</span> <span class="pre">numba</span></code></p>
+<p>We highly recommend checking out this more detailed <a class="reference external" href="https://nyu-cds.github.io/python-numba/">Introduction to Numba</a> by New York University. It has step by step tutorial like this textbook and practice problems as well.</p>
+<p>Other Numba resources:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numba.pydata.org/numba-doc/latest/user/5minguide.html">Numba docs: 5 minute guide to Numba</a></p></li>
+<li><p><a class="reference external" href="https://thedatafrog.com/en/articles/make-python-fast-numba/">Data Frog blog: Make Python Fast with Numba</a></p></li>
+<li><p><a class="reference external" href="https://numba.pydata.org/numba-doc/dev/reference/numpysupported.html">NumPy supported functions in Numba</a></p></li>
+</ul>
+<p>The example we will use is the Monte Carlo calculation of pi we did before!</p>
+<p>Let’s time our original solutions first (for loop and vectorized).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use this number of draws for our MC examples</span>
+<span class="n">n_draws</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="method-1-python-code-only-for-loop-no-numpy-no-numba">
+<h3>Method 1: Python code only (for loop, no NumPy, no Numba)<a class="headerlink" href="#method-1-python-code-only-for-loop-no-numpy-no-numba" title="Permalink to this headline">¶</a></h3>
+<p>To solve our problem with only Python, we will have to use the built-in <code class="docutils literal notranslate"><span class="pre">random</span></code> module in Python.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="k">def</span> <span class="nf">python_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+  <span class="n">n_in_circle</span> <span class="o">=</span> <span class="mi">0</span> 
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">n_in_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="o">%</span><span class="k">timeit</span> -r 4 python_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.5 s ± 1.28 s per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-2-use-numpy-random-for-loop-numpy-no-numba">
+<h3>Method 2: Use NumPy random (for loop, NumPy, no Numba)<a class="headerlink" href="#method-2-use-numpy-random-for-loop-numpy-no-numba" title="Permalink to this headline">¶</a></h3>
+<p>Here we will use the NumPy basic random functions <code class="docutils literal notranslate"><span class="pre">np.random.random()</span></code>. Normally we want to use a RNG object, but we’ll skip it for the sake for this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">def</span> <span class="nf">numpy_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+  <span class="n">n_in_circle</span> <span class="o">=</span> <span class="mi">0</span> 
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">n_in_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="o">%</span><span class="k">timeit</span> -r 4 numpy_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2min 11s ± 13.2 s per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-3-use-numpy-arrays-vectors-numpy-no-numba">
+<h3>Method 3: Use NumPy arrays (vectors, NumPy, no Numba)<a class="headerlink" href="#method-3-use-numpy-arrays-vectors-numpy-no-numba" title="Permalink to this headline">¶</a></h3>
+<p>Here, we will skip the for loop entirely. We make our x and y random arrays and feed them into our equation of a circle directly. This is the <strong>vectorized</strong> solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numpy_vector_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">n_in_circle</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+<span class="o">%</span><span class="k">timeit</span> -r 4 numpy_vector_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.58 s ± 916 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can gain a little speed by avoiding creating intermediate arrays <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, as well as using the simple sum of the <code class="docutils literal notranslate"><span class="pre">True</span></code> values in our equation rather than <code class="docutils literal notranslate"><span class="pre">np.where</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">numpy_vector_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="n">n_in_circle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+<span class="o">%</span><span class="k">timeit</span> -r 4 numpy_vector_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.52 s ± 646 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This vectorized solution is about as quick as we can get just with Python / NumPy.</p>
+</div>
+<div class="section" id="method-4-use-numba-to-speed-up-python-loop-for-loop-no-numpy-numba">
+<h3>Method 4: Use Numba to speed up Python loop (for loop, no NumPy, Numba)<a class="headerlink" href="#method-4-use-numba-to-speed-up-python-loop-for-loop-no-numpy-numba" title="Permalink to this headline">¶</a></h3>
+<p>Numba has 2 main <strong>decorators</strong> that we can use to magically translate our function to compiled <strong>C</strong> code:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jit</span></code>: basic</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">njit</span></code>: “no python” mode, skips Python things</p></li>
+</ol>
+<p>Note: A decorator is a special type of function that changes the behavior of another function. We use a decorator with the <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> symbol on the line before a function definition, e.g.:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@decorator</span>
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="c1"># do stuff</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">njit</span></code> is a short form for <code class="docutils literal notranslate"><span class="pre">jit(nopython=True)</span></code>. This is usually the one we want (Numba will automatically change <code class="docutils literal notranslate"><span class="pre">njit</span></code> to <code class="docutils literal notranslate"><span class="pre">jit</span></code> if it needs to).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numba</span> <span class="kn">import</span> <span class="n">njit</span>
+<span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">numba_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+  <span class="n">n_in_circle</span> <span class="o">=</span> <span class="mi">0</span> 
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">n_in_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+<span class="o">%</span><span class="k">timeit</span> -r 4 numba_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.65 s ± 77.6 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-5-use-numba-with-numpy-loop-for-loop-numpy-numba">
+<h3>Method 5: Use Numba with NumPy loop (for loop, NumPy, Numba)<a class="headerlink" href="#method-5-use-numba-with-numpy-loop-for-loop-numpy-numba" title="Permalink to this headline">¶</a></h3>
+<p>Here we’ll try using Numba on the Method 2 example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">numba_numpy_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+  <span class="n">n_in_circle</span> <span class="o">=</span> <span class="mi">0</span> 
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">n_in_circle</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="o">%</span><span class="k">timeit</span> -r 4 numba_numpy_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.54 s ± 47 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-7-use-numba-with-vectorized-code-vector-numpy-numba">
+<h3>Method 7: Use Numba with vectorized code (vector, NumPy, Numba)<a class="headerlink" href="#method-7-use-numba-with-vectorized-code-vector-numpy-numba" title="Permalink to this headline">¶</a></h3>
+<p>Here we will use Numba on Method 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@njit</span>
+<span class="k">def</span> <span class="nf">numba_numpy_vector_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+    <span class="n">n_in_circle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">n_in_circle</span> <span class="o">/</span> <span class="n">n</span>
+<span class="o">%</span><span class="k">timeit</span> -r 4 numba_numpy_vector_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.75 s ± 843 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="method-8-use-numba-in-parallel-for-loop-numpy-numba-parallel">
+<h3>Method 8: Use Numba in parallel (for loop, NumPy, Numba parallel)<a class="headerlink" href="#method-8-use-numba-in-parallel-for-loop-numpy-numba-parallel" title="Permalink to this headline">¶</a></h3>
+<p>We can add the option <code class="docutils literal notranslate"><span class="pre">(parallel=True)</span></code> to our Numba decorators to have it parallelize our loop automatically.</p>
+<p>One thing we have to do here is define our output array ahead of time so Numba knows where to store the parallel results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@njit</span><span class="p">(</span><span class="n">parallel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">numba_parallel_pi</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> 
+  <span class="n">n_in_circle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">n_in_circle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">n_in_circle</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+
+<span class="o">%</span><span class="k">timeit</span> -r 4 numba_parallel_pi(n_draws)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.07 s ± 177 ms per loop (mean ± std. dev. of 4 runs, 1 loop each)
+</pre></div>
+</div>
+</div>
+</div>
+<p>So it seems parallelization doesn’t always speed up our work. The main reason is <strong>overhead</strong>.</p>
+<p><strong>Overhead</strong> is the extra time introduced by our clever speedup techniques. Some of the hidden overhead in the above examples were:</p>
+<ul class="simple">
+<li><p>Creating a large NumPy array</p></li>
+<li><p>Having Numba convert our code to <strong>C</strong></p></li>
+<li><p>Having Numba parallelize our code (send it to different processes and wait for a result)</p></li>
+</ul>
+<p>If the work we are doing is really easy, the <strong>overhead</strong> we introduce by running it through Numba or parallelizing it can take just as long or longer than the work itself!</p>
+<p>This is why it is important to be able to run quick timing tests with small parts of our code before we dedicate a lot of time to making it more efficient!</p>
+</div>
+</div>
+<div class="section" id="assignment-1-improving-code-efficiency">
+<h2>[Assignment 1] Improving code efficiency<a class="headerlink" href="#assignment-1-improving-code-efficiency" title="Permalink to this headline">¶</a></h2>
+<p>In this assignment, you will be given a function that computes the <strong>factorial</strong> of a number using a for loop.</p>
+<p>You will need to develop the following alternatives to the given function:</p>
+<ul class="simple">
+<li><p>a. Same function using the Numba <code class="docutils literal notranslate"><span class="pre">&#64;njit</span></code> decorator</p></li>
+<li><p>b. Same function using parallel Numba <code class="docutils literal notranslate"><span class="pre">&#64;njit(parallel=True)</span></code></p></li>
+<li><p>c. An alternative function for computing factorials (try googling for a NumPy function that might help)</p></li>
+</ul>
+<p>Once you have your functions:</p>
+<ul class="simple">
+<li><p>Time each for a range of <strong>n</strong> values</p></li>
+<li><p>Plot the <em>scaling</em> behavior (time vs. n)</p></li>
+<li><p>Conclude which function performs the best at high <strong>n</strong></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="assignment-2">
+<h2>[Assignment 2]<a class="headerlink" href="#assignment-2" title="Permalink to this headline">¶</a></h2>
+<p>For this assignment you may need to do some reading / research to learn how to use a new decorator. Often in scientific programming we become aware of a tool but don’t know exactly how to use it.</p>
+<p>The name of the decorator you need to use is <code class="docutils literal notranslate"><span class="pre">lru_cache</span></code>. Using google, your peers, and/or the “#help” channel in Slack, apply <code class="docutils literal notranslate"><span class="pre">&#64;lru_cache</span></code> to the <code class="docutils literal notranslate"><span class="pre">fibonacci(n)</span></code> function we used before.</p>
+<p>Time the function for a range of <strong>n</strong> values before and after using <code class="docutils literal notranslate"><span class="pre">lru_cache</span></code> and plot the scaling behavior like above.</p>
+<p>Write a brief description of what <code class="docutils literal notranslate"><span class="pre">lru_cache</span></code> does and include a link to the official documentation.</p>
+<p>Note: Make sure the highest <strong>n</strong> value you use takes at least 1 minute to compute the function (without <code class="docutils literal notranslate"><span class="pre">lru_cache</span></code>) below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Return the nth Fibonacci number recursively.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span><span class="p">(</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># [your code here]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a6.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 6 (Oct 26)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
