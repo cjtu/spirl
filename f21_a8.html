@@ -483,14 +483,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-py-files">
-   Python
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     .py
-    </span>
-   </code>
-   files
+  <a class="reference internal nav-link" href="#python-scripts-modules-and-packages">
+   Python scripts, modules and packages
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -547,7 +541,7 @@
 <p>Today’s topics are:</p>
 <ol class="simple">
 <li><p>Installing packages from source code</p></li>
-<li><p>Python scripts vs. Jupyter notebooks</p></li>
+<li><p>Python scripts, modules and packages</p></li>
 <li><p>Real (exo)world MCMC example</p></li>
 </ol>
 <div class="section" id="installing-from-source">
@@ -562,8 +556,8 @@
 </ol>
 <p>Before getting into the details of installing from source, we’ll take a detour through python <strong>scripts</strong>, <strong>modules</strong>, and <strong>packages</strong>.</p>
 </div>
-<div class="section" id="python-py-files">
-<h2>Python <code class="docutils literal notranslate"><span class="pre">.py</span></code> files<a class="headerlink" href="#python-py-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python-scripts-modules-and-packages">
+<h2>Python scripts, modules and packages<a class="headerlink" href="#python-scripts-modules-and-packages" title="Permalink to this headline">¶</a></h2>
 <p>We have spent most of the term using only Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), but it’s important to understand when to use <code class="docutils literal notranslate"><span class="pre">.py</span></code> files as well.</p>
 <p>Jupyter notebooks are convenient for quick data analysis / plotting code, but using pure <code class="docutils literal notranslate"><span class="pre">.py</span></code> files is an important part of any Python project. We want to use <code class="docutils literal notranslate"><span class="pre">.py</span></code> files because:</p>
 <ul class="simple">
@@ -700,18 +694,19 @@
 </div>
 <div class="section" id="the-exoplanet-mcmc-package">
 <h2>The <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> MCMC package<a class="headerlink" href="#the-exoplanet-mcmc-package" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package is a tool for identifying exoplanets in stellar light curves. It can be installed from <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>, but in class today we will demonstrate how to install a package from source and encourage you to give it a try on <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> for the homework. The official documentation is quite informative and available <a class="reference external" href="https://docs.exoplanet.codes/en/latest/">here</a>. The GitHub repository is available <a class="reference external" href="https://github.com/exoplanet-dev/exoplanet">here</a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package is a tool for identifying exoplanets from radial velocity (RV) data. It can be installed from <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>, but in class today we will demonstrate how to install a package from source and encourage you to give it a try on <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> for the homework. The official documentation is quite informative and available <a class="reference external" href="https://docs.exoplanet.codes/en/latest/">here</a>. The GitHub repository is available <a class="reference external" href="https://github.com/exoplanet-dev/exoplanet">here</a>.</p>
 </div>
 <div class="section" id="assignment">
 <h2>[Assignment]<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
-<p>For this assignment you have 3 main goals:</p>
+<p>This assignment builds on the concepts we’ve learned so far. The instructions are simple so you can explore a little more naturally. Feel free to refer to previous assignments, the SPIRL textbook, or ask questions on the <code class="docutils literal notranslate"><span class="pre">#help</span></code> channel on Slack!</p>
+<p>You will need to:</p>
 <ul class="simple">
 <li><p>Clone the <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package from GitHub</p></li>
 <li><p>Install the local <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package from source</p></li>
 <li><p>Work through the <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> tutorial <a class="reference external" href="https://docs.exoplanet.codes/en/latest/tutorials/intro-to-pymc3/">here</a> on your local computer</p></li>
 <li><p>Discover a new exoplanet using a different light curve</p>
 <ul>
-<li><p>We will use the lightcurve for HD 209458 (see more <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/overview/HD%20209458%20b#planet_HD-209458-b_collapsible">here</a>)</p></li>
+<li><p>We will use the RV for HD 209458 (see more <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/overview/HD%20209458%20b#planet_HD-209458-b_collapsible">here</a>)</p></li>
 <li><p>To do so, change the download <code class="docutils literal notranslate"><span class="pre">url</span></code> line to: <code class="docutils literal notranslate"><span class="pre">url</span> <span class="pre">=</span> <span class="pre">“https://exoplanetarchive.ipac.caltech.edu/data/ExoData/0108/0108859/data/UID_0108859_RVC_001.tbl”</span></code></p></li>
 <li><p>Update the published literature period line to <code class="docutils literal notranslate"><span class="pre">lit_period</span> <span class="pre">=</span> <span class="pre">3.52474859</span></code></p></li>
 <li><p>Update the K prior to the uniform prior <span class="math notranslate nohighlight">\(U(0, 200)\)</span></p></li>
