@@ -27,7 +27,7 @@ Zoom lecture recordings will be posted as they become available.
 | 5 | Oct 19 | Advanced `pandas`, cleaning data                 | [A5 due Oct 22](f21_a5.ipynb) | [link](https://nau.zoom.us/rec/share/w185ggU49Krji13gKxU2da7av1JKVFpuWz6ThXUAxBbbfe1-C0Epgb-XGFRWyBLe.yvojx57uD1Dpiepm?startTime=1634658626000) |
 | 6 | Oct 26 | Markov-chain Monte Carlo (MCMC)                  | [A6 due Oct 29](f21_a6.ipynb) | [link](https://nau.zoom.us/rec/share/xOtGWJ3VIyTxF3RPHy2CNbKRZBh6lFPrluwcb0nXi5vOlyDvlJCRz2LByglUGT2j.iKe3Ls4Sti4SjvXb?startTime=1635263580000) |
 | 7 | Nov 02 | Timing code, efficiency, vectorizing             | [A7 due Nov 05](f21_a7.ipynb) | [link](https://nau.zoom.us/rec/share/IteHwAbIxbo_uN2gHGXCE30CDQgC8t3DnmkunGZs8qey0KaV8hJaGXpxpuR6P5mO.atGyRseTokc8xxvQ ) |
-| 8 | Nov 09 | Installing new packages, review, Advance MCMC    | A8 due Nov 12 | link TBD |
+| 8 | Nov 09 | Installing new packages, review, Advance MCMC    | [A8 due Nov 12](f21_a8.ipynb) | [link](https://nau.zoom.us/rec/share/J25CR_mJsEAEA1wb0yJRJEN3ULT3mZvF1AGpZBm_nDrA7cYrfFib9mM4dSiOVvS4.SG4iYRudwWubE1ua?startTime=1636473195000) |
 | 9 | Nov 16 | (optional) Questions, BYOProject                 | N/A | link TBD |
 ```
 
