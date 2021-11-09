@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 8 (Nov 8) &#8212; Scientific Programming&lt;br&gt;In Real Life</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://cjtu.github.io/spirl/f21_a8.html" />
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. The Bash Shell" href="bash_about.html" />
+    <link rel="prev" title="Assignment 7 (Nov 2)" href="f21_a7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo_spirl.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Scientific Programming<br>In Real Life</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="about.html">
+   Scientific Programming IRL
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Course
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="f21_about.html">
+   Fall 2021
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_assignments.html">
+     How To Submit Assignments
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a0.html">
+     Assignment 0 (Sep 14)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1.html">
+     Assignment 1 (Sep 21)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a1_bonus.html">
+     Assignment 1 (BONUS)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a2.html">
+     Assignment 2 (Sep 28)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a3.html">
+     Assignment 3 (Oct 05)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a4.html">
+     Assignment 4 (Oct 12)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a5.html">
+     Assignment 5 (Oct 19)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a6.html">
+     Assignment 6 (Oct 26)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f21_a7.html">
+     Assignment 7 (Nov 2)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Assignment 8 (Nov 8)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  SPIRL Textbook
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="bash_about.html">
+   1. The Bash Shell
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_shell.html">
+     1.1. Meet the shell
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_basics.html">
+     1.2. Bash Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_scripts.html">
+     1.3. Scripts and Permissions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="bash_tips.html">
+     1.4. Extra tips and tricks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="git_about.html">
+   2. Version control with Git
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_overview.html">
+     2.1. Git overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_basics.html">
+     2.2. Git basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_remotes.html">
+     2.3. Remotes and GitHub
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="git_practice.html">
+     2.4. Practicing Git IRL
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="python_about.html">
+   3. Programming in Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_style.html">
+     3.1. Python Style
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basics.html">
+     3.2. Python basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_basic-types.html">
+     3.3. Basic Data Types (bool, int, float, str, list, tuple)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_methods.html">
+     3.4. Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_functions.html">
+     3.5. Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_conditionals.html">
+     3.6. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_loops.html">
+     3.7. Loops
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_adv-types.html">
+     3.8. Advanced Data Types (set, dict)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_modules.html">
+     3.9. Modules
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="python_str-formatting.html">
+     3.10. String Formatting (Interactive)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="sp_about.html">
+   4. Scientific Programming
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_jupyter.html">
+     4.1. Jupyter Notebooks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_numpy.html">
+     4.2. Numpy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_matplotlib.html">
+     4.3. Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_scipy.html">
+     4.4. Scipy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_pandas.html">
+     4.5. Pandas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sp_function-plotting.html">
+     4.6. Function Plotting (Interactive)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sandbox.html">
+     4.7. Jupyter Sandbox
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="anaconda_about.html">
+   5. Anaconda
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_installing.html">
+     5.1. Installing Anaconda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="anaconda_environments.html">
+     5.2. Conda environments
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Practice coding here: <br><a href='https://cjtu.github.io/spirl/sandbox'>Jupyter Sandbox</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/f21_a8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/cjtu/spirl"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/cjtu/spirl/issues/new?title=Issue%20on%20page%20%2Ff21_a8.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/cjtu/spirl/master?urlpath=tree/spirl/f21_a8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installing-from-source">
+   Installing from source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-py-files">
+   Python
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .py
+    </span>
+   </code>
+   files
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-scripts">
+     Python scripts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-modules">
+     Python modules
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-packages">
+     Python packages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Installing from source
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-exoplanet-mcmc-package">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     exoplanet
+    </span>
+   </code>
+   MCMC package
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assignment">
+   [Assignment]
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="assignment-8-nov-8">
+<h1>Assignment 8 (Nov 8)<a class="headerlink" href="#assignment-8-nov-8" title="Permalink to this headline">¶</a></h1>
+<p>Today’s topics are:</p>
+<ol class="simple">
+<li><p>Installing packages from source code</p></li>
+<li><p>Python scripts vs. Jupyter notebooks</p></li>
+<li><p>Real (exo)world MCMC example</p></li>
+</ol>
+<div class="section" id="installing-from-source">
+<h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Last time we saw how to install new Python packages form the internet with <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code>, but sometimes we need to install packages directly from their source code.</p>
+<p>As always, first check the official documentation for the package you want to use and try their recommended installation instructions!</p>
+<p>Installing from the source code is done for 3 primary reasons:</p>
+<ol class="simple">
+<li><p>The code isn’t yet available on the Python Package Index (<a class="reference external" href="https://pypi.org">PyPI</a>).</p></li>
+<li><p>The code has complicated dependencies that cannot be easily installed by <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code> alone.</p></li>
+<li><p>You are contributing to the source code of an open source project.</p></li>
+</ol>
+<p>Before getting into the details of installing from source, we’ll take a detour through python <strong>scripts</strong>, <strong>modules</strong>, and <strong>packages</strong>.</p>
+</div>
+<div class="section" id="python-py-files">
+<h2>Python <code class="docutils literal notranslate"><span class="pre">.py</span></code> files<a class="headerlink" href="#python-py-files" title="Permalink to this headline">¶</a></h2>
+<p>We have spent most of the term using only Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>), but it’s important to understand when to use <code class="docutils literal notranslate"><span class="pre">.py</span></code> files as well.</p>
+<p>Jupyter notebooks are convenient for quick data analysis / plotting code, but using pure <code class="docutils literal notranslate"><span class="pre">.py</span></code> files is an important part of any Python project. We want to use <code class="docutils literal notranslate"><span class="pre">.py</span></code> files because:</p>
+<ul class="simple">
+<li><p>They can keep our larger projects organized</p></li>
+<li><p>We can re-use code in a <code class="docutils literal notranslate"><span class="pre">.py</span></code> file much easier than in a <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> notebook</p></li>
+<li><p>We can run code in a <code class="docutils literal notranslate"><span class="pre">.py</span></code> directly from the terminal (useful for cloud / cluster computing)</p></li>
+</ul>
+<p>A <code class="docutils literal notranslate"><span class="pre">.py</span></code> file can be one of two main types which differ in their goals for organizing and running our code. These types are the <strong>Python script</strong> and <strong>Python module</strong>.</p>
+<div class="section" id="python-scripts">
+<h3>Python scripts<a class="headerlink" href="#python-scripts" title="Permalink to this headline">¶</a></h3>
+<p>A Python script is a file meant to be run from top to bottom to produce a certain effect or output. Scripts we typically want to run from the terminal with a <code class="docutils literal notranslate"><span class="pre">python</span></code> command like:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">run_program.py</span></code></p>
+<p>All of the code necessary to perform a task is contained within the script and the program stops after it has run all of its code. For example, say the following file is called <code class="docutils literal notranslate"><span class="pre">quadratic.py</span></code>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Plot a quadratic function with errors.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="k">def</span> <span class="nf">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">err</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Return quadratic in x with err.&quot;&quot;&quot;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;quadratic_with_errors.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We could run it from the terminal with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">quadratic.py</span></code></p>
+<p>Note that the script has a docstring at the top of the file describing what it does.</p>
+<p>Also, our code uses <code class="docutils literal notranslate"><span class="pre">savefig</span></code> to export an image of our plot since we won’t have a nice notebook interface to preserve our figures. Make sure you save the data or plots you need when working with a script!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code> block indicates the parts of the script which you want to be run <strong>only</strong> when the script is called directly.</p>
+<p>If we instead want to import the <code class="docutils literal notranslate"><span class="pre">quadratic</span></code> function to use elsewhere, we can do so from another file with:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">quadratic</span> <span class="pre">import</span> <span class="pre">quadratic_errors</span></code></p>
+<p>Because we have the <code class="docutils literal notranslate"><span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__'</span></code>, our plotting code doesn’t get run when we import <code class="docutils literal notranslate"><span class="pre">quadratic</span></code> from this file. This means we can use this file as a <strong>module</strong>.</p>
+</div>
+<div class="section" id="python-modules">
+<h3>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h3>
+<p>A Python module is a collection of <strong>functions</strong> or <strong>classes</strong> that we intend to use from other programs or notebooks.</p>
+<p>This is simple to do if your notebook or other code file is in the same directory as your module. Like above, simply use the <code class="docutils literal notranslate"><span class="pre">import</span></code> command which we have seen constantly throughout this course. Any of the following will work on our <code class="docutils literal notranslate"><span class="pre">quadratic.py</span></code> file:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module</span>
+<span class="kn">import</span> <span class="nn">quadratic</span>
+<span class="n">quadratic</span><span class="o">.</span><span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Import the module as an alias</span>
+<span class="kn">import</span> <span class="nn">quadratic</span> <span class="k">as</span> <span class="nn">quad</span>
+<span class="n">quad</span><span class="o">.</span><span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Import the function directly</span>
+<span class="kn">from</span> <span class="nn">quadratic</span> <span class="kn">import</span> <span class="n">quadratic_errors</span>
+<span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Modules are very useful because we can use them to group and keep track of code that we want to re-use or use from a variety of projects.</p>
+<p>For example, if we have several projects that all need the <code class="docutils literal notranslate"><span class="pre">quadratic_errors</span></code> function, we <strong>don’t</strong> want to copy and past the function definition into every file (see <a class="reference external" href="https://cjtu.github.io/spirl/python_style.html">3.1 Python Style</a>). Instead, we can put our <code class="docutils literal notranslate"><span class="pre">quadratic_errors</span></code> into the <code class="docutils literal notranslate"><span class="pre">quadratic.py</span></code> file we described above and simple import it from the different projects with one of the import statements above. This makes it so that if we ever need to update <code class="docutils literal notranslate"><span class="pre">quadratic_errors</span></code>, we only need to do it in <strong>one place</strong> and can immediate use the changes from all of our projects.</p>
+<p>So far, <code class="docutils literal notranslate"><span class="pre">import</span></code> statements will only work on local code that is in the same directory, or code that is installed, e.g. with <code class="docutils literal notranslate"><span class="pre">pip</span></code> or <code class="docutils literal notranslate"><span class="pre">conda</span></code>. This is because Python actually has a list of directories it checks whenever you try to <code class="docutils literal notranslate"><span class="pre">import</span></code> from another place. This list of directories is called the <strong>PYTHONPATH</strong> and there is a different <strong>PYTHONPATH</strong> for each of your <code class="docutils literal notranslate"><span class="pre">conda</span></code> environments.</p>
+<p>To add a module to our <strong>PYTHONPATH</strong> to allow us to import it from anywhere on our computer, we first need to put that module into a <strong>package</strong></p>
+</div>
+<div class="section" id="python-packages">
+<h3>Python packages<a class="headerlink" href="#python-packages" title="Permalink to this headline">¶</a></h3>
+<p>Python recognizes packages with a special file outside of the modules called <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code>. For example, if you want to have the modules <code class="docutils literal notranslate"><span class="pre">linear</span></code>, <code class="docutils literal notranslate"><span class="pre">quadratic</span></code>, and <code class="docutils literal notranslate"><span class="pre">cubic</span></code>, you would set up your directory like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">my_modules</span>
+<span class="o">|----</span> <span class="fm">__init__</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|----</span> <span class="n">cubic</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|----</span> <span class="n">linear</span><span class="o">.</span><span class="n">py</span>
+<span class="o">|----</span> <span class="n">quadratic</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> can be completely blank! It just acts as a signifier to Python that there are modules in this folder. The outer folder, <code class="docutils literal notranslate"><span class="pre">my_modules</span></code> is then recognized as the <strong>package</strong>, and can be referred to in an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement like so:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the module</span>
+<span class="kn">from</span> <span class="nn">my_modules</span> <span class="kn">import</span> <span class="n">quadratic</span>
+<span class="n">quadratic</span><span class="o">.</span><span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Import the module as an alias</span>
+<span class="kn">from</span> <span class="nn">my_modules</span> <span class="kn">import</span> <span class="n">quadratic</span> <span class="k">as</span> <span class="n">quad</span>
+<span class="n">quad</span><span class="o">.</span><span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Import the function directly</span>
+<span class="kn">from</span> <span class="nn">my_modules.quadratic</span> <span class="kn">import</span> <span class="n">quadratic_errors</span>
+<span class="n">quadratic_errors</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The last thing we need to make a local Python package installable (have it added to our path to use it from anywhere) is to add a <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file.</p>
+<p>The most basic <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> contains:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">find_packages</span>
+
+<span class="n">setup</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;MyPackageName&#39;</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0.0&#39;</span><span class="p">,</span>
+    <span class="n">author</span><span class="o">=</span><span class="s1">&#39;Author Name&#39;</span><span class="p">,</span>
+    <span class="n">author_email</span><span class="o">=</span><span class="s1">&#39;author@gmail.com&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Description of my package&#39;</span><span class="p">,</span>
+    <span class="n">packages</span><span class="o">=</span><span class="n">find_packages</span><span class="p">(),</span>    
+    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+        <span class="s1">&#39;numpy &gt;= 1.11.1&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;matplotlib &gt;= 1.5.1&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;other_package &gt;= v.x.y,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file contains the metadata needed for Python packages. Although there are several newer ways to setup Python packages (e.g., <code class="docutils literal notranslate"><span class="pre">setup.cfg</span></code>, <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>), packaging is a deep topic and we can stick to <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> for now.</p>
+<p>Now you have everything you need to install your local source code!</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Installing from source<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>The two main way to install from source are:</p>
+<ul class="simple">
+<li><p>Normal package install</p></li>
+<li><p>Install packing in <strong>developer</strong> mode</p></li>
+</ul>
+<p>To install a local package normally (e.g., how <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code> install packages from the internet), you can run any of the following from the root package directory (the folder with <code class="docutils literal notranslate"><span class="pre">setup.py</span></code>) in the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This will install the version of the source code <em>as it was when you ran the command</em>. The three commands are mostly interchangeable (make sure to refer to the official documentation to see if one of the 3 is recommended over the others).</p>
+<p>If you edit your package (change any code or functions in the modules), you will <strong>NOT</strong> be able to use these changes with a normally installed package without re-installing or using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> again to install the <em>updated</em> package.</p>
+<p>To install a package in <strong>developer</strong> or <strong>editable</strong> mode, you can run any of the following from the package directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">develop</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>This way, if you add new functions or edit existing ones in your modules, you will be able to use those changes without running <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> again.</p>
+<p>Rule of thumb:</p>
+<p>If you are installing a package from the internet that you want to use <strong>as is</strong> and will not be editing any of the source code, use the “normal” install (e.g. <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>).</p>
+<p>If you are installing a local package that you want to use elsewhere, or installing another person’s package to tinker with / contribute to the source code, use the <code class="docutils literal notranslate"><span class="pre">develop</span></code> / <code class="docutils literal notranslate"><span class="pre">-e</span></code> mode.</p>
+<p>Final note: These instructions are for installing local packages. If you find a Python package on GitHub you’d like to use, you will likely first need to <strong>fork</strong> and then <strong>clone</strong> the repository and then run one of the install commands above.</p>
+</div>
+<div class="section" id="the-exoplanet-mcmc-package">
+<h2>The <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> MCMC package<a class="headerlink" href="#the-exoplanet-mcmc-package" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package is a tool for identifying exoplanets in stellar light curves. It can be installed from <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">pip</span></code>, but in class today we will demonstrate how to install a package from source and encourage you to give it a try on <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> for the homework. The official documentation is quite informative and available <a class="reference external" href="https://docs.exoplanet.codes/en/latest/">here</a>. The GitHub repository is available <a class="reference external" href="https://github.com/exoplanet-dev/exoplanet">here</a>.</p>
+</div>
+<div class="section" id="assignment">
+<h2>[Assignment]<a class="headerlink" href="#assignment" title="Permalink to this headline">¶</a></h2>
+<p>For this assignment you have 3 main goals:</p>
+<ul class="simple">
+<li><p>Clone the <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package from GitHub</p></li>
+<li><p>Install the local <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> package from source</p></li>
+<li><p>Work through the <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> tutorial <a class="reference external" href="https://docs.exoplanet.codes/en/latest/tutorials/intro-to-pymc3/">here</a> on your local computer</p></li>
+<li><p>Discover a new exoplanet using a different light curve</p>
+<ul>
+<li><p>We will use the lightcurve for HD 209458 (see more <a class="reference external" href="https://exoplanetarchive.ipac.caltech.edu/overview/HD%20209458%20b#planet_HD-209458-b_collapsible">here</a>)</p></li>
+<li><p>To do so, change the download <code class="docutils literal notranslate"><span class="pre">url</span></code> line to: <code class="docutils literal notranslate"><span class="pre">url</span> <span class="pre">=</span> <span class="pre">“https://exoplanetarchive.ipac.caltech.edu/data/ExoData/0108/0108859/data/UID_0108859_RVC_001.tbl”</span></code></p></li>
+<li><p>Update the published literature period line to <code class="docutils literal notranslate"><span class="pre">lit_period</span> <span class="pre">=</span> <span class="pre">3.52474859</span></code></p></li>
+<li><p>Update the K prior to the uniform prior <span class="math notranslate nohighlight">\(U(0, 200)\)</span></p></li>
+<li><p>Update the P prior to the uniform prior <span class="math notranslate nohighlight">\(U(0, 5)\)</span></p></li>
+</ul>
+</li>
+<li><p>Copy and paste your notebook code to a script (<code class="docutils literal notranslate"><span class="pre">.py</span></code> file)</p>
+<ul>
+<li><p>Don’t forget to wrap everything other than the <code class="docutils literal notranslate"><span class="pre">import</span></code> or function <code class="docutils literal notranslate"><span class="pre">def</span></code> lines in <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">'__main__':</span></code></p></li>
+</ul>
+</li>
+<li><p>Save the main corner plot and final fit plots using <code class="docutils literal notranslate"><span class="pre">plt.savefig</span></code></p></li>
+<li><p>Run the script from the terminal</p></li>
+</ul>
+<p>Please submit in your Pull Request your modified tutorial notebook, Python script, and any plots generated by your script.</p>
+<p><strong>BONUS</strong>:</p>
+<p>To take this 1 step further, you can create a module that runs the <code class="docutils literal notranslate"><span class="pre">exoplanet</span></code> MCMC analysis and do the plotting in Jupyter.</p>
+<ul class="simple">
+<li><p>Make a new <code class="docutils literal notranslate"><span class="pre">.py</span></code> file</p></li>
+<li><p>Make a Python function that runs the MCMC analysis from the script</p>
+<ul>
+<li><p>Make sure the function returns <code class="docutils literal notranslate"><span class="pre">trace</span></code>, <code class="docutils literal notranslate"><span class="pre">map_params</span></code>, and anything else you need for the plots</p></li>
+</ul>
+</li>
+<li><p>From a new Jupyter notebook, import your MCMC function from your <code class="docutils literal notranslate"><span class="pre">.py</span></code> file</p></li>
+<li><p>Run the MCMC code cell and make the requested plots in the Jupyter notebook</p></li>
+</ul>
+<p>Clearly name the new module and Jupyter notebook and include them in your PR.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="f21_a7.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Assignment 7 (Nov 2)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="bash_about.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>The Bash Shell</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Christian J. Tai Udovicic <a href="https://github.com/cjtu/spirl/graphs/contributors">et. al</a><br/>
+        
+            &copy; Copyright 2021.<br/>
+          <div class="extra_footer">
+            <a href='https://cjtu.github.io'>About Christian</a> <a href='https://jupyterbook.org/'>About this JupyterBook</a>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-111642150-3', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </body>
+</html>
